@@ -1,0 +1,19 @@
+erDiagram
+    meal_preps ||--|{ ingredients : contains
+    meal_preps {
+        int meal_prep_id PK
+        int ingredient_id FK
+        string meal_prep_name
+    }
+    ingredients ||--|{ components : contains
+    ingredients {
+        int ingredient_id PK
+        int component_id FK
+        string ingredient_name
+        int ingredient_grams_or_milliliters
+    }
+    components {
+        int component_id PK
+        string component_name 
+        int component_grams
+    }
