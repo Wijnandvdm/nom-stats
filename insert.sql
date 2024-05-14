@@ -1,22 +1,33 @@
--- Insert a component first
-INSERT INTO raw.components (component_name, component_grams) VALUES ('calories', 178);
-INSERT INTO raw.components (component_name, component_grams) VALUES ('proteins', 9.1);
-INSERT INTO raw.components (component_name, component_grams) VALUES ('calories', 33);
-INSERT INTO raw.components (component_name, component_grams) VALUES ('proteins', 1.4);
-INSERT INTO raw.components (component_name, component_grams) VALUES ('calories', 365 );
-INSERT INTO raw.components (component_name, component_grams) VALUES ('proteins', 4.1);
-INSERT INTO raw.components (component_name, component_grams) VALUES ('calories', 143 );
-INSERT INTO raw.components (component_name, component_grams) VALUES ('proteins', 8.5);
+-- Insert components
+INSERT INTO components (component_id, component_name, component_weight, component_volume) VALUES
+(1, 'Flour', 100, NULL),
+(2, 'Tomato', 200, NULL),
+(3, 'Basil', 50, NULL),
+(4, 'Olive Oil', NULL, 50),
+(5, 'Cheese', 150, NULL);
 
--- Insert an ingredient that uses the component inserted above
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (1, 'Ravioli', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (2, 'Ravioli', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (3, 'Tomatenblokjes', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (4, 'Tomatenblokjes', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (5, 'Pesto', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (6, 'Pesto', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (7, 'Ricotta', 100);
-INSERT INTO raw.ingredients (component_id, ingredient_name, ingredient_grams_or_milliliters) VALUES (8, 'Ricotta', 100);
+-- Insert ingredients
+INSERT INTO ingredients (ingredient_id, ingredient_name, weight_in_grams, volume_in_milliliters) VALUES
+(1, 'Ravioli', 300, NULL),
+(2, 'Diced Tomatoes', 200, NULL),
+(3, 'Pesto', 100, 50),
+(4, 'Ricotta', 150, NULL);
 
--- Insert a meal prep that uses the ingredient inserted above
-INSERT INTO raw.meal_preps (ingredient_id, meal_prep_name) VALUES (1, 'Puffy Pesto Pillows');
+-- Link ingredients to components
+INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES
+(1, 1, 100),   -- Ravioli made with Flour
+(2, 2, 200),   -- Diced Tomatoes made with Tomato
+(3, 3, 50),    -- Pesto made with Basil
+(3, 4, 50),    -- Pesto made with Olive Oil
+(4, 5, 150);   -- Ricotta made with Cheese
+
+-- Insert meal prep
+INSERT INTO meal_preps (meal_prep_id, meal_prep_name, description) VALUES
+(1, 'Puffy Pesto Pillows', 'Delicious ravioli pillows with a pesto, ricotta, and diced tomato sauce');
+
+-- Link meal prep to ingredients
+INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES
+(1, 1, 300),  -- 300 grams of Ravioli
+(1, 2, 200),  -- 200 grams of Diced Tomatoes
+(1, 3, 100),  -- 100 grams of Pesto
+(1, 4, 150);  -- 150 grams of Ricotta

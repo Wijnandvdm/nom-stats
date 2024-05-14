@@ -1,19 +1,32 @@
 erDiagram
-    meal_preps ||--|{ ingredients : contains
+    meal_prep_ingredients {
+        int meal_prep_id PK, FK
+        int ingredient_id PK, FK
+        int ingredient_quantity
+    }
     meal_preps {
         int meal_prep_id PK
-        int ingredient_id FK
         string meal_prep_name
+        string description
     }
-    ingredients ||--|{ components : contains
+    ingredients_components {
+        int ingredient_id PK, FK
+        int component_id PK, FK
+        int component_quantity
+    }
     ingredients {
         int ingredient_id PK
-        int component_id FK
         string ingredient_name
-        int ingredient_grams_or_milliliters
+        int weight_in_grams
+        int volume_in_milliliters
     }
     components {
         int component_id PK
-        string component_name 
-        int component_grams
+        string component_name
+        int component_weight
+        int component_volume
     }
+meal_preps ||--|{ meal_prep_ingredients : contains
+ingredients ||--|{ meal_prep_ingredients : contains
+ingredients ||--|{ ingredients_components : contains
+components ||--|{ ingredients_components : contains
