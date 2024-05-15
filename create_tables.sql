@@ -2,7 +2,7 @@ CREATE DATABASE raw;
 CREATE TABLE raw.meal_preps (
     meal_prep_id INT PRIMARY KEY,
     meal_prep_name VARCHAR(255) NOT NULL,
-    description VARCHAR(MAX)
+    description VARCHAR(4000)
 );
 
 CREATE TABLE raw.ingredients (
@@ -14,9 +14,7 @@ CREATE TABLE raw.ingredients (
 
 CREATE TABLE raw.components (
     component_id INT PRIMARY KEY,
-    component_name VARCHAR(255) NOT NULL,
-    component_weight INT,
-    component_volume INT
+    component_name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE raw.meal_prep_ingredients (
@@ -31,7 +29,7 @@ CREATE TABLE raw.meal_prep_ingredients (
 CREATE TABLE raw.ingredients_components (
     ingredient_id INT,
     component_id INT,
-    component_quantity INT NOT NULL,
+    component_quantity FLOAT NOT NULL,
     PRIMARY KEY (ingredient_id, component_id),
     FOREIGN KEY (ingredient_id) REFERENCES ingredients(ingredient_id),
     FOREIGN KEY (component_id) REFERENCES components(component_id)

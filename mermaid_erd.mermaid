@@ -12,7 +12,7 @@ erDiagram
     ingredients_components {
         int ingredient_id PK, FK
         int component_id PK, FK
-        int component_quantity
+        float component_quantity
     }
     ingredients {
         int ingredient_id PK
@@ -23,8 +23,6 @@ erDiagram
     components {
         int component_id PK
         string component_name
-        int component_weight
-        int component_volume
     }
 meal_preps ||--|{ meal_prep_ingredients : contains
 ingredients ||--|{ meal_prep_ingredients : contains
