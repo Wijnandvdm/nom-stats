@@ -17,7 +17,7 @@ INSERT INTO ingredients_components (ingredient_id, component_id, component_quant
 (2, 1, 1.4),   -- protein in Diced Tomatoes
 (2, 2, 33),    -- calories in Diced Tomatoes 
 (3, 1, 4.1),    -- protein in Pesto
-(3, 2, 365);   -- calories in Pesto
+(3, 2, 365),   -- calories in Pesto
 (4, 1, 8.5),    -- protein in Pesto
 (4, 2, 143);   -- calories in Pesto per 100 grams
 
@@ -27,7 +27,7 @@ INSERT INTO meal_preps (meal_prep_id, meal_prep_name, description) VALUES
 
 -- Link meal prep to ingredients
 INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES
-(1, 1, 300),  -- 300 grams of Ravioli
-(1, 2, 200),  -- 200 grams of Diced Tomatoes
-(1, 3, 100),  -- 100 grams of Pesto
-(1, 4, 150);  -- 150 grams of Ricotta
+(1, 1, 1000),  -- Ravioli
+(1, 2, 800),   -- Diced Tomatoes
+(1, 3, 100),   -- Pesto
+(1, 4, 250);   -- Ricotta
