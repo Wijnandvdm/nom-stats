@@ -7,9 +7,7 @@ CREATE TABLE raw.meal_preps (
 
 CREATE TABLE raw.ingredients (
     ingredient_id INT PRIMARY KEY,
-    ingredient_name VARCHAR(255) NOT NULL,
-    weight_in_grams INT,
-    volume_in_milliliters INT
+    ingredient_name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE raw.components (
