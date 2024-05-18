@@ -5,34 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database View</title>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 1rem 0;
         }
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid #ddd;
         }
         th, td {
-            padding: 8px;
+            padding: 12px;
             text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            th, td {
+                padding: 8px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Database View</h1>
-    <table>
-        <tr>
-            {% for column in columns %}
-                <th>{{ column }}</th>
-            {% endfor %}
-        </tr>
-        {% for row in data %}
-        <tr>
-            {% for column in columns %}
-                <td>{{ row[column] }}</td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
+    <header>
+        <h1>Database View</h1>
+    </header>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    {% for column in columns %}
+                        <td>{{ row[column] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

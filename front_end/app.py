@@ -28,7 +28,7 @@ def index():
 def per_meal_prep():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM raw.v_per_ingredient")
+    cursor.execute("SELECT * FROM raw.v_per_meal_prep")
     results = cursor.fetchall()
     column_names = cursor.column_names
     cursor.close()
