@@ -24,8 +24,8 @@ def get_db_connection():
 def index():
     return "Welcome to the database view application!"
 
-@app.route('/per_mealprep')
-def per_mealprep():
+@app.route('/per_meal_prep')
+def per_meal_prep():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM raw.v_per_ingredient")
