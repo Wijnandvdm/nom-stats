@@ -1,4 +1,4 @@
-CREATE VIEW v_per_meal_prep AS
+CREATE VIEW raw.v_per_meal_prep AS
 SELECT 
     mp.meal_prep_name,
 	SUM(CASE WHEN c.component_name = 'calories' THEN (ic.component_quantity * mi.ingredient_quantity) / 100 ELSE 0 END) AS total_calories,
