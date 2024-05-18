@@ -1,4 +1,4 @@
-CREATE VIEW v_per_ingredient AS
+CREATE VIEW raw.v_per_ingredient AS
 SELECT 
     mp.meal_prep_name,
     i.ingredient_name,
