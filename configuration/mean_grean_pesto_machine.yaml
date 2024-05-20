@@ -1,0 +1,33 @@
+meal_prep_name: 'Mean Green Pesto Machine'
+description: 'Delicious pasta pesto with chicken and beans'
+ingredients:
+  - name: 'Penne'
+    quantity: 1000
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 13
+      - name: 'calories'
+        quantity_per_100_g: 357
+  - name: 'Sperziebonen'
+    quantity: 500
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 2.3
+      - name: 'calories'
+        quantity_per_100_g: 25
+  - name: 'Pesto'
+    quantity: 800
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 4.1
+      - name: 'calories'
+        quantity_per_100_g: 424
+  - name: 'Kip'
+    quantity: 600
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 24
+      - name: 'calories'
+        quantity_per_100_g: 103
+
+
