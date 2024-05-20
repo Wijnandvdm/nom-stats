@@ -49,7 +49,6 @@ def insert_data_into_db(data):
             cursor.execute("SELECT ingredient_id FROM ingredients WHERE ingredient_name =  %(ingredient_name)s", { 'ingredient_name': ingredient_name })
             ingredient_result = cursor.fetchone()
 
-            # If the ingredient does not exist, insert it
             if ingredient_result is None:
                 cursor.execute(
                     "INSERT INTO ingredients (ingredient_name) VALUES (%s)",
@@ -63,15 +62,11 @@ def insert_data_into_db(data):
                     (meal_prep_id, ingredient_id, ingredient_quantity)
                 )
 
-
                 for component in ingredient['components']:
                     component_name = component['name']
                     component_quantity_per_100_g = component['quantity_per_100_g']
                     
-                    cursor.execute(
-                        "INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",
-                        (component_name,)
-                    )
+                    cursor.execute("INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",(component_name,))
 
                     cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", { 'component_name': component_name })
                     component_id = cursor.fetchone()['component_id']
@@ -83,42 +78,6 @@ def insert_data_into_db(data):
             else:
                 print(f"ingredient {ingredient_name} already present in ingredients table, not inserted. Moving on...")
                 ingredient_id = ingredient_result["ingredient_id"]
-            
-            
-            # print(ingredient_id)
-            # cursor.execute(
-            #     "INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES (%s, %s, %s)",
-            #     (meal_prep_id, ingredient_id, ingredient_quantity)
-            # )
-
-            # for component in ingredient['components']:
-            #     component_name = component['name']
-            #     component_quantity_per_100_g = component['quantity_per_100_g']
-                
-            #     cursor.execute(
-            #         "INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",
-            #         (component_name,)
-            #     )
-
-            #     cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", { 'component_name': component_name })
-            #     component_id = cursor.fetchone()['component_id']
-
-
-                # cursor.execute("SELECT ingredient_id, component_id FROM ingredients_components WHERE ingredient_id = %(ingredient_id)s AND component_id = %(ingredient_id)s", { 'ingredient_id': ingredient_id, 'component_id': component_id })
-                # ingredients_components_result = cursor.fetchone()
-                # if ingredients_components_result is None:
-                #     cursor.execute(
-                #         "INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",
-                #         (ingredient_id, component_id, component_quantity_per_100_g)
-                #     )
-                #     print(f"ingredient id {ingredient_id} and component id {component_id} inserted!")
-                # else:
-                #     print(f"ingredient id {ingredient_id} and component id {component_id} combination already present in ingredients_components table, not inserted. Moving on...")
-
-                # cursor.execute(
-                #     "INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",
-                #     (ingredient_id, component_id, component_quantity_per_100_g)
-                # )
 
         conn.commit()
 
