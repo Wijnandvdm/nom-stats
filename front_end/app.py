@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-import mysql.connector
 import credentials
+import mysql.connector
 from mysql.connector import Error
 
 app = Flask(__name__)
