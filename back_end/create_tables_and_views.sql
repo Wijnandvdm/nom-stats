@@ -7,7 +7,8 @@ CREATE TABLE raw.meal_preps (
 
 CREATE TABLE raw.ingredients (
     ingredient_id INT AUTO_INCREMENT PRIMARY KEY,
-    ingredient_name VARCHAR(255) NOT NULL
+    ingredient_name VARCHAR(255) NOT NULL,
+    CONSTRAINT ingredient_unique UNIQUE (ingredient_name)
 );
 
 CREATE TABLE raw.components (
