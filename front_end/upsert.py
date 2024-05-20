@@ -29,7 +29,6 @@ def insert_data_into_db(data):
     try:
         conn = app.get_db_connection()
         cursor = conn.cursor(dictionary=True, buffered=True)
-        # Insert meal prep
         meal_prep_name = data['meal_prep_name']
         description = data['description']
         cursor.execute("INSERT INTO meal_preps (meal_prep_name, description) VALUES (%s, %s)",(meal_prep_name, description))
