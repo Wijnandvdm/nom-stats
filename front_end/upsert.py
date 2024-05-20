@@ -17,9 +17,7 @@ def empty_tables():
         for table in tables:
             cursor.execute(f"TRUNCATE TABLE {table};")
         cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
-
         conn.commit()
-
     except Error as e:
         print("Error while connecting to MySQL", e)
     finally:
@@ -34,10 +32,7 @@ def insert_data_into_db(data):
         # Insert meal prep
         meal_prep_name = data['meal_prep_name']
         description = data['description']
-        cursor.execute(
-            "INSERT INTO meal_preps (meal_prep_name, description) VALUES (%s, %s)",
-            (meal_prep_name, description)
-        )
+        cursor.execute("INSERT INTO meal_preps (meal_prep_name, description) VALUES (%s, %s)",(meal_prep_name, description))
         meal_prep_id = cursor.lastrowid
 
         # Insert ingredients and their components
@@ -50,17 +45,11 @@ def insert_data_into_db(data):
             ingredient_result = cursor.fetchone()
 
             if ingredient_result is None:
-                cursor.execute(
-                    "INSERT INTO ingredients (ingredient_name) VALUES (%s)",
-                    (ingredient_name,)
-                    )
+                cursor.execute("INSERT INTO ingredients (ingredient_name) VALUES (%s)",(ingredient_name,))
                 ingredient_id = cursor.lastrowid
 
                 print(ingredient_id)
-                cursor.execute(
-                    "INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES (%s, %s, %s)",
-                    (meal_prep_id, ingredient_id, ingredient_quantity)
-                )
+                cursor.execute("INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES (%s, %s, %s)",(meal_prep_id, ingredient_id, ingredient_quantity))
 
                 for component in ingredient['components']:
                     component_name = component['name']
@@ -71,10 +60,7 @@ def insert_data_into_db(data):
                     cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", { 'component_name': component_name })
                     component_id = cursor.fetchone()['component_id']
 
-                    cursor.execute(
-                        "INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",
-                        (ingredient_id, component_id, component_quantity_per_100_g)
-                    )
+                    cursor.execute("INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",(ingredient_id, component_id, component_quantity_per_100_g))
             else:
                 print(f"ingredient {ingredient_name} already present in ingredients table, not inserted. Moving on...")
                 ingredient_id = ingredient_result["ingredient_id"]
