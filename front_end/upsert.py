@@ -71,5 +71,5 @@ def insert_data_into_db(data):
             conn.close()
 
 if __name__ == '__main__':
-    data = load_yaml_file('puffy_pesto_pillows.yaml')
+    data = load_yaml_file('../configuration/puffy_pesto_pillows.yaml')
     insert_data_into_db(data)
