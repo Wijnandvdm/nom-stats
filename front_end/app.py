@@ -49,3 +49,4 @@ def per_ingredient():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    # app.run(host=credentials.server_host, port=credentials.server_port)
