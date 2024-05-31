@@ -28,19 +28,7 @@ def index():
 def per_meal_prep():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM raw.v_per_meal_prep")
-    results = cursor.fetchall()
-    column_names = cursor.column_names
-    cursor.close()
-    conn.close()
-    return render_template('index.html', data=results, columns=column_names)
-
-
-@app.route('/per_ingredient')
-def per_ingredient():
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM raw.v_per_ingredient")
+    cursor.execute("SELECT * FROM well_done.v_per_meal_prep")
     results = cursor.fetchall()
     column_names = cursor.column_names
     cursor.close()

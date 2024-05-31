@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
     meal_prep_ingredients {
         int meal_prep_id PK, FK
@@ -26,3 +27,4 @@ meal_preps ||--|{ meal_prep_ingredients : contains
 ingredients ||--|{ meal_prep_ingredients : contains
 ingredients ||--|{ ingredients_components : contains
 components ||--|{ ingredients_components : contains
+```

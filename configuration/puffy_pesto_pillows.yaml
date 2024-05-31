@@ -15,7 +15,7 @@ ingredients:
         quantity_per_100_g: 1.4
       - name: 'calories'
         quantity_per_100_g: 33
-  - name: 'Pesto'
+  - name: 'Rode Pesto'
     quantity: 570
     components:
       - name: 'protein'

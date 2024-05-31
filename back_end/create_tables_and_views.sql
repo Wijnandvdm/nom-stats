@@ -35,10 +35,21 @@ CREATE TABLE raw.ingredients_components (
     FOREIGN KEY (component_id) REFERENCES components(component_id)
 );
 
-CREATE VIEW raw.v_per_ingredient AS
+CREATE DATABASE medium;
+
+CREATE OR REPLACE VIEW medium.v_total_weight_per_meal_prep AS
 SELECT 
+    meal_prep_id,
+    SUM(ingredient_quantity) AS total_weight_grams
+FROM 
+    raw.meal_prep_ingredients
+GROUP BY 
+    meal_prep_id;
+
+CREATE OR REPLACE VIEW medium.v_total_nutrients_per_meal_prep AS
+SELECT 
+    mp.meal_prep_id,
     mp.meal_prep_name,
-    i.ingredient_name,
     SUM(CASE WHEN c.component_name = 'calories' THEN (ic.component_quantity * mi.ingredient_quantity) / 100 ELSE 0 END) AS total_calories,
     SUM(CASE WHEN c.component_name = 'protein' THEN (ic.component_quantity * mi.ingredient_quantity) / 100 ELSE 0 END) AS total_protein
 FROM 
@@ -48,19 +59,19 @@ JOIN raw.meal_preps mp ON mi.meal_prep_id = mp.meal_prep_id
 JOIN raw.ingredients_components ic ON i.ingredient_id = ic.ingredient_id
 JOIN raw.components c ON ic.component_id = c.component_id
 GROUP BY 
-    mp.meal_prep_name, 
-    i.ingredient_name;
+    mp.meal_prep_id, mp.meal_prep_name;
 
-CREATE VIEW raw.v_per_meal_prep AS
+CREATE DATABASE well_done;
+
+CREATE OR REPLACE VIEW well_done.v_per_meal_prep AS
 SELECT 
-    mp.meal_prep_name,
-	SUM(CASE WHEN c.component_name = 'calories' THEN (ic.component_quantity * mi.ingredient_quantity) / 100 ELSE 0 END) AS total_calories,
-    SUM(CASE WHEN c.component_name = 'protein' THEN (ic.component_quantity * mi.ingredient_quantity) / 100 ELSE 0 END) AS total_protein
+    n.meal_prep_name,
+    n.total_calories,
+    n.total_protein,
+    w.total_weight_grams,
+    (n.total_calories / w.total_weight_grams) * 100 AS calories_per_100_grams
 FROM 
-    raw.ingredients i
-JOIN raw.meal_prep_ingredients mi ON i.ingredient_id = mi.ingredient_id
-JOIN raw.meal_preps mp ON mi.meal_prep_id = mp.meal_prep_id 
-JOIN raw.ingredients_components ic ON i.ingredient_id = ic.ingredient_id
-JOIN raw.components c ON ic.component_id = c.component_id
-GROUP BY 
-    mp.meal_prep_name;
+    medium.v_total_nutrients_per_meal_prep n
+JOIN medium.v_total_weight_per_meal_prep w ON n.meal_prep_id = w.meal_prep_id
+WHERE 
+    w.total_weight_grams > 0;
