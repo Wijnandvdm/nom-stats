@@ -21,10 +21,6 @@ def get_db_connection():
 
 
 @app.route('/')
-def index():
-    return "Welcome to the database view application!"
-
-@app.route('/per_meal_prep')
 def per_meal_prep():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -36,5 +32,5 @@ def per_meal_prep():
     return render_template('index.html', data=results, columns=column_names)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    # app.run(host=credentials.server_host, port=credentials.server_port)
+    # app.run(debug=True)
+    app.run(host=credentials.server_host, port=credentials.server_port)

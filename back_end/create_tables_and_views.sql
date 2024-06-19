@@ -65,11 +65,9 @@ CREATE DATABASE well_done;
 
 CREATE OR REPLACE VIEW well_done.v_per_meal_prep AS
 SELECT 
-    n.meal_prep_name,
-    n.total_calories,
-    n.total_protein,
-    w.total_weight_grams,
-    (n.total_calories / w.total_weight_grams) * 100 AS calories_per_100_grams
+    n.meal_prep_name AS 'Recipe Name',
+    ROUND((n.total_calories / w.total_weight_grams) * 100, 1) AS 'Calories per 100 g',
+    ROUND((n.total_protein / w.total_weight_grams) * 100, 1) AS 'Protein per 100 g'
 FROM 
     medium.v_total_nutrients_per_meal_prep n
 JOIN medium.v_total_weight_per_meal_prep w ON n.meal_prep_id = w.meal_prep_id
