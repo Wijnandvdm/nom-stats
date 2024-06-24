@@ -15,13 +15,6 @@ ingredients:
         quantity_per_100_g: 1.4
       - name: 'calories'
         quantity_per_100_g: 33
-  - name: 'Rode Pesto'
-    quantity: 570
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 4.1
-      - name: 'calories'
-        quantity_per_100_g: 424
   - name: 'Ricotta'
     quantity: 250
     components:
