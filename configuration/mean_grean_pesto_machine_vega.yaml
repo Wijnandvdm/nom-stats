@@ -1,5 +1,5 @@
-meal_prep_name: 'Mean Green Pesto Machine'
-description: 'Delicious pasta pesto with chicken and beans'
+meal_prep_name: 'Mean Green Pesto Machine Vega'
+description: 'Delicious pasta pesto with vega chicken and beans'
 ingredients:
   - name: 'Penne'
     quantity: 1000
@@ -22,12 +22,12 @@ ingredients:
         quantity_per_100_g: 4.1
       - name: 'calories'
         quantity_per_100_g: 364
-  - name: 'Kip'
+  - name: 'Vivera Kip'
     quantity: 600
     components:
       - name: 'protein'
-        quantity_per_100_g: 24
+        quantity_per_100_g: 15
       - name: 'calories'
-        quantity_per_100_g: 103
+        quantity_per_100_g: 166
 
 
