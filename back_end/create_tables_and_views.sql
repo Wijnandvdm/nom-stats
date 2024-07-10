@@ -30,7 +30,7 @@ CREATE TABLE raw.ingredients_components (
     ingredient_id INT,
     component_id INT,
     component_quantity FLOAT NOT NULL,
-    PRIMARY KEY (ingredient_id, component_id),
+    -- PRIMARY KEY (ingredient_id, component_id),
     FOREIGN KEY (ingredient_id) REFERENCES ingredients(ingredient_id),
     FOREIGN KEY (component_id) REFERENCES components(component_id)
 );

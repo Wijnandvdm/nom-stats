@@ -8,13 +8,13 @@ ingredients:
         quantity_per_100_g: 10
       - name: 'calories'
         quantity_per_100_g: 285
-  - name: 'Minced meat'
+  - name: 'Gehakt'
     quantity: 500
     components:
       - name: 'protein'
-        quantity_per_100_g: 18
+        quantity_per_100_g: 20
       - name: 'calories'
-        quantity_per_100_g: 225
+        quantity_per_100_g: 243
   - name: 'Diced Tomatoes'
     quantity: 400
     components:
@@ -51,4 +51,31 @@ ingredients:
       - name: 'calories'
         quantity_per_100_g: 153
 
+# own calculations
+# lasagna:
+# lasagna bladeren 
+# 	25 	proteine
+# 	712,5 	cal
+# diced tomatoes
+# 	5.6	proteine
+# 	132	cal
+# tomato frito
+# 	3	proteine
+# 	150	cal
+# cheese
+# 	21	proteine
+# 	204,75	cal
+# besciamella
+# 	2.05	proteine
+# 	54	cal
+# milk
+# 	16	proteine
+# 	765	cal
+# gehakt
+# 	100	proteine
+# 	1215	cal
+
+# totaal cal 		    3233,25
+# totaal gewicht		1975
+# cal/100g		      163,7
 

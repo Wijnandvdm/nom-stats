@@ -63,6 +63,16 @@ def insert_data_into_db(data):
             else:
                 print(f"ingredient {ingredient_name} already present in ingredients table, not inserted. Moving on...")
                 ingredient_id = ingredient_result["ingredient_id"]
+                for component in ingredient['components']:
+                    component_name = component['name']
+                    component_quantity_per_100_g = component['quantity_per_100_g']
+                    
+                    # cursor.execute("INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",(component_name,))
+
+                    cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", { 'component_name': component_name })
+                    component_id = cursor.fetchone()['component_id']
+
+                    cursor.execute("INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",(ingredient_id, component_id, component_quantity_per_100_g))
 
         conn.commit()
 
