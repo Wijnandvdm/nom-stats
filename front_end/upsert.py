@@ -34,45 +34,35 @@ def insert_data_into_db(data):
         cursor.execute("INSERT INTO meal_preps (meal_prep_name, description) VALUES (%s, %s)",(meal_prep_name, description))
         meal_prep_id = cursor.lastrowid
 
-        # Insert ingredients and their components
         for ingredient in data['ingredients']:
             ingredient_name = ingredient['name']
             ingredient_quantity = ingredient['quantity']
 
-            # Check if the ingredient already exists
-            cursor.execute("SELECT ingredient_id FROM ingredients WHERE ingredient_name =  %(ingredient_name)s", { 'ingredient_name': ingredient_name })
+            cursor.execute("SELECT ingredient_id FROM ingredients WHERE ingredient_name = %(ingredient_name)s", {'ingredient_name': ingredient_name})
             ingredient_result = cursor.fetchone()
 
             if ingredient_result is None:
                 cursor.execute("INSERT INTO ingredients (ingredient_name) VALUES (%s)",(ingredient_name,))
                 ingredient_id = cursor.lastrowid
-
-                print(ingredient_id)
-                cursor.execute("INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES (%s, %s, %s)",(meal_prep_id, ingredient_id, ingredient_quantity))
-
-                for component in ingredient['components']:
-                    component_name = component['name']
-                    component_quantity_per_100_g = component['quantity_per_100_g']
-                    
-                    cursor.execute("INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",(component_name,))
-
-                    cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", { 'component_name': component_name })
-                    component_id = cursor.fetchone()['component_id']
-
-                    cursor.execute("INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",(ingredient_id, component_id, component_quantity_per_100_g))
             else:
-                print(f"ingredient {ingredient_name} already present in ingredients table, not inserted. Moving on...")
-                ingredient_id = ingredient_result["ingredient_id"]
-                for component in ingredient['components']:
-                    component_name = component['name']
-                    component_quantity_per_100_g = component['quantity_per_100_g']
-                    
-                    # cursor.execute("INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",(component_name,))
+                ingredient_id = ingredient_result['ingredient_id']
 
-                    cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", { 'component_name': component_name })
-                    component_id = cursor.fetchone()['component_id']
+            cursor.execute("INSERT INTO meal_prep_ingredients (meal_prep_id, ingredient_id, ingredient_quantity) VALUES (%s, %s, %s)",(meal_prep_id, ingredient_id, ingredient_quantity))
 
-                    cursor.execute("INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s)",(ingredient_id, component_id, component_quantity_per_100_g))
+            for component in ingredient['components']:
+                component_name = component['name']
+                component_quantity_per_100_g = component['quantity_per_100_g']
+
+                cursor.execute("SELECT component_id FROM components WHERE component_name = %(component_name)s", {'component_name': component_name})
+                component_result = cursor.fetchone()
+
+                if component_result is None:
+                    cursor.execute("INSERT INTO components (component_name) VALUES (%s) ON DUPLICATE KEY UPDATE component_name=component_name",(component_name,))
+                    component_id = cursor.lastrowid
+                else:
+                    component_id = component_result['component_id']
+
+                cursor.execute("INSERT INTO ingredients_components (ingredient_id, component_id, component_quantity) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE component_quantity=%s",(ingredient_id, component_id, component_quantity_per_100_g, component_quantity_per_100_g))
 
         conn.commit()
 
@@ -89,9 +79,8 @@ if __name__ == '__main__':
     if os.path.isdir(config_dir):                                                   # Check if the "configuration" directory exists and is a directory
         for file in os.listdir(config_dir):
             if os.path.isfile(os.path.join(config_dir, file)):
-                print(file)
-                data = load_yaml_file(f'../configuration/{file}')
-                insert_data_into_db(data)           
+                data = load_yaml_file(os.path.join(config_dir, file))
+                insert_data_into_db(data)
+                print(f"Upserted file {file}!")
     else:
         print(f"The directory '{config_dir}' does not exist or is not a directory.")
-

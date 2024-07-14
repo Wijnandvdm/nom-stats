@@ -24,7 +24,7 @@ def get_db_connection():
 def per_meal_prep():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM well_done.v_per_meal_prep")
+    cursor.execute("SELECT * FROM well_done.v_per_meal_prep ORDER BY `Recipe name` ASC")
     results = cursor.fetchall()
     column_names = cursor.column_names
     cursor.close()
