@@ -1,0 +1,60 @@
+meal_prep_name: 'Spaghetti Bolognese'
+description: 'Big Spaghet, no ragret'
+ingredients:
+  - name: 'Spaghetti'
+    quantity: 500
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 13
+      - name: 'calories'
+        quantity_per_100_g: 357
+  - name: 'Gehakt'
+    quantity: 500
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 20
+      - name: 'calories'
+        quantity_per_100_g: 243
+  - name: 'Chorizo'
+    quantity: 100
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 23
+      - name: 'calories'
+        quantity_per_100_g: 463
+  - name: 'Passata'
+    quantity: 1035
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.4
+      - name: 'calories'
+        quantity_per_100_g: 33
+  - name: 'Spaghetti groentenmix'
+    quantity: 600
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.2
+      - name: 'calories'
+        quantity_per_100_g: 28
+  - name: 'Uien'
+    quantity: 300
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.3
+      - name: 'calories'
+        quantity_per_100_g: 37
+  - name: 'Knoflook'
+    quantity: 25
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 5.6
+      - name: 'calories'
+        quantity_per_100_g: 128
+  - name: 'Gochujang'
+    quantity: 5
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 6.1
+      - name: 'calories'
+        quantity_per_100_g: 233
+

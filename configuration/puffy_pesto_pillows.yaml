@@ -1,0 +1,26 @@
+meal_prep_name: 'Puffy Pesto Pillows'
+description: 'Delicious ravioli pillows with a pesto, ricotta, and diced tomato sauce'
+ingredients:
+  - name: 'Ravioli'
+    quantity: 1000
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 9.1
+      - name: 'calories'
+        quantity_per_100_g: 278
+  - name: 'Diced Tomatoes'
+    quantity: 800
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.4
+      - name: 'calories'
+        quantity_per_100_g: 33
+  - name: 'Ricotta'
+    quantity: 250
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 8.5
+      - name: 'calories'
+        quantity_per_100_g: 143
+
+

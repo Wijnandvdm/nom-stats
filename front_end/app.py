@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-import mysql.connector
 import credentials
+import mysql.connector
 from mysql.connector import Error
 
 app = Flask(__name__)
@@ -21,26 +21,10 @@ def get_db_connection():
 
 
 @app.route('/')
-def index():
-    return "Welcome to the database view application!"
-
-@app.route('/per_meal_prep')
 def per_meal_prep():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM raw.v_per_ingredient")
-    results = cursor.fetchall()
-    column_names = cursor.column_names
-    cursor.close()
-    conn.close()
-    return render_template('index.html', data=results, columns=column_names)
-
-
-@app.route('/per_ingredient')
-def per_ingredient():
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM raw.v_per_ingredient")
+    cursor.execute("SELECT * FROM well_done.v_per_meal_prep ORDER BY `Recipe name` ASC")
     results = cursor.fetchall()
     column_names = cursor.column_names
     cursor.close()
@@ -48,4 +32,5 @@ def per_ingredient():
     return render_template('index.html', data=results, columns=column_names)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run(host=credentials.server_host, port=credentials.server_port)
