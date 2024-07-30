@@ -37,7 +37,7 @@ ingredients:
       - name: 'calories'
         quantity_per_100_g: 37
   - name: 'Knoflook'
-    quantity: 25
+    quantity: 50
     components:
       - name: 'protein'
         quantity_per_100_g: 5.6
