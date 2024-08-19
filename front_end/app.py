@@ -11,7 +11,7 @@ def get_db_connection():
             host=credentials.host,
             user=credentials.user,
             password=credentials.password,
-            database=credentials.database
+            database=credentials.well_done_database
         )
         if connection.is_connected():
             return connection

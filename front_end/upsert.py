@@ -1,15 +1,29 @@
 import yaml
-import app
+import credentials
 import mysql.connector
 from mysql.connector import Error
 import os
+
+def get_db_connection():
+    try:
+        connection = mysql.connector.connect(
+            host=credentials.host,
+            user=credentials.user,
+            password=credentials.password,
+            database=credentials.raw_database
+        )
+        if connection.is_connected():
+            return connection
+    except Error as e:
+        print("Error while connecting to MySQL", e)
+        return None
 
 def load_yaml_file(file_path):
     with open(file_path, 'r') as file:
         return yaml.safe_load(file)
 
 def empty_tables():
-    conn = app.get_db_connection()
+    conn = get_db_connection()
     cursor = conn.cursor(dictionary=True, buffered=True)
     try:
         cursor.execute("SET FOREIGN_KEY_CHECKS = 0;")
@@ -27,7 +41,7 @@ def empty_tables():
 
 def insert_data_into_db(data):
     try:
-        conn = app.get_db_connection()
+        conn = get_db_connection()
         cursor = conn.cursor(dictionary=True, buffered=True)
         meal_prep_name = data['meal_prep_name']
         description = data['description']
