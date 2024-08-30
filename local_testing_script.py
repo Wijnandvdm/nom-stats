@@ -35,8 +35,6 @@ def process_all_recipes(directory):
             print(f'Calories per 100g: {calories_per_100g:.2f} kcal')
             print('---')
 
-# Example usage:
 current_directory = os.path.dirname(__file__)
-parent_directory = os.path.abspath(os.path.join(current_directory, os.pardir))
-configuration_directory = os.path.join(parent_directory, 'configuration')
+configuration_directory = os.path.join(current_directory, 'configuration')
 process_all_recipes(configuration_directory)
