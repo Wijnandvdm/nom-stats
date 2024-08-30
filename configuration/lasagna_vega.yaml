@@ -37,16 +37,9 @@ ingredients:
       - name: 'calories'
         quantity_per_100_g: 273
   - name: 'Besciamella'
-    quantity: 50
+    quantity: 400
     components:
       - name: 'protein'
-        quantity_per_100_g: 4.1
+        quantity_per_100_g: 0.9
       - name: 'calories'
-        quantity_per_100_g: 108
-  - name: 'Milk'
-    quantity: 500
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 3.2
-      - name: 'calories'
-        quantity_per_100_g: 153
+        quantity_per_100_g: 112

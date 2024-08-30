@@ -40,9 +40,9 @@ ingredients:
     quantity: 25
     components:
       - name: 'protein'
-        quantity_per_100_g: 5.6
+        quantity_per_100_g: 6.4
       - name: 'calories'
-        quantity_per_100_g: 128
+        quantity_per_100_g: 158
   - name: 'Gochujang'
     quantity: 15
     components:
