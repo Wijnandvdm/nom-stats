@@ -13,5 +13,8 @@ COPY . /app
 # Install the Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Expose the Flask port (default: 5000)
+EXPOSE 5000
+
 # Run the script
 CMD ["python", "app.py"]
