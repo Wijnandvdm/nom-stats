@@ -1,4 +1,4 @@
-meal_prep_name: 'Spaghetti Bolognese'
+recipe_name: 'Spaghetti Bolognese'
 description: 'Big Spaghet, no ragret'
 ingredients:
   - name: 'Spaghetti'
