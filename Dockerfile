@@ -10,6 +10,6 @@ COPY . /app
 # Install the Python dependencies (no cache to reduce image size)
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 80
 
 CMD ["python", "app.py"]

@@ -5,6 +5,7 @@ container_registry_sku="Basic"
 
 image="recipe-calculator"
 container_instance="ci-recipe-calculator"
+dns_name="recipe-calculator"
 
 ## basic infrastructure
 # az group create --name ${resource_group} --location ${location}
@@ -19,5 +20,5 @@ az container create -g ${resource_group} \
   --image "${container_registry}.azurecr.io/${image}" \
   --registry-password ${acr_password} \
   --registry-username ${container_registry} \
-  --ports 5000 80 \
-  --dns-name-label tomato
+  --ports 80 \
+  --dns-name-label ${dns_name}
