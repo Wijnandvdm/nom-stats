@@ -1,4 +1,4 @@
-meal_prep_name: 'Lasagna'
+recipe_name: 'Lasagna'
 description: '10/10 would eat again'
 ingredients:
   - name: 'Lasagna leaves'

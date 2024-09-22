@@ -32,12 +32,12 @@ def process_all_recipes(directory):
                 yaml_content = yaml.safe_load(file)
             protein, calories, protein_per_100g, calories_per_100g = calculate_nutrition(yaml_content)
             recipe = {
-                'meal_prep_name': yaml_content['meal_prep_name'],
-                'description': yaml_content['description'],
-                'total_protein': f"{protein:.2f}",
-                'total_calories': f"{calories:.2f}",
-                'protein_per_100g': f"{protein_per_100g:.2f}",
-                'calories_per_100g': f"{calories_per_100g:.2f}"
+                'Recipe Name': yaml_content['recipe_name'],
+                'Description': yaml_content['description'],
+                'Total Protein': f"{protein:.2f}",
+                'Total Calories': f"{calories:.2f}",
+                'Protein/100g': f"{protein_per_100g:.2f}",
+                'Calories/100g': f"{calories_per_100g:.2f}"
             }
             recipes.append(recipe)
     return recipes
@@ -47,12 +47,12 @@ def index():
     current_directory = os.path.dirname(__file__)
     configuration_directory = os.path.join(current_directory, 'configuration')
     data = process_all_recipes(configuration_directory)
-    columns = ['meal_prep_name', 'total_protein', 'total_calories', 'protein_per_100g', 'calories_per_100g']
+    columns = ['Recipe Name', 'Total Protein', 'Total Calories', 'Protein/100g', 'Calories/100g']
     return render_template('index.html', data=data, columns=columns)
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+# @app.route('/favicon.ico')
+# def favicon():
+#     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=80)

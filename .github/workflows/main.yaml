@@ -1,0 +1,25 @@
+name: 'Create Azure Resource Group'
+
+on:
+  workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  create-resource-group:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v3
+
+      - name: 'Login to Azure using Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: 'Create Azure Resource Group'
+        run: |
+          az group create --name testing --location westeurope
+

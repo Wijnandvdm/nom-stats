@@ -27,7 +27,7 @@ def process_all_recipes(directory):
             with open(filepath, 'r') as file:
                 yaml_content = yaml.safe_load(file)
             protein, calories, protein_per_100g, calories_per_100g = calculate_nutrition(yaml_content)
-            print(f"Recipe: {yaml_content['meal_prep_name']}")
+            print(f"Recipe: {yaml_content['recipe_name']}")
             print(f"Description: {yaml_content['description']}")
             print(f'Total Protein: {protein:.2f} grams')
             print(f'Total Calories: {calories:.2f} kcal')
