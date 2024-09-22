@@ -1,9 +1,10 @@
 name: 'Create Azure Resource Group'
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   create-resource-group:
