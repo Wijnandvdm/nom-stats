@@ -14,8 +14,15 @@ jobs:
       - name: 'Checkout Code'
         uses: actions/checkout@v3
 
+      - name: 'Bash Action'
+        # You may pin to the exact commit or the version.
+        # uses: rethab/bash-action@8d1f7b182b1a1b00759f7ae1b67d5afb2a3494e9
+        uses: rethab/bash-action@v1
+        with:
+          command: echo "hello"
+
       - name: 'Login to Azure using Azure CLI'
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
