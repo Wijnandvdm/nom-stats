@@ -19,11 +19,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: 'Set up Azure CLI'
-        uses: azure/cli@v2
-        with:
-          azcliversion: latest
-
       - name: 'Run Bash Script for Azure Resources'
         run: |
           # Define variables

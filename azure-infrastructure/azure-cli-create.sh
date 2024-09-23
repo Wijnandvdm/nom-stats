@@ -15,11 +15,11 @@ az acr create -n ${container_registry} -g ${resource_group} \
 # for docker part, see README.md
 acr_password=$(az acr credential show -n ${container_registry} | jq -r .passwords[0].value)
 
-# az container create -g ${resource_group} \
-#   --name ${container_instance} \
-#   --ip-address Public \
-#   --image "${container_registry}.azurecr.io/${image}" \
-#   --registry-password ${acr_password} \
-#   --registry-username ${container_registry} \
-#   --ports 80 \
-#   --dns-name-label ${dns_name}
+az container create -g ${resource_group} \
+  --name ${container_instance} \
+  --ip-address Public \
+  --image "${container_registry}.azurecr.io/${image}" \
+  --registry-password ${acr_password} \
+  --registry-username ${container_registry} \
+  --ports 80 \
+  --dns-name-label ${dns_name}
