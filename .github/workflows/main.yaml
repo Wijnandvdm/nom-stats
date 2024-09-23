@@ -1,4 +1,4 @@
-name: 'Create Azure Resource Group'
+name: 'Create Azure Resources, Build & Push Docker Image, Create Container Instance'
 
 on:
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
@@ -7,7 +7,7 @@ on:
   #     - main
 
 jobs:
-  create-resource-group:
+  create-resources:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,11 +15,50 @@ jobs:
         uses: actions/checkout@v3
 
       - name: 'Login to Azure using Azure CLI'
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: 'Create Azure Resource Group'
+      - name: 'Run Complete Bash Script'
         run: |
-          az group create --name testing --location westeurope
+          # Define variables
+          resource_group="rg-containers"
+          location="westeurope"
+          container_registry="acrhonestdatasolutions"
+          container_registry_sku="Basic"
 
+          image="recipe-calculator"
+          container_instance="ci-recipe-calculator"
+          dns_name="recipe-calculator"
+
+          # Step 0: Delete resource group
+          az group delete -n ${resource_group} --yes
+
+          # Step 1: Create resource group
+          az group create -n ${resource_group} -l ${location}
+
+          # Step 2: Create Azure Container Registry (ACR)
+          az acr create -n ${container_registry} -g ${resource_group} \
+              --sku ${container_registry_sku} --admin-enabled true
+
+          # Step 3: Build Docker image
+          docker build -t ${container_registry}.azurecr.io/${image} .
+
+          # Step 4: Login to ACR
+          az acr login --name ${container_registry}
+
+          # Step 5: Push Docker image to ACR
+          docker push ${container_registry}.azurecr.io/${image}
+
+          # Step 6: Retrieve ACR password
+          acr_password=$(az acr credential show -n ${container_registry} --query "passwords[0].value" -o tsv)
+
+          # Step 7: Create Azure Container Instance (ACI) using the Docker image
+          az container create -g ${resource_group} \
+            --name ${container_instance} \
+            --ip-address Public \
+            --image "${container_registry}.azurecr.io/${image}" \
+            --registry-password ${acr_password} \
+            --registry-username ${container_registry} \
+            --ports 80 \
+            --dns-name-label ${dns_name}

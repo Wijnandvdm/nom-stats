@@ -7,9 +7,10 @@ image="recipe-calculator"
 container_instance="ci-recipe-calculator"
 dns_name="recipe-calculator"
 
-## basic infrastructure
-# az group create --name ${resource_group} --location ${location}
-# az acr create --resource-group ${resource_group} --name ${container_registry} --sku ${container_registry_sku}
+# basic infrastructure
+az group create -n ${resource_group} -l ${location}
+az acr create -n ${container_registry} -g ${resource_group} \
+    --sku ${container_registry_sku} --admin-enabled true
 
 # for docker part, see README.md
 acr_password=$(az acr credential show -n ${container_registry} | jq -r .passwords[0].value)

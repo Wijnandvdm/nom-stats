@@ -17,3 +17,7 @@ az acr login --name acrhonestdatasolutions
 
 # push to azure
 docker push acrhonestdatasolutions.azurecr.io/recipe-calculator
+
+# to do:
+- ingredients in one big yaml for recipe yamls to reference to (only name and quantity in recipe)
+- mobile access to site
