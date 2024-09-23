@@ -1,4 +1,4 @@
-name: 'Create Azure Resources and Container Instance'
+name: 'Create Azure Resources, Build & Push Docker Image, Create Container Instance'
 
 on:
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
@@ -19,7 +19,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: 'Run Bash Script for Azure Resources'
+      - name: 'Run Complete Bash Script'
         run: |
           # Define variables
           resource_group="rg-containers"
@@ -31,17 +31,26 @@ jobs:
           container_instance="ci-recipe-calculator"
           dns_name="recipe-calculator"
 
-          # Create resource group
+          # Step 1: Create resource group
           az group create -n ${resource_group} -l ${location}
-          
-          # Create Azure Container Registry (ACR)
+
+          # Step 2: Create Azure Container Registry (ACR)
           az acr create -n ${container_registry} -g ${resource_group} \
               --sku ${container_registry_sku} --admin-enabled true
 
-          # Retrieve ACR password
+          # Step 3: Build Docker image
+          docker build -t ${container_registry}.azurecr.io/${image} .
+
+          # Step 4: Login to ACR
+          az acr login --name ${container_registry}
+
+          # Step 5: Push Docker image to ACR
+          docker push ${container_registry}.azurecr.io/${image}
+
+          # Step 6: Retrieve ACR password
           acr_password=$(az acr credential show -n ${container_registry} --query "passwords[0].value" -o tsv)
-          
-          # Create Azure Container Instance (ACI)
+
+          # Step 7: Create Azure Container Instance (ACI) using the Docker image
           az container create -g ${resource_group} \
             --name ${container_instance} \
             --ip-address Public \
@@ -50,3 +59,6 @@ jobs:
             --registry-username ${container_registry} \
             --ports 80 \
             --dns-name-label ${dns_name}
+          
+          # Step 8: check folders
+          ls -la
