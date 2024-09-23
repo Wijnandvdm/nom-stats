@@ -32,7 +32,7 @@ jobs:
           dns_name="recipe-calculator"
 
           # Step 0: Delete resource group
-          az group delete -n ${resource_group}
+          az group delete -n ${resource_group} --yes
 
           # Step 1: Create resource group
           az group create -n ${resource_group} -l ${location}
