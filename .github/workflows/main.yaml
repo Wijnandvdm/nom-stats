@@ -1,4 +1,4 @@
-name: 'Create Azure Resource Group'
+name: 'Create Azure Resources and Container Instance'
 
 on:
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
@@ -7,7 +7,7 @@ on:
   #     - main
 
 jobs:
-  create-resource-group:
+  create-resources:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,14 +19,39 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # - name: 'Create Azure Resource Group'
-      #   run: |
-      #     az group create --name testing --location westeurope
-
-      - name: Azure CLI script
+      - name: 'Set up Azure CLI'
         uses: azure/cli@v2
         with:
           azcliversion: latest
-          inlineScript: |
-            az group create --name testing --location westeurope
 
+      - name: 'Run Bash Script for Azure Resources'
+        run: |
+          # Define variables
+          resource_group="rg-containers"
+          location="westeurope"
+          container_registry="acrhonestdatasolutions"
+          container_registry_sku="Basic"
+
+          image="recipe-calculator"
+          container_instance="ci-recipe-calculator"
+          dns_name="recipe-calculator"
+
+          # Create resource group
+          az group create -n ${resource_group} -l ${location}
+          
+          # Create Azure Container Registry (ACR)
+          az acr create -n ${container_registry} -g ${resource_group} \
+              --sku ${container_registry_sku} --admin-enabled true
+
+          # Retrieve ACR password
+          acr_password=$(az acr credential show -n ${container_registry} --query "passwords[0].value" -o tsv)
+          
+          # Create Azure Container Instance (ACI)
+          az container create -g ${resource_group} \
+            --name ${container_instance} \
+            --ip-address Public \
+            --image "${container_registry}.azurecr.io/${image}" \
+            --registry-password ${acr_password} \
+            --registry-username ${container_registry} \
+            --ports 80 \
+            --dns-name-label ${dns_name}
