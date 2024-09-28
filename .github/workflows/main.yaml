@@ -31,8 +31,14 @@ jobs:
           container_instance="ci-recipe-calculator"
           dns_name="recipe-calculator"
 
-          # Step 0: Delete resource group
-          az group delete -n ${resource_group} --yes
+          # Step 0: Delete resource group if necessary
+          rg_exists=$(az group exists -n ${resource_group})
+          if [[ "${rg_exists}" == "true" ]]; then
+            echo "Resource group exists. Deleting..."
+            az group delete -n ${resource_group} --yes
+          else
+            echo "Resource group does not exist. Skipping deletion."
+          fi
 
           # Step 1: Create resource group
           az group create -n ${resource_group} -l ${location}
