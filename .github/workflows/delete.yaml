@@ -1,0 +1,25 @@
+name: 'Delete Container Instance Resource Group'
+
+on:
+  workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
+
+jobs:
+  create-resources:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v3
+
+      - name: 'Login to Azure using Azure CLI'
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: 'Delete Resource Group with Bash and Azure CLI'
+        run: |
+          # Define variables
+          resource_group="rg-containers"
+
+          # Step 0: Delete resource group
+          az group delete -n ${resource_group} --yes
