@@ -84,8 +84,9 @@ def index():
 
     # Process recipes using the loaded ingredients
     data = process_all_recipes(configuration_directory, all_ingredients)
+    data.sort(key=lambda x: x['Recipe Name'])
     columns = ['Recipe Name', 'Total Protein', 'Total Calories', 'Protein/100g', 'Calories/100g']
     return render_template('index.html', data=data, columns=columns)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=80)
