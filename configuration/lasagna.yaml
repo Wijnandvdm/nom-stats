@@ -3,43 +3,14 @@ description: '10/10 would eat again'
 ingredients:
   - name: 'Lasagna leaves'
     quantity: 250
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 10
-      - name: 'calories'
-        quantity_per_100_g: 285
   - name: 'Gehakt'
     quantity: 500
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 20
-      - name: 'calories'
-        quantity_per_100_g: 243
   - name: 'Diced Tomatoes'
     quantity: 400
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 1.4
-      - name: 'calories'
-        quantity_per_100_g: 33
   - name: 'Tomato Frito'
     quantity: 200
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 1.5
-      - name: 'calories'
-        quantity_per_100_g: 75
   - name: 'Cheese'
     quantity: 75
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 28
-      - name: 'calories'
-        quantity_per_100_g: 273
   - name: 'Besciamella'
     quantity: 400
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 0.9
-      - name: 'calories'
-        quantity_per_100_g: 112
+
