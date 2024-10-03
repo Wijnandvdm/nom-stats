@@ -88,5 +88,24 @@ def index():
     columns = ['Recipe Name', 'Total Protein', 'Total Calories', 'Protein/100g', 'Calories/100g']
     return render_template('index.html', data=data, columns=columns)
 
+@app.route('/recipe/<recipe_name>')
+def recipe_detail(recipe_name):
+    current_directory = os.path.dirname(__file__)
+    configuration_directory = os.path.join(current_directory, 'configuration')
+
+    # Load the specific recipe file
+    normalized_recipe_name = recipe_name.lower().replace(' ', '_')
+    recipe_file = os.path.join(configuration_directory, f"{normalized_recipe_name}.yaml")
+    
+    # Check if the recipe file exists
+    if not os.path.exists(recipe_file):
+        return "Recipe not found", 404
+    
+    # Load the recipe from the YAML file
+    with open(recipe_file, 'r') as file:
+        recipe = yaml.safe_load(file)
+
+    return render_template('recipe_detail.html', recipe=recipe)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)

@@ -79,7 +79,15 @@
                 {% for row in data %}
                 <tr>
                     {% for column in columns %}
-                        <td>{{ row[column] }}</td>
+                        {% if column == 'Recipe Name' %}
+                            <td>
+                                <a href="{{ url_for('recipe_detail', recipe_name=row[column]) }}">
+                                    {{ row[column] }}
+                                </a>
+                            </td>
+                        {% else %}
+                            <td>{{ row[column] }}</td>
+                        {% endif %}
                     {% endfor %}
                 </tr>
                 {% endfor %}

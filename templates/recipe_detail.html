@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe['recipe_name'] }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem; /* Space below the button */
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: #45a049;
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem; /* Space above the ingredients list */
+        }
+        .ingredients-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .ingredients-list li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ recipe['recipe_name'] }}</h1>
+        <p>{{ recipe['description'] }}</p>
+    </header>
+
+    <div class="container">
+        <!-- Ingredients List -->
+        <h2>Ingredients</h2>
+        <ul class="ingredients-list">
+            {% for ingredient in recipe['ingredients'] %}
+                <li>{{ ingredient['quantity'] }} g/ml {{ ingredient['name'] }}</li>
+            {% endfor %}
+
+        <!-- Back to Recipes Link -->
+        <a href="{{ url_for('index') }}" class="back-link">&larr; Back to recipes</a>
+        </ul>
+    </div>
+</body>
+</html>
