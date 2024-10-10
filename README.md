@@ -19,4 +19,4 @@ az acr login --name acrhonestdatasolutions
 docker push acrhonestdatasolutions.azurecr.io/recipe-calculator
 
 # to do:
-- mobile access to site
+- 
