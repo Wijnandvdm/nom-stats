@@ -85,7 +85,7 @@ def index():
     # Process recipes using the loaded ingredients
     data = process_all_recipes(configuration_directory, all_ingredients)
     data.sort(key=lambda x: x['Recipe Name'])
-    columns = ['Recipe Name', 'Total Protein', 'Total Calories', 'Protein/100g', 'Calories/100g']
+    columns = ['Recipe Name', 'Protein/100g', 'Calories/100g']
     return render_template('index.html', data=data, columns=columns)
 
 @app.route('/recipe/<recipe_name>')
@@ -93,19 +93,32 @@ def recipe_detail(recipe_name):
     current_directory = os.path.dirname(__file__)
     configuration_directory = os.path.join(current_directory, 'configuration')
 
+    # Load ingredients once
+    ingredients_file = os.path.join(configuration_directory, 'ingredients.yaml')
+    all_ingredients = load_ingredients(ingredients_file)
+
     # Load the specific recipe file
     normalized_recipe_name = recipe_name.lower().replace(' ', '_')
     recipe_file = os.path.join(configuration_directory, f"{normalized_recipe_name}.yaml")
-    
+
     # Check if the recipe file exists
     if not os.path.exists(recipe_file):
         return "Recipe not found", 404
-    
+
     # Load the recipe from the YAML file
     with open(recipe_file, 'r') as file:
         recipe = yaml.safe_load(file)
 
-    return render_template('recipe_detail.html', recipe=recipe)
+    # Calculate total protein and total calories
+    total_protein, total_calories, _, _ = calculate_nutrition(recipe, all_ingredients)
+
+    # Pass the recipe and total nutrition to the template
+    return render_template(
+        'recipe_detail.html',
+        recipe=recipe,
+        total_protein=f"{total_protein:.2f}",
+        total_calories=f"{total_calories:.2f}"
+    )
 
 @app.route('/favicon.ico')
 def favicon():

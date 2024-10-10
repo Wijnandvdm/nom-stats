@@ -55,6 +55,13 @@
         .ingredients-list li:last-child {
             border-bottom: none;
         }
+
+        /* Style for total protein and calories */
+        .nutrition-info {
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -64,16 +71,26 @@
     </header>
 
     <div class="container">
-        <!-- Ingredients List -->
         <h2>Ingredients</h2>
         <ul class="ingredients-list">
             {% for ingredient in recipe['ingredients'] %}
                 <li>{{ ingredient['quantity'] }} g/ml {{ ingredient['name'] }}</li>
             {% endfor %}
-
-        <!-- Back to Recipes Link -->
-        <a href="{{ url_for('index') }}" class="back-link">&larr; Back to recipes</a>
         </ul>
+
+        <!-- Total Protein and Calories -->
+        <div class="nutrition-info">
+            <p>Total Protein: {{ total_protein }} g</p>
+            <p>Total Calories: {{ total_calories }} kcal</p>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="back-link">&larr; Back to recipes</a>
     </div>
+    <!-- Disclaimer -->
+    <footer>
+        <p style="font-size: 0.9em; color: #555; text-align: center; margin-top: 2rem;">
+            Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
+        </p>
+    </footer>
 </body>
 </html>
