@@ -107,5 +107,9 @@ def recipe_detail(recipe_name):
 
     return render_template('recipe_detail.html', recipe=recipe)
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
