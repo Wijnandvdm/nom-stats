@@ -1,0 +1,21 @@
+recipe_name: 'Gochujang Risotto'
+description: 'Big Spaghet, no ragret'
+ingredients:
+  - name: 'Uien'
+    quantity: 200
+  - name: 'Knoflook'
+    quantity: 20
+  - name: 'Gochujang'
+    quantity: 60
+  - name: 'Risotto'
+    quantity: 400
+  - name: 'Tomatenpuree'
+    quantity: 280
+  - name: 'Skyr'
+    quantity: 300
+  - name: 'Groentebouillonblokje'
+    quantity: 10
+  - name: 'Cherry tomaatjes'
+    quantity: 250
+  - name: 'Halloumi'
+    quantity: 450                
