@@ -1,17 +1,17 @@
 recipe_name: 'Puffy Pesto Pillows'
 description: 'Delicious ravioli pillows with a pesto, ricotta, and diced tomato sauce'
 ingredients:
-  - name: 'Ravioli'
+  - name: 'ravioli'
     quantity: 1000
-  - name: 'Tomatenblokjes'
+  - name: 'tomatenblokjes'
     quantity: 800
-  - name: 'Skyr'
+  - name: 'skyr'
     quantity: 185
-  - name: 'Rode pesto'
+  - name: 'rode pesto'
     quantity: 570
-  - name: 'Uien'
+  - name: 'uien'
     quantity: 400
     pieces: 4
-  - name: 'Knoflook'
+  - name: 'knoflook'
     quantity: 50
     pieces: 20

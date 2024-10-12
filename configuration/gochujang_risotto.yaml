@@ -1,23 +1,23 @@
-recipe_name: 'Gochujang Risotto'
+recipe_name: 'Gochujang risotto'
 description: 'Bit of spice, very nice'
 ingredients:
-  - name: 'Uien'
+  - name: 'uien'
     quantity: 200
     pieces: 2
-  - name: 'Knoflook'
+  - name: 'knoflook'
     quantity: 25
     pieces: 10
-  - name: 'Gochujang'
+  - name: 'gochujang'
     quantity: 60
-  - name: 'Risotto'
+  - name: 'risotto'
     quantity: 400
-  - name: 'Tomatenpuree'
+  - name: 'tomatenpuree'
     quantity: 280
-  - name: 'Skyr'
+  - name: 'skyr'
     quantity: 300
-  - name: 'Groentebouillonblokje'
+  - name: 'groentebouillonblokje'
     quantity: 10
-  - name: 'Cherry tomaatjes'
+  - name: 'cherry tomaatjes'
     quantity: 250
-  - name: 'Halloumi'
+  - name: 'halloumi'
     quantity: 450                

@@ -1,13 +1,13 @@
 recipe_name: 'Mean Green Pesto Machine Vega'
 description: 'Delicious pasta pesto with vega chicken and beans'
 ingredients:
-  - name: 'Penne'
+  - name: 'penne'
     quantity: 500
-  - name: 'Sperziebonen'
+  - name: 'sperziebonen'
     quantity: 375
-  - name: 'Groene Pesto'
+  - name: 'groene pesto'
     quantity: 475
-  - name: 'Vivera Kip'
+  - name: 'vivera kip'
     quantity: 320
 
 

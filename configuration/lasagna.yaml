@@ -1,16 +1,16 @@
-recipe_name: 'Lasagna'
+recipe_name: 'lasagna'
 description: '10/10 would eat again'
 ingredients:
-  - name: 'Lasagna bladeren'
+  - name: 'lasagna bladeren'
     quantity: 250
-  - name: 'Gehakt'
+  - name: 'gehakt'
     quantity: 500
-  - name: 'Tomatenblokjes'
+  - name: 'tomatenblokjes'
     quantity: 400
-  - name: 'Tomato Frito'
+  - name: 'tomato frito'
     quantity: 200
-  - name: 'Kaas'
+  - name: 'kaas'
     quantity: 75
-  - name: 'Besciamella'
+  - name: 'besciamella'
     quantity: 400
 

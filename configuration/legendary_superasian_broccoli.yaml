@@ -1,20 +1,20 @@
-recipe_name: 'Legendary Superasian Broccoli'
-description: 'Teriyaki deliciousness'
+recipe_name: 'Legendary Superasian broccoli'
+description: 'teriyaki deliciousness'
 ingredients:
-  - name: 'Mie'
+  - name: 'mie'
     quantity: 250
-  - name: 'Broccoli'
+  - name: 'broccoli'
     quantity: 500
-  - name: 'Teriyaki saus Lidl'
+  - name: 'teriyaki saus Lidl'
     quantity: 360
   - name: 'Ongezouten cashews'
     quantity: 50
-  - name: 'Uien'
+  - name: 'uien'
     quantity: 300
     pieces: 3
-  - name: 'Kip'
+  - name: 'kip'
     quantity: 300
-  - name: 'Rode peper'
+  - name: 'rode peper'
     quantity: 15
 
 

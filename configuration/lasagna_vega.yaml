@@ -1,15 +1,15 @@
-recipe_name: 'Lasagna Vega'
+recipe_name: 'lasagna Vega'
 description: '10/10 would eat vega again'
 ingredients:
-  - name: 'Lasagna bladeren'
+  - name: 'lasagna bladeren'
     quantity: 250
-  - name: 'Beyond Meat Burger Gehakt'
+  - name: 'beyond meat burger gehakt'
     quantity: 452
-  - name: 'Tomatenblokjes'
+  - name: 'tomatenblokjes'
     quantity: 400
-  - name: 'Tomato Frito'
+  - name: 'tomato frito'
     quantity: 200
-  - name: 'Kaas'
+  - name: 'kaas'
     quantity: 75
-  - name: 'Besciamella'
+  - name: 'besciamella'
     quantity: 400

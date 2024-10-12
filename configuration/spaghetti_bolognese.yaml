@@ -1,21 +1,21 @@
 recipe_name: 'Spaghetti Bolognese'
 description: 'Big Spaghet, no ragret'
 ingredients:
-  - name: 'Spaghetti'
+  - name: 'spaghetti'
     quantity: 500
-  - name: 'Gehakt'
+  - name: 'gehakt'
     quantity: 500
-  - name: 'Chorizo'
+  - name: 'chorizo'
     quantity: 100
-  - name: 'Passata'
+  - name: 'passata'
     quantity: 1035
-  - name: 'Spaghetti groentenmix'
+  - name: 'spaghetti groentenmix'
     quantity: 600
-  - name: 'Uien'
+  - name: 'uien'
     quantity: 300
     pieces: 3
-  - name: 'Knoflook'
+  - name: 'knoflook'
     quantity: 25
     pieces: 10
-  - name: 'Gochujang'
+  - name: 'gochujang'
     quantity: 5
