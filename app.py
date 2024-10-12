@@ -4,38 +4,35 @@ import yaml
 
 app = Flask(__name__)
 
-# Load the ingredients from ingredients.yaml
+# Helper function to get configuration directory and ingredients
+def get_configuration_and_ingredients():
+    configuration_directory = os.path.join(os.path.dirname(__file__), 'configuration')
+    ingredients_file = os.path.join(configuration_directory, 'ingredients.yaml')
+    all_ingredients = load_ingredients(ingredients_file)
+    return configuration_directory, all_ingredients
+
+# Load ingredients from a YAML file and return a dictionary
 def load_ingredients(ingredients_file):
     with open(ingredients_file, 'r') as file:
-        ingredients_data = yaml.safe_load(file)
-    return ingredients_data['ingredients']
-
-# Find an ingredient by name
-def find_ingredient(ingredient_name, all_ingredients):
-    for ingredient in all_ingredients:
-        if ingredient['name'] == ingredient_name:
-            return ingredient
-    return None
+        ingredients = yaml.safe_load(file)['ingredients']
+    return {ingredient['name']: ingredient for ingredient in ingredients}
 
 # Calculate the nutrition values based on the ingredients
 def calculate_nutrition(yaml_content, all_ingredients):
-    total_protein = 0
-    total_calories = 0
-    total_weight = 0
+    total_protein = total_calories = total_weight = 0
 
     for recipe_ingredient in yaml_content['ingredients']:
         ingredient_name = recipe_ingredient['name']
         quantity = recipe_ingredient['quantity']
         total_weight += quantity
-        
-        # Lookup the ingredient details in the ingredients file
-        ingredient = find_ingredient(ingredient_name, all_ingredients)
+
+        ingredient = all_ingredients.get(ingredient_name)
         if ingredient:
-            for component in ingredient['components']:
-                if component['name'] == 'protein':
-                    total_protein += (quantity * component['quantity_per_100_g']) / 100
-                elif component['name'] == 'calories':
-                    total_calories += (quantity * component['quantity_per_100_g']) / 100
+            protein_per_100g = next((comp['quantity_per_100_g'] for comp in ingredient['components'] if comp['name'] == 'protein'), 0)
+            calories_per_100g = next((comp['quantity_per_100_g'] for comp in ingredient['components'] if comp['name'] == 'calories'), 0)
+            
+            total_protein += (quantity * protein_per_100g) / 100
+            total_calories += (quantity * calories_per_100g) / 100
 
     protein_per_100g = (total_protein / total_weight) * 100 if total_weight else 0
     calories_per_100g = (total_calories / total_weight) * 100 if total_weight else 0
@@ -46,43 +43,28 @@ def calculate_nutrition(yaml_content, all_ingredients):
 def process_all_recipes(directory, all_ingredients):
     recipes = []
     for filename in os.listdir(directory):
-        # Skip the ingredients.yaml file and only process recipe files
         if filename == "ingredients.yaml":
             continue
 
-        if filename.endswith(".yaml") or filename.endswith(".yml"):
-            filepath = os.path.join(directory, filename)
-            with open(filepath, 'r') as file:
-                yaml_content = yaml.safe_load(file)
-            
-            # Ensure the yaml_content contains recipe data
-            if 'recipe_name' in yaml_content and 'ingredients' in yaml_content:
-                protein, calories, protein_per_100g, calories_per_100g = calculate_nutrition(yaml_content, all_ingredients)
-                recipe = {
-                    'Recipe Name': yaml_content['recipe_name'],
-                    'Description': yaml_content.get('description', 'No description available'),
-                    'Total Protein': f"{protein:.2f}",
-                    'Total Calories': f"{calories:.2f}",
-                    'Protein/100g': f"{protein_per_100g:.2f}",
-                    'Calories/100g': f"{calories_per_100g:.2f}"
-                }
-                recipes.append(recipe)
-            else:
-                print(f"Warning: Skipping file '{filename}' due to missing 'recipe_name' or 'ingredients'")
+        with open(os.path.join(directory, filename), 'r') as file:
+            yaml_content = yaml.safe_load(file)
+        
+        if 'recipe_name' in yaml_content and 'ingredients' in yaml_content:
+            protein, calories, protein_per_100g, calories_per_100g = calculate_nutrition(yaml_content, all_ingredients)
+            recipes.append({
+                'Recipe Name': yaml_content['recipe_name'],
+                'Description': yaml_content.get('description', 'No description available'),
+                'Total Protein': f"{protein:.2f}",
+                'Total Calories': f"{calories:.2f}",
+                'Protein/100g': f"{protein_per_100g:.2f}",
+                'Calories/100g': f"{calories_per_100g:.2f}"
+            })
     
     return recipes
 
-
 @app.route('/')
 def index():
-    current_directory = os.path.dirname(__file__)
-    configuration_directory = os.path.join(current_directory, 'configuration')
-    
-    # Load ingredients once
-    ingredients_file = os.path.join(configuration_directory, 'ingredients.yaml')
-    all_ingredients = load_ingredients(ingredients_file)
-
-    # Process recipes using the loaded ingredients
+    configuration_directory, all_ingredients = get_configuration_and_ingredients()
     data = process_all_recipes(configuration_directory, all_ingredients)
     data.sort(key=lambda x: x['Recipe Name'])
     columns = ['Recipe Name', 'Protein/100g', 'Calories/100g']
@@ -90,39 +72,21 @@ def index():
 
 @app.route('/recipe/<recipe_name>')
 def recipe_detail(recipe_name):
-    current_directory = os.path.dirname(__file__)
-    configuration_directory = os.path.join(current_directory, 'configuration')
+    configuration_directory, all_ingredients = get_configuration_and_ingredients()
+    recipe_file = os.path.join(configuration_directory, f"{recipe_name.lower().replace(' ', '_')}.yaml")
 
-    # Load ingredients once
-    ingredients_file = os.path.join(configuration_directory, 'ingredients.yaml')
-    all_ingredients = load_ingredients(ingredients_file)
-
-    # Load the specific recipe file
-    normalized_recipe_name = recipe_name.lower().replace(' ', '_')
-    recipe_file = os.path.join(configuration_directory, f"{normalized_recipe_name}.yaml")
-
-    # Check if the recipe file exists
     if not os.path.exists(recipe_file):
         return "Recipe not found", 404
-
-    # Load the recipe from the YAML file
-    with open(recipe_file, 'r') as file:
-        recipe = yaml.safe_load(file)
-
-    # Calculate total protein and total calories
-    total_protein, total_calories, _, _ = calculate_nutrition(recipe, all_ingredients)
-
-    # Pass the recipe and total nutrition to the template
-    return render_template(
-        'recipe_detail.html',
-        recipe=recipe,
-        total_protein=f"{total_protein:.2f}",
-        total_calories=f"{total_calories:.2f}"
-    )
+    else:
+        with open(recipe_file, 'r') as file:
+            recipe = yaml.safe_load(file)
+        total_protein, total_calories, _, _ = calculate_nutrition(recipe, all_ingredients)
+    return render_template('recipe_detail.html', recipe=recipe, total_protein=f"{total_protein:.2f}", total_calories=f"{total_calories:.2f}")
 
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000)
+    # app.run(host='0.0.0.0', port=80)
