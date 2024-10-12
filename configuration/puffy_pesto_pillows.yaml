@@ -5,13 +5,13 @@ ingredients:
     quantity: 1000
   - name: 'Tomatenblokjes'
     quantity: 800
-#  - name: 'Plantaardig creme fraishe'
-#    quantity: 175
   - name: 'Skyr'
     quantity: 185
   - name: 'Rode pesto'
     quantity: 570
   - name: 'Uien'
     quantity: 400
+    pieces: 4
   - name: 'Knoflook'
     quantity: 50
+    pieces: 20

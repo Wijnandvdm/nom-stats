@@ -88,6 +88,7 @@ ingredients:
       - name: 'calories'
         quantity_per_100_g: 28
   - name: 'Uien'
+    measurement_unit: 'stuks'
     components:
       - name: 'protein'
         quantity_per_100_g: 1.3
@@ -137,6 +138,7 @@ ingredients:
       - name: 'calories'
         quantity_per_100_g: 33
   - name: 'Knoflook'
+    measurement_unit: 'teentjes'
     components:
       - name: 'protein'
         quantity_per_100_g: 6.4

@@ -13,7 +13,9 @@ ingredients:
     quantity: 600
   - name: 'Uien'
     quantity: 300
+    pieces: 3
   - name: 'Knoflook'
     quantity: 25
+    pieces: 10
   - name: 'Gochujang'
     quantity: 5

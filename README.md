@@ -21,4 +21,3 @@ docker push acrhonestdatasolutions.azurecr.io/recipe-calculator
 # to do:
 - Add steps to create a meal from the recipe on the recipe page
 - Add scoring system for a meal
-- Add the ability to add how many pieces go in instead of grams

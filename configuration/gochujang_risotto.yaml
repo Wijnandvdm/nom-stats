@@ -3,8 +3,10 @@ description: 'Bit of spice, very nice'
 ingredients:
   - name: 'Uien'
     quantity: 200
+    pieces: 2
   - name: 'Knoflook'
-    quantity: 20
+    quantity: 25
+    pieces: 10
   - name: 'Gochujang'
     quantity: 60
   - name: 'Risotto'

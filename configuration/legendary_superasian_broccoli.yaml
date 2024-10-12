@@ -11,6 +11,7 @@ ingredients:
     quantity: 50
   - name: 'Uien'
     quantity: 300
+    pieces: 3
   - name: 'Kip'
     quantity: 300
   - name: 'Rode peper'

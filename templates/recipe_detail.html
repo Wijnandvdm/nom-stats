@@ -72,9 +72,9 @@
 
     <div class="container">
         <h2>Ingredients</h2>
-        <ul class="ingredients-list">
-            {% for ingredient in recipe['ingredients'] %}
-                <li>{{ ingredient['quantity'] }} g/ml {{ ingredient['name'] }}</li>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient }}</li> <!-- Display human-readable ingredients here -->
             {% endfor %}
         </ul>
 
