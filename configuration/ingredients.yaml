@@ -55,7 +55,7 @@ ingredients:
         quantity_per_100_g: 9.1
       - name: 'calories'
         quantity_per_100_g: 278
-  - name: 'Lasagna leaves'
+  - name: 'Lasagna bladeren'
     components:
       - name: 'protein'
         quantity_per_100_g: 10
@@ -168,7 +168,7 @@ ingredients:
         quantity_per_100_g: 4.8
       - name: 'calories'
         quantity_per_100_g: 89        
-  - name: 'Cheese'
+  - name: 'Kaas'
     components:
       - name: 'protein'
         quantity_per_100_g: 28
