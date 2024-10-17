@@ -2,18 +2,18 @@ recipe_name: 'Pannenkoeken'
 description: 'Tasty frisbees'
 ingredients:
   - name: 'bloem'
-    quantity: 150
+    quantity: 125
   - name: 'ei'
-    quantity: 75
-    pieces: 1.5
+    quantity: 50
+    pieces: 1
   - name: 'lactosevrije halfvolle melk'
-    quantity: 300
+    quantity: 250
   - name: 'boter'
-    quantity: 30 
+    quantity: 20 
   - name: 'ui'
     quantity: 100
     pieces: 1
   - name: 'spek'
-    quantity: 100    
+    quantity: 50    
   - name: 'schenkstroop'
     quantity: 100                 
