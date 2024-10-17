@@ -12,5 +12,6 @@ ingredients:
   - name: 'kaas'
     quantity: 75
   - name: 'besciamella'
-    quantity: 400
-
+    quantity: 50
+  - name: 'lactosevrije halfvolle melk'
+    quantity: 500

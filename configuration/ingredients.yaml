@@ -111,7 +111,38 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 0.9
       - name: 'calories'
-        quantity_per_100_g: 31        
+        quantity_per_100_g: 31
+# zuivel
+  - name: 'lactosevrije halfvolle melk'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 3.3
+      - name: 'calories'
+        quantity_per_100_g: 46
+  - name: 'kaas'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 28
+      - name: 'calories'
+        quantity_per_100_g: 273
+  - name: 'halloumi'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 23
+      - name: 'calories'
+        quantity_per_100_g: 316
+  - name: 'skyr'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 11
+      - name: 'calories'
+        quantity_per_100_g: 62
+  - name: 'plantaardig creme fraishe'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.2
+      - name: 'calories'
+        quantity_per_100_g: 247
 # overig
   - name: 'groene pesto'
     components:
@@ -125,13 +156,13 @@ ingredients:
         quantity_per_100_g: 3.8
       - name: 'calories'
         quantity_per_100_g: 424
-  - name: 'teriyaki saus Lidl'
+  - name: 'teriyaki saus lidl'
     components:
       - name: 'protein'
         quantity_per_100_g: 1.7
       - name: 'calories'
         quantity_per_100_g: 209
-  - name: 'Ongezouten cashews'
+  - name: 'ongezouten cashews'
     components:
       - name: 'protein'
         quantity_per_100_g: 19
@@ -179,37 +210,13 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 4.8
       - name: 'calories'
-        quantity_per_100_g: 89        
-  - name: 'kaas'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 28
-      - name: 'calories'
-        quantity_per_100_g: 273
-  - name: 'halloumi'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 23
-      - name: 'calories'
-        quantity_per_100_g: 316       
+        quantity_per_100_g: 89              
   - name: 'besciamella'
     components:
       - name: 'protein'
         quantity_per_100_g: 0.9
       - name: 'calories'
         quantity_per_100_g: 112
-  - name: 'plantaardig creme fraishe'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 1.2
-      - name: 'calories'
-        quantity_per_100_g: 247
-  - name: 'skyr'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 11
-      - name: 'calories'
-        quantity_per_100_g: 62
   - name: 'groentebouillonblokje'
     components:
       - name: 'protein'
@@ -229,12 +236,6 @@ ingredients:
         quantity_per_100_g: 12.7
       - name: 'calories'
         quantity_per_100_g: 148
-  - name: 'lactosevrije halfvolle melk'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 3.3
-      - name: 'calories'
-        quantity_per_100_g: 46
   - name: 'boter'
     components:
       - name: 'protein'
