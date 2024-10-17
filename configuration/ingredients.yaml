@@ -24,6 +24,18 @@ ingredients:
         quantity_per_100_g: 15
       - name: 'calories'
         quantity_per_100_g: 166
+  - name: 'spek'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 16
+      - name: 'calories'
+        quantity_per_100_g: 354       
+  - name: 'vivera spek'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 17
+      - name: 'calories'
+        quantity_per_100_g: 87        
   - name: 'chorizo'
     components:
       - name: 'protein'
@@ -87,7 +99,7 @@ ingredients:
         quantity_per_100_g: 1.2
       - name: 'calories'
         quantity_per_100_g: 28
-  - name: 'uien'
+  - name: 'ui'
     measurement_unit: 'stuks'
     components:
       - name: 'protein'
@@ -204,3 +216,34 @@ ingredients:
         quantity_per_100_g: 1
       - name: 'calories'
         quantity_per_100_g: 25        
+  - name: 'bloem'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 10
+      - name: 'calories'
+        quantity_per_100_g: 343 
+  - name: 'ei'
+    measurement_unit: ''
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 12.7
+      - name: 'calories'
+        quantity_per_100_g: 148
+  - name: 'lactosevrije halfvolle melk'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 3.3
+      - name: 'calories'
+        quantity_per_100_g: 46
+  - name: 'boter'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0.5
+      - name: 'calories'
+        quantity_per_100_g: 701    
+  - name: 'schenkstroop'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0
+      - name: 'calories'
+        quantity_per_100_g: 288                                      

@@ -1,0 +1,19 @@
+recipe_name: 'Gochujang risotto'
+description: 'Bit of spice, very nice'
+ingredients:
+  - name: 'bloem'
+    quantity: 150
+  - name: 'ei'
+    quantity: 75
+    pieces: 1.5
+  - name: 'lactosevrije halfvolle melk'
+    quantity: 300
+  - name: 'boter'
+    quantity: 30 
+  - name: 'ui'
+    quantity: 100
+    pieces: 1
+  - name: 'spek'
+    quantity: 100    
+  - name: 'schenkstroop'
+    quantity: 100                 
