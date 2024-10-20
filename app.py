@@ -107,5 +107,5 @@ def favicon():
     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
+    # app.run(debug=True, host='0.0.0.0', port=5000)
     app.run(host='0.0.0.0', port=80)
-    # app.run(host='0.0.0.0', port=80)

@@ -1,0 +1,29 @@
+recipe_name: 'Chili Sin Carne'
+description: '10/10 would eat again'
+ingredients:
+  - name: 'vega gehakt'
+    quantity: 575
+  - name: 'bruine bonen'
+    quantity: 500
+  - name: 'kidneybonen'
+    quantity: 125
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'tomatenpuree'
+    quantity: 70
+  - name: 'mais'
+    quantity: 150
+  - name: 'linzen'
+    quantity: 375
+  - name: 'paprika'
+    pieces: 2
+    quantity: 270
+  - name: 'ui'
+    pieces: 3
+    quantity: 300
+  - name: 'knoflook'
+    pieces: 10
+    quantity: 25
+  - name: 'jalapeno'
+    pieces: 1
+    quantity: 30
