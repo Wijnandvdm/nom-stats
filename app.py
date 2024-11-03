@@ -104,15 +104,21 @@ def recipe_detail(recipe_name):
     else:
         with open(recipe_file, 'r') as file:
             recipe = yaml.safe_load(file)
+        
+        # Extract nutrition info
         total_protein, total_calories, _, _, human_readable_ingredients = calculate_nutrition(recipe, all_ingredients)
-    return render_template(
-        'recipe_detail.html',
-        recipe=recipe,
-        total_protein=f"{total_protein:.2f}",
-        total_calories=f"{total_calories:.2f}",
-        ingredients=human_readable_ingredients
-    )
-
+        
+        # Pass the steps along with other recipe details
+        return render_template(
+            'recipe_detail.html',
+            recipe=recipe,
+            total_protein=f"{total_protein:.0f}",
+            total_calories=f"{total_calories:.0f}",
+            ingredients=human_readable_ingredients,
+            steps=recipe.get('steps', []),
+            rating=recipe.get('rating', 0)
+            
+        )
 
 @app.route('/favicon.ico')
 def favicon():

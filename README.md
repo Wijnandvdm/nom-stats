@@ -17,7 +17,3 @@ az acr login --name acrhonestdatasolutions
 
 # push to azure
 docker push acrhonestdatasolutions.azurecr.io/recipe-calculator
-
-# to do:
-- Add steps to create a meal from the recipe on the recipe page
-- Add scoring system for a meal

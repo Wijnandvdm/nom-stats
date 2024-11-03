@@ -14,4 +14,10 @@ ingredients:
   - name: 'spek'
     quantity: 50    
   - name: 'schenkstroop'
-    quantity: 100                 
+    quantity: 100
+steps:
+  - "Meng in een grote kom de bloem en de eieren."
+  - "Voeg geleidelijk de melk toe en roer totdat het glad is."
+  - "Verhit de boter in een koekenpan en bak het beslag totdat het goudbruin is."
+  - "Serveer met stroop en geniet ervan!"
+rating: 3
