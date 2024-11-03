@@ -10,11 +10,10 @@ ingredients:
   - name: 'ongezouten cashews'
     quantity: 50
   - name: 'ui'
-    quantity: 300
-    pieces: 3
+    quantity: 3
   - name: 'kip'
     quantity: 300
   - name: 'rode peper'
-    quantity: 15
+    quantity: 11
 
 

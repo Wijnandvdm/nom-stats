@@ -10,10 +10,8 @@ ingredients:
   - name: 'spaghetti groentenmix'
     quantity: 600
   - name: 'ui'
-    quantity: 300
-    pieces: 3
+    quantity: 3
   - name: 'knoflook'
-    quantity: 25
-    pieces: 10
+    quantity: 10
   - name: 'gochujang'
     quantity: 15

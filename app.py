@@ -22,25 +22,37 @@ def calculate_nutrition(yaml_content, all_ingredients):
     for recipe_ingredient in yaml_content['ingredients']:
         ingredient_name = recipe_ingredient['name']
         quantity = recipe_ingredient.get('quantity', 0)
-        pieces = recipe_ingredient.get('pieces')
-        total_weight += quantity
 
         # Lookup the ingredient details in the ingredients file
         ingredient = all_ingredients.get(ingredient_name)
         if ingredient:
+            # Check if the ingredient has a weight per unit
+            weight_per_unit = ingredient.get('weight_per_unit')
+            
+            # If weight_per_unit exists, interpret quantity as units and convert to grams
+            if weight_per_unit:
+                quantity = quantity * weight_per_unit  # Convert units to grams
+            
+            # Accumulate total weight for nutritional calculations
+            total_weight += quantity
+
+            # Retrieve protein and calorie values per 100g
             protein_per_100g = next((comp['quantity_per_100_g'] for comp in ingredient['components'] if comp['name'] == 'protein'), 0)
             calories_per_100g = next((comp['quantity_per_100_g'] for comp in ingredient['components'] if comp['name'] == 'calories'), 0)
 
-            measurement_unit = ingredient.get('measurement_unit', 'g/ml')  # Default to 'g/ml' if not provided
+            measurement_unit = ingredient.get('measurement_unit', ' g/ml')  # Default to 'g/ml' if not specified
 
+            # Calculate total protein and calories based on the adjusted quantity
             total_protein += (quantity * protein_per_100g) / 100
             total_calories += (quantity * calories_per_100g) / 100
 
-            if pieces:
-                human_readable_ingredients.append(f"{pieces} {measurement_unit} {ingredient_name}")
+            # Create human-readable format for grocery shopping list
+            if weight_per_unit:
+                human_readable_ingredients.append(f"{int(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}")
             else:
                 human_readable_ingredients.append(f"{quantity}{measurement_unit} {ingredient_name}")
 
+    # Calculate protein and calories per 100g for the overall recipe
     protein_per_100g = (total_protein / total_weight) * 100 if total_weight else 0
     calories_per_100g = (total_calories / total_weight) * 100 if total_weight else 0
 
@@ -63,10 +75,10 @@ def process_all_recipes(directory, all_ingredients):
                 recipe = {
                     'Recipe Name': yaml_content['recipe_name'],
                     'Description': yaml_content.get('description', 'No description available'),
-                    'Total Protein': f"{protein:.2f}",
-                    'Total Calories': f"{calories:.2f}",
-                    'Protein/100g': f"{protein_per_100g:.2f}",
-                    'Calories/100g': f"{calories_per_100g:.2f}"
+                    'Total Protein': f"{protein:.1f}",
+                    'Total Calories': f"{calories:.0f}",
+                    'Protein/100g': f"{protein_per_100g:.1f}",
+                    'Calories/100g': f"{calories_per_100g:.0f}"
                 }
                 recipes.append(recipe)
             else:
@@ -107,5 +119,5 @@ def favicon():
     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
-    # app.run(debug=True, host='0.0.0.0', port=5000)
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug=True, host='0.0.0.0', port=5000)
+    # app.run(host='0.0.0.0', port=80)

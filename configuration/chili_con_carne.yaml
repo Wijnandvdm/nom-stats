@@ -16,14 +16,10 @@ ingredients:
   - name: 'linzen'
     quantity: 375
   - name: 'paprika'
-    pieces: 2
-    quantity: 270
+    quantity: 2
   - name: 'ui'
-    pieces: 3
-    quantity: 300
+    quantity: 3
   - name: 'knoflook'
-    pieces: 10
-    quantity: 25
+    quantity: 10
   - name: 'jalapeno'
-    pieces: 1
-    quantity: 30
+    quantity: 1

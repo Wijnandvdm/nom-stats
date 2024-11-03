@@ -2,11 +2,9 @@ recipe_name: 'Gochujang risotto'
 description: 'Bit of spice, very nice'
 ingredients:
   - name: 'ui'
-    quantity: 200
-    pieces: 2
+    quantity: 2
   - name: 'knoflook'
-    quantity: 25
-    pieces: 10
+    quantity: 10
   - name: 'gochujang'
     quantity: 200
   - name: 'risotto'

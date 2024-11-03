@@ -10,8 +10,6 @@ ingredients:
   - name: 'rode pesto'
     quantity: 570
   - name: 'ui'
-    quantity: 400
-    pieces: 4
+    quantity: 4
   - name: 'knoflook'
-    quantity: 50
-    pieces: 20
+    quantity: 20

@@ -4,15 +4,13 @@ ingredients:
   - name: 'bloem'
     quantity: 125
   - name: 'ei'
-    quantity: 50
-    pieces: 1
+    quantity: 1
   - name: 'lactosevrije halfvolle melk'
     quantity: 250
   - name: 'boter'
     quantity: 20 
   - name: 'ui'
-    quantity: 100
-    pieces: 1
+    quantity: 1
   - name: 'vivera spek'
     quantity: 90    
   - name: 'schenkstroop'
