@@ -1,4 +1,4 @@
-name: 'Create Azure Resources, Build & Push Docker Image, Create Container Instance'
+name: 'Create NomStats'
 
 on:
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
@@ -19,7 +19,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: 'Run Complete Bash Script'
+      - name: 'Prepare and Deploy resources'
         run: |
           # Define variables
           resource_group="rg-containers"
@@ -68,3 +68,15 @@ jobs:
             --registry-username ${container_registry} \
             --ports 80 \
             --dns-name-label ${dns_name}
+
+      - name: 'Time to live'
+        run: |
+          sleep 1800
+
+      - name: 'Delete Resources'
+        run: |
+          # Define variables
+          resource_group="rg-containers"
+
+          # Step 0: Delete resource group
+          az group delete -n ${resource_group} --yes
