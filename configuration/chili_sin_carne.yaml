@@ -23,3 +23,11 @@ ingredients:
     quantity: 10
   - name: 'jalapeno'
     quantity: 1
+steps:
+  - "Snij de uien"
+  - "Snij de paprika"
+  - "Braad het gehakt"
+  - "Braad de uien"
+  - "Breng de rest aan de kook in een grote pan"
+  - "Meng alles bij elkaar"
+rating: 3

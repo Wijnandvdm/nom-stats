@@ -14,6 +14,15 @@ ingredients:
   - name: 'kip'
     quantity: 300
   - name: 'rode peper'
-    quantity: 11
-
-
+    quantity: 1
+steps:
+  - "Snij de uien"
+  - "Snij de broccoli"
+  - "Snij de peper(s)"
+  - "Bak de kip"
+  - "Voeg de pinda's/cashews toe aan de kip als ze nog 5 min moeten"
+  - "Bak de uien"
+  - "Kook de mie"
+  - "Kook de broccoli"
+  - "Meng alles bij elkaar"
+rating: 3

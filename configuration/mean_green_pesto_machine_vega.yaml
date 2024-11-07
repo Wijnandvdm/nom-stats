@@ -9,5 +9,10 @@ ingredients:
     quantity: 475
   - name: 'vivera kip'
     quantity: 320
-
+steps:
+  - "Bak de kip"
+  - "Kook de snijbonen"
+  - "Kook de penne"
+  - "Meng alles bij elkaar"
+rating: 4
 

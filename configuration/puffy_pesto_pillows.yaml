@@ -13,3 +13,15 @@ ingredients:
     quantity: 4
   - name: 'knoflook'
     quantity: 20
+steps:
+  - "Snij de ui"
+  - "Kook de ravioli"
+  - "Bak de ui"
+  - "Voeg chilipeper toe"
+  - "Voeg de tomatenblokjes toe"
+  - "Voeg de rode pesto toe"
+  - "Voeg de skyr toe"
+  - "Voeg verse basilicum toe"
+  - "Voeg knoflook toe"
+  - "Meng alles bij elkaar"
+rating: 5

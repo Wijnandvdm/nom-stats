@@ -1,5 +1,5 @@
 recipe_name: 'Pannenkoeken Vega'
-description: 'Tasty frisbees'
+description: 'Fantastic floppy frisbees'
 ingredients:
   - name: 'bloem'
     quantity: 125
@@ -14,4 +14,10 @@ ingredients:
   - name: 'vivera spek'
     quantity: 90    
   - name: 'schenkstroop'
-    quantity: 100                 
+    quantity: 100
+steps:
+  - "Meng in een grote kom de bloem en de eieren"
+  - "Voeg geleidelijk de melk toe en roer totdat het glad is"
+  - "Verhit de boter in een koekenpan en bak het beslag totdat het goudbruin is"
+  - "Serveer met stroop"
+rating: 5

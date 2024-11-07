@@ -9,3 +9,9 @@ ingredients:
     quantity: 475
   - name: 'kip'
     quantity: 300
+steps:
+  - "Bak de kip"
+  - "Kook de snijbonen"
+  - "Kook de penne"
+  - "Meng alles bij elkaar"
+rating: 4

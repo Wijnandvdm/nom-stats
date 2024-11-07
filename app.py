@@ -4,6 +4,13 @@ import yaml
 
 app = Flask(__name__)
 
+debugging=False
+
+if debugging == True:
+    port=5000
+else:
+    port=80
+
 def get_configuration_and_ingredients():
     configuration_directory = os.path.join(os.path.dirname(__file__), 'configuration')
     ingredients_file = os.path.join(configuration_directory, 'ingredients.yaml')
@@ -125,5 +132,4 @@ def favicon():
     return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == "__main__":
-    # app.run(debug=True, host='0.0.0.0', port=5000)
-    app.run(host='0.0.0.0', port=80)
+    app.run(debug=debugging, port=port, host='0.0.0.0')

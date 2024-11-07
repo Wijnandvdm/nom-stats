@@ -6,7 +6,9 @@ ingredients:
   - name: 'beyond meat burger gehakt'
     quantity: 452
   - name: 'passata'
-    quantity: 1035
+    quantity: 690
+  - name: 'op smaak gebakken tomaten'
+    quantity: 400
   - name: 'spaghetti groentenmix'
     quantity: 600
   - name: 'ui'
@@ -15,3 +17,9 @@ ingredients:
     quantity: 10
   - name: 'gochujang'
     quantity: 15
+steps:
+  - "Bak het gehakt"
+  - "Bak de uien en spaghetti groenten"
+  - "Kook de spaghetti"
+  - "Meng alles bij elkaar"
+rating: 5

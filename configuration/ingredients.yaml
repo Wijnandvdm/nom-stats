@@ -249,7 +249,7 @@ ingredients:
         quantity_per_100_g: 1.4
       - name: 'calories'
         quantity_per_100_g: 33
-  - name: 'tomato frito'
+  - name: 'op smaak gebakken tomaten'
     components:
       - name: 'protein'
         quantity_per_100_g: 1.5
