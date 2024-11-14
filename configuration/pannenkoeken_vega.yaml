@@ -4,15 +4,13 @@ ingredients:
   - name: 'bloem'
     quantity: 125
   - name: 'ei'
-    quantity: 2
+    quantity: 3
   - name: 'lactosevrije halfvolle melk'
-    quantity: 250
+    quantity: 300
   - name: 'boter'
-    quantity: 15
-  - name: 'ui'
-    quantity: 1
+    quantity: 10
   - name: 'schenkstroop'
-    quantity: 100
+    quantity: 50
 steps:
   - "Meng in een grote kom de bloem en de eieren"
   - "Voeg geleidelijk de melk toe en roer totdat het glad is"
