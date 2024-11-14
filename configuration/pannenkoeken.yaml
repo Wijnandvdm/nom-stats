@@ -10,7 +10,9 @@ ingredients:
   - name: 'boter'
     quantity: 15 
   - name: 'ui'
-    quantity: 1   
+    quantity: 1
+  - name: 'spek'
+    quantity: 50    
   - name: 'schenkstroop'
     quantity: 100
 steps:

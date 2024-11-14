@@ -11,8 +11,6 @@ ingredients:
     quantity: 15
   - name: 'ui'
     quantity: 1
-  - name: 'vivera spek'
-    quantity: 90    
   - name: 'schenkstroop'
     quantity: 100
 steps:
