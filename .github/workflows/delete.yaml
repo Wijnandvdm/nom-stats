@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
 
 jobs:
-  create-resources:
+  delete-resources:
     runs-on: ubuntu-latest
 
     steps:
