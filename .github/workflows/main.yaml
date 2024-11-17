@@ -2,9 +2,6 @@ name: 'Create NomStats'
 
 on:
   workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
-  # push:
-  #   branches:
-  #     - main
 
 jobs:
   create-resources:
@@ -27,9 +24,9 @@ jobs:
           container_registry="acrhonestdatasolutions"
           container_registry_sku="Basic"
 
-          image="recipe-calculator"
-          container_instance="ci-recipe-calculator"
-          dns_name="recipe-calculator"
+          image="nom-stats"
+          container_instance="ci-nom-stats"
+          dns_name="nom-stats"
 
           # Step 0: Delete resource group if necessary
           rg_exists=$(az group exists -n ${resource_group})

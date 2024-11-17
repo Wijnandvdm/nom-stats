@@ -16,7 +16,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: 'Delete Resource Group with Bash and Azure CLI'
+      - name: 'Delete Resources'
         run: |
           # Define variables
           resource_group="rg-containers"
