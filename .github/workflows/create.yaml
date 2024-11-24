@@ -16,19 +16,8 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # - name: setup python
-      #   uses: actions/setup-python@v4
-      #   with:
-      #     python-version: '3.10' # install the python version needed
-
-      # - name: install python packages
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install -r requirements.txt
-
-      - name: execute py script # run main.py
+      - name: execute py script
         run: python generate_static_website.py
-
 
       - name: 'Prepare and Deploy resources'
         run: |
@@ -38,6 +27,8 @@ jobs:
           storage_account_name="nomstats"
           storage_account_sku="Standard_LRS"
           storage_account_hns_enabled="true"
+          storage_account_404_document="404.html"
+          storage_account_index_document="index.html"
 
           # Step 0: Delete resource group if necessary
           rg_exists=$(az group exists -n ${resource_group})
@@ -56,10 +47,12 @@ jobs:
               --sku ${storage_account_sku} --hns ${storage_account_hns_enabled}
 
           # Step 3: Turn on static website capability
-          az storage blob service-properties update --account-name nomstats --static-website --404-document 404.html --index-document index.html
+          az storage blob service-properties update --account-name ${storage_account_name}  \
+              --static-website --404-document ${storage_account_404_document}  \
+              --index-document ${storage_account_index_document}
 
           # Step 4: Upload html files
-          az storage blob upload-batch -s static_site -d '$web' --account-name nomstats --overwrite
+          az storage blob upload-batch -s static_site -d '$web' --account-name ${storage_account_name} --overwrite
 
       - name: 'Time to live'
         run: |
@@ -68,7 +61,7 @@ jobs:
       - name: 'Delete Resources'
         run: |
           # Define variables
-          resource_group="rg-containers"
+          resource_group="rg-nom-stats"
 
           # Step 0: Delete resource group
           az group delete -n ${resource_group} --yes

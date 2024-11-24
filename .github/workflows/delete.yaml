@@ -19,7 +19,7 @@ jobs:
       - name: 'Delete Resources'
         run: |
           # Define variables
-          resource_group="rg-containers"
+          resource_group="rg-nom-stats"
 
           # Step 0: Delete resource group
           az group delete -n ${resource_group} --yes
