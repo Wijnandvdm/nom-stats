@@ -16,7 +16,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: execute py script
+      - name: 'Generate HTML files'
         run: python generate_static_website.py
 
       - name: 'Prepare and Deploy resources'
