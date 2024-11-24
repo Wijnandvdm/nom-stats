@@ -9,9 +9,7 @@ env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
-    print(f"'{OUTPUT_DIR}' didn't exist yet, folder created!")
-else:
-    print(f"'{OUTPUT_DIR}' folder already exists.")
+    print(f"'{OUTPUT_DIR}' didn't exist yet, folder created! Moving on...")
 
 # Directory paths
 configuration_directory = os.path.join(os.path.dirname(__file__), 'configuration')
