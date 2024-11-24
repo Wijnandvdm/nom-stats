@@ -17,7 +17,10 @@ az acr login --name acrhonestdatasolutions
 ### push to azure
 docker push acrhonestdatasolutions.azurecr.io/nom-stats
 
-# Possibility of static website hosting (with https):
--  https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
--  https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-cli
--  https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal
+# static site
+az storage account create -n nomstats -g rg-nom-stats -l westeurope --sku Standard_LRS --hns true
+
+az storage blob service-properties update --account-name nomstats --static-website --404-document 404.html --index-document index.html
+
+az storage blob upload-batch -s static_site -d '$web' --account-name nomstats --overwrite
+
