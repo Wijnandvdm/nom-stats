@@ -90,15 +90,19 @@
                 </tr>
             </thead>
             <tbody>
-                {% for row in data %}
+                {% for row in data | sort(attribute='name') %}
                 <tr>
                     {% for column in columns %}
                         {% if column == 'Recipe Name' %}
                             <td>
-                                <a href="{{ url_for('recipe_detail', recipe_name=row[column]) }}">
-                                    {{ row[column] }}
+                                <a href="/{{ row['filename'] }}">
+                                    {{ row['name'] }}
                                 </a>
                             </td>
+                        {% elif column == 'Protein/100g' %}
+                            <td>{{ row['protein_100g'] }}</td>
+                        {% elif column == 'Calories/100g' %}
+                            <td>{{ row['calories_100g'] }}</td>
                         {% else %}
                             <td>{{ row[column] }}</td>
                         {% endif %}

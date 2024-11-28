@@ -16,17 +16,19 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: 'Generate HTML files'
+        run: python generate_static_website.py
+
       - name: 'Prepare and Deploy resources'
         run: |
           # Define variables
-          resource_group="rg-containers"
+          resource_group="rg-nom-stats"
           location="westeurope"
-          container_registry="acrhonestdatasolutions"
-          container_registry_sku="Basic"
-
-          image="nom-stats"
-          container_instance="ci-nom-stats"
-          dns_name="nom-stats"
+          storage_account_name="nomstats"
+          storage_account_sku="Standard_LRS"
+          storage_account_hns_enabled="true"
+          storage_account_404_document="404.html"
+          storage_account_index_document="index.html"
 
           # Step 0: Delete resource group if necessary
           rg_exists=$(az group exists -n ${resource_group})
@@ -40,31 +42,17 @@ jobs:
           # Step 1: Create resource group
           az group create -n ${resource_group} -l ${location}
 
-          # Step 2: Create Azure Container Registry (ACR)
-          az acr create -n ${container_registry} -g ${resource_group} \
-              --sku ${container_registry_sku} --admin-enabled true
+          # Step 2: Create Azure Storage Account
+          az storage account create -n ${storage_account_name} -g ${resource_group} -l ${location}  \
+              --sku ${storage_account_sku} --hns ${storage_account_hns_enabled}
 
-          # Step 3: Build Docker image
-          docker build -t ${container_registry}.azurecr.io/${image} .
+          # Step 3: Turn on static website capability
+          az storage blob service-properties update --account-name ${storage_account_name}  \
+              --static-website --404-document ${storage_account_404_document}  \
+              --index-document ${storage_account_index_document}
 
-          # Step 4: Login to ACR
-          az acr login --name ${container_registry}
-
-          # Step 5: Push Docker image to ACR
-          docker push ${container_registry}.azurecr.io/${image}
-
-          # Step 6: Retrieve ACR password
-          acr_password=$(az acr credential show -n ${container_registry} --query "passwords[0].value" -o tsv)
-
-          # Step 7: Create Azure Container Instance (ACI) using the Docker image
-          az container create -g ${resource_group} \
-            --name ${container_instance} \
-            --ip-address Public \
-            --image "${container_registry}.azurecr.io/${image}" \
-            --registry-password ${acr_password} \
-            --registry-username ${container_registry} \
-            --ports 80 \
-            --dns-name-label ${dns_name}
+          # Step 4: Upload html files
+          az storage blob upload-batch -s static_site -d '$web' --account-name ${storage_account_name} --overwrite
 
       - name: 'Time to live'
         run: |
@@ -73,7 +61,7 @@ jobs:
       - name: 'Delete Resources'
         run: |
           # Define variables
-          resource_group="rg-containers"
+          resource_group="rg-nom-stats"
 
           # Step 0: Delete resource group
           az group delete -n ${resource_group} --yes
