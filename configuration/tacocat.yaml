@@ -14,7 +14,7 @@ ingredients:
   - name: 'santa maria kruidenmix taco'
     quantity: 14
   - name: 'santa maria taco schelpen'
-    quantity: 135
+    quantity: 67,5
 steps:
   - "Snij de ui"
   - "Bak de ui"
