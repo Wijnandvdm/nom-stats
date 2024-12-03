@@ -1,0 +1,25 @@
+recipe_name: 'TacocaT Vega'
+description: 'Was it a car or a cat I saW?'
+ingredients:
+  - name: 'vivera kip'
+    quantity: 160
+  - name: 'ui'
+    quantity: 1
+  - name: 'kidneybonen'
+    quantity: 125
+  - name: 'mais'
+    quantity: 70
+  - name: 'basis tomatensaus pikant'
+    quantity: 390
+  - name: 'santa maria kruidenmix taco'
+    quantity: 14
+  - name: 'santa maria taco schelpen'
+    quantity: 135
+steps:
+  - "Snij de ui"
+  - "Bak de ui"
+  - "Bak het gehakt"
+  - "Voeg tomatensaus toe"
+  - "Voeg kruidenmix toe"
+  - "Schep in tacos"
+rating: 5
