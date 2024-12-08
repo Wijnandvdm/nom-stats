@@ -53,15 +53,3 @@ jobs:
 
           # Step 4: Upload html files
           az storage blob upload-batch -s static_site -d '$web' --account-name ${storage_account_name} --overwrite
-
-      - name: 'Time to live'
-        run: |
-          sleep 1800
-
-      - name: 'Delete Resources'
-        run: |
-          # Define variables
-          resource_group="rg-nom-stats"
-
-          # Step 0: Delete resource group
-          az group delete -n ${resource_group} --yes
