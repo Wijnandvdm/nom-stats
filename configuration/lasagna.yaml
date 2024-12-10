@@ -5,6 +5,8 @@ ingredients:
     quantity: 250
   - name: 'gehakt'
     quantity: 500
+  - name: 'ui'
+    quantity: 2
   - name: 'tomatenblokjes'
     quantity: 400
   - name: 'op smaak gebakken tomaten'
