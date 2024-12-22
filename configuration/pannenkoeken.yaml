@@ -1,18 +1,16 @@
 recipe_name: 'Pannenkoeken'
-description: 'Fantastic floppy frisbees'
+description: '11 Fantastic floppy frisbees'
 ingredients:
   - name: 'bloem'
-    quantity: 166
+    quantity: 275
   - name: 'ei'
-    quantity: 3.5
+    quantity: 5
   - name: 'lactosevrije halfvolle melk'
-    quantity: 500
+    quantity: 900
   - name: 'boter'
-    quantity: 10
-  - name: 'spek'
-    quantity: 50    
+    quantity: 20
   - name: 'schenkstroop'
-    quantity: 50
+    quantity: 100
 steps:
   - "Meng in een grote kom de bloem en de eieren"
   - "Voeg geleidelijk de melk toe en roer totdat het glad is"
