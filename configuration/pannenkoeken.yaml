@@ -2,11 +2,11 @@ recipe_name: 'Pannenkoeken'
 description: 'Fantastic floppy frisbees'
 ingredients:
   - name: 'bloem'
-    quantity: 125
+    quantity: 166
   - name: 'ei'
-    quantity: 3
+    quantity: 3.5
   - name: 'lactosevrije halfvolle melk'
-    quantity: 300
+    quantity: 500
   - name: 'boter'
     quantity: 10
   - name: 'spek'
