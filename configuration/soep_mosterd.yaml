@@ -1,0 +1,32 @@
+recipe_name: 'Soep Mosterd'
+description: '10/10 would eat again'
+ingredients:
+  - name: 'dijon mosterd extra pittig'
+    quantity: 100
+  - name: 'prei'
+    quantity: 1
+  - name: 'knoflook'
+    quantity: 3
+  - name: 'sjalot'
+    quantity: 1
+  - name: 'boter'
+    quantity: 30
+  - name: 'bloem'
+    quantity: 30
+  - name: 'groentebouillonblokje'
+    quantity: 10
+  - name: 'water'
+    quantity: 700
+  - name: 'slagroom'
+    quantity: 125
+steps:
+  - "Snij de sjalot"
+  - "Snij de prei"
+  - "Snij de knoflook"
+  - "Fruit de sjalot, prei en knoflook"
+  - "Roer bloem erdoor en bak dit 1 minuut mee"
+  - "Voeg 700 ml water toe"
+  - "Voeg bouillonblokje toe"
+  - "Roer slagroom door het mengsel"
+  - "Roer mosterd door het mengsel"
+rating: 5
