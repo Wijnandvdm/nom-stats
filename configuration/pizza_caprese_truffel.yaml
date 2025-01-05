@@ -2,9 +2,9 @@ recipe_name: 'Pizza Caprese Truffel'
 description: 'Pizza with caprese and truffel toppings'
 ingredients:
   - name: 'arla lactosevrije magere kwark'
-    quantity: 150
+    quantity: 100
   - name: 'zelfrijzend bakmeel'
-    quantity: 150
+    quantity: 100
   - name: 'passata'
     quantity: 150
   - name: 'kaas'
