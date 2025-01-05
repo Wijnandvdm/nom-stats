@@ -93,6 +93,12 @@ ingredients:
         quantity_per_100_g: 2.3
       - name: 'calories'
         quantity_per_100_g: 25
+  - name: 'champignons'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 2.3
+      - name: 'calories'
+        quantity_per_100_g: 18
   - name: 'bruine bonen'
     components:
       - name: 'protein'
@@ -164,6 +170,12 @@ ingredients:
         quantity_per_100_g: 28
       - name: 'calories'
         quantity_per_100_g: 273
+  - name: 'mini mozzarella'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 18
+      - name: 'calories'
+        quantity_per_100_g: 245
   - name: 'halloumi'
     components:
       - name: 'protein'
@@ -176,6 +188,12 @@ ingredients:
         quantity_per_100_g: 11
       - name: 'calories'
         quantity_per_100_g: 62
+  - name: 'arla lactosevrije magere kwark'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 11
+      - name: 'calories'
+        quantity_per_100_g: 62
   - name: 'plantaardig creme fraishe'
     components:
       - name: 'protein'
@@ -183,18 +201,24 @@ ingredients:
       - name: 'calories'
         quantity_per_100_g: 247
 # overig
-  - name: 'groene pesto'
+  - name: 'gran italia groene pesto'
     components:
       - name: 'protein'
-        quantity_per_100_g: 4.1
+        quantity_per_100_g: 7.1
       - name: 'calories'
-        quantity_per_100_g: 364
+        quantity_per_100_g: 470
   - name: 'rode pesto'
     components:
       - name: 'protein'
         quantity_per_100_g: 3.8
       - name: 'calories'
         quantity_per_100_g: 424
+  - name: 'truffel paddenstoel tapenade'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 2.1
+      - name: 'calories'
+        quantity_per_100_g: 224
   - name: 'teriyaki saus lidl'
     components:
       - name: 'protein'
@@ -296,7 +320,13 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 10
       - name: 'calories'
-        quantity_per_100_g: 343 
+        quantity_per_100_g: 343
+  - name: 'zelfrijzend bakmeel'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 12
+      - name: 'calories'
+        quantity_per_100_g: 340 
   - name: 'ei'
     measurement_unit: ''
     weight_per_unit: 50

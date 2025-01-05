@@ -5,7 +5,9 @@ ingredients:
     quantity: 1000
   - name: 'tomatenblokjes'
     quantity: 800
-  - name: 'skyr'
+  # - name: 'skyr'
+  #   quantity: 185
+  - name: 'arla lactosevrije magere kwark'
     quantity: 185
   - name: 'rode pesto'
     quantity: 570
