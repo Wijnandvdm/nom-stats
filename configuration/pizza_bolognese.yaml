@@ -5,6 +5,8 @@ ingredients:
     quantity: 100
   - name: 'zelfrijzend bakmeel'
     quantity: 110
+ - name: 'passata'
+    quantity: 100
   - name: 'ui'
     quantity: 1
   - name: 'gehakt'
