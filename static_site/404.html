@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
     <style>
+        /* Base styles (applies to both modes) */
+        :root {
+            --transition: 0.3s;
+        }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            transition: background-color var(--transition), color var(--transition);
         }
         .container {
             text-align: center;
             max-width: 600px;
-            background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -28,7 +30,6 @@
         h1 {
             font-size: 4rem;
             margin: 0;
-            color: #0B6623;
             font-weight: bold;
             animation: float 1.5s infinite;
         }
@@ -41,12 +42,11 @@
             display: inline-block;
             margin-top: 1.5rem;
             padding: 0.75rem 1.5rem;
-            background-color: #0B6623;
             color: white;
             text-decoration: none;
             font-weight: bold;
             border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color var(--transition) ease, transform 0.2s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         a:hover {
@@ -59,6 +59,80 @@
             margin: 1rem auto;
             animation: fadeIn 1.5s ease-in-out;
         }
+
+        /* Default: Dark mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        body.dark-mode .container {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        body.dark-mode h1 {
+            color: #45a049;
+        }
+        body.dark-mode a {
+            background-color: #45a049;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body.light-mode .container {
+            background-color: white;
+            color: #333;
+        }
+        body.light-mode h1 {
+            color: #0B6623;
+        }
+        body.light-mode a {
+            background-color: #0B6623;
+        }
+
+        /* Tooltip styles */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #e0e0e0;
+            transition: color var(--transition) ease;
+        }
+
+        .theme-toggle.light-mode {
+            color: #333;
+        }
+
+        /* Tooltip text */
+        .theme-toggle::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition) ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover::after {
+            opacity: 1;
+        }
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(0);
@@ -87,11 +161,35 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
+    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
     <div class="container">
         <h1>404</h1>
         <p>Oops! It seems like you're taking the road less traveled!</p>
-        <a href="/">Take Me Home</a>
+        <a href="/" class="back-link">Take Me Home</a>
     </div>
+
+    <script>
+        // Default mode is dark
+        document.body.classList.add('dark-mode');
+
+        function toggleTheme() {
+            const body = document.body;
+            const toggleButton = document.querySelector('.theme-toggle');
+
+            body.classList.toggle('light-mode');
+            body.classList.toggle('dark-mode');
+
+            // Update button icon
+            if (body.classList.contains('light-mode')) {
+                toggleButton.textContent = '☀️'; // Sun for light mode
+                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+            } else {
+                toggleButton.textContent = '🌙'; // Moon for dark mode
+                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+            }
+        }
+
+    </script>
 </body>
 </html>

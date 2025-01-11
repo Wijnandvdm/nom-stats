@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ recipe['recipe_name'] }}</title>
     <style>
+        /* Base styles (applies to both modes) */
+        :root {
+            --transition: 0.3s;
+        }
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            transition: background-color var(--transition), color var(--transition);
         }
         header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
             text-align: center;
             padding: 1rem;
         }
@@ -26,9 +27,8 @@
             max-width: 1200px;
             margin: 2rem auto;
             padding: 2rem;
-            background: #1e1e1e;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            transition: background-color var(--transition), box-shadow var(--transition);
         }
         .back-link {
             display: inline-block;
@@ -55,8 +55,6 @@
         .ingredients-list li:last-child {
             border-bottom: none;
         }
-
-        /* Style for total protein and calories */
         .nutrition-info {
             margin-top: 1.5rem;
             font-weight: bold;
@@ -65,43 +63,108 @@
             font-size: 1.5rem;
             margin-top: 1rem;
         }
-
         .star {
             color: grey;
         }
-
         .star.filled {
             color: #efbf04;
         }
-
         .star.empty {
             color: #d4d4d4;
         }
 
+        /* Default: Dark mode */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        header {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+        }
+        .container {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* Light mode styles when body has 'light-mode' */
+        body.light-mode {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        body.light-mode header {
+            background-color: #0B6623;
+            color: white;
+        }
+        body.light-mode .container {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        body.light-mode .back-link {
+            background-color: #0B6623;
+            color: white;
+        }
+        body.light-mode .back-link:hover {
+            background-color: #45a049;
+        }
+
+        /* Tooltip styles */
+        .theme-toggle {
+            position: fixed; /* Ensure the button stays at the top-right */
+            top: 0.5rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #e0e0e0; /* Default icon color for dark mode */
+            transition: color var(--transition) ease;
+        }
+        .theme-toggle.light-mode {
+            color: #333; /* Icon color for light mode */
+        }
+        .theme-toggle::after {
+            content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
+            position: absolute;
+            bottom: 70%; /* Position the tooltip above the button */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none; /* Prevent interaction with the tooltip */
+            transition: opacity 0.3s ease;
+            z-index: 1000; /* Ensure the tooltip appears above other content */
+        }
+        .theme-toggle:hover::after {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>{{ recipe['name'] }}</h1>
         <p>{{ recipe['description'] }}</p>
-            <!-- Star Rating Section -->
-            <div class="star-rating">
-                {% for _ in range(recipe['rating']) %}
-                    <span class="star filled">★</span>
-                {% endfor %}
-                {% for _ in range(5 - recipe['rating']) %}
-                    <span class="star empty">★</span>
-                {% endfor %}
-            </div>       
+        <!-- Star Rating Section -->
+        <div class="star-rating">
+            {% for _ in range(recipe['rating']) %}
+                <span class="star filled">★</span>
+            {% endfor %}
+            {% for _ in range(5 - recipe['rating']) %}
+                <span class="star empty">★</span>
+            {% endfor %}
+        </div>       
     </header>
 
     <div class="container">
-
-
         <h2>Ingredients</h2>
         <ul>
             {% for ingredient in recipe['ingredients'] %}
-                <li>{{ ingredient }}</li> <!-- Display human-readable ingredients here -->
+                <li>{{ ingredient }}</li>
             {% endfor %}
         </ul>
 
@@ -121,11 +184,37 @@
 
         <a href="/" class="back-link">&larr; Back to recipes</a>
     </div>
+
     <!-- Disclaimer -->
     <footer>
         <p style="font-size: 0.9em; color: #888; text-align: center; margin-top: 2rem;">
             Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
         </p>
     </footer>
+
+    <!-- Theme toggle button -->
+    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
+
+    <script>
+        // Default mode is dark
+        document.body.classList.add('dark-mode');
+
+        function toggleTheme() {
+            const body = document.body;
+            const toggleButton = document.querySelector('.theme-toggle');
+
+            body.classList.toggle('light-mode');
+            body.classList.toggle('dark-mode');
+
+            // Update button icon
+            if (body.classList.contains('light-mode')) {
+                toggleButton.textContent = '☀️'; // Sun for light mode
+                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+            } else {
+                toggleButton.textContent = '🌙'; // Moon for dark mode
+                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+            }
+        }
+    </script>
 </body>
 </html>
