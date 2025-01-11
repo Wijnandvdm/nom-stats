@@ -111,7 +111,7 @@
         .theme-toggle {
             position: fixed; /* Ensure the button stays at the top-right */
             top: 0.5rem;
-            right: 2rem;
+            right: 1rem;
             padding: 0.5rem 1rem;
             background-color: transparent;
             border: none;
@@ -124,14 +124,14 @@
         .theme-toggle::after {
             content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
             position: absolute;
-            bottom: 100%; /* Position the tooltip above the button */
-            left: 50%;
+            top: 100%;
+            left: 0%;
             transform: translateX(-50%);
             background-color: #333;
             color: #fff;
             padding: 5px 10px;
             border-radius: 4px;
-            font-size: 0.875rem;
+            font-size: 0.7rem;
             white-space: nowrap;
             opacity: 0;
             pointer-events: none; /* Prevent interaction with the tooltip */

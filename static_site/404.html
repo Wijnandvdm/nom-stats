@@ -100,8 +100,8 @@
         /* Tooltip styles */
         .theme-toggle {
             position: fixed;
-            top: 1rem;
-            right: 2rem;
+            top: 0.5rem;
+            right: 1rem;
             padding: 0.5rem 1rem;
             background-color: transparent;
             border: none;
@@ -115,14 +115,14 @@
         .theme-toggle::after {
             content: attr(data-tooltip);
             position: absolute;
-            bottom: 100%;
-            left: 50%;
+            top: 100%;
+            left: 0%;
             transform: translateX(-50%);
             background-color: #333;
             color: #fff;
             padding: 5px 10px;
             border-radius: 4px;
-            font-size: 0.875rem;
+            font-size: 0.7rem;
             white-space: nowrap;
             opacity: 0;
             pointer-events: none;
