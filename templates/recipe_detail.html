@@ -38,7 +38,7 @@
             color: #e0e0e0;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color var(--transition) ease;
         }
         .back-link:hover {
             background-color: #45a049;
@@ -135,7 +135,7 @@
             white-space: nowrap;
             opacity: 0;
             pointer-events: none; /* Prevent interaction with the tooltip */
-            transition: opacity 0.3s ease;
+            transition: opacity var(--transition) ease;
             z-index: 1000; /* Ensure the tooltip appears above other content */
         }
         .theme-toggle:hover::after {
