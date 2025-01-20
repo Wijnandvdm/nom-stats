@@ -204,12 +204,12 @@ ingredients:
         quantity_per_100_g: 11
       - name: 'calories'
         quantity_per_100_g: 62
-  - name: 'arla lactosevrije magere kwark'
+  - name: 'lactosevrije magere kwark'
     components:
       - name: 'protein'
-        quantity_per_100_g: 11
+        quantity_per_100_g: 8.5
       - name: 'calories'
-        quantity_per_100_g: 62
+        quantity_per_100_g: 50
   - name: 'plantaardig creme fraishe'
     components:
       - name: 'protein'
