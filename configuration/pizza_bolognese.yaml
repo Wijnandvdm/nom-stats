@@ -1,7 +1,7 @@
 recipe_name: 'Pizza Bolognese'
 description: 'Pizza with minced meat, onion and jalapeno'
 ingredients:
-  - name: 'arla lactosevrije magere kwark'
+  - name: 'lactosevrije magere kwark'
     quantity: 100
   - name: 'zelfrijzend bakmeel'
     quantity: 110
