@@ -1,5 +1,5 @@
 recipe_name: 'Pizza Bolognese'
-description: 'Pizza with minced meat, onion and jalapeno'
+description: 'Just like Spaghetti, except on a pizza'
 ingredients:
   - name: 'lactosevrije magere kwark'
     quantity: 100
