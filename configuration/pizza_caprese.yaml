@@ -10,11 +10,11 @@ ingredients:
   - name: 'kaas'
     quantity: 75
   - name: 'gran italia groene pesto'
-    quantity: 45
+    quantity: 30
   - name: 'cherry tomaatjes'
-    quantity: 100
-  - name: 'mini mozzarella'
-    quantity: 83
+    quantity: 50
+  - name: 'galbani mozzarella mini'
+    quantity: 75
 steps:
   - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
   - "Rol het deeg uit tot pizzabodems"

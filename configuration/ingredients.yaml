@@ -186,12 +186,12 @@ ingredients:
         quantity_per_100_g: 28
       - name: 'calories'
         quantity_per_100_g: 273
-  - name: 'mini mozzarella'
+  - name: 'galbani mozzarella mini'
     components:
       - name: 'protein'
-        quantity_per_100_g: 18
+        quantity_per_100_g: 19
       - name: 'calories'
-        quantity_per_100_g: 245
+        quantity_per_100_g: 233
   - name: 'halloumi'
     components:
       - name: 'protein'
