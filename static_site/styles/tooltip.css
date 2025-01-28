@@ -1,0 +1,37 @@
+/* Tooltip styles */
+.theme-toggle {
+    position: fixed; /* Ensure the button stays at the top-right */
+    top: 0.5rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e0e0e0; /* Default icon color for dark mode */
+    transition: color var(--transition) ease;
+}
+
+/* Tooltip text */
+.theme-toggle::after {
+    content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction with the tooltip */
+    transition: opacity var(--transition) ease;
+    z-index: 1000; /* Ensure the tooltip appears above other content */
+}
+
+/* Show the tooltip when hovering */
+.theme-toggle:hover::after {
+    opacity: 1;
+}

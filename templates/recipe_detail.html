@@ -3,145 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/base-style.css" />
+    <link rel="stylesheet" href="styles/dark-mode.css" />
+    <link rel="stylesheet" href="styles/light-mode.css" />
+    <link rel="stylesheet" href="styles/tooltip.css" />
+    <script src="scripts/style-toggle.js"></script>
     <title>{{ recipe['recipe_name'] }}</title>
-    <style>
-        /* Base styles (applies to both modes) */
-        :root {
-            --transition: 0.3s;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            transition: background-color var(--transition), color var(--transition);
-        }
-        header {
-            text-align: center;
-            padding: 1rem;
-        }
-        h1, h2 {
-            margin: 0;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 8px;
-            transition: background-color var(--transition), box-shadow var(--transition);
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #0B6623;
-            color: #e0e0e0;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color var(--transition) ease;
-        }
-        .back-link:hover {
-            background-color: #45a049;
-        }
-        .ingredients-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
-        }
-        .ingredients-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #333;
-        }
-        .ingredients-list li:last-child {
-            border-bottom: none;
-        }
-        .nutrition-info {
-            margin-top: 1.5rem;
-            font-weight: bold;
-        }
-        .star-rating {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-        .star {
-            color: grey;
-        }
-        .star.filled {
-            color: #efbf04;
-        }
-        .star.empty {
-            color: #d4d4d4;
-        }
-
-        /* Default: Dark mode */
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-        }
-        .container {
-            background-color: #1e1e1e;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        /* Light mode styles when body has 'light-mode' */
-        body.light-mode {
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        body.light-mode header {
-            background-color: #0B6623;
-            color: white;
-        }
-        body.light-mode .container {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        body.light-mode .back-link {
-            background-color: #0B6623;
-            color: white;
-        }
-        body.light-mode .back-link:hover {
-            background-color: #45a049;
-        }
-
-        /* Tooltip styles */
-        .theme-toggle {
-            position: fixed; /* Ensure the button stays at the top-right */
-            top: 0.5rem;
-            right: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: transparent;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #e0e0e0; /* Default icon color for dark mode */
-            transition: color var(--transition) ease;
-        }
-
-        .theme-toggle::after {
-            content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
-            position: absolute;
-            top: 100%;
-            left: 0%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none; /* Prevent interaction with the tooltip */
-            transition: opacity var(--transition) ease;
-            z-index: 1000; /* Ensure the tooltip appears above other content */
-        }
-        .theme-toggle:hover::after {
-            opacity: 1;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -192,27 +59,5 @@
 
     <!-- Theme toggle button -->
     <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
-
-    <script>
-        // Default mode is dark
-        document.body.classList.add('dark-mode');
-
-        function toggleTheme() {
-            const body = document.body;
-            const toggleButton = document.querySelector('.theme-toggle');
-
-            body.classList.toggle('light-mode');
-            body.classList.toggle('dark-mode');
-
-            // Update button icon
-            if (body.classList.contains('light-mode')) {
-                toggleButton.textContent = '☀️'; // Sun for light mode
-                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
-            } else {
-                toggleButton.textContent = '🌙'; // Moon for dark mode
-                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
-            }
-        }
-    </script>
 </body>
 </html>

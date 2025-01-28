@@ -1,0 +1,35 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+header {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+.container {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+table, th, td {
+    border-color: #333;
+}
+th {
+    background-color: #333;
+    color: #e0e0e0;
+}
+tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+tr:hover {
+    background-color: #333;
+}
+a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition) ease;
+}
+a:hover {
+    color: #45a049;
+    text-decoration: underline;
+}
