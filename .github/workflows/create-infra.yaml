@@ -1,0 +1,46 @@
+name: 'Create infrastructure for NomStats'
+
+on:
+  workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
+
+env:
+  resourceGroupName: 'rg-nom-stats'
+  azureLocation: 'westeurope'
+  storageAccountName: 'nomstats'
+
+jobs:
+  create-resources:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout Code'
+        uses: actions/checkout@v3
+
+      - name: 'Login to Azure using Azure CLI'
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: 'Create resource group'
+        run: |
+          rg_exists = $(az group exists -n $resourceGroupName)
+
+          if [[ ${rg_exists} != true ]]; then
+            az group create -n $resourceGroupName -l $azureLocation
+          fi
+
+      - name: 'Create and configure storage account'
+        env:
+          sku: 'Standard_LRS'
+          hnsEnabled: true
+          notFoundDocument: '404.html'
+          indexDocument: 'index.html'
+        run: |
+          # Create storage account
+          az storage account create -n ${storage_account_name} -g $resourceGroupName -l $azureLocation  \
+              --sku $sku --hns $hnsEnabled
+
+          # Turn on static website capability
+          az storage blob service-properties update --account-name $storageAccountName  \
+              --static-website --404-document $notFoundDocument  \
+              --index-document $indexDocument
