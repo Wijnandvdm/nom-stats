@@ -37,7 +37,7 @@ jobs:
           indexDocument: 'index.html'
         run: |
           # Create storage account
-          az storage account create -n ${storage_account_name} -g $resourceGroupName -l $azureLocation  \
+          az storage account create -n $storageAccountName -g $resourceGroupName -l $azureLocation  \
               --sku $sku --hns $hnsEnabled
 
           # Turn on static website capability
