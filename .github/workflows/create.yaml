@@ -1,7 +1,6 @@
 name: 'Create NomStats'
 
 on:
-  workflow_dispatch:
   push:
     - main
 

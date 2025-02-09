@@ -1,7 +1,7 @@
 name: 'Delete NomStats'
 
 on:
-  workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
+  workflow_dispatch:
 
 jobs:
   delete-resources:
