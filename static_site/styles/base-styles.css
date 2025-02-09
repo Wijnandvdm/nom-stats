@@ -1,0 +1,45 @@
+:root {
+    --transition: 0.3s
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition), color var(--transition);
+}
+header {
+    text-align: center;
+    padding: 1rem;
+}
+h1 {
+    margin: 0;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+table, th, td {
+    border: 1px solid;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+th {
+    transition: background-color var(--transition), color var(--transition);
+}
+tr:nth-child(even) {
+    transition: background-color var(--transition);
+}
+tr:hover {
+    transition: background-color var(--transition);
+}

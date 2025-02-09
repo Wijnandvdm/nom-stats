@@ -1,0 +1,31 @@
+body.light-mode {
+    background-color: #f4f4f9;
+    color: #333;
+}
+body.light-mode header {
+    background-color: #0B6623;
+    color: white;
+}
+body.light-mode .container {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+body.light-mode table, body.light-mode th, body.light-mode td {
+    border-color: #ddd;
+}
+body.light-mode th {
+    background-color: #0B6623;
+    color: white;
+}
+body.light-mode tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+body.light-mode tr:hover {
+    background-color: #ddd;
+}
+body.light-mode a {
+    color: #0B6623;
+}
+body.light-mode a:hover {
+    color: #45a049;
+}
