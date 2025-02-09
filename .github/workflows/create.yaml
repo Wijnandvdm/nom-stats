@@ -1,8 +1,10 @@
 name: 'Create NomStats'
 
 on:
+  workflow_dispatch:
   push:
-    - main
+    branches:
+      - main
 
 jobs:
   create-resources:
