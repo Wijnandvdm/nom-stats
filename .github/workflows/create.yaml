@@ -1,7 +1,9 @@
 name: 'Create NomStats'
 
 on:
-  workflow_dispatch:  # Allows manual trigger from the GitHub Actions UI
+  workflow_dispatch:
+  push:
+    - main
 
 jobs:
   create-resources:
