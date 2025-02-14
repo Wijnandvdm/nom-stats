@@ -48,6 +48,12 @@ ingredients:
         quantity_per_100_g: 23
       - name: 'calories'
         quantity_per_100_g: 463
+  - name: 'redefine pulled pork'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 21
+      - name: 'calories'
+        quantity_per_100_g: 122
 # pasta
   - name: 'penne'
     components:
@@ -229,6 +235,12 @@ ingredients:
         quantity_per_100_g: 7.1
       - name: 'calories'
         quantity_per_100_g: 470
+  - name: 'remia zero jack smokey bbq'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1
+      - name: 'calories'
+        quantity_per_100_g: 52
   - name: 'rode pesto'
     components:
       - name: 'protein'
