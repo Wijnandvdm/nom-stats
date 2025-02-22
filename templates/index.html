@@ -3,230 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes</title>
+    <title>Recipe Categories</title>
     <style>
-        /* Base styles (applies to both modes) */
-        :root {
-            --transition: 0.3s
-        }
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            transition: background-color var(--transition), color var(--transition);
-        }
-        header {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text for contrast */
             text-align: center;
-            padding: 1rem;
+            padding: 20px;
         }
-        h1 {
-            margin: 0;
+        .accordion {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
+        .accordion-item {
+            background-color: #1f1f1f; /* Dark gray background for items */
             border-radius: 8px;
-            transition: background-color var(--transition), box-shadow var(--transition);
+            margin-bottom: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
+        .accordion-item:hover {
+            transform: scale(1.02);
         }
-        table, th, td {
-            border: 1px solid;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            transition: background-color var(--transition), color var(--transition);
-        }
-        tr:nth-child(even) {
-            transition: background-color var(--transition);
-        }
-        tr:hover {
-            transition: background-color var(--transition);
-        }
-
-        /* Default: Dark mode */
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-        header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-        }
-        .container {
-            background-color: #1e1e1e;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        table, th, td {
-            border-color: #333;
-        }
-        th {
-            background-color: #333;
-            color: #e0e0e0;
-        }
-        tr:nth-child(even) {
-            background-color: #1a1a1a;
-        }
-        tr:hover {
-            background-color: #333;
-        }
-        a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color var(--transition) ease;
-        }
-        a:hover {
-            color: #45a049;
-            text-decoration: underline;
-        }
-
-        /* Light mode styles when body has 'light-mode' */
-        body.light-mode {
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        body.light-mode header {
-            background-color: #0B6623;
+        .accordion-header {
+            background: linear-gradient(135deg, #0B6623, #45a049); /* Dark green to light green gradient */
             color: white;
-        }
-        body.light-mode .container {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        body.light-mode table, body.light-mode th, body.light-mode td {
-            border-color: #ddd;
-        }
-        body.light-mode th {
-            background-color: #0B6623;
-            color: white;
-        }
-        body.light-mode tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        body.light-mode tr:hover {
-            background-color: #ddd;
-        }
-        body.light-mode a {
-            color: #0B6623;
-        }
-        body.light-mode a:hover {
-            color: #45a049;
-        }
-
-        /* Tooltip styles */
-        .theme-toggle {
-            position: fixed; /* Ensure the button stays at the top-right */
-            top: 0.5rem;
-            right: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: transparent;
-            border: none;
-            font-size: 1.5rem;
+            padding: 15px;
             cursor: pointer;
-            color: #e0e0e0; /* Default icon color for dark mode */
-            transition: color var(--transition) ease;
+            font-size: 1.3rem;
+            text-align: left;
+            font-weight: bold;
+            transition: background 0.3s;
         }
-
-        /* Tooltip text */
-        .theme-toggle::after {
-            content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
-            position: absolute;
-            top: 100%;
-            left: 0%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none; /* Prevent interaction with the tooltip */
-            transition: opacity var(--transition) ease;
-            z-index: 1000; /* Ensure the tooltip appears above other content */
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #45a049, #0B6623); /* Light green to dark green gradient */
         }
-
-        /* Show the tooltip when hovering */
-        .theme-toggle:hover::after {
-            opacity: 1;
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            text-align: left;
+            background-color: #222; /* Dark background for content */
+            border-top: 2px solid #45a049; /* Light green accent border */
         }
-
+        .recipe-link {
+            display: block;
+            padding: 8px 0;
+            color: #e0e0e0; /* Light green for links */
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .recipe-link:hover {
+            color: #45a049; /* Dark green on hover */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Recipes</h1>
-    </header>
-    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    {% for column in columns %}
-                        <th>{{ column }}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in data | sort(attribute='name') %}
-                <tr>
-                    {% for column in columns %}
-                        {% if column == 'Recipe Name' %}
-                            <td>
-                                <a href="/{{ row['filename'] }}">
-                                    {{ row['name'] }}
-                                </a>
-                            </td>
-                        {% elif column == 'Protein/100g' %}
-                            <td>{{ row['protein_100g'] }}</td>
-                        {% elif column == 'Calories/100g' %}
-                            <td>{{ row['calories_100g'] }}</td>
-                        {% else %}
-                            <td>{{ row[column] }}</td>
-                        {% endif %}
-                    {% endfor %}
-                </tr>
+    <h1 style="color: #e0e0e0;">🍽️ Recipes</h1> <!-- Dark green header -->
+    <div class="accordion">
+        {% for category, recipes in categories.items() %}
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
+            <div class="accordion-content">
+                {% for recipe in recipes %}
+                <a href="{{ recipe | replace(' ', '_') | lower }}.html" class="recipe-link">{{ recipe | replace('.yaml', '') }}</a>
                 {% endfor %}
-            </tbody>
-        </table>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    <!-- Disclaimer -->
-    <footer>
-        <p style="font-size: 0.9em; text-align: center; margin-top: 2rem;">
-            Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
-        </p>
-    </footer>
 
     <script>
-        // Default mode is dark
-        document.body.classList.add('dark-mode');
-
-        function toggleTheme() {
-            const body = document.body;
-            const toggleButton = document.querySelector('.theme-toggle');
-
-            body.classList.toggle('light-mode');
-            body.classList.toggle('dark-mode');
-
-            // Update button icon
-            if (body.classList.contains('light-mode')) {
-                toggleButton.textContent = '☀️'; // Sun for light mode
-                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
-            } else {
-                toggleButton.textContent = '🌙'; // Moon for dark mode
-                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
-            }
+        function toggleAccordion(element) {
+            let content = element.nextElementSibling;
+            content.style.display = (content.style.display === "block") ? "none" : "block";
         }
-
     </script>
 </body>
 </html>
