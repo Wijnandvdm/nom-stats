@@ -84,25 +84,29 @@ def get_categories(directory):
 # Process recipes
 def process_all_recipes(directory, all_ingredients):
     recipes = []
-    for filename in os.listdir(directory):
-        if filename.endswith(".yaml") and filename != "ingredients.yaml":
-            filepath = os.path.join(directory, filename)
-            with open(filepath, 'r') as file:
-                yaml_content = yaml.safe_load(file)
-            if 'recipe_name' in yaml_content:
-                total_protein, total_calories, protein_100g, calories_100g, ingredients = calculate_nutrition(yaml_content, all_ingredients)
-                recipes.append({
-                    'name': yaml_content['recipe_name'],
-                    'description': yaml_content.get('description', ''),
-                    'protein_100g': protein_100g,
-                    'calories_100g': calories_100g,
-                    'total_protein': total_protein,
-                    'total_calories': total_calories,
-                    'ingredients': ingredients,
-                    'steps': yaml_content.get('steps', []),
-                    'rating': yaml_content.get('rating', 0),
-                    'filename': filename.replace(".yaml", ".html")
-                })
+    for category in os.listdir(directory):
+        category_path = os.path.join(directory, category)  # Get full path
+        if os.path.isdir(category_path):  # Only process directories
+            print(f"Processing directory: {category}")
+            for filename in os.listdir(os.path.join(directory, category)):
+                if filename.endswith(".yaml") and filename != "ingredients.yaml":
+                    filepath = os.path.join(directory, category, filename)
+                    with open(filepath, 'r') as file:
+                        yaml_content = yaml.safe_load(file)
+                    if 'recipe_name' in yaml_content:
+                        total_protein, total_calories, protein_100g, calories_100g, ingredients = calculate_nutrition(yaml_content, all_ingredients)
+                        recipes.append({
+                            'name': yaml_content['recipe_name'],
+                            'description': yaml_content.get('description', ''),
+                            'protein_100g': protein_100g,
+                            'calories_100g': calories_100g,
+                            'total_protein': total_protein,
+                            'total_calories': total_calories,
+                            'ingredients': ingredients,
+                            'steps': yaml_content.get('steps', []),
+                            'rating': yaml_content.get('rating', 0),
+                            'filename': filename.replace(".yaml", ".html")
+                    })
     return recipes
 
 # Generate Static Pages
@@ -112,7 +116,6 @@ def generate_static_pages():
     all_ingredients = load_ingredients(ingredients_file)
     recipes = process_all_recipes(recipes_directory, all_ingredients)
     categories = get_categories(directory=configuration_directory)
-
     # Render the index.html
     index_template = env.get_template('index.html')
     with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w') as file:
@@ -120,6 +123,7 @@ def generate_static_pages():
 
     # Render individual recipe_detail.html files
     recipe_template = env.get_template('recipe_detail.html')
+
     for recipe in recipes:
         recipe_filename = recipe['filename']
         with open(os.path.join(OUTPUT_DIR, recipe_filename), 'w') as file:
