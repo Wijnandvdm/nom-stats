@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ recipe['recipe_name'] }}</title>
     <style>
-        /* Base styles (applies to both modes) */
+        /* Root Variables for Light/Dark Mode */
         :root {
-            --transition: 0.3s;
+            --primary-dark: #0B6623;
+            --primary-light: #45a049;
+            --bg-dark: #121212;
+            --bg-light: #f4f4f9;
+            --text-dark: #e0e0e0;
+            --text-light: #333;
+            --container-dark: #1f1f1f;
+            --container-light: white;
+            --border-light: #ccc;
+            --transition: 0.3s ease-in-out;
         }
         body {
             font-family: 'Arial', sans-serif;
@@ -42,6 +51,28 @@
         }
         .back-link:hover {
             background-color: #45a049;
+        }
+        .nutrition-table {
+            border-collapse: separate;
+            border-spacing: 0; 
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .nutrition-table th, .nutrition-table td {
+            padding: 10px;
+        }
+        .nutrition-table th {
+            background-color: #0B6623; /* Darker green instead of bright green */
+            color: #d9d9d9; /* Light gray instead of pure white */
+            font-weight: normal; /* Less bold */
+        }
+        .nutrition-table td {
+            background-color: rgba(255, 255, 255, 0.05); /* Softer contrast */
+        }
+        body.light-mode .nutrition-table td {
+            background-color: rgba(0, 0, 0, 0.05);
         }
         .ingredients-list {
             list-style: none;
@@ -159,18 +190,32 @@
     </header>
 
     <div class="container">
+        <!-- Nutrition Facts Table -->
+        <h2>Nutrition Facts</h2>
+        <table class="nutrition-table">
+            <tr>
+                <th></th>
+                <th>Total</th>
+                <th>Per 100g</th>
+            </tr>
+            <tr>
+                <td>Protein</td>
+                <td>{{ recipe['total_protein'] | round(0) }} g</td>
+                <td>{{ recipe['protein_100g'] | round(0) }} g</td>
+            </tr>
+            <tr>
+                <td>Calories</td>
+                <td>{{ recipe['total_calories'] | round(0) }}</td>
+                <td>{{ recipe['calories_100g'] | round(0) }}</td>
+            </tr>
+        </table>
+
         <h2>Ingredients</h2>
         <ul>
             {% for ingredient in recipe['ingredients'] %}
                 <li>{{ ingredient }}</li>
             {% endfor %}
         </ul>
-
-        <!-- Total Protein and Calories -->
-        <div class="nutrition-info">
-            <p>Total Protein: {{ recipe['total_protein'] | round(0) }} g</p>
-            <p>Total Calories: {{ recipe['total_calories'] | round(0) }} kcal</p>
-        </div>
 
         <!-- Preparation Steps Section -->
         <h2>Preparation Steps</h2>
@@ -204,15 +249,27 @@
             body.classList.toggle('light-mode');
             body.classList.toggle('dark-mode');
 
-            // Update button icon
+            // Save theme preference to localStorage
             if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '☀️'; // Sun for light mode
                 toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+                localStorage.setItem('theme', 'light');
             } else {
                 toggleButton.textContent = '🌙'; // Moon for dark mode
                 toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+                localStorage.setItem('theme', 'dark');
             }
         }
+
+        // Load stored theme preference
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        })();
+
     </script>
 </body>
 </html>
