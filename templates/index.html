@@ -11,30 +11,41 @@
             --primary-light: #45a049;
             --bg-dark: #121212;
             --bg-light: #f4f4f9;
+            --accordion-bg: #222222;
             --text-dark: #e0e0e0;
-            --text-light: #333;
+            --text-light: #333333;
             --container-dark: #1f1f1f;
-            --container-light: white;
-            --border-light: #ccc;
+            --container-light: #ffffff;
+            --border-light: #cccccc;
             --transition: 0.3s ease-in-out;
         }
-
-        /* Base Styles */
         body {
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: var(--bg-dark);
             color: var(--text-dark);
             text-align: center;
-            padding: 20px;
             transition: background-color var(--transition), color var(--transition);
         }
-
-        .accordion {
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
+        header {
+            background-color: var(--container-dark);
+            padding: 1rem;
+            color: var(--text-dark);
         }
-
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--container-dark);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color var(--transition), box-shadow var(--transition);
+        }
         .accordion-item {
             background-color: var(--container-dark);
             border-radius: 8px;
@@ -43,73 +54,66 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: transform var(--transition);
         }
-
         .accordion-item:hover {
             transform: scale(1.02);
         }
-
         .accordion-header {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
-            color: white;
+            color: var(--container-light);
             padding: 15px;
             cursor: pointer;
             font-size: 1.3rem;
-            text-align: left;
             font-weight: bold;
             transition: background var(--transition);
         }
-
         .accordion-header:hover {
             background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
         }
-
         .accordion-content {
             display: none;
             padding: 15px;
             text-align: left;
-            background-color: #222;
+            background-color: var(--accordion-bg);
             border-top: 2px solid var(--primary-light);
         }
-
         .recipe-link {
             display: block;
             padding: 8px 0;
-            color: #f4f4f9;
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 1.1rem;
             transition: color var(--transition);
         }
-
         .recipe-link:hover {
             color: var(--primary-dark);
         }
-
         /* Light Mode */
         body.light-mode {
             background-color: var(--bg-light);
             color: var(--text-light);
         }
-
-        body.light-mode .accordion-item {
+        body.light-mode header {
+            background-color: var(--primary-dark);
+            color: var(--container-light);
+        }
+        body.light-mode .container {
             background-color: var(--container-light);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+        body.light-mode .accordion-item {
+            background-color: var(--container-light);
+        }
         body.light-mode .accordion-content {
             background-color: var(--container-light);
             border-top: 2px solid var(--border-light);
         }
-
         body.light-mode .recipe-link {
             color: var(--primary-dark);
         }
-
         body.light-mode .recipe-link:hover {
             color: var(--primary-light);
         }
-
         .theme-toggle {
-            content: attr(data-tooltip);
             position: fixed;
             top: 10px;
             right: 20px;
@@ -121,25 +125,8 @@
             color: var(--text-dark);
             transition: color var(--transition);
         }
-        .theme-toggle::after {
-            content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
-            position: absolute;
-            top: 100%;
-            left: 0%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none; /* Prevent interaction with the tooltip */
-            transition: opacity var(--transition) ease;
-            z-index: 1000; /* Ensure the tooltip appears above other content */
-        }
-        .theme-toggle:hover::after {
-            opacity: 1;
+        .theme-toggle:hover {
+            color: var(--primary-light);
         }
         body.light-mode .theme-toggle {
             color: var(--text-light);
@@ -147,56 +134,46 @@
     </style>
 </head>
 <body>
-    <!-- Dark Mode Toggle Button -->
     <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
-
-    <h1 style="color: var(--text-dark);">🍽️ Recipes</h1>
-
-    <div class="accordion">
-        {% for category, recipes in categories.items() %}
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
-            <div class="accordion-content">
-                {% for recipe in recipes %}
-                <a href="{{ recipe | replace(' ', '_') | lower }}.html" class="recipe-link">{{ recipe | replace('.yaml', '') }}</a>
-                {% endfor %}
+    <header>
+        <h1>🍽️ Recipes</h1>
+    </header>
+    <div class="container">
+        <div class="accordion">
+            {% for category, recipes in categories.items() %}
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
+                <div class="accordion-content">
+                    {% for recipe in recipes %}
+                    <a href="{{ recipe | replace(' ', '_') | lower }}.html" class="recipe-link">{{ recipe | replace('.yaml', '') }}</a>
+                    {% endfor %}
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-
-    <!-- Disclaimer -->
     <footer>
         <p style="font-size: 0.9em; text-align: center; margin-top: 2rem;">
             Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
         </p>
     </footer>
-
     <script>
         function toggleAccordion(element) {
             let content = element.nextElementSibling;
             content.style.display = (content.style.display === "block") ? "none" : "block";
         }
-
         function toggleTheme() {
             const body = document.body;
             const toggleButton = document.querySelector('.theme-toggle');
-
             body.classList.toggle('light-mode');
-
-            // Update button icon
             if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '☀️';
                 localStorage.setItem('theme', 'light');
-                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
             } else {
                 toggleButton.textContent = '🌙';
                 localStorage.setItem('theme', 'dark');
-                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
             }
         }
-
-        // Load stored theme preference
         (function() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'light') {

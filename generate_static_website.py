@@ -87,7 +87,6 @@ def process_all_recipes(directory, all_ingredients):
     for category in os.listdir(directory):
         category_path = os.path.join(directory, category)  # Get full path
         if os.path.isdir(category_path):  # Only process directories
-            print(f"Processing directory: {category}")
             for filename in os.listdir(os.path.join(directory, category)):
                 if filename.endswith(".yaml") and filename != "ingredients.yaml":
                     filepath = os.path.join(directory, category, filename)

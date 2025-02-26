@@ -14,9 +14,11 @@
             --text-dark: #e0e0e0;
             --text-light: #333;
             --container-dark: #1f1f1f;
-            --container-light: white;
-            --border-light: #ccc;
+            --container-light: #ffffff;
             --transition: 0.3s ease-in-out;
+            --star: #808080;
+            --star-filled: #efbf04;
+            --star-empty: #d4d4d4;
         }
         body {
             font-family: 'Arial', sans-serif;
@@ -43,14 +45,14 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.5rem 1rem;
-            background-color: #0B6623;
-            color: #e0e0e0;
+            background-color: var(--primary-dark);
+            color: var(--text-dark);
             text-decoration: none;
             border-radius: 5px;
             transition: background-color var(--transition) ease;
         }
         .back-link:hover {
-            background-color: #45a049;
+            background-color: var(--primary-light);
         }
         .nutrition-table {
             border-collapse: separate;
@@ -64,12 +66,12 @@
             padding: 10px;
         }
         .nutrition-table th {
-            background-color: #0B6623; /* Darker green instead of bright green */
-            color: #d9d9d9; /* Light gray instead of pure white */
-            font-weight: normal; /* Less bold */
+            background-color: var(--primary-dark);
+            color: var(--text-dark);
+            font-weight: normal;
         }
         .nutrition-table td {
-            background-color: rgba(255, 255, 255, 0.05); /* Softer contrast */
+            background-color: rgba(255, 255, 255, 0.05);
         }
         body.light-mode .nutrition-table td {
             background-color: rgba(0, 0, 0, 0.05);
@@ -81,7 +83,7 @@
         }
         .ingredients-list li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--text-light);
         }
         .ingredients-list li:last-child {
             border-bottom: none;
@@ -95,52 +97,47 @@
             margin-top: 1rem;
         }
         .star {
-            color: grey;
+            color: var(--star);
         }
         .star.filled {
-            color: #efbf04;
+            color: var(--star-filled);
         }
         .star.empty {
-            color: #d4d4d4;
+            color: var(--star-empty);
         }
-
-        /* Default: Dark mode */
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
         }
         header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
+            background-color: var(--container-dark);
+            color: var(--text-dark);
         }
         .container {
-            background-color: #1e1e1e;
+            background-color: var(--container-dark);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        /* Light mode styles when body has 'light-mode' */
         body.light-mode {
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--bg-light);
+            color: var(--text-light);
         }
         body.light-mode header {
-            background-color: #0B6623;
-            color: white;
+            background-color: var(--primary-dark);
+            color: var(--container-light);
         }
         body.light-mode .container {
-            background-color: white;
+            background-color: var(--container-light);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         body.light-mode .back-link {
-            background-color: #0B6623;
-            color: white;
+            background-color: var(--primary-dark);
+            color: var(--container-light);
         }
         body.light-mode .back-link:hover {
-            background-color: #45a049;
+            background-color: var(--primary-light);
         }
-
-        /* Tooltip styles */
         .theme-toggle {
-            position: fixed; /* Ensure the button stays at the top-right */
+            position: fixed;
             top: 0.5rem;
             right: 1rem;
             padding: 0.5rem 1rem;
@@ -148,26 +145,25 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #e0e0e0; /* Default icon color for dark mode */
+            color: var(--text-dark);
             transition: color var(--transition) ease;
         }
-
         .theme-toggle::after {
-            content: attr(data-tooltip); /* Use the data-tooltip attribute as the text */
+            content: attr(data-tooltip);
             position: absolute;
             top: 100%;
             left: 0%;
             transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
+            background-color: var(--text-light);
+            color: var(--container-light);
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.7rem;
             white-space: nowrap;
             opacity: 0;
-            pointer-events: none; /* Prevent interaction with the tooltip */
+            pointer-events: none;
             transition: opacity var(--transition) ease;
-            z-index: 1000; /* Ensure the tooltip appears above other content */
+            z-index: 1000;
         }
         .theme-toggle:hover::after {
             opacity: 1;
@@ -251,11 +247,11 @@
 
             // Save theme preference to localStorage
             if (body.classList.contains('light-mode')) {
-                toggleButton.textContent = '☀️'; // Sun for light mode
+                toggleButton.textContent = '☀️';
                 toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
                 localStorage.setItem('theme', 'light');
             } else {
-                toggleButton.textContent = '🌙'; // Moon for dark mode
+                toggleButton.textContent = '🌙';
                 toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
                 localStorage.setItem('theme', 'dark');
             }
