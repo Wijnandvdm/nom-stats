@@ -3,6 +3,9 @@ First things first, congratulations for actually reading a README!
 
 Secondly, NomStats is a tool for generating and hosting recipe websites with nutritional information. It calculates nutritional values based on provided ingredients and recipes, generates HTML pages, and deploys them to Azure Blob Storage.
 
+## Schematic overview
+![](./docs/schematic_overview.drawio.png)
+
 ## How it works
 1. **Recipe & Ingredient Configuration**:
    - Define ingredients with nutritional data in `ingredients.yaml`.
@@ -17,6 +20,5 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
 
 This of course does not explain the complete functionality of this project. Want to know more? Don't be shy, ask the creator of this repo!
 
-To Do:
-- categories for food
+## To Do
 - add a marker if a recipe is vegetarian or not and display this on NomStats after a recipe name
