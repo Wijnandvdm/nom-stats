@@ -1,0 +1,25 @@
+recipe_name: 'Dairy Devils Vega'
+description: 'Heavenly cheddar, hellishly hot—will your taste buds make it? Probably not!'
+ingredients:
+  - name: 'vega slager lecker burgerlijk'
+    quantity: 160
+  - name: 'cheddar smeltkaas'
+    quantity: 50
+  - name: 'kaiserbroodje'
+    quantity: 110
+  - name: 'ui'
+    quantity: 1
+  - name: 'jalapeno'
+    quantity: 1
+steps:
+  - "Snij de ui"
+  - "Snij de jalapeno"
+  - "Bak het gehakt"
+  - "Fruit de ui"
+  - "Leg de kaas op het gehakt"
+  - "Laat de kaas smelten"
+  - "Ui op het broodje"
+  - "Cheeseburger op het broodje"
+  - "Jalapeno slices op de kaas"
+  - "Saus naar keuze toevoegen"
+rating: 5

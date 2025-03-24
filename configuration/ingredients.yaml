@@ -18,6 +18,12 @@ ingredients:
         quantity_per_100_g: 20
       - name: 'calories'
         quantity_per_100_g: 108
+  - name: 'vega slager lecker burgerlijk'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 11
+      - name: 'calories'
+        quantity_per_100_g: 180
   - name: 'kip'
     components:
       - name: 'protein'
@@ -192,6 +198,12 @@ ingredients:
         quantity_per_100_g: 28
       - name: 'calories'
         quantity_per_100_g: 273
+  - name: 'cheddar smeltkaas'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 14
+      - name: 'calories'
+        quantity_per_100_g: 276
   - name: 'galbani mozzarella mini'
     components:
       - name: 'protein'
@@ -271,6 +283,12 @@ ingredients:
         quantity_per_100_g: 19
       - name: 'calories'
         quantity_per_100_g: 622
+  - name: 'kaiserbroodje'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 9.4
+      - name: 'calories'
+        quantity_per_100_g: 239
   - name: 'rode peper'
     measurement_unit: 'stuks'
     weight_per_unit: 15
