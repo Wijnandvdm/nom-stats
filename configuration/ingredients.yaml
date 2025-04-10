@@ -3,9 +3,9 @@ ingredients:
   - name: 'gehakt'
     components:
       - name: 'protein'
-        quantity_per_100_g: 20
+        quantity_per_100_g: 18.8
       - name: 'calories'
-        quantity_per_100_g: 243
+        quantity_per_100_g: 224
   - name: 'beyond meat burger gehakt'
     components:
       - name: 'protein'
