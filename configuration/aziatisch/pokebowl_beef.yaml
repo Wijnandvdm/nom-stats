@@ -8,7 +8,7 @@ ingredients:
   - name: 'avocado'
     quantity: 50
   - name: 'biefstuk'
-    quantity: 100
+    quantity: 280
   - name: 'ah zeewier salade'
     quantity: 62.5
   - name: 'radijs'
@@ -33,4 +33,4 @@ steps:
   - "Verdeel avocado, edamame, biefstuk, radijs en zeewiersalade over de rijst"
   - "Meng de mayonaise met sesamzaadjes, sojasaus, rijstazijn en sesamolie"
   - "Verdeel de zojuist gemaakte dressing over de bowl"
-rating: 3
+rating: 4
