@@ -11,8 +11,8 @@ ingredients:
     quantity: 390
   - name: 'santa maria kruidenmix taco'
     quantity: 14
-  - name: 'santa maria taco schelpen'
-    quantity: 67.5
+  - name: 'santa maria tortilla wraps mini'
+    quantity: 100
 steps:
   - "Snij de ui"
   - "Bak de ui"

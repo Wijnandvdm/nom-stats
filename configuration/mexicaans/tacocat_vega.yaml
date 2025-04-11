@@ -1,18 +1,18 @@
 recipe_name: 'TacocaT Vega'
 description: 'Was it a car or a cat I saW?'
 ingredients:
-  - name: 'vivera kip'
-    quantity: 160
+  - name: 'redefine pulled pork'
+    quantity: 200
   - name: 'ui'
     quantity: 1
   - name: 'mais'
     quantity: 70
-  - name: 'basis tomatensaus pikant'
+  - name: 'heinz tomatenblokjes naturel'
     quantity: 390
   - name: 'santa maria kruidenmix taco'
     quantity: 14
-  - name: 'santa maria taco schelpen'
-    quantity: 67.5
+  - name: 'santa maria tortilla wraps mini'
+    quantity: 100
 steps:
   - "Snij de ui"
   - "Bak de ui"

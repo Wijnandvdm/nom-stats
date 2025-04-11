@@ -47,7 +47,13 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 17
       - name: 'calories'
-        quantity_per_100_g: 87        
+        quantity_per_100_g: 87
+  - name: 'redefine pulled pork'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 21
+      - name: 'calories'
+        quantity_per_100_g: 122        
   - name: 'chorizo'
     components:
       - name: 'protein'
@@ -317,6 +323,12 @@ ingredients:
         quantity_per_100_g: 6.5
       - name: 'calories'
         quantity_per_100_g: 461
+  - name: 'santa maria tortilla wraps mini'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 8.3
+      - name: 'calories'
+        quantity_per_100_g: 302
   - name: 'santa maria kruidenmix taco'
     components:
       - name: 'protein'
@@ -361,6 +373,12 @@ ingredients:
         quantity_per_100_g: 1.3
       - name: 'calories'
         quantity_per_100_g: 39
+  - name: 'heinz tomatenblokjes naturel'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.5
+      - name: 'calories'
+        quantity_per_100_g: 25
   - name: 'besciamella'
     components:
       - name: 'protein'
