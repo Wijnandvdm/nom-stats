@@ -17,6 +17,8 @@ ingredients:
     quantity: 50
   - name: 'lactosevrije halfvolle melk'
     quantity: 500
+  - name: 'knoflook'
+    quantity: 5
 steps:
   - "Snij de ui"
   - "Bak de ui"
