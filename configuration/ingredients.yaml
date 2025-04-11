@@ -1,5 +1,11 @@
 ingredients:
 # vlees
+  - name: 'biefstuk'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 22.9
+      - name: 'calories'
+        quantity_per_100_g: 108
   - name: 'gehakt'
     components:
       - name: 'protein'
@@ -103,7 +109,13 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 5.8
       - name: 'calories'
-        quantity_per_100_g: 350   
+        quantity_per_100_g: 350
+  - name: 'sushi rijst'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 7.4
+      - name: 'calories'
+        quantity_per_100_g: 349  
 # groente
   - name: 'sperziebonen'
     components:
@@ -111,6 +123,36 @@ ingredients:
         quantity_per_100_g: 2.3
       - name: 'calories'
         quantity_per_100_g: 25
+  - name: 'edamame boontjes'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 12
+      - name: 'calories'
+        quantity_per_100_g: 138
+  - name: 'avocado'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 2
+      - name: 'calories'
+        quantity_per_100_g: 183
+  - name: 'ah terra gerookte tofu'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 15
+      - name: 'calories'
+        quantity_per_100_g: 131
+  - name: 'ah zeewier salade'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.5
+      - name: 'calories'
+        quantity_per_100_g: 92
+  - name: 'radijs'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1
+      - name: 'calories'
+        quantity_per_100_g: 22
   - name: 'champignons'
     components:
       - name: 'protein'
@@ -277,6 +319,24 @@ ingredients:
         quantity_per_100_g: 1.7
       - name: 'calories'
         quantity_per_100_g: 209
+  - name: 'zaanse halfvolle mayo'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0.6
+      - name: 'calories'
+        quantity_per_100_g: 341
+  - name: 'go-tan sojasaus'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 9.1
+      - name: 'calories'
+        quantity_per_100_g: 60
+  - name: 'sesamolie'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0
+      - name: 'calories'
+        quantity_per_100_g: 828
   - name: 'dijon mosterd extra pittig'
     components:
       - name: 'protein'
@@ -289,6 +349,18 @@ ingredients:
         quantity_per_100_g: 19
       - name: 'calories'
         quantity_per_100_g: 622
+  - name: 'saitaku geroosterd zwart sesamzaad'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 21
+      - name: 'calories'
+        quantity_per_100_g: 581
+  - name: 'rijstazijn'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0
+      - name: 'calories'
+        quantity_per_100_g: 8
   - name: 'kaiserbroodje'
     components:
       - name: 'protein'
