@@ -142,15 +142,19 @@
         <div class="accordion">
             {% for category, recipes in categories.items() | sort %}
             <div class="accordion-item">
-                <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
-                <div class="accordion-content">
-                    {% for recipe in recipes | sort %}
-                    <a href="{{ recipe | replace(' ', '_') | lower }}.html" class="recipe-link">{{ recipe | replace('.yaml', '') }}</a>
-                    <title>{{ recipe.dietary_labels }}</title>
-                    {% endfor %}
-                </div>
+              <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
+              <div class="accordion-content">
+                {% for recipe in recipes | sort(attribute='name') %}
+                  <a href="{{ recipe.filename }}" class="recipe-link">
+                    {{ recipe.name }}
+                    {% if recipe.dietary_labels %}
+                      <small style="font-size: 0.8rem; color: #aaa;">({{ recipe.dietary_labels | join(', ') }})</small>
+                    {% endif %}
+                  </a>
+                {% endfor %}
+              </div>
             </div>
-            {% endfor %}
+          {% endfor %}
         </div>
     </div>
     <footer>
