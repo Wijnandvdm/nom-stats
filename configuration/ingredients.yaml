@@ -246,6 +246,12 @@ ingredients:
         quantity_per_100_g: 28
       - name: 'calories'
         quantity_per_100_g: 273
+  - name: 'kruidenkaas light'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 11
+      - name: 'calories'
+        quantity_per_100_g: 157
   - name: 'cheddar smeltkaas'
     components:
       - name: 'protein'

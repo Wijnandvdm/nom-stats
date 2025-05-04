@@ -1,0 +1,18 @@
+recipe_name: 'Atomic Buffalo Turds Vega'
+description: 'With a name so wrong, how can it taste so right?'
+ingredients:
+  - name: 'vivera spek'
+    quantity: 100
+  - name: 'jalapeno'
+    quantity: 4
+  - name: 'kruidenkaas light'
+    quantity: 40
+steps:
+  - "Snij de jalapeños verticaal door"
+  - "Verwijder de zaadlijsten en zaadjes"
+  - "Plaats kruidenkaas in de jalapeños"
+  - "Doe de helften jalapeños op elkaar"
+  - "Rol bacon eromheen"
+  - "Steek de tandenstokers er doorheen"
+  - "Plaats de Atomic Buffalo Turds op de BBQ"
+rating: 5

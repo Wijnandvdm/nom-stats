@@ -140,7 +140,7 @@
     </header>
     <div class="container">
         <div class="accordion">
-            {% for category, recipes in categories.items() %}
+            {% for category, recipes in categories.items() | sort %}
             <div class="accordion-item">
                 <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
                 <div class="accordion-content">
