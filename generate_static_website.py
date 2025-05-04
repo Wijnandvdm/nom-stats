@@ -65,37 +65,32 @@ def load_recipe_name(filepath):
         data = yaml.safe_load(file)
         return data.get('recipe_name', 'Unnamed Recipe')  # Return 'Unnamed Recipe' if key is missing
 
-def get_categories(directory):
+def process_all_recipes(directory, all_ingredients):
     categories = {}
+    all_recipes = []
+
     for category in os.listdir(directory):
         category_path = os.path.join(directory, category)
-        if os.path.isdir(category_path):  # Ensure it's a folder
-            recipes = []
+        if os.path.isdir(category_path):
+            category_recipes = []           # Holds full recipe dicts
+            category_recipe_names = []      # Holds just the names
+
             for filename in os.listdir(category_path):
                 if filename.endswith(".yaml") and filename != "ingredients.yaml":
                     filepath = os.path.join(category_path, filename)
-                    recipe_name = load_recipe_name(filepath)  # Get the recipe name from the YAML file
-                    recipes.append(recipe_name)  # Add the formatted recipe name
-            if recipes:
-                categories[category.title()] = recipes  # Add the formatted category to the dictionary
-    return categories
-
-
-# Process recipes
-def process_all_recipes(directory, all_ingredients):
-    recipes = []
-    for category in os.listdir(directory):
-        category_path = os.path.join(directory, category)  # Get full path
-        if os.path.isdir(category_path):  # Only process directories
-            for filename in os.listdir(os.path.join(directory, category)):
-                if filename.endswith(".yaml") and filename != "ingredients.yaml":
-                    filepath = os.path.join(directory, category, filename)
                     with open(filepath, 'r') as file:
                         yaml_content = yaml.safe_load(file)
+
+                    recipe_name = yaml_content.get('recipe_name', 'Unnamed Recipe')
+                    category_recipe_names.append(recipe_name)
+
                     if 'recipe_name' in yaml_content:
-                        total_protein, total_calories, protein_100g, calories_100g, ingredients = calculate_nutrition(yaml_content, all_ingredients)
-                        recipes.append({
-                            'name': yaml_content['recipe_name'],
+                        total_protein, total_calories, protein_100g, calories_100g, ingredients = calculate_nutrition(
+                            yaml_content, all_ingredients
+                        )
+
+                        recipe_data = {
+                            'name': recipe_name,
                             'description': yaml_content.get('description', ''),
                             'protein_100g': protein_100g,
                             'calories_100g': calories_100g,
@@ -105,21 +100,28 @@ def process_all_recipes(directory, all_ingredients):
                             'steps': yaml_content.get('steps', []),
                             'rating': yaml_content.get('rating', 0),
                             'filename': filename.replace(".yaml", ".html"),
-                            'dietary_labels': yaml_content.get('dietary_labels', [])
-                    })
-    return recipes
+                            'dietary_labels': yaml_content.get('dietary_labels', []),
+                            'category': category.title()
+                        }
+
+                        category_recipes.append(recipe_data)
+                        all_recipes.append(recipe_data)
+
+            if category_recipe_names:
+                categories[category.title()] = category_recipe_names
+
+    return categories, all_recipes
 
 # Generate Static Pages
 def generate_static_pages():
     ingredients_file = 'configuration/ingredients.yaml'
     recipes_directory = 'configuration'
     all_ingredients = load_ingredients(ingredients_file)
-    recipes = process_all_recipes(recipes_directory, all_ingredients)
-    categories = get_categories(directory=configuration_directory)
+    categories, recipes = process_all_recipes(recipes_directory, all_ingredients)
     # Render the index.html
     index_template = env.get_template('index.html')
     with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w') as file:
-        file.write(index_template.render(categories=categories))
+        file.write(index_template.render(categories=categories, recipes=recipes))
 
     # Render individual recipe_detail.html files
     recipe_template = env.get_template('recipe_detail.html')
