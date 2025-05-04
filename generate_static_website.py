@@ -118,7 +118,6 @@ def generate_static_pages():
     recipes_directory = 'configuration'
     all_ingredients = load_ingredients(ingredients_file)
     categories, recipes = process_all_recipes(recipes_directory, all_ingredients)
-    print(categories)
     # Render the index.html
     index_template = env.get_template('index.html')
     with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w') as file:
