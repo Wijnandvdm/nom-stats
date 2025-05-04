@@ -145,11 +145,13 @@
                 <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
                 <div class="accordion-content">
                     {% for recipe in recipes | sort %}
-                    <a href="{{ recipe | replace(' ', '_') | lower }}.html" class="recipe-link">{{ recipe | replace('.yaml', '') }}</a>
-                        {% for dietary_label in recipe.dietary_labels | sort %}    
-                        <title>"{{ dietary_label }}"</title>
-                        {% endfor %}
-                    {% endfor %}
+                    <a href="{{ recipe.name | replace(' ', '_') | lower }}.html" class="recipe-link">
+                        {{ recipe.name | replace('.yaml', '') }}
+                        {% if recipe.dietary_labels %}
+                            ({{ recipe.dietary_labels | join(', ') }})
+                        {% endif %}
+                    </a>
+                {% endfor %}
                 </div>
             </div>
             {% endfor %}
