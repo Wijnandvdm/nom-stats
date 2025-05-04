@@ -104,7 +104,8 @@ def process_all_recipes(directory, all_ingredients):
                             'ingredients': ingredients,
                             'steps': yaml_content.get('steps', []),
                             'rating': yaml_content.get('rating', 0),
-                            'filename': filename.replace(".yaml", ".html")
+                            'filename': filename.replace(".yaml", ".html"),
+                            'dietary_labels': yaml_content.get('dietary_labels', [])
                     })
     return recipes
 
