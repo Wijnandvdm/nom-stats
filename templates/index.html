@@ -146,6 +146,7 @@
                 <div class="accordion-content">
                     {% for recipe in recipes | sort %}
                     <a href="{{ recipe | replace(' ', '_') | lower }}.html" class="recipe-link">{{ recipe | replace('.yaml', '') }}</a>
+                    <title>{{ recipe.dietary_labels }}</title>
                     {% endfor %}
                 </div>
             </div>
