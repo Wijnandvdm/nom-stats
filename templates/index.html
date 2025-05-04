@@ -147,9 +147,10 @@
                 {% for recipe in recipes | sort(attribute='name') %}
                   <a href="{{ recipe.filename }}" class="recipe-link">
                     {{ recipe.name }}
-                    {% if recipe.dietary_labels %}
-                      <small style="font-size: 0.8rem; color: #aaa;">({{ recipe.dietary_labels | join(', ') }})</small>
-                    {% endif %}
+                    {% for label in recipe.dietary_labels %}
+                      {% set icon_path = 'icons/' ~ label ~ '.svg' %}
+                      <img src="{{ icon_path }}" alt="{{ label }}" style="width: 18px; height: 18px; vertical-align: middle; margin-left: 6px;" />
+                    {% endfor %}
                   </a>
                 {% endfor %}
               </div>
