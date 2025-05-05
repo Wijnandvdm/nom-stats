@@ -1,4 +1,4 @@
-recipe_name: 'Atomic Buffalo Turds Vega'
+recipe_name: 'Atomic Buffaless Turds'
 description: 'With a name so wrong, how can it taste so right?'
 ingredients:
   - name: 'vivera spek'
@@ -16,3 +16,5 @@ steps:
   - "Steek de tandenstokers er doorheen"
   - "Plaats de Atomic Buffalo Turds op de BBQ"
 rating: 5
+dietary_labels:
+  - vegetarian

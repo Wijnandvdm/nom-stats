@@ -1,4 +1,4 @@
-recipe_name: 'Legendary Superasian Broccoli Vega'
+recipe_name: 'Legendary Superasian Broccoleaf'
 description: 'Teriyaki deliciousness'
 ingredients:
   - name: 'mie'
@@ -26,3 +26,5 @@ steps:
   - "Kook de broccoli"
   - "Meng alles bij elkaar"
 rating: 3
+dietary_labels:
+  - vegetarian

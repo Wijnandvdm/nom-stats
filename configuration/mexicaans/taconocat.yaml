@@ -1,4 +1,4 @@
-recipe_name: 'TacocaT Vega'
+recipe_name: 'TaconocaT'
 description: 'Was it a car or a cat I saW?'
 ingredients:
   - name: 'redefine pulled pork'
@@ -21,3 +21,5 @@ steps:
   - "Voeg kruidenmix toe"
   - "Schep in tacos"
 rating: 5
+dietary_labels:
+  - vegetarian

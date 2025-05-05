@@ -1,4 +1,4 @@
-recipe_name: 'Dairy Devils Vega'
+recipe_name: 'Dairy Angels'
 description: 'Heavenly cheddar, hellishly hot—will your taste buds make it? Probably not!'
 ingredients:
   - name: 'vega slager lecker burgerlijk'
@@ -23,3 +23,5 @@ steps:
   - "Jalapeno slices op de kaas"
   - "Saus naar keuze toevoegen"
 rating: 5
+dietary_labels:
+  - vegetarian

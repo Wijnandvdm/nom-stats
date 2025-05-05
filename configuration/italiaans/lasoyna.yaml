@@ -1,4 +1,4 @@
-recipe_name: 'Lasagna Vega'
+recipe_name: 'Lasoyna'
 description: '10/10 would eat vega again'
 ingredients:
   - name: 'lasagna bladeren'
@@ -34,3 +34,5 @@ steps:
   - "Kaas bovenop"
   - "In de oven op 200 graden voor ~20 minuten"
 rating: 5
+dietary_labels:
+  - vegetarian
