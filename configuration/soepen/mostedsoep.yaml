@@ -1,4 +1,4 @@
-recipe_name: 'Soep Mosterd'
+recipe_name: 'Mosterdsoep'
 description: '10/10 would eat again'
 ingredients:
   - name: 'dijon mosterd extra pittig'
@@ -30,3 +30,5 @@ steps:
   - "Roer slagroom door het mengsel"
   - "Roer mosterd door het mengsel"
 rating: 5
+dietary_labels:
+  - vegetarian
