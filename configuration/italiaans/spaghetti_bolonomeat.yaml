@@ -1,4 +1,4 @@
-recipe_name: 'Spaghetti Bolognese Vega'
+recipe_name: 'Spaghetti Bolonomeat'
 description: 'Big Spaghet, no ragret'
 ingredients:
   - name: 'spaghetti'
@@ -23,3 +23,5 @@ steps:
   - "Kook de spaghetti"
   - "Meng alles bij elkaar"
 rating: 5
+dietary_labels:
+  - vegetarian

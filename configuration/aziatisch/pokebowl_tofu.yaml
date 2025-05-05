@@ -34,3 +34,5 @@ steps:
   - "Meng de mayonaise met sesamzaadjes, sojasaus, rijstazijn en sesamolie"
   - "Verdeel de zojuist gemaakte dressing over de bowl"
 rating: 5
+dietary_labels:
+  - vegetarian

@@ -24,4 +24,5 @@ steps:
   - "Plaats de toppings op de pizzabodem"
   - "Plaats de pizzas 10-15 min in de oven"
 rating: 5
-
+dietary_labels:
+  - vegetarian
