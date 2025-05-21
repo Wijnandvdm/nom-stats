@@ -1,0 +1,28 @@
+recipe_name: 'Chicken me softly'
+description: 'All I see is red'
+ingredients:
+  - name: 'penne'
+    quantity: 500
+  - name: 'rode pesto'
+    quantity: 380
+  - name: 'vivera kip'
+    quantity: 320
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'paprika'
+    quantity: 3
+  - name: 'ui'
+    quantity: 3
+  - name: 'jalapeno'
+    quantity: 1
+steps:
+  - "Snij de uien"
+  - "Snij de paprika"
+  - "Snij de jalapeno"
+  - "Braad de kip"
+  - "Braad de uien"
+  - "Kook de penne"
+  - "Kook de paprika"
+  - "Kook de kidneybonen"
+  - "Meng alles bij elkaar"
+rating: 4
