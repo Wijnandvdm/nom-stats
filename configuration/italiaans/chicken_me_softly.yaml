@@ -26,3 +26,5 @@ steps:
   - "Kook de kidneybonen"
   - "Meng alles bij elkaar"
 rating: 4
+dietary_labels:
+  - vegetarian
