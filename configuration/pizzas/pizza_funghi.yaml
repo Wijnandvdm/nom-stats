@@ -1,0 +1,24 @@
+recipe_name: 'Pizza Funghi'
+description: 'Pizza with fun says hi'
+ingredients:
+  - name: 'lactosevrije magere kwark'
+    quantity: 100
+  - name: 'zelfrijzend bakmeel'
+    quantity: 110
+  - name: 'passata'
+    quantity: 100
+  - name: 'kaas'
+    quantity: 75
+  - name: 'champignons'
+    quantity: 125
+steps:
+  - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
+  - "Rol het deeg uit tot pizzabodems"
+  - "Plaats de pizzabodems 5-10 min in de oven"
+  - "Haal de pizzabodems uit de oven"
+  - "Spreid passata op de pizzabodem"
+  - "Plaats de toppings op de pizzabodem"
+  - "Plaats de pizzas 10-15 min in de oven"
+rating: 5
+dietary_labels:
+  - vegetarian
