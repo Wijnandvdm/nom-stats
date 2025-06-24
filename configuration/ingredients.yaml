@@ -252,6 +252,12 @@ ingredients:
         quantity_per_100_g: 11
       - name: 'calories'
         quantity_per_100_g: 157
+  - name: 'viking blue'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 18
+      - name: 'calories'
+        quantity_per_100_g: 315
   - name: 'cheddar smeltkaas'
     components:
       - name: 'protein'
