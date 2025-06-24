@@ -1,6 +1,3 @@
 recipe_name: 'Viking Blue'
 description: 'Blauwaderkaas'
-ingredients:
-  - name: 'viking blue'
-    quantity: 100
 rating: 5
