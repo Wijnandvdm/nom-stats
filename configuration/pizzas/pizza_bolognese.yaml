@@ -13,6 +13,8 @@ ingredients:
     quantity: 250
   - name: 'jalapeno'
     quantity: 1
+  - name: 'kaas'
+    quantity: 75
 steps:
   - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
   - "Rol het deeg uit tot pizzabodems"
