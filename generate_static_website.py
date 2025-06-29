@@ -40,7 +40,7 @@ def calculate_nutrition(yaml_content, all_ingredients):
             # Create human-readable format for grocery shopping list
             measurement_unit = ingredient.get('measurement_unit', ' g/ml')  # Default to 'g/ml' if not specified
             if weight_per_unit:
-                human_readable_ingredients.append(f"{int(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}")
+                human_readable_ingredients.append(f"{float(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}")
             else:
                 human_readable_ingredients.append(f"{quantity}{measurement_unit} {ingredient_name}")
 
