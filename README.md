@@ -22,5 +22,4 @@ This of course does not explain the complete functionality of this project. Want
 
 ## To Do
 - possibility to put folders in folders and have them represented that way in the index.html dynamically
-- Preparation steps still becomes visible even though a recipe doesn't have the key in the yaml file. Better solution would be to not "Preparation steps" at all on the page if there is no "steps" key in the recipe yaml file.
 - ingredients.yaml file as csv file?

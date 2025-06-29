@@ -2,26 +2,21 @@ from jinja2 import Environment, FileSystemLoader
 import os
 import yaml
 
-# Setup Jinja Environment
 TEMPLATE_DIR = 'templates'
 OUTPUT_DIR = 'static_site'
+CONFIG_DIR = os.path.join(os.path.dirname(__file__), 'configuration')
+INGREDIENTS_FILE = os.path.join(CONFIG_DIR, 'ingredients.yaml')
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
     print(f"'{OUTPUT_DIR}' didn't exist yet, folder created! Moving on...")
 
-# Directory paths
-configuration_directory = os.path.join(os.path.dirname(__file__), 'configuration')
-ingredients_file = os.path.join(configuration_directory, 'ingredients.yaml')
-
-# Load ingredients
 def load_ingredients(ingredients_file):
     with open(ingredients_file, 'r') as file:
         ingredients = yaml.safe_load(file)['ingredients']
     return {ingredient['name']: ingredient for ingredient in ingredients}
 
-# Calculate nutrition
 def calculate_nutrition(yaml_content, all_ingredients):
     total_protein = total_calories = total_weight = 0
     human_readable_ingredients = []
@@ -44,7 +39,6 @@ def calculate_nutrition(yaml_content, all_ingredients):
             else:
                 human_readable_ingredients.append(f"{quantity}{measurement_unit} {ingredient_name}")
 
-
             protein_per_100g = next((c['quantity_per_100_g'] for c in ingredient['components'] if c['name'] == 'protein'), 0)
             calories_per_100g = next((c['quantity_per_100_g'] for c in ingredient['components'] if c['name'] == 'calories'), 0)
 
@@ -55,11 +49,6 @@ def calculate_nutrition(yaml_content, all_ingredients):
     calories_per_100g = round((total_calories / total_weight) * 100) if total_weight else 0
 
     return total_protein, total_calories, protein_per_100g, calories_per_100g, human_readable_ingredients
-
-# def load_recipe_name(filepath):
-#     with open(filepath, 'r') as file:
-#         data = yaml.safe_load(file)
-#         return data.get('recipe_name', 'Unnamed Recipe')
 
 def process_all_recipes(directory, all_ingredients):
     categories = {}
@@ -108,8 +97,8 @@ def process_all_recipes(directory, all_ingredients):
     return categories, all_recipes
 
 def generate_static_pages():
-    all_ingredients = load_ingredients(ingredients_file)
-    categories, recipes = process_all_recipes(configuration_directory, all_ingredients)
+    all_ingredients = load_ingredients(INGREDIENTS_FILE)
+    categories, recipes = process_all_recipes(CONFIG_DIR, all_ingredients)
     # Render the index.html
     index_template = env.get_template('index.html')
     with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w') as file:
