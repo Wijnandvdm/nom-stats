@@ -2,7 +2,7 @@ recipe_name: 'Curry Thaim'
 description: "The clock says it's spice o'clock."
 ingredients:
   - name: 'basmati rijst'
-    quantity: 100
+    quantity: 70
   - name: 'appel'
     quantity: 0.5
   - name: 'paprika'

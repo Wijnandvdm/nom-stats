@@ -2,7 +2,7 @@ recipe_name: 'Curry Bok Bok Thaim'
 description: "It's cluck o'clock!"
 ingredients:
   - name: 'basmati rijst'
-    quantity: 200
+    quantity: 150
   - name: 'appel'
     quantity: 0.5
   - name: 'paprika'
@@ -33,5 +33,3 @@ steps:
   - "Laat koken tot het (nep)vlees gaar is"
   - "Serveer met rijst"
 rating: 4
-dietary_labels:
-  - vegetarian
