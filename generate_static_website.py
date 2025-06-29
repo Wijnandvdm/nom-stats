@@ -56,14 +56,10 @@ def calculate_nutrition(yaml_content, all_ingredients):
 
     return total_protein, total_calories, protein_per_100g, calories_per_100g, human_readable_ingredients
 
-import os
-import yaml
-
-def load_recipe_name(filepath):
-    # Load the YAML file and get the recipe name
-    with open(filepath, 'r') as file:
-        data = yaml.safe_load(file)
-        return data.get('recipe_name', 'Unnamed Recipe')  # Return 'Unnamed Recipe' if key is missing
+# def load_recipe_name(filepath):
+#     with open(filepath, 'r') as file:
+#         data = yaml.safe_load(file)
+#         return data.get('recipe_name', 'Unnamed Recipe')
 
 def process_all_recipes(directory, all_ingredients):
     categories = {}
@@ -82,7 +78,6 @@ def process_all_recipes(directory, all_ingredients):
                         yaml_content = yaml.safe_load(file)
 
                     recipe_name = yaml_content.get('recipe_name', 'Unnamed Recipe')
-                    # category_recipe_names.append(recipe_name)
 
                     if 'recipe_name' in yaml_content:
                         total_protein, total_calories, protein_100g, calories_100g, ingredients = calculate_nutrition(
@@ -112,12 +107,9 @@ def process_all_recipes(directory, all_ingredients):
 
     return categories, all_recipes
 
-# Generate Static Pages
 def generate_static_pages():
-    ingredients_file = 'configuration/ingredients.yaml'
-    recipes_directory = 'configuration'
     all_ingredients = load_ingredients(ingredients_file)
-    categories, recipes = process_all_recipes(recipes_directory, all_ingredients)
+    categories, recipes = process_all_recipes(configuration_directory, all_ingredients)
     # Render the index.html
     index_template = env.get_template('index.html')
     with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w') as file:
