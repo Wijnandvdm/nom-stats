@@ -1,0 +1,37 @@
+recipe_name: 'Curry Bok Bok Thaim'
+description: "It's cluck o'clock!"
+ingredients:
+  - name: 'basmati rijst'
+    quantity: 200
+  - name: 'appel'
+    quantity: 0.5
+  - name: 'paprika'
+    quantity: 1
+  - name: 'ui'
+    quantity: 2
+  - name: 'knoflook'
+    quantity: 2
+  - name: 'kokosmelk light'
+    quantity: 200
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'kip'
+    quantity: 200
+  - name: 'fairtrade rode thaise kruidenpasta'
+    quantity: 35
+  - name: 'gehakte gember' # kan ook met gekonfijte gember, miss proberen in de toekomst
+    quantity: 25
+  - name: 'groentebouillonblokje'
+    quantity: 2.5
+steps:
+  - "Snij appel en groenten"
+  - "Fruit paprika, knoflook en uien"
+  - "Voeg het (nep)vlees toe en bak gaar"
+  - "Voeg alle andere ingrediënten behalve appel toe"
+  - "Voeg kruiden naar smaak toe; komijn, kerrie, curry kruiden)"
+  - "Voeg appel toe"
+  - "Laat koken tot het (nep)vlees gaar is"
+  - "Serveer met rijst"
+rating: 4
+dietary_labels:
+  - vegetarian

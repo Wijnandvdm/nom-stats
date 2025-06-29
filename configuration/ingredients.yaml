@@ -115,7 +115,13 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 7.4
       - name: 'calories'
-        quantity_per_100_g: 349  
+        quantity_per_100_g: 349
+  - name: 'basmati rijst'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 8.8
+      - name: 'calories'
+        quantity_per_100_g: 355 
 # groente
   - name: 'sperziebonen'
     components:
@@ -233,6 +239,15 @@ ingredients:
         quantity_per_100_g: 0.9
       - name: 'calories'
         quantity_per_100_g: 31
+# fruit
+  - name: 'appel'
+    measurement_unit: 'stuks'
+    weight_per_unit: 150
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0.3
+      - name: 'calories'
+        quantity_per_100_g: 60
 # zuivel
   - name: 'lactosevrije halfvolle melk'
     components:
@@ -240,6 +255,12 @@ ingredients:
         quantity_per_100_g: 3.3
       - name: 'calories'
         quantity_per_100_g: 46
+  - name: 'kokosmelk light'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0.6
+      - name: 'calories'
+        quantity_per_100_g: 61
   - name: 'kaas'
     components:
       - name: 'protein'
@@ -419,6 +440,12 @@ ingredients:
         quantity_per_100_g: 10
       - name: 'calories'
         quantity_per_100_g: 280
+  - name: 'fairtrade rode thaise kruidenpasta'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 5.8
+      - name: 'calories'
+        quantity_per_100_g: 138
   - name: 'jalapeno'
     measurement_unit: 'stuks'
     weight_per_unit: 30
@@ -433,6 +460,12 @@ ingredients:
         quantity_per_100_g: 6.1
       - name: 'calories'
         quantity_per_100_g: 233
+  - name: 'gehakte gember'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.4
+      - name: 'calories'
+        quantity_per_100_g: 70
   - name: 'tomatenblokjes'
     components:
       - name: 'protein'
