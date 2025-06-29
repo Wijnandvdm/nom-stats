@@ -214,12 +214,14 @@
         </ul>
 
         <!-- Preparation Steps Section -->
-        <h2>Preparation Steps</h2>
-        <ol class="steps-list">
-            {% for step in recipe['steps'] %}
-                <li>{{ step }}</li>
-            {% endfor %}
-        </ol>
+        {% if recipe['steps'] %}
+            <h2>Preparation Steps</h2>
+            <ol class="steps-list">
+                {% for step in recipe['steps'] %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
 
         <a href="/" class="back-link">&larr; Back to recipes</a>
     </div>
