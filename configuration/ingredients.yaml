@@ -72,6 +72,12 @@ ingredients:
         quantity_per_100_g: 21
       - name: 'calories'
         quantity_per_100_g: 122
+  - name: 'vega zalm'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.4
+      - name: 'calories'
+        quantity_per_100_g: 65
 # pasta
   - name: 'penne'
     components:

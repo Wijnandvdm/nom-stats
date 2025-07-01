@@ -1,8 +1,10 @@
-recipe_name: 'Pokebowl Tofu'
+recipe_name: 'Pokebowl Veggie Salmon'
 description: "All kinds of stuff in a bowl. Who wouldn't want that?"
 ingredients:
   - name: 'sushi rijst'
     quantity: 125
+  - name: 'vega zalm'
+    quantity: 150
   - name: 'edamame boontjes'
     quantity: 75
   - name: 'avocado'
@@ -23,12 +25,8 @@ steps:
   - "Kook de sushi rijst en meng met rijstazijn"
   - "Snijd de avocado in plakjes of blokjes"
   - "Snijd de radijs in dunne plakjes"
-  - "Snijd de gerookte tofu in blokjes"
-  - "Bak de tofu kort tot goudbruin"
   - "Doe de rijst in een kom als basis"
-  - "Verdeel avocado, edamame, tofu, radijs en zeewiersalade over de rijst"
-  - "Meng de mayonaise met sesamzaadjes, sojasaus, rijstazijn en sesamolie"
-  - "Verdeel de zojuist gemaakte dressing over de bowl"
+  - "Verdeel avocado, edamame, zalm, radijs en zeewiersalade over de rijst"
 rating: 5
 dietary_labels:
   - vegetarian
