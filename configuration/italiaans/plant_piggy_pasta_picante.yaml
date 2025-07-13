@@ -1,5 +1,5 @@
-recipe_name: 'Piggy Pasta Picante Vega'
-description: 'Big Spaghet, no ragret'
+recipe_name: 'Plant Piggy Pasta Picante'
+description: 'Oink free and still bringing the heat!'
 ingredients:
   - name: 'spaghetti'
     quantity: 100
@@ -19,3 +19,5 @@ steps:
   - "Voeg de fijn geraspte pecorino romano toe"
   - "Meng de gekookte spaghetti door de saus, voeg indien nodig wat kookvocht toe voor extra smeuïgheid"
 rating: 5
+dietary_labels:
+  - vegetarian
