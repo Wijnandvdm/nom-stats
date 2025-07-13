@@ -1,0 +1,19 @@
+recipe_name: 'Spaghetti Amatriciana'
+description: 'Big Spaghet, no ragret'
+ingredients:
+  - name: 'spaghetti'
+    quantity: 150
+  - name: 'spek'
+    quantity: 120
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'tomatenpuree'
+    quantity: 70
+  - name: 'pecorino romano'
+    quantity: 30
+steps:
+  - "Bak het gehakt"
+  - "Bak de uien en spaghetti groenten"
+  - "Kook de spaghetti"
+  - "Meng alles bij elkaar"
+rating: 5

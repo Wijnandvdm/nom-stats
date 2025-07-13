@@ -47,13 +47,19 @@ ingredients:
       - name: 'protein'
         quantity_per_100_g: 16
       - name: 'calories'
-        quantity_per_100_g: 354       
+        quantity_per_100_g: 354
   - name: 'vivera spek'
     components:
       - name: 'protein'
         quantity_per_100_g: 17
       - name: 'calories'
         quantity_per_100_g: 87
+  - name: 'ah terra plantaardige spekreepjes'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 19
+      - name: 'calories'
+        quantity_per_100_g: 164
   - name: 'redefine pulled pork'
     components:
       - name: 'protein'
@@ -267,6 +273,31 @@ ingredients:
         quantity_per_100_g: 0.6
       - name: 'calories'
         quantity_per_100_g: 61
+  - name: 'skyr'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 11
+      - name: 'calories'
+        quantity_per_100_g: 62
+  - name: 'lactosevrije magere kwark'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 8.5
+      - name: 'calories'
+        quantity_per_100_g: 50
+  - name: 'plantaardig creme fraishe'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.2
+      - name: 'calories'
+        quantity_per_100_g: 247
+  - name: 'slagroom'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 2.5
+      - name: 'calories'
+        quantity_per_100_g: 337
+# kaas
   - name: 'kaas'
     components:
       - name: 'protein'
@@ -303,30 +334,12 @@ ingredients:
         quantity_per_100_g: 23
       - name: 'calories'
         quantity_per_100_g: 316
-  - name: 'skyr'
+  - name: 'pecorino romano'
     components:
       - name: 'protein'
-        quantity_per_100_g: 11
+        quantity_per_100_g: 25
       - name: 'calories'
-        quantity_per_100_g: 62
-  - name: 'lactosevrije magere kwark'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 8.5
-      - name: 'calories'
-        quantity_per_100_g: 50
-  - name: 'plantaardig creme fraishe'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 1.2
-      - name: 'calories'
-        quantity_per_100_g: 247
-  - name: 'slagroom'
-    components:
-      - name: 'protein'
-        quantity_per_100_g: 2.5
-      - name: 'calories'
-        quantity_per_100_g: 337
+        quantity_per_100_g: 406
 # overig
   - name: 'gran italia groene pesto'
     components:
