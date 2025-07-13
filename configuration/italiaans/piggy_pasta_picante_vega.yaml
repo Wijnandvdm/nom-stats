@@ -1,0 +1,21 @@
+recipe_name: 'Piggy Pasta Picante Vega'
+description: 'Big Spaghet, no ragret'
+ingredients:
+  - name: 'spaghetti'
+    quantity: 100
+  - name: 'ah terra plantaardige spekreepjes'
+    quantity: 100
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'tomatenpuree'
+    quantity: 70
+  - name: 'pecorino romano'
+    quantity: 30
+steps:
+  - "Kook de spaghetti"
+  - "Bak de spek (of plantaardige spekvervanger) krokant"
+  - "Voeg de tomatenpuree toe en bak kort mee"
+  - "Voeg de tomatenblokjes toe"
+  - "Voeg de fijn geraspte pecorino romano toe"
+  - "Meng de gekookte spaghetti door de saus, voeg indien nodig wat kookvocht toe voor extra smeuïgheid"
+rating: 5
