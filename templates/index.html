@@ -144,7 +144,7 @@
             <div class="accordion-item">
               <div class="accordion-header" onclick="toggleAccordion(this)">{{ category }}</div>
               <div class="accordion-content">
-                {% for recipe in recipes | sort(attribute='name') %}
+                {% for recipe in recipes | sort(attribute='name') | sort(attribute='filename') %}
                   <a href="{{ recipe.filename }}" class="recipe-link">
                     {{ recipe.name }}
                     {% for label in recipe.dietary_labels %}
