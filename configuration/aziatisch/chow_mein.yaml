@@ -2,25 +2,25 @@ recipe_name: 'Stir-Fry Kip Chow Mein'
 description: "Snelle wok vol smaak met kip en noedels."
 ingredients:
   - name: 'rijstazijn'
-    quantity: 22
+    quantity: 10
   - name: 'go-tan sojasaus'
-    quantity: 38
+    quantity: 20
   - name: 'hoisinsaus'
-    quantity: 40
+    quantity: 20
   - name: 'sesamolie'
-    quantity: 5
+    quantity: 2.5
   - name: 'mie'
-    quantity: 125
+    quantity: 150
   - name: 'kipdijfilet'
-    quantity: 200
+    quantity: 300
   - name: 'chinese kool'
-    quantity: 125
+    quantity: 250
   - name: 'bosui'
     quantity: 1
   - name: 'winterpeen'
-    quantity: 1
+    quantity: 0.5
   - name: 'knoflook'
-    quantity: 7
+    quantity: 3.5
 steps:
   - "Maak de saus: meng rijstazijn, sojasaus, hoisin/oestersaus, sesamolie en maïzena in een kommetje."
   - "Snij (nep)kip in stukjes en bereid alle groenten voor."
