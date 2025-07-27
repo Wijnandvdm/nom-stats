@@ -42,6 +42,12 @@ ingredients:
         quantity_per_100_g: 15
       - name: 'calories'
         quantity_per_100_g: 166
+  - name: 'kipdijfilet'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 19
+      - name: 'calories'
+        quantity_per_100_g: 135
   - name: 'spek'
     components:
       - name: 'protein'
@@ -221,6 +227,20 @@ ingredients:
         quantity_per_100_g: 1.3
       - name: 'calories'
         quantity_per_100_g: 37
+  - name: 'bosui'
+    measurement_unit: 'stuks'
+    weight_per_unit: 50
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1.3
+      - name: 'calories'
+        quantity_per_100_g: 37
+  - name: 'chinese kool'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 1
+      - name: 'calories'
+        quantity_per_100_g: 17
   - name: 'sjalot'
     measurement_unit: 'stuks'
     weight_per_unit: 21
@@ -245,6 +265,14 @@ ingredients:
         quantity_per_100_g: 1
       - name: 'calories'
         quantity_per_100_g: 26
+  - name: 'winterpeen'
+    measurement_unit: 'stuks'
+    weight_per_unit: 150
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0.7
+      - name: 'calories'
+        quantity_per_100_g: 33
   - name: 'cherry tomaatjes'
     components:
       - name: 'protein'
@@ -383,12 +411,24 @@ ingredients:
         quantity_per_100_g: 9.1
       - name: 'calories'
         quantity_per_100_g: 60
+  - name: 'hoisinsaus'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 8
+      - name: 'calories'
+        quantity_per_100_g: 122
   - name: 'sesamolie'
     components:
       - name: 'protein'
         quantity_per_100_g: 0
       - name: 'calories'
         quantity_per_100_g: 828
+  - name: 'olijfolie'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0
+      - name: 'calories'
+        quantity_per_100_g: 819
   - name: 'dijon mosterd extra pittig'
     components:
       - name: 'protein'
