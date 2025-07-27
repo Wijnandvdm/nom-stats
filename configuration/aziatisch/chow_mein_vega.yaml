@@ -9,8 +9,6 @@ ingredients:
     quantity: 40
   - name: 'sesamolie'
     quantity: 5
-  - name: 'olijfolie'
-    quantity: 42
   - name: 'mie'
     quantity: 125
   - name: 'vivera kip'
