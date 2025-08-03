@@ -21,6 +21,8 @@ ingredients:
     quantity: 0.5
   - name: 'knoflook'
     quantity: 3.5
+  - name: 'rode peper'
+    quantity: 1
 steps:
   - "Maak de saus: meng rijstazijn, sojasaus, hoisin/oestersaus, sesamolie en maïzena in een kommetje."
   - "Snij (nep)kip in stukjes en bereid alle groenten voor."
