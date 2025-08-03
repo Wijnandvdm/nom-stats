@@ -11,6 +11,8 @@ ingredients:
     quantity: 70
   - name: 'pecorino romano'
     quantity: 30
+  - name: 'rode peper'
+    quantity: 1
 steps:
   - "Kook de spaghetti"
   - "Bak de spek (of plantaardige spekvervanger) krokant"
