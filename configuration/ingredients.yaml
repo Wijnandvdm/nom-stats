@@ -417,6 +417,12 @@ ingredients:
         quantity_per_100_g: 8
       - name: 'calories'
         quantity_per_100_g: 122
+  - name: 'ketjap manis'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 6.6
+      - name: 'calories'
+        quantity_per_100_g: 207
   - name: 'sesamolie'
     components:
       - name: 'protein'

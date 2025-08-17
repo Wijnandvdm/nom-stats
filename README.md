@@ -22,4 +22,5 @@ This of course does not explain the complete functionality of this project. Want
 
 ## To Do
 - possibility to put folders in folders and have them represented that way in the index.html dynamically
+- make the base ingredients of all recipes enough for one portion, then make a counter which you can increase on the recipe page to up the portions
 - ingredients.yaml file as csv file?

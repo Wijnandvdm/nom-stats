@@ -5,7 +5,7 @@ ingredients:
     quantity: 10
   - name: 'go-tan sojasaus'
     quantity: 20
-  - name: 'hoisinsaus'
+  - name: 'ketjap manis'
     quantity: 20
   - name: 'sesamolie'
     quantity: 2.5
@@ -24,7 +24,7 @@ ingredients:
   - name: 'rode peper'
     quantity: 1
 steps:
-  - "Maak de saus: meng rijstazijn, sojasaus, hoisin/oestersaus, sesamolie en maïzena in een kommetje."
+  - "Maak de saus: meng rijstazijn, sojasaus, ketjap manis/oestersaus, sesamolie en maïzena in een kommetje."
   - "Snij (nep)kip in stukjes en bereid alle groenten voor."
   - "Kook de mie volgens de verpakking, giet af en spoel koud."
   - "Bak de (nep)kip goudbruin en gaar."
