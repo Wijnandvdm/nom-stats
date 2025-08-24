@@ -168,6 +168,42 @@
         .theme-toggle:hover::after {
             opacity: 1;
         }
+        .servings-control {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;  /* left align instead of center */
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .servings-control label {
+            margin-right: 0.5rem;
+        }
+
+        .serving-btn {
+            background-color: var(--primary-dark);
+            color: var(--text-dark);
+            border: none;
+            padding: 0.4rem 0.8rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color var(--transition), transform var(--transition);
+        }
+
+        .serving-btn:hover {
+            background-color: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        .servings-control span {
+            min-width: 2rem;
+            text-align: center;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -196,22 +232,72 @@
             </tr>
             <tr>
                 <td>Protein</td>
-                <td>{{ recipe['total_protein'] | round(0) }} g</td>
+                <td id="total-protein" data-base="{{ recipe['total_protein'] }}">{{ recipe['total_protein'] | round(0) }} g</td>
                 <td>{{ recipe['protein_100g'] | round(0) }} g</td>
             </tr>
             <tr>
                 <td>Calories</td>
-                <td>{{ recipe['total_calories'] | round(0) }}</td>
+                <td id="total-calories" data-base="{{ recipe['total_calories'] }}">{{ recipe['total_calories'] | round(0) }}</td>
                 <td>{{ recipe['calories_100g'] | round(0) }}</td>
             </tr>
         </table>
 
+        <script>
+        let servings = 1;
+
+        function updateDisplay() {
+            document.getElementById("servings").textContent = servings;
+
+            // Update nutrition totals
+            ["total-protein", "total-calories"].forEach(id => {
+                const el = document.getElementById(id);
+                const baseValue = parseFloat(el.dataset.base);
+                if (!isNaN(baseValue)) {
+                    el.textContent = Math.round(baseValue * servings) + (id.includes("protein") ? " g" : "");
+                }
+            });
+
+            // Update ingredients
+            document.querySelectorAll("#ingredients-list li").forEach(el => {
+                const baseText = el.dataset.base;
+                const match = baseText.match(/^([\d\.]+)\s*(.*)$/);  // find number + unit/name
+                if (match) {
+                    const baseQty = parseFloat(match[1]);
+                    const rest = match[2];
+                    el.textContent = (baseQty * servings).toFixed(2).replace(/\.00$/, "") + " " + rest;
+                } else {
+                    el.textContent = baseText; // if no number, leave it as is
+                }
+            });
+        }
+
+        function increaseServings() {
+            servings++;
+            updateDisplay();
+        }
+
+        function decreaseServings() {
+            if (servings > 1) {
+                servings--;
+                updateDisplay();
+            }
+        }
+        </script>
+
         <h2>Ingredients</h2>
-        <ul>
+        <ul id="ingredients-list">
             {% for ingredient in recipe['ingredients'] %}
-                <li>{{ ingredient }}</li>
+                <li data-base="{{ ingredient }}">{{ ingredient }}</li>
             {% endfor %}
         </ul>
+
+
+        <div class="servings-control">
+            <label for="servings">Servings:</label>
+            <button class="serving-btn" onclick="decreaseServings()">−</button>
+            <span id="servings">1</span>
+            <button class="serving-btn" onclick="increaseServings()">+</button>
+        </div>
 
         <!-- Preparation Steps Section -->
         {% if recipe['steps'] %}
