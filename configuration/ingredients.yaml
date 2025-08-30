@@ -441,6 +441,12 @@ ingredients:
         quantity_per_100_g: 0
       - name: 'calories'
         quantity_per_100_g: 387
+  - name: 'suiker'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0
+      - name: 'calories'
+        quantity_per_100_g: 387
   - name: 'sesamolie'
     components:
       - name: 'protein'
