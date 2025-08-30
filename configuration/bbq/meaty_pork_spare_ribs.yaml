@@ -1,0 +1,22 @@
+recipe_name: 'Meaty Pork Spare Ribs'
+description: 'Low and slow ribs'
+ingredients:
+  - name: 'varkensribben'
+    quantity: 700
+  - name: 'bruine basterdsuiker'
+    quantity: 4
+  - name: 'honing'
+    quantity: 30
+  - name: 'go-tan sojasaus'
+    quantity: 10
+steps:
+  - "Maak de rub door door 2 zout, 1 basterdsuiker, 1 peper, 1 chili/cayennepoeder, 7 paprikapoeder, 1 knoflookpoeder, 2 uipoeder en 1 theelepel komijn te mengen"
+  - "Optioneel: Verwijder het vlies (silver skin) aan de achterkant van de ribben"
+  - "Dep de ribben droog en breng de rub aan"
+  - "Wikkel de ribben in aluminiumfolie en plaats ze in de oven of BBQ op 100°C"
+  - "Laat de ribben langzaam garen tot een kerntemperatuur van 85-95°C"
+  - "Maak de glaze door honing, basterdsuiker en sojasaus te mengen"
+  - "Haal de ribben uit de folie en bestrijk ze met de glaze"
+  - "Plaats de ribben terug op de BBQ of in de oven op 180-200°C tot de glaze plakkerig en gekaramelliseerd is"
+  - "Laat de ribben kort rusten en serveer"
+rating: 5

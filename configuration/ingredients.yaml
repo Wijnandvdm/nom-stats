@@ -78,6 +78,12 @@ ingredients:
         quantity_per_100_g: 23
       - name: 'calories'
         quantity_per_100_g: 463
+  - name: 'varkensribben'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 20
+      - name: 'calories'
+        quantity_per_100_g: 300
   - name: 'redefine pulled pork'
     components:
       - name: 'protein'
@@ -423,6 +429,18 @@ ingredients:
         quantity_per_100_g: 6.6
       - name: 'calories'
         quantity_per_100_g: 207
+  - name: 'honing'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0.4
+      - name: 'calories'
+        quantity_per_100_g: 308
+  - name: 'bruine basterdsuiker'
+    components:
+      - name: 'protein'
+        quantity_per_100_g: 0
+      - name: 'calories'
+        quantity_per_100_g: 387
   - name: 'sesamolie'
     components:
       - name: 'protein'
