@@ -1,0 +1,13 @@
+recipe_name: 'Hot Wings'
+description: "Winging it since forever"
+ingredients:
+  - name: 'kip'
+    quantity: 200
+steps:
+  - "Maak de rub door door 2 theelepels zout, 2 suiker, 1 peper, 1 gemberpoeder, 2 paprikapoeder, 0.5 chili/cayennepoeder te mengen"
+  - "Optioneel: Plaats de vleugels ingewikkeld in folie in de koelkast en laat ze een nacht marineren"
+  - "Plaats de vleugels op BBQ op 180°C, indirecte hitte"
+  - "Gaar de vleugels tot een kerntemperatuur van 72°C"
+  - "Verplaats de vleugels naar directe hitte en grill ze krokant"
+  - "Laat kort rusten en serveer"
+rating: 5
