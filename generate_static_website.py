@@ -1,21 +1,33 @@
-from jinja2 import Environment, FileSystemLoader
+import csv
 import os
+from jinja2 import Environment, FileSystemLoader
 import yaml
 
 TEMPLATE_DIR = 'templates'
 OUTPUT_DIR = 'static_site'
 CONFIG_DIR = os.path.join(os.path.dirname(__file__), 'configuration')
-INGREDIENTS_FILE = os.path.join(CONFIG_DIR, 'ingredients.yaml')
+INGREDIENTS_FILE = os.path.join(CONFIG_DIR, 'ingredients.csv')
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
     print(f"'{OUTPUT_DIR}' didn't exist yet, folder created! Moving on...")
 
-def load_ingredients(ingredients_file):
-    with open(ingredients_file, 'r') as file:
-        ingredients = yaml.safe_load(file)['ingredients']
-    return {ingredient['name']: ingredient for ingredient in ingredients}
+def load_ingredients_csv(ingredients_file):
+    ingredients = {}
+    with open(ingredients_file, newline='') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            ingredients[row['name']] = {
+                "name": row['name'],
+                "measurement_unit": row['measurement_unit'] or 'g/ml',
+                "weight_per_unit": float(row['weight_per_unit']) if row['weight_per_unit'] else 0,
+                "components": [
+                    {"name": "protein", "quantity_per_100_g": float(row['protein_per_100g'])},
+                    {"name": "calories", "quantity_per_100_g": float(row['calories_per_100g'])}
+                ]
+            }
+    return ingredients
 
 def calculate_nutrition(yaml_content, all_ingredients):
     total_protein = total_calories = total_weight = 0
@@ -32,8 +44,7 @@ def calculate_nutrition(yaml_content, all_ingredients):
                 quantity *= weight_per_unit
             total_weight += quantity
 
-            # Create human-readable format for grocery shopping list
-            measurement_unit = ingredient.get('measurement_unit', ' g/ml')  # Default to 'g/ml' if not specified
+            measurement_unit = ingredient.get('measurement_unit', ' g/ml')
             if weight_per_unit:
                 human_readable_ingredients.append(f"{float(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}")
             else:
@@ -49,7 +60,6 @@ def calculate_nutrition(yaml_content, all_ingredients):
     calories_per_100g = round((total_calories / total_weight) * 100) if total_weight else 0
 
     return total_protein, total_calories, protein_per_100g, calories_per_100g, human_readable_ingredients
-
 def process_all_recipes(directory, all_ingredients):
     categories = {}
     all_recipes = []
@@ -97,7 +107,7 @@ def process_all_recipes(directory, all_ingredients):
     return categories, all_recipes
 
 def generate_static_pages():
-    all_ingredients = load_ingredients(INGREDIENTS_FILE)
+    all_ingredients = load_ingredients_csv(INGREDIENTS_FILE)
     categories, recipes = process_all_recipes(CONFIG_DIR, all_ingredients)
     # Render the index.html
     index_template = env.get_template('index.html')
