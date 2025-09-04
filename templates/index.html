@@ -174,9 +174,11 @@
             body.classList.toggle('light-mode');
             if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '☀️';
+                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
                 localStorage.setItem('theme', 'light');
             } else {
                 toggleButton.textContent = '🌙';
+                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
                 localStorage.setItem('theme', 'dark');
             }
         }
