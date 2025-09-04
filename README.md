@@ -13,7 +13,7 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
 
 2. **Deployment**:
    - Store credentials of an Azure Service principal with enough rights on your Azure environment in GitHub.
-   - Use GitHub Actions to:
+   - (Automatically done on push to main, but you can also manually) Use GitHub Actions to:
         - Run the `generate_static_website.py` script to generate HTML pages for all recipes.
         - Deploy the html pages to Azure Blob Storage (`Create NomStats`) and or clean up resources (`Delete NomStats`).
         - Use Azure CLI to turn on static website capability.
@@ -21,6 +21,4 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
 This of course does not explain the complete functionality of this project. Want to know more? Don't be shy, ask the creator of this repo!
 
 ## To Do
-- possibility to put folders in folders and have them represented that way in the index.html dynamically
-- make the base ingredients of all recipes enough for one portion
 - ingredients.yaml file as csv file?
