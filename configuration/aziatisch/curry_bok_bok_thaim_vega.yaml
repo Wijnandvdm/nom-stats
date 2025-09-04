@@ -2,7 +2,7 @@ recipe_name: 'Curry Bok Bok Thaim'
 description: "It's cluck o'clock!"
 ingredients:
   - name: 'basmati rijst'
-    quantity: 150
+    quantity: 75
   - name: 'appel'
     quantity: 0.5
   - name: 'paprika'
@@ -16,7 +16,7 @@ ingredients:
   - name: 'tomatenblokjes'
     quantity: 400
   - name: 'vivera kip'
-    quantity: 320
+    quantity: 160
   - name: 'fairtrade rode thaise kruidenpasta'
     quantity: 35
   - name: 'gehakte gember' # kan ook met gekonfijte gember, miss proberen in de toekomst
