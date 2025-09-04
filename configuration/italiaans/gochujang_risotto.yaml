@@ -2,23 +2,23 @@ recipe_name: 'Gochujang Risotto'
 description: 'Bit of spice, very nice'
 ingredients:
   - name: 'ui'
-    quantity: 2
+    quantity: 0.5
   - name: 'knoflook'
-    quantity: 10
+    quantity: 2.5
   - name: 'gochujang'
-    quantity: 200
+    quantity: 50
   - name: 'risotto'
-    quantity: 400
+    quantity: 100
   - name: 'tomatenpuree'
-    quantity: 280
+    quantity: 70
   - name: 'skyr'
-    quantity: 300
+    quantity: 75
   - name: 'groentebouillonblokje'
-    quantity: 10
+    quantity: 2.5
   - name: 'cherry tomaatjes'
-    quantity: 250
+    quantity: 62.5
   - name: 'halloumi'
-    quantity: 450
+    quantity: 106.25
 rating: 4
 dietary_labels:
   - vegetarian

@@ -2,23 +2,23 @@ recipe_name: 'Lasagna'
 description: '10/10 would eat vega again'
 ingredients:
   - name: 'lasagna bladeren'
-    quantity: 250
+    quantity: 83.3
   - name: 'beyond meat burger gehakt'
-    quantity: 452
+    quantity: 150.7
   - name: 'ui'
-    quantity: 2
+    quantity: 0.7
   - name: 'tomatenblokjes'
-    quantity: 400
+    quantity: 133.3
   - name: 'op smaak gebakken tomaten'
-    quantity: 200
+    quantity: 66.7
   - name: 'kaas'
-    quantity: 75
+    quantity: 25
   - name: 'besciamella'
-    quantity: 50
+    quantity: 16.7
   - name: 'lactosevrije halfvolle melk'
-    quantity: 350
+    quantity: 116.7
   - name: 'knoflook'
-    quantity: 5
+    quantity: 1.7
 steps:
   - "Snij de ui"
   - "Bak de ui"

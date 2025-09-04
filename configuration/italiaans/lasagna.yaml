@@ -2,23 +2,23 @@ recipe_name: 'Lasagna'
 description: '10/10 would eat again'
 ingredients:
   - name: 'lasagna bladeren'
-    quantity: 250
+    quantity: 125
   - name: 'gehakt'
-    quantity: 500
+    quantity: 250
   - name: 'ui'
-    quantity: 2
+    quantity: 1
   - name: 'tomatenblokjes'
-    quantity: 400
-  - name: 'op smaak gebakken tomaten'
     quantity: 200
+  - name: 'op smaak gebakken tomaten'
+    quantity: 100
   - name: 'kaas'
-    quantity: 75
+    quantity: 37.5
   - name: 'besciamella'
-    quantity: 50
+    quantity: 25
   - name: 'lactosevrije halfvolle melk'
-    quantity: 350
+    quantity: 175
   - name: 'knoflook'
-    quantity: 5
+    quantity: 2.5
 steps:
   - "Snij de ui"
   - "Bak de ui"

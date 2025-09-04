@@ -1,20 +1,20 @@
 recipe_name: 'Legendary Superasian Broccoli'
 description: 'Teriyaki deliciousness'
 ingredients:
-  - name: 'mie'
-    quantity: 250
-  - name: 'broccoli'
-    quantity: 500
-  - name: 'teriyaki saus lidl'
-    quantity: 360
-  - name: 'ongezouten cashews'
-    quantity: 50
-  - name: 'ui'
-    quantity: 3
   - name: 'kip'
-    quantity: 300
+    quantity: 150
+  - name: 'mie'
+    quantity: 125
+  - name: 'broccoli'
+    quantity: 250
+  - name: 'teriyaki saus lidl'
+    quantity: 180
+  - name: 'ongezouten cashews'
+    quantity: 25
+  - name: 'ui'
+    quantity: 1.5
   - name: 'rode peper'
-    quantity: 1
+    quantity: 0.5
 steps:
   - "Snij de uien"
   - "Snij de broccoli"

@@ -2,19 +2,19 @@ recipe_name: 'Spaghetti Bolognese'
 description: 'Big Spaghet, no ragret'
 ingredients:
   - name: 'spaghetti'
-    quantity: 600
+    quantity: 150
   - name: 'gehakt'
-    quantity: 750
+    quantity: 187.5
   - name: 'passata'
-    quantity: 1380
+    quantity: 345
   - name: 'spaghetti groentenmix'
-    quantity: 600
+    quantity: 150
   - name: 'ui'
-    quantity: 3
+    quantity: 0.75
   - name: 'knoflook'
-    quantity: 10
+    quantity: 2.5
   - name: 'gochujang'
-    quantity: 5
+    quantity: 1.25
 steps:
   - "Bak het gehakt"
   - "Bak de uien en spaghetti groenten"

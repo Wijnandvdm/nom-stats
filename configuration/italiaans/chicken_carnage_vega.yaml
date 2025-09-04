@@ -1,20 +1,20 @@
 recipe_name: 'Chicken Carnage'
 description: 'All I see is red'
 ingredients:
-  - name: 'penne'
-    quantity: 500
-  - name: 'rode pesto'
-    quantity: 380
   - name: 'vivera kip'
-    quantity: 320
+    quantity: 160
+  - name: 'penne'
+    quantity: 100
+  - name: 'rode pesto'
+    quantity: 190
   - name: 'tomatenblokjes'
-    quantity: 400
+    quantity: 200
   - name: 'paprika'
-    quantity: 3
-  - name: 'ui'
-    quantity: 3
-  - name: 'jalapeno'
     quantity: 1
+  - name: 'ui'
+    quantity: 1
+  - name: 'jalapeno'
+    quantity: 0.5
 steps:
   - "Snij de uien"
   - "Snij de paprika"
