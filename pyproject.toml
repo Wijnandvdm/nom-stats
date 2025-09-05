@@ -1,0 +1,13 @@
+[project]
+name = "nomstats"
+version = "1.0.0"
+description = "Static recipe nutrition site generator"
+authors = [
+    { name = "Wijnand van der Meijs", email = "wijnand@honestdatasolutions.nl" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "pandas"
+]
