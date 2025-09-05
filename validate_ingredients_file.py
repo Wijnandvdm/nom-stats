@@ -1,6 +1,7 @@
 import pandas as pd
+import sys
 
-def validate_ingredients_csv(csv_path="ingredients.csv"):
+def validate_ingredients_csv(csv_path):
     """
     Validate the structure and content of the ingredients CSV.
     Returns a list of issues found (empty if everything looks good).
@@ -35,24 +36,37 @@ def validate_ingredients_csv(csv_path="ingredients.csv"):
                 negatives = df[df[col] < 0]
                 if not negatives.empty:
                     issues.append(f"⚠️ Column '{col}' contains negative values.")
-        
-    if "measurement_unit" in df.columns and "weight_per_unit" in df.columns:
-        # allowed units that don't require weight_per_unit
-        base_units = {"g", "ml", "g/ml", None}
-        
-        mismatches = df[
-            (~df["measurement_unit"].isin(base_units)) &  # requires weight_per_unit
-            (df["weight_per_unit"].isnull() | (df["weight_per_unit"] == ""))  # but missing
-        ]
-        if not mismatches.empty:
-            rows = [f"row {i} ({row['name']})" if "name" in df.columns else f"row {i}" 
-                    for i, row in mismatches.iterrows()]
-            issues.append("⚠️ Some rows have 'measurement_unit' without 'weight_per_unit' (or vice versa): " 
-                        + "\n ".join(rows))
-        if not issues:
-            return ["✅ No issues found. CSV looks good!"]
-        return issues
+
+    # Measurement unit must always be filled in
+    missing_units = df[df["measurement_unit"].isnull() | (df["measurement_unit"].astype(str).str.strip() == "")]
+    if not missing_units.empty:
+        rows = [f"⚠️  Line number {i+2} and ingredient '{row['name']}'"
+                for i, row in missing_units.iterrows()]
+        issues.append(
+            "".join(rows) +
+            " is missing a 'measurement_unit'. Please specify one (e.g., 'g', 'ml', 'stuks')."
+        )
+
+    # allowed units that don't require weight_per_unit
+    base_units = {"g", "ml"}
+    
+    mismatches = df[
+        (~df["measurement_unit"].isin(base_units)) &  # requires weight_per_unit
+        (df["weight_per_unit"].isnull() | (df["weight_per_unit"] == ""))  # but missing
+    ]
+    if not mismatches.empty:
+        rows = [f"⚠️  Line number {i+2} and ingredient '{row['name']}'" for i, row in mismatches.iterrows()]
+        issues.append(
+            "".join(rows) +
+            f" has 'measurement_unit' without 'weight_per_unit'. Please provide 'weight_per_unit' or use a base unit: {base_units}")
+    if not issues:
+        return ["✅ No issues found. CSV looks good!"]
+    return issues
 
 problems = validate_ingredients_csv("configuration/ingredients.csv")
 for p in problems:
     print(p)
+
+    # Fail the script if there are any problems
+    if any(p for p in problems if not p.startswith("✅")):
+        sys.exit(1)
