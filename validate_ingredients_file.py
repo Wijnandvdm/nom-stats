@@ -11,20 +11,18 @@ def validate_ingredients_csv(csv_path="ingredients.csv"):
         df = pd.read_csv(csv_path)
     except Exception as e:
         return [f"❌ Could not read CSV: {e}"]
-    
-    # Required columns
-    required_cols = ["name", "protein_per_100g", "calories_per_100g"]
+
+    required_cols = ["name", "measurement_unit", "weight_per_unit", "protein_per_100g", "calories_per_100g"]
     for col in required_cols:
         if col not in df.columns:
             issues.append(f"❌ Missing required column: '{col}'")
     
-    if "name" in df.columns:
-        # Empty or duplicate names
-        if df["name"].isnull().any():
-            issues.append("⚠️ Some ingredients have no name.")
-        duplicates = df["name"][df["name"].duplicated()].unique()
-        if len(duplicates) > 0:
-            issues.append(f"⚠️ Duplicate ingredient names found: {', '.join(duplicates)}")
+    # Empty or duplicate names
+    if df["name"].isnull().any():
+        issues.append("⚠️ Some ingredients have no name.")
+    duplicates = df["name"][df["name"].duplicated()].unique()
+    if len(duplicates) > 0:
+        issues.append(f"⚠️ Duplicate ingredient names found: {', '.join(duplicates)}")
     
     # Check numeric values
     for col in ["protein_per_100g", "calories_per_100g", "weight_per_unit"]:

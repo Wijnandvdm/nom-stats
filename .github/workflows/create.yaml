@@ -19,14 +19,13 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # - name: 'Install UV'
-      #   run: curl -LsSf https://astral.sh/uv/0.8.15/install.sh | sh
-
-      - name: 'Validate ingredients file'
+      - name: 'Install UV & install dependencies'
         run: |
           curl -LsSf https://astral.sh/uv/0.8.15/install.sh | sh
           uv sync
-          uv run python validate_ingredients_file.py
+
+      - name: 'Validate ingredients file'
+        run: uv run python validate_ingredients_file.py
 
       - name: 'Generate HTML files'
         run: uv run python generate_static_website.py

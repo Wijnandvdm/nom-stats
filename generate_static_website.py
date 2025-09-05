@@ -60,6 +60,7 @@ def calculate_nutrition(yaml_content, all_ingredients):
     calories_per_100g = round((total_calories / total_weight) * 100) if total_weight else 0
 
     return total_protein, total_calories, protein_per_100g, calories_per_100g, human_readable_ingredients
+
 def process_all_recipes(directory, all_ingredients):
     categories = {}
     all_recipes = []
