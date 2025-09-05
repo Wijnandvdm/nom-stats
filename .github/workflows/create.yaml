@@ -20,7 +20,9 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: 'Validate ingredients file'
-        run: python validate_ingredients_file.py
+        run: |
+          pip install pandas
+          python validate_ingredients_file.py
 
       - name: 'Generate HTML files'
         run: python generate_static_website.py
