@@ -9,5 +9,6 @@ readme = "README.md"
 requires-python = ">=3.9"
 
 dependencies = [
-    "pandas"
+    "pandas",
+    "jinja2",
 ]
