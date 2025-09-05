@@ -48,7 +48,7 @@ def calculate_nutrition(yaml_content, all_ingredients):
             if weight_per_unit:
                 human_readable_ingredients.append(f"{float(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}")
             else:
-                human_readable_ingredients.append(f"{quantity}{measurement_unit} {ingredient_name}")
+                human_readable_ingredients.append(f"{quantity} {measurement_unit} {ingredient_name}")
 
             protein_per_100g = next((c['quantity_per_100_g'] for c in ingredient['components'] if c['name'] == 'protein'), 0)
             calories_per_100g = next((c['quantity_per_100_g'] for c in ingredient['components'] if c['name'] == 'calories'), 0)
