@@ -11,4 +11,5 @@ requires-python = ">=3.9"
 dependencies = [
     "pandas",
     "jinja2",
+    "pyyaml",
 ]
