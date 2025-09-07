@@ -2,3 +2,4 @@
 !/static_site/icons
 /static_site/*.html
 uv.lock
+.venv/
