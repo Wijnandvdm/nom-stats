@@ -208,7 +208,17 @@
 </head>
 <body>
     <header>
-        <h1>{{ recipe['name'] }}</h1>
+        <h1>
+            {{ recipe.name }}
+            {% for label in recipe.dietary_labels %}
+            {% set icon_path = 'icons/' ~ label ~ '.svg' %}
+            <img src="{{ icon_path }}" 
+                alt="{{ label }}" 
+                class="dietary-icon" 
+                title="{{ label }}" />
+            {% endfor %}
+        </h1>
+        <!-- <h1>{{ recipe['name'] }}</h1> -->
         <p>{{ recipe['description'] }}</p>
         <!-- Star Rating Section -->
         <div class="star-rating">
@@ -228,17 +238,23 @@
             <tr>
                 <th></th>
                 <th>Total</th>
-                <th>Per 100g</th>
+                <th>Per 100g/ml</th>
+                {% if recipe.alcohol_percentage is defined %}
+                <th>Alcohol</th>
+                {% endif %}
             </tr>
             <tr>
                 <td>Protein</td>
-                <td id="total-protein" data-base="{{ recipe['total_protein'] }}">{{ recipe['total_protein'] | round(0) }} g</td>
-                <td>{{ recipe['protein_100g'] | round(0) }} g</td>
+                <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
+                <td>{{ recipe.protein_100g | round(0) }} g</td>
+                {% if recipe.alcohol_percentage is defined %}
+                <td rowspan="2">{{ recipe.alcohol_percentage }} %</td>
+                {% endif %}
             </tr>
             <tr>
                 <td>Calories</td>
-                <td id="total-calories" data-base="{{ recipe['total_calories'] }}">{{ recipe['total_calories'] | round(0) }}</td>
-                <td>{{ recipe['calories_100g'] | round(0) }}</td>
+                <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
+                <td>{{ recipe.calories_100g | round(0) }}</td>
             </tr>
         </table>
 
