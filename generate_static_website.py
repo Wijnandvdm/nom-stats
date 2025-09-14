@@ -25,12 +25,15 @@ def load_ingredients_csv(ingredients_file):
                 "components": [
                     {"name": "protein", "quantity_per_100_g": float(row['protein_per_100g'])},
                     {"name": "calories", "quantity_per_100_g": float(row['calories_per_100g'])}
-                ]
+                ],
+                "alcohol_percentage": float(row['alcohol_percentage']) if row.get('alcohol_percentage') else 0
             }
     return ingredients
 
+
 def calculate_nutrition(yaml_content, all_ingredients):
     total_protein = total_calories = total_weight = 0
+    total_alcohol_ml = 0
     human_readable_ingredients = []
 
     for recipe_ingredient in yaml_content['ingredients']:
@@ -50,16 +53,33 @@ def calculate_nutrition(yaml_content, all_ingredients):
             else:
                 human_readable_ingredients.append(f"{quantity} {measurement_unit} {ingredient_name}")
 
+            # Nutrition
             protein_per_100g = next((c['quantity_per_100_g'] for c in ingredient['components'] if c['name'] == 'protein'), 0)
             calories_per_100g = next((c['quantity_per_100_g'] for c in ingredient['components'] if c['name'] == 'calories'), 0)
 
             total_protein += round((quantity * protein_per_100g) / 100)
             total_calories += round((quantity * calories_per_100g) / 100)
 
+            # Alcohol (ml ethanol)
+            abv = ingredient.get('alcohol_percentage', 0)
+            if abv > 0:
+                # volume (ml) * %ABV
+                total_alcohol_ml += (quantity * abv) / 100
+
     protein_per_100g = round((total_protein / total_weight) * 100, 1) if total_weight else 0
     calories_per_100g = round((total_calories / total_weight) * 100) if total_weight else 0
 
-    return total_protein, total_calories, protein_per_100g, calories_per_100g, human_readable_ingredients
+    # Alcohol percentage of the whole recipe
+    alcohol_percentage = round((total_alcohol_ml / total_weight) * 100, 1) if total_weight else 0
+
+    return (
+        total_protein,
+        total_calories,
+        protein_per_100g,
+        calories_per_100g,
+        human_readable_ingredients,
+        alcohol_percentage
+    )
 
 def process_all_recipes(directory, all_ingredients):
     categories = {}
@@ -80,7 +100,9 @@ def process_all_recipes(directory, all_ingredients):
                     recipe_name = yaml_content.get('recipe_name', 'Unnamed Recipe')
 
                     if 'recipe_name' in yaml_content:
-                        total_protein, total_calories, protein_100g, calories_100g, ingredients = calculate_nutrition(
+                        (total_protein, total_calories,
+                        protein_100g, calories_100g,
+                        ingredients, alcohol_percentage) = calculate_nutrition(
                             yaml_content, all_ingredients
                         )
 
@@ -98,9 +120,49 @@ def process_all_recipes(directory, all_ingredients):
                             'dietary_labels': yaml_content.get('dietary_labels', []),
                             'category': category.title()
                         }
+
+                        # Include alcohol % only if labeled appropriately
+                        labels = recipe_data['dietary_labels']
+                        if 'alcoholic' in labels or 'non_alcoholic' in labels:
+                            recipe_data['alcohol_percentage'] = alcohol_percentage
                         category_recipe_names.append(recipe_data)
                         category_recipes.append(recipe_data)
                         all_recipes.append(recipe_data)
+
+
+                    if 'recipe_name' in yaml_content:
+                        (total_protein, total_calories,
+                        protein_100g, calories_100g,
+                        ingredients, alcohol_percentage) = calculate_nutrition(
+                            yaml_content, all_ingredients
+                        )
+
+                        recipe_data = {
+                            'name': recipe_name,
+                            'description': yaml_content.get('description', ''),
+                            'protein_100g': protein_100g,
+                            'calories_100g': calories_100g,
+                            'total_protein': total_protein,
+                            'total_calories': total_calories,
+                            'ingredients': ingredients,
+                            'steps': yaml_content.get('steps', []),
+                            'rating': yaml_content.get('rating', 0),
+                            'filename': filename.replace(".yaml", ".html"),
+                            'dietary_labels': yaml_content.get('dietary_labels', []),
+                            'category': category.title()
+                        }
+
+                        # Include alcohol % only if labeled appropriately
+                        labels = recipe_data['dietary_labels']
+                        if 'alcoholic' in labels or 'non_alcoholic' in labels:
+                            recipe_data['alcohol_percentage'] = alcohol_percentage
+
+
+
+
+
+
+
 
             if category_recipe_names:
                 categories[category.title()] = category_recipe_names
