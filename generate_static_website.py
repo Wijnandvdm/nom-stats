@@ -123,7 +123,7 @@ def process_all_recipes(directory, all_ingredients):
 
                         # Include alcohol % only if labeled appropriately
                         labels = recipe_data['dietary_labels']
-                        if 'alcoholic' in labels or 'non-alcoholic' in labels:
+                        if 'alcoholic' in labels or 'non_alcoholic' in labels:
                             recipe_data['alcohol_percentage'] = alcohol_percentage
                         category_recipe_names.append(recipe_data)
                         category_recipes.append(recipe_data)
@@ -154,7 +154,7 @@ def process_all_recipes(directory, all_ingredients):
 
                         # Include alcohol % only if labeled appropriately
                         labels = recipe_data['dietary_labels']
-                        if 'alcoholic' in labels or 'non-alcoholic' in labels:
+                        if 'alcoholic' in labels or 'non_alcoholic' in labels:
                             recipe_data['alcohol_percentage'] = alcohol_percentage
 
 
