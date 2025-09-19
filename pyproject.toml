@@ -2,14 +2,28 @@
 name = "nomstats"
 version = "1.0.0"
 description = "Static recipe nutrition site generator"
-authors = [
-    { name = "Wijnand van der Meijs", email = "wijnand@honestdatasolutions.nl" }
-]
-readme = "README.md"
-requires-python = ">=3.9"
-
+authors = [{ name = "Wijnand van der Meijs", email = "wijnand@honestdatasolutions.nl" }]
+requires-python = ">=3.10"
 dependencies = [
     "pandas",
     "jinja2",
     "pyyaml",
+    "ruff",
+    "mypy",
+    "pre-commit",
 ]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_return_any = true
