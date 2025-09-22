@@ -24,8 +24,6 @@ jobs:
 
       - name: 'Install UV & install dependencies'
         run: |
-      - name: 'Install UV & install dependencies'
-        run: |
           set -e
 
           echo "Attempting to install UV version $UV_VERSION..."
