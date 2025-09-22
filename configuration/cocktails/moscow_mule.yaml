@@ -1,0 +1,20 @@
+recipe_name: 'Moscow Mule'
+description: "Strong like a wrestler, kicks like a mule!"
+ingredients:
+  - name: 'absolut vodka'
+    quantity: 50
+  - name: 'ginger beer 0% suiker'
+    quantity: 200
+  - name: 'limoensap'
+    quantity: 10
+steps:
+  - "Giet de Vodka in een glas"
+  - "Giet het ginger beer erbij"
+  - "Giet het limoensap erbij"
+  - "Meng grondig"
+  - "Optioneel: Voeg ijs toe"
+  - "Optioneel: garneer met limoenschijfjes"
+rating: 4
+dietary_labels:
+  - vegetarian
+  - alcoholic

@@ -1,0 +1,20 @@
+recipe_name: 'Balon 43'
+description: "Sour and sweet, a dentist's delight!"
+ingredients:
+  - name: 'likeur 43'
+    quantity: 80
+  - name: 'spa rood'
+    quantity: 160
+  - name: 'citroensap'
+    quantity: 30
+steps:
+  - "Giet de Likeur 43 in een glas"
+  - "Giet het citroensap erbij"
+  - "Giet de spa rood erbij"
+  - "Meng grondig"
+  - "Optioneel: Voeg ijs toe"
+  - "Optioneel: garneer met citroenschijfjes"
+rating: 5
+dietary_labels:
+  - vegetarian
+  - alcoholic

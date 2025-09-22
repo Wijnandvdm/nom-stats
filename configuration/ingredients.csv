@@ -67,14 +67,14 @@ go-tan sojasaus,ml,,9.1,60,0
 hoisinsaus,ml,,8.0,122,0
 ketjap manis,ml,,6.6,207,0
 honing,g,,0.4,308,0
-bruine basterdsuiker,g,,0.0,387,0
-suiker,g,,0.0,387,0
-sesamolie,ml,,0.0,828,0
-olijfolie,ml,,0.0,819,0
+bruine basterdsuiker,g,,0,387,0
+suiker,g,,0,387,0
+sesamolie,ml,,0,828,0
+olijfolie,ml,,0,819,0
 dijon mosterd extra pittig,g,,7.2,156,0
 ongezouten cashews,g,,19.0,622,0
 saitaku geroosterd zwart sesamzaad,g,,21.0,581,0
-rijstazijn,ml,,0.0,8,0
+rijstazijn,ml,,0,8,0
 kaiserbroodje,g,,9.4,239,0
 rode peper,stuks,15.0,1.4,29,0
 passata,g,,1.4,33,0
@@ -97,8 +97,13 @@ bloem,g,,10.0,343,0
 zelfrijzend bakmeel,g,,12.0,340,0
 ei,stuks,50.0,12.7,148,0
 boter,g,,0.5,701,0
-schenkstroop,ml,,0.0,288,0
-water,ml,,0.0,0,0
+schenkstroop,ml,,0,288,0
+water,ml,,0,0,0
+spa rood, ml,,0,1,0
 ah terra plantaardige room,ml,,2.7,187,0
 absolut vodka,ml,,0,217,40
+likeur 43,ml,,0,348,31
 kahlua,ml,,0,269,20
+ginger beer 0% suiker,ml,,0,1,0
+limoensap,ml,,0.4,28,0
+citroensap,ml,,0.4,27,0
