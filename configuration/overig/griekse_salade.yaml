@@ -1,0 +1,31 @@
+recipe_name: 'Griekse Salade'
+description: 'πολύ νόστιμο'
+ingredients:
+  - name: 'trostomaten'
+    quantity: 4
+  - name: 'komkommer'
+    quantity: 125
+  - name: 'rode ui'
+    quantity: 1
+  - name: 'puntpaprika'
+    quantity: 1
+  - name: 'extra vierge olijfolie'
+    quantity: 20
+  - name: 'witte wijnazijn'
+    quantity: 10
+  - name: 'feta'
+    quantity: 75
+steps:
+  - "Snij de tomaten in stukjes"
+  - "Schil en snij de komkommer in halve plakjes"
+  - "Snij de rode ui in dunne kwartjes"
+  - "Snij de paprika in reepjes"
+  - "Doe de gesneden groenten in een kom"
+  - "Verkruimel de feta over de salade"
+  - "Meng olijfolie en witte wijnazijn in de kom"
+  - "Breng de salade op smaak met oregano en zout"
+  - "Meng alles voorzichtig door elkaar"
+  - "Serveer vers en koud"
+rating: 5
+dietary_labels:
+  - vegetarian
