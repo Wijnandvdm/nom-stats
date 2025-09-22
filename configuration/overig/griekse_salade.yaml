@@ -2,17 +2,17 @@ recipe_name: 'Griekse Salade'
 description: 'πολύ νόστιμο!'
 ingredients:
   - name: 'trostomaten'
-    quantity: 4
+    quantity: 2
   - name: 'komkommer'
-    quantity: 125
+    quantity: 62.5
   - name: 'rode ui'
-    quantity: 1
+    quantity: 0.5
   - name: 'puntpaprika'
-    quantity: 1
+    quantity: 0.5
   - name: 'extra vierge olijfolie'
-    quantity: 20
-  - name: 'witte wijnazijn'
     quantity: 10
+  - name: 'witte wijnazijn'
+    quantity: 5
   - name: 'feta'
     quantity: 75
 steps:
