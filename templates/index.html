@@ -137,6 +137,12 @@
     <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
     <header>
         <h1>🍽️ NomStats</h1>
+        <input 
+            type="text" 
+            id="searchBar" 
+            placeholder="🔍 Search recipes..." 
+            style="margin-top: 1rem; padding: 8px; width: 80%; max-width: 400px; border-radius: 6px; border: 1px solid #ccc;"
+        >
     </header>
     <div class="container">
         <div class="accordion">
@@ -189,6 +195,38 @@
                 document.querySelector('.theme-toggle').textContent = '☀️';
             }
         })();
+        document.getElementById('searchBar').addEventListener('input', function() {
+            let query = this.value.toLowerCase();
+            let recipeLinks = document.querySelectorAll('.recipe-link');
+
+            recipeLinks.forEach(link => {
+                let text = link.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    link.style.display = "block";
+                } else {
+                    link.style.display = "none";
+                }
+            });
+
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                let content = item.querySelector('.accordion-content');
+                let visibleLinks = item.querySelectorAll('.recipe-link:not([style*="display: none"])');
+
+                if (query === "") {
+                    // ✅ Reset: collapse everything
+                    item.style.display = "block";  
+                    content.style.display = "none";  
+                } else if (visibleLinks.length > 0) {
+                    // ✅ Keep expanded if there’s a match
+                    item.style.display = "block";
+                    content.style.display = "block";
+                } else {
+                    // ✅ Hide categories with no matches
+                    item.style.display = "none";
+                    content.style.display = "none";
+                }
+            });
+        });
     </script>
 </body>
 </html>
