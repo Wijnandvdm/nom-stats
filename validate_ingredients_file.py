@@ -35,7 +35,12 @@ def validate_ingredients_csv(csv_path: str) -> List[str]:
         issues.append(f"⚠️ Duplicate ingredient names found: {', '.join(duplicates)}")
 
     # Check numeric values
-    for col in ["protein_per_100g", "calories_per_100g", "weight_per_unit"]:
+    for col in [
+        "protein_per_100g",
+        "calories_per_100g",
+        "weight_per_unit",
+        "alcohol_percentage",
+    ]:
         if col in df.columns:
             bad_values = df[
                 ~df[col].apply(

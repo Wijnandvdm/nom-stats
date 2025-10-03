@@ -23,7 +23,7 @@ def load_ingredients_csv(ingredients_file: str) -> dict:
         for row in reader:
             ingredients[row["name"]] = {
                 "name": row["name"],
-                "measurement_unit": row["measurement_unit"] or "g/ml",
+                "measurement_unit": row["measurement_unit"],
                 "weight_per_unit": float(row["weight_per_unit"])
                 if row["weight_per_unit"]
                 else 0,
@@ -63,7 +63,7 @@ def calculate_nutrition(
                 quantity *= weight_per_unit
             total_weight += quantity
 
-            measurement_unit = ingredient.get("measurement_unit", " g/ml")
+            measurement_unit = ingredient.get("measurement_unit")
             if weight_per_unit:
                 human_readable_ingredients.append(
                     f"{float(quantity / weight_per_unit)} {measurement_unit} "
