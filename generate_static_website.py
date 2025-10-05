@@ -24,9 +24,7 @@ def load_ingredients_csv(ingredients_file: str) -> dict:
             ingredients[row["name"]] = {
                 "name": row["name"],
                 "measurement_unit": row["measurement_unit"],
-                "weight_per_unit": float(row["weight_per_unit"])
-                if row["weight_per_unit"]
-                else 0,
+                "weight_per_unit": float(row["weight_per_unit"]) if row["weight_per_unit"] else 0,
                 "components": [
                     {
                         "name": "protein",
@@ -45,7 +43,6 @@ def load_ingredients_csv(ingredients_file: str) -> dict:
                         "quantity_per_100_g": float(row.get("carbohydrates_per_100g", 0) or 0),
                     },
                 ],
-
                 "alcohol_percentage": float(row["alcohol_percentage"])
                 if row.get("alcohol_percentage")
                 else 0,
@@ -75,46 +72,27 @@ def calculate_nutrition(
             measurement_unit = ingredient.get("measurement_unit")
             if weight_per_unit:
                 human_readable_ingredients.append(
-                    f"{float(quantity / weight_per_unit)} {measurement_unit} "
-                    f"{ingredient_name}"
+                    f"{float(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}"
                 )
 
             else:
-                human_readable_ingredients.append(
-                    f"{quantity} {measurement_unit} {ingredient_name}"
-                )
+                human_readable_ingredients.append(f"{quantity} {measurement_unit} {ingredient_name}")
 
             # Nutrition
             protein_per_100g = next(
-                (
-                    c["quantity_per_100_g"]
-                    for c in ingredient["components"]
-                    if c["name"] == "protein"
-                ),
+                (c["quantity_per_100_g"] for c in ingredient["components"] if c["name"] == "protein"),
                 0,
             )
             calories_per_100g = next(
-                (
-                    c["quantity_per_100_g"]
-                    for c in ingredient["components"]
-                    if c["name"] == "calories"
-                ),
+                (c["quantity_per_100_g"] for c in ingredient["components"] if c["name"] == "calories"),
                 0,
             )
             fat_per_100g = next(
-                (
-                    c["quantity_per_100_g"]
-                    for c in ingredient["components"]
-                    if c["name"] == "fat"
-                ),
+                (c["quantity_per_100_g"] for c in ingredient["components"] if c["name"] == "fat"),
                 0,
             )
             carbs_per_100g = next(
-                (
-                    c["quantity_per_100_g"]
-                    for c in ingredient["components"]
-                    if c["name"] == "carbohydrates"
-                ),
+                (c["quantity_per_100_g"] for c in ingredient["components"] if c["name"] == "carbohydrates"),
                 0,
             )
             total_protein += round((quantity * protein_per_100g) / 100)
@@ -127,19 +105,13 @@ def calculate_nutrition(
                 # volume (ml) * %ABV
                 total_alcohol_ml += (quantity * abv) / 100
 
-    protein_per_100g = (
-        round((total_protein / total_weight) * 100, 1) if total_weight else 0
-    )
-    calories_per_100g = (
-        round((total_calories / total_weight) * 100) if total_weight else 0
-    )
+    protein_per_100g = round((total_protein / total_weight) * 100, 1) if total_weight else 0
+    calories_per_100g = round((total_calories / total_weight) * 100) if total_weight else 0
     fat_per_100g = round((total_fat / total_weight) * 100, 1) if total_weight else 0
     carbs_per_100g = round((total_carbs / total_weight) * 100, 1) if total_weight else 0
 
     # Alcohol percentage of the whole recipe
-    alcohol_percentage = (
-        round((total_alcohol_ml / total_weight) * 100, 1) if total_weight else 0
-    )
+    alcohol_percentage = round((total_alcohol_ml / total_weight) * 100, 1) if total_weight else 0
 
     return (
         total_protein,
@@ -189,7 +161,6 @@ def process_all_recipes(
                             ingredients,
                             alcohol_percentage,
                         ) = calculate_nutrition(yaml_content, all_ingredients)
-
 
                         recipe_data = {
                             "name": recipe_name,

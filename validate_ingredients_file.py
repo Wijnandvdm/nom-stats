@@ -4,16 +4,22 @@ from typing import List
 import pandas as pd
 
 # === Step 1: Define schema ===
-SCHEMA = pd.DataFrame([
-    {"column": "name", "is_numeric": False, "allowed_empty": False},
-    {"column": "measurement_unit", "is_numeric": False, "allowed_empty": False},
-    {"column": "weight_per_unit", "is_numeric": True, "allowed_empty": True},
-    {"column": "protein_per_100g", "is_numeric": True, "allowed_empty": False},
-    {"column": "fat_per_100g", "is_numeric": True, "allowed_empty": False},
-    {"column": "carbohydrates_per_100g", "is_numeric": True, "allowed_empty": False},
-    {"column": "calories_per_100g", "is_numeric": True, "allowed_empty": False},
-    {"column": "alcohol_percentage", "is_numeric": True, "allowed_empty": False},
-])
+SCHEMA = pd.DataFrame(
+    [
+        {"column": "name", "is_numeric": False, "allowed_empty": False},
+        {"column": "measurement_unit", "is_numeric": False, "allowed_empty": False},
+        {"column": "weight_per_unit", "is_numeric": True, "allowed_empty": True},
+        {"column": "protein_per_100g", "is_numeric": True, "allowed_empty": False},
+        {"column": "fat_per_100g", "is_numeric": True, "allowed_empty": False},
+        {
+            "column": "carbohydrates_per_100g",
+            "is_numeric": True,
+            "allowed_empty": False,
+        },
+        {"column": "calories_per_100g", "is_numeric": True, "allowed_empty": False},
+        {"column": "alcohol_percentage", "is_numeric": True, "allowed_empty": False},
+    ]
+)
 
 
 # === Step 2: Validation functions ===
@@ -24,6 +30,7 @@ def check_required_columns(df: pd.DataFrame, schema: pd.DataFrame) -> List[str]:
         if col not in df.columns:
             issues.append(f"❌ Missing required column: '{col}'")
     return issues
+
 
 def check_unexpected_columns(df: pd.DataFrame, schema: pd.DataFrame) -> List[str]:
     """Warn if CSV contains columns that are not in the expected schema."""
@@ -55,7 +62,7 @@ def check_missing_values(df: pd.DataFrame, schema: pd.DataFrame) -> List[str]:
             missing_rows = df[missing_mask]
             for i, r in missing_rows.iterrows():
                 issues.append(
-                    f"⚠️ Line {i+2}: Missing value for '{col}' (ingredient '{r.get('name', '?')}')"
+                    f"⚠️ Line {i + 2}: Missing value for '{col}' (ingredient '{r.get('name', '?')}')"
                 )
     return issues
 
@@ -69,9 +76,7 @@ def check_numeric_columns(df: pd.DataFrame, schema: pd.DataFrame) -> List[str]:
             continue
 
         # Non-numeric check
-        non_numeric = df[
-            ~df[col].apply(lambda x: str(x).replace(".", "", 1).isdigit() or pd.isna(x))
-        ]
+        non_numeric = df[~df[col].apply(lambda x: str(x).replace(".", "", 1).isdigit() or pd.isna(x))]
         if not non_numeric.empty:
             issues.append(f"⚠️ Column '{col}' contains non-numeric values.")
 
@@ -108,7 +113,7 @@ def check_measurement_units(df: pd.DataFrame) -> List[str]:
     if not mismatches.empty:
         for i, row in mismatches.iterrows():
             issues.append(
-                f"⚠️ Line {i+2}: ingredient '{row['name']}' uses '{row['measurement_unit']}' "
+                f"⚠️ Line {i + 2}: ingredient '{row['name']}' uses '{row['measurement_unit']}' "
                 f"but has no 'weight_per_unit'. Consider using {base_units} or add a conversion."
             )
     return issues

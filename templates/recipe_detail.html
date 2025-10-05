@@ -276,6 +276,7 @@
 
         <script>
         let servings = 1;
+        const MAX_SERVINGS = 100;
 
         function updateDisplay() {
             document.getElementById("servings").textContent = servings;
@@ -308,6 +309,10 @@
 
         function increaseServings() {
             servings++;
+            if (servings > MAX_SERVINGS) {
+                alert("Maybe you should open a restaurant! Let's keep it under 100 servings, shall we?");
+                servings = 1;
+            }
             updateDisplay();
         }
 
