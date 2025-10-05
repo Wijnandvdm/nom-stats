@@ -54,7 +54,7 @@
         .back-link:hover {
             background-color: var(--primary-light);
         }
-        .nutrition-table {
+        .macronutrients-table {
             border-collapse: separate;
             border-spacing: 0; 
             border-radius: 12px;
@@ -62,18 +62,18 @@
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
-        .nutrition-table th, .nutrition-table td {
+        .macronutrients-table th, .macronutrients-table td {
             padding: 10px;
         }
-        .nutrition-table th {
+        .macronutrients-table th {
             background-color: var(--primary-dark);
             color: var(--text-dark);
             font-weight: normal;
         }
-        .nutrition-table td {
+        .macronutrients-table td {
             background-color: rgba(255, 255, 255, 0.05);
         }
-        body.light-mode .nutrition-table td {
+        body.light-mode .macronutrients-table td {
             background-color: rgba(0, 0, 0, 0.05);
         }
         .ingredients-list {
@@ -238,12 +238,12 @@
     </header>
 
     <div class="container">
-        <!-- Nutrition Facts Table -->
-        <h2>Nutrition Facts</h2>
-        <table class="nutrition-table">
+        <!-- Macronutrients Table -->
+        <h2>Macronutrients</h2>
+        <table class="macronutrients-table">
             <tr>
                 <th></th>
-                <th>Total (g)</th>
+                <th>Total</th>
                 <th>Per 100g or ml</th>
                 {% if recipe.alcohol_percentage is defined %}
                 <th>Alcohol</th>
@@ -285,9 +285,12 @@
                 const el = document.getElementById(id);
                 const baseValue = parseFloat(el.dataset.base);
                 if (!isNaN(baseValue)) {
-                    el.textContent = Math.round(baseValue * servings) + (id.includes("protein") ? " g" : "");
+                    // Add " g" for everything except calories
+                    const isCalories = id.includes("calories");
+                    el.textContent = Math.round(baseValue * servings) + (isCalories ? "" : " g");
                 }
             });
+
 
             // Update ingredients
             document.querySelectorAll("#ingredients-list li").forEach(el => {
