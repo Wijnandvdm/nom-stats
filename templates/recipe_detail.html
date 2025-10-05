@@ -243,19 +243,24 @@
         <table class="nutrition-table">
             <tr>
                 <th></th>
-                <th>Total</th>
+                <th>Total (g)</th>
                 <th>Per 100g or ml</th>
                 {% if recipe.alcohol_percentage is defined %}
                 <th>Alcohol</th>
                 {% endif %}
             </tr>
             <tr>
-                <td>Protein</td>
-                <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
-                <td>{{ recipe.protein_100g | round(0) }} g</td>
+                <td>Calories</td>
+                <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
+                <td>{{ recipe.calories_100g | round(0) }}</td>
                 {% if recipe.alcohol_percentage is defined %}
                 <td rowspan="4">{{ recipe.alcohol_percentage }} %</td>
                 {% endif %}
+            </tr>
+            <tr>
+                <td>Protein</td>
+                <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
+                <td>{{ recipe.protein_100g | round(0) }} g</td>
             </tr>
             <tr>
                 <td>Fat</td>
@@ -267,11 +272,6 @@
                 <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | round(0) }} g</td>
                 <td>{{ recipe.carbs_100g | round(0) }} g</td>
             </tr>
-            <tr>
-                <td>Calories</td>
-                <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
-                <td>{{ recipe.calories_100g | round(0) }}</td>
-            </tr>
         </table>
 
         <script>
@@ -281,7 +281,7 @@
             document.getElementById("servings").textContent = servings;
 
             // Update nutrition totals
-            ["total-protein", "total-fat", "total-carbs", "total-calories"].forEach(id => {
+            ["total-calories", "total-protein", "total-fat", "total-carbs"].forEach(id => {
                 const el = document.getElementById(id);
                 const baseValue = parseFloat(el.dataset.base);
                 if (!isNaN(baseValue)) {
