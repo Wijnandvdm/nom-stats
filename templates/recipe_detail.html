@@ -277,6 +277,7 @@
         <script>
         let servings = 1;
         const MAX_SERVINGS = 100;
+        let warningTimeout = null;
 
         function updateDisplay() {
             document.getElementById("servings").textContent = servings;
@@ -307,11 +308,38 @@
             });
         }
 
+        function showWarningMessage() {
+            const container = document.querySelector(".servings-control");
+            let warning = document.getElementById("serving-warning");
+
+            // Create warning element if it doesn't exist yet
+            if (!warning) {
+                warning = document.createElement("div");
+                warning.id = "serving-warning";
+                warning.style.color = "#e57373";
+                warning.style.fontSize = "0.95rem";
+                warning.style.marginTop = "0.5rem";
+                warning.style.fontWeight = "normal";
+                container.insertAdjacentElement("afterend", warning);
+            }
+
+            warning.textContent = `🍳 Maybe you should open a restaurant! Let's keep it under ${MAX_SERVINGS} servings, shall we?`;
+            warning.style.opacity = 1;
+
+            // Clear existing timeout if the user keeps clicking
+            if (warningTimeout) clearTimeout(warningTimeout);
+
+            // Hide message after 3 seconds
+            warningTimeout = setTimeout(() => {
+                warning.style.opacity = 0;
+            }, 3000);
+        }
+
         function increaseServings() {
             servings++;
             if (servings > MAX_SERVINGS) {
-                alert("Maybe you should open a restaurant! Let's keep it under 100 servings, shall we?");
                 servings = 1;
+                showWarningMessage();
             }
             updateDisplay();
         }
