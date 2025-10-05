@@ -17,7 +17,7 @@ ingredients:
     quantity: 10
   - name: 'water'
     quantity: 700
-  - name: 'slagroom'
+  - name: 'ah slagroom 35%'
     quantity: 125
 steps:
   - "Snij de sjalot"

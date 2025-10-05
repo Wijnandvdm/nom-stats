@@ -1,116 +1,116 @@
-name,measurement_unit,weight_per_unit,protein_per_100g,calories_per_100g,alcohol_percentage
-biefstuk,g,,22.9,108,0
-gehakt,g,,18.8,224,0
-beyond meat burger gehakt,g,,16.0,196,0
-vega gehakt,g,,20.0,108,0
-vega slager lecker burgerlijk,g,,11.0,180,0
-kip,g,,24.0,103,0
-vivera kip,g,,15.0,166,0
-kipdijfilet,g,,19.0,135,0
-spek,g,,16.0,354,0
-vivera spek,g,,17.0,87,0
-ah terra plantaardige spekreepjes,g,,19.0,164,0
-redefine pulled pork,g,,21.0,122,0
-chorizo,g,,23.0,463,0
-varkensribben,g,,20.0,300,0
-vega zalm,g,,1.4,65,0
-penne,g,,13.0,357,0
-mie,g,,11.0,351,0
-spaghetti,g,,13.0,357,0
-ravioli,g,,9.1,278,0
-lasagna bladeren,g,,10.0,285,0
-risotto,g,,5.8,350,0
-sushi rijst,g,,7.4,349,0
-basmati rijst,g,,8.8,355,0
-sperziebonen,g,,2.3,25,0
-edamame boontjes,g,,12.0,138,0
-avocado,g,,2.0,183,0
-ah terra gerookte tofu,g,,15.0,131,0
-ah zeewier salade,g,,1.5,92,0
-radijs,g,,1.0,22,0
-champignons,g,,2.3,18,0
-bruine bonen,g,,6.2,104,0
-kidneybonen,g,,8.4,102,0
-mais,g,,2.6,84,0
-linzen,g,,6.5,87,0
-broccoli,g,,2.8,33,0
-spaghetti groentenmix,g,,1.2,28,0
-ui,stuks,100.0,1.3,37,0
-rode ui,stuks,100,1.2,37,0
-bosui,stuks,50.0,1.3,37,0
-chinese kool,g,,1.0,17,0
-sjalot,stuks,21.0,2.5,71,0
-prei,stuks,350.0,1.5,60,0
-paprika,stuks,135.0,1.0,26,0
-puntpaprika,stuks,125,0.8,25,0
-winterpeen,stuks,150.0,0.7,33,0
-trostomaten,stuks,75,0.7,22,0
-cherry tomaatjes,g,,0.9,31,0
-komkommer,g,,0.7,13
-appel,stuks,150.0,0.3,60,0
-lactosevrije halfvolle melk,ml,,3.3,46,0
-kokosmelk light,ml,,0.6,61,0
-skyr,g,,11.0,62,0
-lactosevrije magere kwark,g,,8.5,50,0
-plantaardig creme fraishe,g,,1.2,247,0
-slagroom,ml,,2.5,337,0
-kaas,g,,28.0,273,0
-kruidenkaas light,g,,11.0,157,0
-viking blue,g,,18.0,315,0
-cheddar smeltkaas,g,,14.0,276,0
-galbani mozzarella mini,g,,19.0,233,0
-feta,g,,17,278,0
-halloumi,g,,23.0,316,0
-pecorino romano,g,,25.0,406,0
-gran italia groene pesto,g,,7.1,470,0
-remia zero jack smokey bbq,g,,1.0,52,0
-rode pesto,g,,3.8,424,0
-truffel paddenstoel tapenade,g,,2.1,224,0
-teriyaki saus lidl,ml,,1.7,209,0
-zaanse halfvolle mayo,g,,0.6,341,0
-go-tan sojasaus,ml,,9.1,60,0
-hoisinsaus,ml,,8.0,122,0
-ketjap manis,ml,,6.6,207,0
-honing,g,,0.4,308,0
-bruine basterdsuiker,g,,0,387,0
-suiker,g,,0,387,0
-sesamolie,ml,,0,828,0
-olijfolie,ml,,0,819,0
-extra vierge olijfolie,ml,,0,814,0
-dijon mosterd extra pittig,g,,7.2,156,0
-ongezouten cashews,g,,19.0,622,0
-saitaku geroosterd zwart sesamzaad,g,,21.0,581,0
-rijstazijn,ml,,0,8,0
-witte wijnazijn,ml,,0,18,0
-kaiserbroodje,g,,9.4,239,0
-rode peper,stuks,15.0,1.4,29,0
-passata,g,,1.4,33,0
-knoflook,teentjes,2.5,6.4,158,0
-santa maria taco schelpen,g,,6.5,461,0
-santa maria tortilla wraps mini,g,,8.3,302,0
-santa maria kruidenmix taco,g,,10.0,280,0
-fairtrade rode thaise kruidenpasta,g,,5.8,138,0
-jalapeno,stuks,30.0,0.9,28,0
-gochujang,g,,6.1,233,0
-gehakte gember,g,,1.4,70,0
-tomatenblokjes,g,,1.4,33,0
-op smaak gebakken tomaten,g,,1.5,75,0
-tomatenpuree,g,,4.8,89,0
-basis tomatensaus pikant,ml,,1.3,39,0
-heinz tomatenblokjes naturel,g,,1.5,25,0
-besciamella,g,,0.9,112,0
-groentebouillonblokje,g,,1.0,25,0
-bloem,g,,10.0,343,0
-zelfrijzend bakmeel,g,,12.0,340,0
-ei,stuks,50.0,12.7,148,0
-boter,g,,0.5,701,0
-schenkstroop,ml,,0,288,0
-water,ml,,0,0,0
-spa rood,ml,,0,1,0
-ah terra plantaardige room,ml,,2.7,187,0
-absolut vodka,ml,,0,217,40
-likeur 43,ml,,0,348,31
-kahlua,ml,,0,269,20
-ginger beer 0% suiker,ml,,0,1,0
-limoensap,ml,,0.4,28,0
-citroensap,ml,,0.4,27,0
+name,measurement_unit,weight_per_unit,protein_per_100g,calories_per_100g,fat_per_100g,carbohydrates_per_100g,alcohol_percentage
+biefstuk,g,,22.9,108,1.8,0,0
+gehakt,g,,18.8,224,16.5,0.2,0
+beyond meat burger gehakt,g,,16,196,12,5.6,0
+vega slager lecker burgerlijk,g,,11,180,11,4.5,0
+kip,g,,24,103,1.8,0,0
+kipdijfilet,g,,19,135,6.3,0,0
+vivera kip,g,,15,166,8.2,4.7,0
+spek,g,,16,354,32,0.5,0
+vivera spek,g,,17,87,0.1,2.2,0
+redefine pulled pork,g,,21,122,0.8,6,0
+chorizo,g,,23,463,41,0.6,0
+varkensribben,g,,20,300,5.9,0,0
+vega zalm,g,,1.4,65,0.8,11.7,0
+penne,g,,13,357,1.3,72,0
+mie nestjes fijn,g,,11,353,1.5,72,0
+spaghetti,g,,13,357,1.3,72,0
+ravioli kaas tomaat,g,,9.1,278,6.7,42,0
+lasagna bladeren,g,,10,285,2.5,53,0
+risotto rijst,g,,5.8,350,0.9,77,0
+sushi rijst,g,,7.4,349,0.9,77,0
+basmati rijst,g,,8.8,355,0.5,78,0
+sperziebonen,g,,2.3,25,0.2,1.8,0
+edamame boontjes,g,,12,138,6.1,5.6,0
+avocado,g,,2,183,18,1.8,0
+ah terra gerookte tofu,g,,15,131,6.4,0.4,0
+ah zeewier salade,g,,1.5,92,3.7,11,0
+radijs,g,,1,22,0,4,0
+champignons,g,,2.3,18,0.5,0.4,0
+bruine bonen,g,,6.2,104,1.1,14,0
+witte bonen,g,,6.4,79,0.6,8.7,0
+kidneybonen,g,,8.4,102,0.8,12,0
+mais,g,,2.6,84,1.4,14,0
+linzen,g,,6.5,87,0.5,13,0
+broccoli,g,,2.8,33,0.4,1.8,0
+chinese kool,g,,1.0,17,0,2,0
+spaghetti groentenmix,g,,1.2,28,0.2,4.4,0
+ui,stuks,100.0,1.3,37,0.2,6.3,0
+rode ui,stuks,100,1.2,37,0.1,6.6,0
+bosui,stuks,50.0,1.3,37,0.4,4.2,0
+sjalot,stuks,21.0,2.5,71,0.2,6.3,0
+prei,stuks,350.0,1.5,60,0.2,3.5,0
+paprika,stuks,135.0,1.0,26,0.1,3.8,0
+puntpaprika,stuks,125,0.8,25,0.1,4.3,0
+winterpeen,stuks,150,0.7,33,0.3,5.7,0
+trostomaten,stuks,75,0.7,22,0.5,3,0
+cherry tomaatjes,g,,0.9,31,0.8,4,0
+komkommer,g,,0.7,0.4,1.3,13,0
+appel,stuks,150,0.3,60,0.2,13,0
+lactosevrije halfvolle melk,ml,,3.3,46,1.6,2.3,0
+kokosmelk light,ml,,0.6,61,6,0.8,0
+skyr,g,,11.0,62,0.2,4,0
+lactosevrije magere kwark,g,,8.5,50,0.2,3.6,0
+plantaardige creme fraishe,g,,1.2,247,30,2.4,0
+ah slagroom 35%,ml,,2.5,337,35,3,0
+ah geraspte kaas 20+,g,,28,273,12,2,0
+kruidenkaas light,g,,11,157,8,4.9,0
+zuivelspread knoflook en kruiden,g,,3.8,210,20,3.6,0
+viking blue,g,,18.0,315,27,0.1,0
+cheddar smeltkaas,g,,14.0,276,22,5.4,0
+galbani mozzarella mini,g,,19.0,233,15,1,0
+feta,g,,17,278,23,0.7,0
+halloumi,g,,23.0,316,24,2,0
+pecorino romano,g,,25.0,406,34,0,0
+gran italia groene pesto,g,,7.1,470,45,8.5,0
+remia blackjack smokey bbq saus,g,,1.5,139,0.3,31,0
+rode pesto,g,,3.8,424,43,3.6,0
+truffel paddenstoel tapenade,g,,2.1,224,22,4.5,0
+lidl teriyaki saus,ml,,1.7,209,0.2,49.7,0
+zaanse halfvolle mayo,g,,0.6,341,33.3,9.4,0
+go-tan sojasaus,ml,,9.1,60,0,5.5,0
+hoisinsaus,ml,,8.0,122,1.5,31,0
+ketjap manis,ml,,6.6,207,0,45.2,0
+honing,g,,0.4,326,0,81,0
+bruine basterdsuiker,g,,0,387,0,99,0
+suiker,g,,0,387,0,100,0
+sesamolie,ml,,0,828,92,0,0
+olijfolie,ml,,0,819,91,0,0
+extra vierge olijfolie,ml,,0,814,91.4,0,0
+dijon mosterd extra pittig,g,,7.2,156,12,3.2,0
+ongezouten cashews,g,,19.0,622,50,22,0
+saitaku geroosterd zwart sesamzaad,g,,21.0,581,54,6,0
+rijstazijn,ml,,0,8,0,1.9,0
+witte wijnazijn,ml,,0,18,0,0,0
+kaiserbroodje,g,,9.4,239,0.9,54,0
+rode peper,stuks,15,1.4,29,0.3,5.1,0
+passata,g,,1.4,37,0,6.8,0
+knoflook,teentjes,2.5,6.4,158,0.5,31,0
+santa maria taco schelpen,g,,6.5,461,20,61,0
+santa maria tortilla wraps mini,g,,8.3,302,4.9,55,0
+santa maria kruidenmix taco,g,,10,280,6,44,0
+fairtrade rode thaise kruidenpasta,g,,5.8,138,4.6,18,0
+jalapeno,stuks,30,0.9,28,0,1,0
+gochujang,g,,6.1,233,2.3,40,0
+gehakte gember,g,,1.4,70,1.8,11.5,0
+tomatenblokjes,g,,1.4,33,0.1,4,0
+op smaak gebakken tomaten,g,,1.5,75,3.3,9.3,0
+tomatenpuree,g,,4.8,89,0.4,15,0
+basis tomatensaus pikant,ml,,1.3,39,0.6,6.4,0
+heinz tomatenblokjes naturel,g,,1.5,25,0.2,3.7,0
+besciamella,g,,0.9,112,4.4,13,0
+groentebouillonblokje,g,,0.2,5,0.2,0.6,0
+bloem,g,,10,343,1.1,72,0
+zelfrijzend bakmeel,g,,12,340,1.4,68,0
+ei,stuks,50.0,12.7,148,9.2,0.2,0
+boter,g,,0.5,701,79,0.5,0
+schenkstroop,ml,,0,288,0,72,0
+water,ml,,0,0,0,0,0
+spa rood,ml,,0,1,0,1,0
+ah terra plantaardige sojaroom,ml,,2.7,187,17,5.4,0
+absolut vodka,ml,,0,217,0,0,40
+likeur 43,ml,,0,348,0,22,31
+kahlua,ml,,0,269,0,40,20
+ginger beer 0% suiker,ml,,0,1,0,0,0
+limoensap,ml,,0.4,28,0.5,1,0
+citroensap,ml,,0.4,27,0.03,2,0

@@ -30,13 +30,22 @@ def load_ingredients_csv(ingredients_file: str) -> dict:
                 "components": [
                     {
                         "name": "protein",
-                        "quantity_per_100_g": float(row["protein_per_100g"]),
+                        "quantity_per_100_g": float(row.get("protein_per_100g", 0) or 0),
                     },
                     {
                         "name": "calories",
-                        "quantity_per_100_g": float(row["calories_per_100g"]),
+                        "quantity_per_100_g": float(row.get("calories_per_100g", 0) or 0),
+                    },
+                    {
+                        "name": "fat",
+                        "quantity_per_100_g": float(row.get("fat_per_100g", 0) or 0),
+                    },
+                    {
+                        "name": "carbohydrates",
+                        "quantity_per_100_g": float(row.get("carbohydrates_per_100g", 0) or 0),
                     },
                 ],
+
                 "alcohol_percentage": float(row["alcohol_percentage"])
                 if row.get("alcohol_percentage")
                 else 0,
@@ -49,7 +58,7 @@ def calculate_nutrition(
     all_ingredients: Dict[str, Dict[str, Any]],
 ) -> Tuple[int, int, float, float, List[str], float]:
     total_protein = total_calories = total_weight = 0
-    total_alcohol_ml = 0
+    total_alcohol_ml = total_fat = total_carbs = 0
     human_readable_ingredients = []
 
     for recipe_ingredient in yaml_content["ingredients"]:
@@ -92,10 +101,26 @@ def calculate_nutrition(
                 ),
                 0,
             )
-
+            fat_per_100g = next(
+                (
+                    c["quantity_per_100_g"]
+                    for c in ingredient["components"]
+                    if c["name"] == "fat"
+                ),
+                0,
+            )
+            carbs_per_100g = next(
+                (
+                    c["quantity_per_100_g"]
+                    for c in ingredient["components"]
+                    if c["name"] == "carbohydrates"
+                ),
+                0,
+            )
             total_protein += round((quantity * protein_per_100g) / 100)
             total_calories += round((quantity * calories_per_100g) / 100)
-
+            total_fat += round((quantity * fat_per_100g) / 100)
+            total_carbs += round((quantity * carbs_per_100g) / 100)
             # Alcohol (ml ethanol)
             abv = ingredient.get("alcohol_percentage", 0)
             if abv > 0:
@@ -108,6 +133,8 @@ def calculate_nutrition(
     calories_per_100g = (
         round((total_calories / total_weight) * 100) if total_weight else 0
     )
+    fat_per_100g = round((total_fat / total_weight) * 100, 1) if total_weight else 0
+    carbs_per_100g = round((total_carbs / total_weight) * 100, 1) if total_weight else 0
 
     # Alcohol percentage of the whole recipe
     alcohol_percentage = (
@@ -119,6 +146,10 @@ def calculate_nutrition(
         total_calories,
         protein_per_100g,
         calories_per_100g,
+        total_fat,
+        total_carbs,
+        fat_per_100g,
+        carbs_per_100g,
         human_readable_ingredients,
         alcohol_percentage,
     )
@@ -151,9 +182,14 @@ def process_all_recipes(
                             total_calories,
                             protein_100g,
                             calories_100g,
+                            total_fat,
+                            total_carbs,
+                            fat_100g,
+                            carbs_100g,
                             ingredients,
                             alcohol_percentage,
                         ) = calculate_nutrition(yaml_content, all_ingredients)
+
 
                         recipe_data = {
                             "name": recipe_name,
@@ -162,6 +198,10 @@ def process_all_recipes(
                             "calories_100g": calories_100g,
                             "total_protein": total_protein,
                             "total_calories": total_calories,
+                            "fat_100g": fat_100g,
+                            "carbs_100g": carbs_100g,
+                            "total_fat": total_fat,
+                            "total_carbs": total_carbs,
                             "ingredients": ingredients,
                             "steps": yaml_content.get("steps", []),
                             "rating": yaml_content.get("rating", 0),

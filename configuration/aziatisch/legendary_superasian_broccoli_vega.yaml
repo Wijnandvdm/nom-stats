@@ -3,11 +3,11 @@ description: 'Teriyaki deliciousness'
 ingredients:
   - name: 'vivera kip'
     quantity: 160
-  - name: 'mie'
+  - name: 'mie nestjes fijn'
     quantity: 100
   - name: 'broccoli'
     quantity: 250
-  - name: 'teriyaki saus lidl'
+  - name: 'lidl teriyaki saus'
     quantity: 180
   - name: 'ongezouten cashews'
     quantity: 20
@@ -22,7 +22,7 @@ steps:
   - "Bak de kip"
   - "Voeg de pinda's/cashews toe aan de kip als ze nog 5 min moeten"
   - "Bak de uien"
-  - "Kook de mie"
+  - "Kook de mie nestjes fijn"
   - "Kook de broccoli"
   - "Meng alles bij elkaar"
 rating: 3
