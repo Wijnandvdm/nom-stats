@@ -254,8 +254,18 @@
                 <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
                 <td>{{ recipe.protein_100g | round(0) }} g</td>
                 {% if recipe.alcohol_percentage is defined %}
-                <td rowspan="2">{{ recipe.alcohol_percentage }} %</td>
+                <td rowspan="4">{{ recipe.alcohol_percentage }} %</td>
                 {% endif %}
+            </tr>
+            <tr>
+                <td>Fat</td>
+                <td id="total-fat" data-base="{{ recipe.total_fat }}">{{ recipe.total_fat | round(0) }} g</td>
+                <td>{{ recipe.fat_100g | round(0) }} g</td>
+            </tr>
+            <tr>
+                <td>Carbohydrates</td>
+                <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | round(0) }} g</td>
+                <td>{{ recipe.carbs_100g | round(0) }} g</td>
             </tr>
             <tr>
                 <td>Calories</td>
@@ -271,7 +281,7 @@
             document.getElementById("servings").textContent = servings;
 
             // Update nutrition totals
-            ["total-protein", "total-calories"].forEach(id => {
+            ["total-protein", "total-fat", "total-carbs", "total-calories"].forEach(id => {
                 const el = document.getElementById(id);
                 const baseValue = parseFloat(el.dataset.base);
                 if (!isNaN(baseValue)) {

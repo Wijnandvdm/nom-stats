@@ -1,8 +1,8 @@
 recipe_name: 'Chili Sin Carne'
 description: '10/10 would eat again'
 ingredients:
-  - name: 'vega gehakt'
-    quantity: 287.5
+  - name: 'beyond meat burger gehakt'
+    quantity: 226
   - name: 'bruine bonen'
     quantity: 250
   - name: 'kidneybonen'
