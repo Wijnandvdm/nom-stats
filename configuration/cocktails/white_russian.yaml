@@ -2,7 +2,7 @@ recipe_name: 'White Russian'
 description: "Who said you can't become drunk and fat in one drink?"
 ingredients:
   - name: 'absolut vodka'
-    quantity: 30
+    quantity: 20
   - name: 'kahlua'
     quantity: 30
   - name: 'ah terra plantaardige sojaroom'
