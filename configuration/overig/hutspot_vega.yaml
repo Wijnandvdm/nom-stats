@@ -1,0 +1,26 @@
+recipe_name: 'Potpeenpieperpret proppen, prakken, prikken'
+description: "Lekkerder dan het klinkt, warmer dan je deken, en met genoeg spek om je innerlijke oermens te laten spinnen van blijdschap."
+ingredients:
+  - name: 'kruimige aardappel'
+    quantity: 250
+  - name: 'winterpeen'
+    quantity: 2
+  - name: 'ui'
+    quantity: 2
+  - name: 'boter'
+    quantity: 15
+  - name: 'melk'
+    quantity: 25
+  - name: 'dijon mosterd extra pittig'
+    quantity: 30
+  - name: 'knoflook'
+    quantity: 3
+  - name: 'vivera spek'
+    quantity: 175
+steps:
+  - "Schil en snijd aardappelen, wortel, ui en knoflook."
+  - "Kook alles samen in gezouten water tot gaar (ca. 25 min)."
+  - "Bak het spek krokant in een koekenpan."
+  - "Giet groenten af en stamp met boter, melk en mosterd."
+  - "Roer de spekjes erdoor en breng op smaak met peterselie, zout en peper."
+rating: 5
