@@ -153,10 +153,10 @@
     <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
     <header>
         <h1>🍽️ NomStats</h1>
-        <input 
-            type="text" 
-            id="searchBar" 
-            placeholder="🔍 Search recipes..." 
+        <input
+            type="text"
+            id="searchBar"
+            placeholder="🔍 Search recipes..."
             style="margin-top: 1rem; padding: 8px; width: 80%; max-width: 400px; border-radius: 6px; border: 1px solid #ccc;"
         >
     </header>
@@ -230,8 +230,8 @@
 
                 if (query === "") {
                     // ✅ Reset: collapse everything
-                    item.style.display = "block";  
-                    content.style.display = "none";  
+                    item.style.display = "block";
+                    content.style.display = "none";
                 } else if (visibleLinks.length > 0) {
                     // ✅ Keep expanded if there’s a match
                     item.style.display = "block";
