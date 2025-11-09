@@ -1,16 +1,18 @@
-recipe_name: 'Pizza Funghi'
-description: 'Pizza with fun says hi'
+recipe_name: 'Pizza Shroom Boom'
+description: 'Truffle Truffle Truffle Truffle Truffle Truffle Truffle Truffle MUSHROOM MUSHROOM!'
 ingredients:
   - name: 'lactosevrije magere kwark'
     quantity: 100
   - name: 'zelfrijzend bakmeel'
     quantity: 110
-  - name: 'passata'
-    quantity: 100
+  - name: 'bertolli pizzasaus piccante'
+    quantity: 90
   - name: 'ah geraspte kaas 20+'
     quantity: 75
   - name: 'champignons'
     quantity: 125
+  - name: 'truffel paddenstoel tapenade'
+    quantity: 40
 steps:
   - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
   - "Rol het deeg uit tot pizzabodems"

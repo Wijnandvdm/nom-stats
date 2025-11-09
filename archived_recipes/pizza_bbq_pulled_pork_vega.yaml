@@ -1,24 +1,20 @@
-recipe_name: 'Pizza Caprese Truffel'
-description: 'Pizza with caprese and truffel toppings'
+recipe_name: 'Pizza BBQ Pulled Pork'
+description: 'Nom nom nom nom'
 ingredients:
   - name: 'lactosevrije magere kwark'
     quantity: 100
   - name: 'zelfrijzend bakmeel'
     quantity: 110
-  - name: 'passata'
-    quantity: 100
+  - name: 'bertolli pizzasaus piccante'
+    quantity: 90
+  - name: 'ui'
+    quantity: 1
+  - name: 'redefine pulled pork'
+    quantity: 200
+  - name: 'remia blackjack smokey bbq saus'
+    quantity: 45
   - name: 'ah geraspte kaas 20+'
     quantity: 75
-  - name: 'gran italia groene pesto'
-    quantity: 22.5
-  - name: 'cherry tomaatjes'
-    quantity: 50
-  - name: 'galbani mozzarella mini'
-    quantity: 41.5
-  - name: 'truffel paddenstoel tapenade'
-    quantity: 20
-  - name: 'champignons'
-    quantity: 25
 steps:
   - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
   - "Rol het deeg uit tot pizzabodems"

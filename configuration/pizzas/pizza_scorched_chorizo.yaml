@@ -1,5 +1,5 @@
-recipe_name: 'Pizza Holy Caprese!'
-description: 'Vibrant colors and flavors on every bite!'
+recipe_name: 'Pizza Scorched Chorizo'
+description: 'And it burns, burns, burns, the rings of fire!'
 ingredients:
   - name: 'lactosevrije magere kwark'
     quantity: 100
@@ -7,13 +7,13 @@ ingredients:
     quantity: 110
   - name: 'bertolli pizzasaus piccante'
     quantity: 90
+  - name: 'ui'
+    quantity: 1
+  - name: 'chorizo'
+    quantity: 130
+  - name: 'jalapeno'
+    quantity: 1
   - name: 'ah geraspte kaas 20+'
-    quantity: 75
-  - name: 'gran italia groene pesto'
-    quantity: 30
-  - name: 'cherry tomaatjes'
-    quantity: 50
-  - name: 'galbani mozzarella mini'
     quantity: 75
 steps:
   - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
@@ -24,5 +24,4 @@ steps:
   - "Plaats de toppings op de pizzabodem"
   - "Plaats de pizzas 10-15 min in de oven"
 rating: 5
-dietary_labels:
-  - vegetarian
+
