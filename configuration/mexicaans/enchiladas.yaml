@@ -1,0 +1,26 @@
+recipe_name: 'Echiladas'
+description: 'nom nom nom'
+ingredients:
+  - name: 'gehakt'
+    quantity: 250
+  - name: 'ah tortilla medium'
+    quantity: 120
+  - name: 'ah terra bonenmix'
+    quantity: 100
+  - name: 'passata'
+    quantity: 135
+  - name: 'ah geraspte kaas 20+'
+    quantity: 40
+  - name: 'ui'
+    quantity: 1
+  - name: 'jalapeno'
+    quantity: 0.5
+steps:
+  - "Snij de ui"
+  - "Bak gehakt met picadollo kruiden"
+  - "Voeg bonenmix, ui en helft van passata toe"
+  - "Verdeel mengels over de wrap en leg in ovenschaal"
+  - "Rest van passata over de wraps"
+  - "Strooi de kaas en jalapeno's erover"
+  - "In de oven voor 25 min op 180 graden"
+rating: 5
