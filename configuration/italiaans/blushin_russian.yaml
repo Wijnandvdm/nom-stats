@@ -1,0 +1,32 @@
+recipe_name: 'The Blushin Russian with a Spanish Cousin'
+description: 'International pasta mayhem, served hot'
+ingredients:
+  - name: 'penne'
+    quantity: 150
+  - name: 'chorizo'
+    quantity: 65
+  - name: 'absolut vodka'
+    quantity: 12.5
+  - name: 'ah terra plantaardige sojaroom'
+    quantity: 45
+  # - name: 'parmigiano reggiano'
+  #   quantity: 30
+  - name: 'tomatenpuree'
+    quantity: 35
+  - name: 'tomatenblokjes'
+    quantity: 200
+  - name: 'ui'
+    quantity: 1
+  - name: 'knoflook'
+    quantity: 2
+steps:
+  - "Kook de pasta"
+  - "Bak ui en knoflook zonder te kleuren"
+  - "Voeg chorizo en tomatenpuree toe en bak 5 min"
+  - "Giet vodka erbij en zet vuur laag"
+  - "Meng kookroom langzaam bij saus"
+  - "Schep pasta in de saus en voeg eventueel pastawater toe"
+  # - "Roer Parmezaanse kaas erdoor en garneer met bosui"
+rating: 4
+dietary_labels:
+  - alcoholic

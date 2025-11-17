@@ -9,26 +9,25 @@ ingredients:
     quantity: 12.5
   - name: 'ah terra plantaardige sojaroom'
     quantity: 45
-  - name: 'parmigiano reggiano'
-    quantity: 30
+  # - name: 'parmigiano reggiano'
+  #   quantity: 30
   - name: 'tomatenpuree'
     quantity: 35
+  - name: 'tomatenblokjes'
+    quantity: 200
   - name: 'ui'
     quantity: 1
   - name: 'knoflook'
     quantity: 2
-  - name: 'bosui'
-    quantity: 0.5
 steps:
-  - "Snij de uien"
-  - "Snij de paprika"
-  - "Snij de jalapeno"
-  - "Braad de kip"
-  - "Braad de uien"
-  - "Kook de penne"
-  - "Kook de paprika"
-  - "Kook de kidneybonen"
-  - "Meng alles bij elkaar"
+  - "Kook de pasta"
+  - "Bak ui en knoflook zonder te kleuren"
+  - "Voeg chorizo en tomatenpuree toe en bak 5 min"
+  - "Giet vodka erbij en zet vuur laag"
+  - "Meng kookroom langzaam bij saus"
+  - "Schep pasta in de saus en voeg eventueel pastawater toe"
+  # - "Roer Parmezaanse kaas erdoor en garneer met bosui"
 rating: 4
 dietary_labels:
   - vegetarian
+  - alcoholic
