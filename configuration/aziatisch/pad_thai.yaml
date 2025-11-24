@@ -1,0 +1,40 @@
+recipe_name: 'pad thai'
+description: "Snelle wok vol smaak met kip en noedels."
+ingredients:
+  - name: 'conimex rijstnoedels 5mm'
+    quantity: 125
+  - name: 'kipdijfilet'
+    quantity: 200
+  - name: 'ah woksaus pad thai'
+    quantity: 90
+  - name: 'pinda ongezouten'
+    quantity: 30
+  - name: 'bosui'
+    quantity: 1
+  - name: 'tauge'
+    quantity: 62.5
+  - name: 'sjalot'
+    quantity: 2
+  - name: 'knoflook'
+    quantity: 3
+  - name: 'gehakte gember'
+    quantity: 2
+  - name: 'ei'
+    quantity: 1
+steps:
+  - "Maak de saus: meng rijstazijn, sojasaus, ketjap manis/oestersaus, sesamolie en maïzena in een kommetje."
+  - "Snij (nep)kip in stukjes en bereid alle groenten voor."
+  - "Kook de mie volgens de verpakking, giet af en spoel koud."
+  - "Bak de (nep)kip goudbruin en gaar."
+  - "Plaats de kip op een bord en zet apart."
+  - "Voeg bosui toe en bak tot ze slap worden."
+  - "Voeg driekwart van de knoflook toe en bak tot de knoflook goudbruin eruit ziet."
+  - "Voeg winterpeen julienne toe en bak tot ze slap worden."
+  - "Voeg de chinese kool en bak tot ze slap worden."
+  - "Voeg de (nep)kip terug in de pan en roer goed door."
+  - "Voeg de gekookte mie toe aan de pan."
+  - "Giet de saus en 2 eetlepels water erbij, roer goed door tot alles bedekt is."
+  - "Zet het gas uit, voeg de rest van de knoflook toe en roer goed door."
+  - "Voeg eventueel extra sojasaus toe voor meer smaak."
+  - "Serveer eventueel met extra lente-ui bovenop."
+rating: 5
