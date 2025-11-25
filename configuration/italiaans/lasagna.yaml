@@ -1,7 +1,7 @@
 recipe_name: 'Lasagna'
 description: '10/10 would eat again'
 ingredients:
-  - name: 'lasagna bladeren'
+  - name: 'ah lasagna bladeren ei'
     quantity: 125
   - name: 'gehakt'
     quantity: 250
@@ -27,7 +27,7 @@ steps:
   - "Voeg op smaak gebakken tomaten toe"
   - "Mix besciamella met melk om saus te maken"
   - "Maak een laag van besciamellasaus"
-  - "Hierop een laag van lasagna bladeren"
+  - "Hierop een laag van ah lasagna bladeren ei"
   - "Hierop een laag van gehaktsaus"
   - "Hierop een laag van besciamellasaus"
   - "Etc."
