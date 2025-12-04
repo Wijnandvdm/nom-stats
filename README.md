@@ -23,4 +23,3 @@ This of course does not explain the complete functionality of this project. Want
 
 ## To Do
 - spicy spice rating thingy to recipes
-- put something in pre-commit that checks if the ingredients used in the recipe.yamls are present in the csv file (combine with validate_ingredients_file.py script?)
