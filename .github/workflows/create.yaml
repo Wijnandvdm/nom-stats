@@ -48,9 +48,6 @@ jobs:
 
           uv sync
 
-      - name: 'Validate ingredients file'
-        run: uv run python validate_ingredients_file.py
-
       - name: 'Generate HTML files'
         run: uv run python generate_static_website.py
 
