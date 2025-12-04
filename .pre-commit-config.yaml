@@ -12,3 +12,19 @@ repos:
       - id: ruff-check
         args: ["--fix"]
       - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: custom-python-check
+        name: check ingredients csv
+        entry: uv run python check_ingredients_csv.py
+        language: system
+        types: [python]
+
+  - repo: local
+    hooks:
+      - id: custom-python-check
+        name: check recipe yamls
+        entry: uv run python check_recipe_yamls.py
+        language: system
+        types: [python]
