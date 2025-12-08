@@ -1,0 +1,27 @@
+recipe_name: 'Pizza cheese filled crust'
+description: 'hmmmmm cheeseeee'
+ingredients:
+  - name: 'lactosevrije magere kwark'
+    quantity: 100
+  - name: 'zelfrijzend bakmeel'
+    quantity: 110
+  - name: 'bertolli pizzasaus piccante'
+    quantity: 90
+  - name: 'ah geraspte kaas 20+'
+    quantity: 75
+  - name: 'ah Emmentaler 45+'
+    quantity: 60
+  - name: 'ui'
+    quantity: 1
+
+steps:
+  - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
+  - "Rol het deeg uit tot pizzabodems"
+  - "Plaats de pizzabodems 5-10 min in de oven"
+  - "Haal de pizzabodems uit de oven"
+  - "Spreid passata op de pizzabodem"
+  - "Plaats de toppings op de pizzabodem"
+  - "Plaats de pizzas 10-15 min in de oven"
+rating: 5
+dietary_labels:
+  - vegetarian
