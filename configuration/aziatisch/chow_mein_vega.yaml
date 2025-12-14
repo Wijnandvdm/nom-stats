@@ -1,5 +1,5 @@
-recipe_name: 'Stir-Fry Kip Chow Mein'
-description: "Snelle wok vol smaak met kip en noedels."
+recipe_name: 'Chow Mein Teil'
+description: "Chow down on Mein Teil!"
 ingredients:
   - name: 'rijstazijn'
     quantity: 10
