@@ -13,11 +13,11 @@ def load_known_ingredients() -> set[str]:
     try:
         df = pd.read_csv(INGREDIENTS_CSV)
     except Exception as e:
-        print(f"❌ Cannot read ingredients.csv: {e}")
+        print(f"Cannot read ingredients.csv: {e}")
         sys.exit(1)
 
     if "name" not in df.columns:
-        print("❌ CSV is missing required column 'name'.")
+        print("CSV is missing required column 'name'.")
         sys.exit(1)
 
     return set(df["name"].dropna().astype(str).str.strip())
@@ -34,20 +34,20 @@ def check_recipe(file: Path, known: set[str]) -> list[str]:
         with file.open() as f:
             data = yaml.safe_load(f)
     except Exception as e:
-        return [f"❌ Could not parse YAML file {file}: {e}"]
+        return [f"Could not parse YAML file {file}: {e}"]
 
     ingredients = data.get("ingredients", [])
     if not isinstance(ingredients, list):
-        return [f"❌ Invalid 'ingredients' structure in {file}"]
+        return [f"Invalid 'ingredients' structure in {file}"]
 
     for item in ingredients:
         name = item.get("name")
         if name is None:
-            issues.append(f"❌ {file}: ingredient entry without a 'name' key")
+            issues.append(f"{file}: ingredient entry without a 'name' key")
             continue
 
         if name not in known:
-            issues.append(f"❌ {file}: ingredient '{name}' not found in ingredients.csv")
+            issues.append(f"{file}: ingredient '{name}' not found in ingredients.csv")
 
     return issues
 
@@ -61,7 +61,7 @@ def main():
         all_issues.extend(check_recipe(file, known))
 
     if not all_issues:
-        print("✅ All recipe YAML files reference valid ingredient names.")
+        print("All recipe YAML files reference valid ingredient names.")
         return 0
 
     for issue in all_issues:

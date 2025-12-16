@@ -19,7 +19,7 @@ repos:
         name: check ingredients csv
         entry: uv run python check_ingredients_csv.py
         language: system
-        types: [python]
+        always_run: true
 
   - repo: local
     hooks:
@@ -27,4 +27,4 @@ repos:
         name: check recipe yamls
         entry: uv run python check_recipe_yamls.py
         language: system
-        types: [python]
+        always_run: true
