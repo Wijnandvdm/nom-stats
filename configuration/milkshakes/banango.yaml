@@ -1,0 +1,19 @@
+recipe_name: 'Banango'
+description: 'Banana, mango, protein. Damn I love my job.'
+ingredients:
+  - name: 'melk'
+    quantity: 300
+  - name: 'banaan'
+    quantity: 1
+  - name: 'mango'
+    quantity: 50
+  - name: 'eiwitpoeder'
+    quantity: 30
+steps:
+  - "Doe de melk in een blender"
+  - "Voeg de bevroren banaan toe"
+  - "Voeg de bevroren mango toe"
+  - "Voeg het eiwitpoeder toe"
+  - "Blend tot een gladde shake"
+  - "Schenk in een glas en serveer direct"
+rating: 5
