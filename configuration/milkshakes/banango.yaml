@@ -1,7 +1,7 @@
 recipe_name: 'Banango'
 description: 'Banana, mango, protein. Damn I love my job.'
 ingredients:
-  - name: 'melk'
+  - name: 'lactosevrije halfvolle melk'
     quantity: 300
   - name: 'banaan'
     quantity: 1
