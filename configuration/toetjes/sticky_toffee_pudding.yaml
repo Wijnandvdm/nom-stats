@@ -1,0 +1,44 @@
+recipe_name: 'Sticky Toffee Pudding'
+description: "10 out of 10 dentists do not recommend this dessert... but you will!"
+ingredients:
+  - name: 'medjoul dadels'
+    quantity: 225
+  - name: 'baksoda'
+    quantity: 2
+  - name: 'bloem'
+    quantity: 225
+  - name: 'zelfrijzend bakmeel'
+    quantity: 1
+  - name: 'nootmuskaat'
+    quantity: 1
+  - name: 'boter'
+    quantity: 200
+  - name: 'lichtbruine basterdsuiker'
+    quantity: 350
+  - name: 'ei'
+    quantity: 3
+  - name: 'vanillesuiker'
+    quantity: 8
+  - name: 'maple syrup'
+    quantity: 100
+  - name: 'ah terra plantaardige sojaroom'
+    quantity: 400
+  - name: 'vanille ijs'
+    quantity: 400
+steps:
+  - "Verwarm de oven voor op 180°C en vet een ovenschaal van ~20x20 cm in met boter."
+  - "Breng de dadels (hoe donkerder en droger hoe beter) en het water aan de kook."
+  - "De dadels kunnen wat boven het water uitsteken. Laat 4 minuten zachtjes koken tot ze zacht zijn."
+  - "Voeg de baksoda toe en pureer het mengsel tot een zo glad mogelijke massa."
+  - "Meng bloem, zelfrijzend bakmeel, zout en nootmuskaat in een kom."
+  - "Klop de boter romig en voeg de basterdsuiker toe. Klop 3-5 minuten tot licht en luchtig."
+  - "Voeg de eieren, vanillesuiker en dadelpuree toe."
+  - "Spatel het bloemmengsel er in twee delen doorheen."
+  - "Giet het beslag in de ovenschaal en bak 30-40 minuten tot een prikker er schoon uitkomt."
+  - "Prik direct na het bakken gaatjes in de cake tot op de bodem."
+  - "Maak de toffeesaus door suiker, maple syrup en boter te verwarmen."
+  - "Voeg 240 ml room toe, laat 4 minuten koken en daarna 15-20 minuten inkoken."
+  - "Voeg de resterende room toe, kook nog 3-4 minuten (tot dikke saus) en breng op smaak met vanillesuiker en zout."
+  - "Giet de helft van de warme saus over de cake en zet deze nog 3-4 minuten terug in de oven."
+  - "Snijd de cake in stukken en serveer warm met extra toffeesaus over de cake en dan over de bol vanille-ijs."
+rating: 5
