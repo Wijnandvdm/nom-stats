@@ -24,4 +24,3 @@ This of course does not explain the complete functionality of this project. Want
 ## To Do
 - spicy spice rating thingy to recipes
 - a way to enter ingredients and read straight ingredient data straight from albert heijn
-- the github actions pipeline needs to be sequential
