@@ -25,5 +25,3 @@ This of course does not explain the complete functionality of this project. Want
 - spicy spice rating thingy to recipes
 - a way to enter ingredients and read straight ingredient data straight from albert heijn
 - the github actions pipeline needs to be sequential
-
-addition to trigger a deployment for testing
