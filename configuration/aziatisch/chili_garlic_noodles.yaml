@@ -1,5 +1,5 @@
-recipe_name: 'Chongqing noodles met chili oil en crispy pork'
-description: "Pittige Sichuan-noedels met huisgemaakte chili-olie, krokant gekruid varkensgehakt en sesampasta."
+recipe_name: 'Chili Garlic Noodles'
+description: "Who needs peanut butter and jelly when you got chili oil and garlic?"
 ingredients:
   - name: 'kipdijfilet'
     quantity: 300
@@ -23,14 +23,12 @@ ingredients:
     quantity: 1
   - name: 'chiliolie'
     quantity: 30
-
 steps:
   - "Bak het vlees in een hete pan plat gedrukt tot de onderkant bruin is. Maak het fijn met een stamper of spatel en bak verder tot krokant."
   - "Voeg suiker en sojasaus toe aan het gehakt en laat inkoken tot een glanzend laagje. Roer de fijngehakte knoflook erdoor en houd warm."
   - "Meng geraspte knoflook met water en zet apart."
   - "Kook de noedels volgens de verpakking en giet af."
-  - "Stel per kom samen: voeg chili-olie naar smaak toe, een lepel knoflookwater, een snuf gemalen peperkorrels, sesampasta, pinda’s en bosui."
+  - "Stel per kom samen: voeg chili-olie naar smaak toe, een lepel knoflookwater, een snuf gemalen peperkorrels, sesampasta, pinda's en bosui."
   - "Voeg bouillon toe, daarna de noedels en een lepel crispy pork."
-  - "Garneer met extra chili-olie, pinda’s en bosui en serveer direct."
-
+  - "Garneer met extra chili-olie, pinda's en bosui en serveer direct."
 rating: 5
