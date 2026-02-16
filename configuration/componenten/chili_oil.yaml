@@ -1,0 +1,37 @@
+recipe_name: 'Spicy Slap'
+description: "Slaps harder than Monday mornings"
+ingredients:
+  - name: 'olijfolie'
+    quantity: 300
+  - name: 'raapzaadolie'
+    quantity: 120
+  - name: 'chilivlokken'
+    quantity: 40
+  - name: 'peper'
+    quantity: 10
+  - name: 'zout'
+    quantity: 15
+  - name: 'msg'
+    quantity: 6
+  - name: 'suiker'
+    quantity: 13
+  - name: 'saitaku geroosterd zwart sesamzaad'
+    quantity: 10
+  - name: 'go-tan sojasaus'
+    quantity: 10
+  - name: 'rijstazijn'
+    quantity: 10
+steps:
+  - "Doe de neutrale olie en koolzaadolie in een steelpan."
+  - "Voeg knoflook, sjalot, steranijs, kardemom en kaneel toe."
+  - "Zet de pan op middelhoog vuur."
+  - "Laat 20-30 minuten zacht koken."
+  - "Zeef de olie om knoflook, sjalot en specerijen te verwijderen."
+  - "Zet de gezeefde olie terug op middelhoog vuur en verwarm tot 176°C."
+  - "Doe chilivlokken, gemalen peper, zout, MSG, suiker en sesamzaad in een hittebestendige kom."
+  - "Giet de hete olie voorzichtig over het mengsel."
+  - "Roer meteen goed door zodat alles mengt."
+  - "Voeg soja en rijsazijn mengsel toe en laat de olie afkoelen tot kamertemperatuur."
+rating: 5
+dietary_labels:
+  - vegetarian

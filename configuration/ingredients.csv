@@ -15,6 +15,7 @@ varkensribben,g,,20,300,5.9,0,0
 vega zalm,g,,1.4,65,0.8,11.7,0
 penne,g,,13,357,1.3,72,0
 mie nestjes fijn,g,,11,353,1.5,72,0
+ah verse eiernoedels,g,,13,290,3.8,50,0
 conimex rijstnoedels 5mm,g,,2.9,165,0.5,37,0
 spaghetti,g,,13,357,1.3,72,0
 ravioli kaas tomaat,g,,9.1,278,6.7,42,0
@@ -84,14 +85,15 @@ ketjap manis,ml,,6.6,207,0,45.2,0
 honing,g,,0.4,326,0,81,0
 bruine basterdsuiker,g,,0,387,0,99,0
 lichtbruine basterdsuiker,g,,0,396,0,99,0
-suiker,g,,0,387,0,100,0
 vanillesuiker,g,,0,396,0,99,0
 maple syrup,g,,0,387,0,90,0
 sesamolie,ml,,0,828,92,0,0
 olijfolie,ml,,0,819,91,0,0
+raapzaadolie,ml,,0,828,92,0,0
 extra vierge olijfolie,ml,,0,814,91.4,0,0
 dijon mosterd extra pittig,g,,7.2,156,12,3.2,0
 ongezouten cashews,g,,19.0,622,50,22,0
+sesampasta,g,,23,693,61,9,0
 saitaku geroosterd zwart sesamzaad,g,,21.0,581,54,6,0
 rijstazijn,ml,,0,8,0,1.9,0
 witte wijnazijn,ml,,0,18,0,0,0
@@ -109,6 +111,11 @@ jalapeno,stuks,30,0.9,28,0,1,0
 gochujang,g,,6.1,233,2.3,40,0
 gehakte gember,g,,1.4,70,1.8,11.5,0
 nootmuskaat,g,,5.5,545,38,44,0
+chilivlokken,g,,10,370,15,40,0
+peper,g,,11,332,3,52,0
+zout,g,,0,0,0,0,0
+msg,g,,0,0,0,0,0
+suiker,g,,0,400,0,100,0
 tomatenblokjes,g,,1.4,33,0.1,4,0
 op smaak gebakken tomaten,g,,1.5,75,3.3,9.3,0
 tomatenpuree,g,,4.8,89,0.4,15,0
