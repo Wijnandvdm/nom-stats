@@ -19,7 +19,6 @@ ingredients:
     quantity: 1
   - name: 'chiliolie'
     quantity: 25
-
 steps:
   - "Bak de tofu in een hete pan plat gedrukt tot de onderkant bruin is. Maak het fijn met een stamper of spatel en bak verder tot krokant."
   - "Voeg suiker en sojasaus toe aan het gehakt en laat inkoken tot een glanzend laagje. Roer de fijngehakte knoflook erdoor en houd warm."
@@ -28,7 +27,6 @@ steps:
   - "Stel per kom samen: voeg chili-olie naar smaak toe, een lepel knoflookwater, een snuf gemalen peperkorrels, sesampasta, pinda's en bosui."
   - "Voeg bouillon toe, daarna de noedels en een lepel crispy pork."
   - "Garneer met extra chili-olie, pinda's en bosui en serveer direct."
-
 rating: 5
 dietary_labels:
   - vegetarian
