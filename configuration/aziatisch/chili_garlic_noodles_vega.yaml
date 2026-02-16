@@ -3,8 +3,6 @@ description: "Pittige Sichuan-noedels met huisgemaakte chili-olie, krokant gekru
 ingredients:
   - name: 'ah terra gerookte tofu'
     quantity: 100
-  - name: 'suiker'
-    quantity: 10
   - name: 'go-tan sojasaus'
     quantity: 40
   - name: 'knoflook'
@@ -17,10 +15,10 @@ ingredients:
     quantity: 5
   - name: 'sesampasta'
     quantity: 30
-  - name: 'pinda ongezouten'
-    quantity: 30
   - name: 'bosui'
     quantity: 1
+  - name: 'chiliolie'
+    quantity: 25
 
 steps:
   - "Bak de tofu in een hete pan plat gedrukt tot de onderkant bruin is. Maak het fijn met een stamper of spatel en bak verder tot krokant."

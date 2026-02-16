@@ -21,6 +21,8 @@ ingredients:
     quantity: 30
   - name: 'bosui'
     quantity: 1
+  - name: 'chiliolie'
+    quantity: 30
 
 steps:
   - "Bak het vlees in een hete pan plat gedrukt tot de onderkant bruin is. Maak het fijn met een stamper of spatel en bak verder tot krokant."
