@@ -2,7 +2,7 @@ recipe_name: 'Mean Green Pesto Machine'
 description: 'Delicious pasta pesto with chicken and beans'
 ingredients:
   - name: 'kip'
-    quantity: 100
+    quantity: 150
   - name: 'penne'
     quantity: 125
   - name: 'sperziebonen'
