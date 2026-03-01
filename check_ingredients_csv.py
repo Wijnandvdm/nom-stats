@@ -85,6 +85,16 @@ def check_numeric_columns(df: pd.DataFrame, schema: pd.DataFrame) -> List[str]:
     return issues
 
 
+def check_lowercase_names(df: pd.DataFrame) -> List[str]:
+    issues = []
+    if "name" not in df.columns:
+        return issues
+    uppercase_mask = df["name"].astype(str).str.contains(r"[A-Z]", regex=True)
+    for _, row in df[uppercase_mask].iterrows():
+        issues.append(f"Ingredient name contains uppercase letters: '{row['name']}'")
+    return issues
+
+
 def check_duplicate_names(df: pd.DataFrame) -> List[str]:
     issues = []
     if "name" not in df.columns:
@@ -130,6 +140,7 @@ def validate_ingredients_csv(csv_path: str) -> List[str]:
     issues.extend(check_missing_values(df, SCHEMA))
     issues.extend(check_numeric_columns(df, SCHEMA))
     issues.extend(check_measurement_units(df))
+    issues.extend(check_lowercase_names(df))
     issues.extend(check_duplicate_names(df))
 
     if not issues:
