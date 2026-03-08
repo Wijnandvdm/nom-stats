@@ -176,6 +176,7 @@ def process_all_recipes(
                             "ingredients": ingredients,
                             "steps": yaml_content.get("steps", []),
                             "rating": yaml_content.get("rating", 0),
+                            "spice_level": yaml_content.get("spice_level", 0),
                             "filename": filename.replace(".yaml", ".html"),
                             "dietary_labels": yaml_content.get("dietary_labels", []),
                             "category": category.title(),

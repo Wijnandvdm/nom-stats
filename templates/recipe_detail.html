@@ -105,6 +105,17 @@
         .star.empty {
             color: var(--star-empty);
         }
+        .spice-rating {
+            margin-top: 0.25rem;
+        }
+        .pepper-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+        .pepper-icon.empty {
+            opacity: 0.2;
+        }
         body {
             background-color: var(--bg-dark);
             color: var(--text-dark);
@@ -235,6 +246,17 @@
                 <span class="star empty">★</span>
             {% endfor %}
         </div>
+        <!-- Spice Level Section -->
+        {% if recipe['spice_level'] > 0 %}
+        <div class="spice-rating">
+            {% for _ in range(recipe['spice_level']) %}
+                <img src="icons/pepper.svg" alt="spice" class="pepper-icon filled" />
+            {% endfor %}
+            {% for _ in range(5 - recipe['spice_level']) %}
+                <img src="icons/pepper.svg" alt="" class="pepper-icon empty" />
+            {% endfor %}
+        </div>
+        {% endif %}
     </header>
 
     <div class="container">
