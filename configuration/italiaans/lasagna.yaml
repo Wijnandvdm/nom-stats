@@ -7,7 +7,7 @@ ingredients:
     quantity: 250
   - name: 'ui'
     quantity: 1
-  - name: 'tomatenblokjes'
+  - name: 'tomatenblokjes bio'
     quantity: 200
   - name: 'op smaak gebakken tomaten'
     quantity: 100
@@ -23,7 +23,7 @@ steps:
   - "Snij de ui"
   - "Bak de ui"
   - "Bak het gehakt"
-  - "Voeg tomatenblokjes toe"
+  - "Voeg tomatenblokjes bio toe"
   - "Voeg op smaak gebakken tomaten toe"
   - "Mix besciamella met melk om saus te maken"
   - "Maak een laag van besciamellasaus"
