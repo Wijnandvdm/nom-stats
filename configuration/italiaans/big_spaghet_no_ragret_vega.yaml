@@ -1,0 +1,23 @@
+recipe_name: 'Big Spaghet, no ragret'
+description: 'Eat spaghetti to forgetti your regretti'
+ingredients:
+  - name: 'spaghetti'
+    quantity: 100
+  - name: 'beyond meat burger gehakt'
+    quantity: 113
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'tomatenpuree'
+    quantity: 70
+  - name: 'ui'
+    quantity: 2
+  - name: 'knoflook'
+    quantity: 3
+steps:
+  - "Bak het gehakt"
+  - "Bak de uien en spaghetti groenten"
+  - "Kook de spaghetti"
+  - "Meng alles bij elkaar"
+rating: 5
+dietary_labels:
+  - vegetarian

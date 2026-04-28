@@ -1,20 +1,18 @@
-recipe_name: 'Spaghetti Bolognese'
+recipe_name: 'Big Spaghet, no ragret'
 description: 'Eat spaghetti to forgetti your regretti'
 ingredients:
   - name: 'spaghetti'
     quantity: 150
   - name: 'gehakt'
-    quantity: 187.5
-  - name: 'passata'
-    quantity: 345
-  - name: 'spaghetti groentenmix'
-    quantity: 150
+    quantity: 240
+  - name: 'tomatenblokjes'
+    quantity: 400
+  - name: 'tomatenpuree'
+    quantity: 70g
   - name: 'ui'
-    quantity: 0.75
+    quantity: 2
   - name: 'knoflook'
-    quantity: 2.5
-  - name: 'gochujang'
-    quantity: 1.25
+    quantity: 3
 steps:
   - "Bak het gehakt"
   - "Bak de uien en spaghetti groenten"
