@@ -2,7 +2,7 @@ recipe_name: 'Big Spaghet, no ragret'
 description: 'Eat spaghetti to forgetti your regretti'
 ingredients:
   - name: 'spaghetti'
-    quantity: 110
+    quantity: 100
   - name: 'gehakt'
     quantity: 240
   - name: 'tomatenblokjes bio'
