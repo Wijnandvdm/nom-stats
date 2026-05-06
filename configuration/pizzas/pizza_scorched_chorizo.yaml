@@ -1,7 +1,7 @@
 recipe_name: 'Pizza Scorched Chorizo'
 description: 'And it burns, burns, burns, the rings of fire!'
 ingredients:
-  - name: 'lactosevrije magere kwark'
+  - name: 'skyr'
     quantity: 100
   - name: 'zelfrijzend bakmeel'
     quantity: 110
