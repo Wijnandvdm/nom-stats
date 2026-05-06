@@ -1,10 +1,10 @@
 recipe_name: 'Pizza Bolognese'
 description: 'Just like Spaghetti, except on a pizza'
 ingredients:
-  - name: 'lactosevrije magere kwark'
+  - name: 'skyr'
     quantity: 100
   - name: 'zelfrijzend bakmeel'
-    quantity: 110
+    quantity: 100
   - name: 'bertolli pizzasaus piccante'
     quantity: 90
   - name: 'ui'
@@ -16,7 +16,7 @@ ingredients:
   - name: 'ah geraspte kaas 20+'
     quantity: 75
 steps:
-  - "Meng kwark met zelfrijzend bakmeel tot een niet plakkend deeg"
+  - "Meng skyr met zelfrijzend bakmeel tot een niet plakkend deeg"
   - "Rol het deeg uit tot pizzabodems"
   - "Plaats de pizzabodems 5-10 min in de oven"
   - "Haal de pizzabodems uit de oven"
