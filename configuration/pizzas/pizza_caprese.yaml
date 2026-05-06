@@ -1,7 +1,7 @@
 recipe_name: 'Pizza Holy Caprese!'
 description: 'Vibrant colors and flavors on every bite!'
 ingredients:
-  - name: 'lactosevrije magere kwark'
+  - name: 'skyr'
     quantity: 100
   - name: 'zelfrijzend bakmeel'
     quantity: 110
