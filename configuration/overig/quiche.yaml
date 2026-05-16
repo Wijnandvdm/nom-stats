@@ -1,0 +1,30 @@
+recipe_name: 'Quiche'
+description: 'Romige, hartige quiche met spek, kaas en bosui—klein van formaat, groot van smaak!'
+ingredients:
+  - name: 'ah quichedeeg'
+    quantity: 115
+  - name: 'spek'
+    quantity: 125
+  - name: 'bosui'
+    quantity: 2
+  - name: 'ei'
+    quantity: 3
+  - name: 'minusl slagroom lactosevrij'
+    quantity: 100
+  - name: 'ah geraspte kaas 20+'
+    quantity: 75
+
+steps:
+  - "Verwarm de oven voor op 180-190°C"
+  - "Bekleed de 18cm springvorm met quichedeeg"
+  - "Bak de spekjes kort uit tot ze licht krokant zijn"
+  - "Snij de bosui in ringetjes"
+  - "Meng eieren, crème fraîche en kruiden tot een glad mengsel"
+  - "Roer spekjes, bosui en kaas door het mengsel"
+  - "Giet het geheel in de vorm"
+  - "Bak de quiche 25–35 minuten tot hij goudbruin en net stevig is"
+  - "Laat 5–10 minuten afkoelen voor het aansnijden"
+
+rating: 5
+
+dietary_labels:
