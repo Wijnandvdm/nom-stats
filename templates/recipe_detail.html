@@ -328,7 +328,7 @@
 
 
             // Update ingredients
-            document.querySelectorAll("#ingredients-list li").forEach(el => {
+            document.querySelectorAll(".ingredients-list li").forEach(el => {
                 const baseText = el.dataset.base;
                 const match = baseText.match(/^([\d\.]+)\s*(.*)$/);  // find number + unit/name
                 if (match) {
@@ -386,11 +386,16 @@
         </script>
 
         <h2>Ingredients</h2>
-        <ul id="ingredients-list">
-            {% for ingredient in recipe['ingredients'] %}
-                <li data-base="{{ ingredient.display }}"><a href="/ingredients/{{ ingredient.slug }}.html" class="ingredient-link">{{ ingredient.display }}</a></li>
-            {% endfor %}
-        </ul>
+        {% for component in recipe.components %}
+            {% if component.name %}
+            <h3>{{ component.name }}</h3>
+            {% endif %}
+            <ul class="ingredients-list">
+                {% for ingredient in component.ingredients %}
+                    <li data-base="{{ ingredient.display }}"><a href="/ingredients/{{ ingredient.slug }}.html" class="ingredient-link">{{ ingredient.display }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
 
 
         <div class="servings-control">
