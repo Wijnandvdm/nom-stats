@@ -14,7 +14,7 @@ components:
       - name: 'nootmuskaat'
         quantity: 1
       - name: 'boter'
-        quantity: 115
+        quantity: 85
       - name: 'lichtbruine basterdsuiker'
         quantity: 150
       - name: 'ei'
@@ -28,7 +28,7 @@ components:
       - name: 'maple syrup'
         quantity: 100
       - name: 'boter'
-        quantity: 85
+        quantity: 115
       - name: 'ah terra plantaardige sojaroom'
         quantity: 400
   - name: "Serving"
