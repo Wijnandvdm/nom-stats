@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ingredient.name }}</title>
+    <style>
+        :root {
+            --primary-dark: #0B6623;
+            --primary-light: #45a049;
+            --bg-dark: #121212;
+            --bg-light: #f4f4f9;
+            --text-dark: #e0e0e0;
+            --text-light: #333;
+            --container-dark: #1f1f1f;
+            --container-light: #ffffff;
+            --transition: 0.3s ease-in-out;
+            --table-cell-dark: rgba(255, 255, 255, 0.05);
+            --table-cell-light: rgba(0, 0, 0, 0.05);
+            --border-radius-table: 12px;
+            --border-radius-btn: 5px;
+            --border-radius-container: 8px;
+            --padding-cell: 10px;
+            --padding-container: 2rem;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --back-link-color: var(--text-dark);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            transition: background-color var(--transition), color var(--transition);
+        }
+
+        header {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--container-dark);
+            color: var(--text-dark);
+            transition: background-color var(--transition);
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: var(--padding-container);
+            border-radius: var(--border-radius-container);
+            background-color: var(--container-dark);
+            box-shadow: var(--shadow);
+            transition: background-color var(--transition), box-shadow var(--transition);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-dark);
+            color: var(--back-link-color);
+            text-decoration: none;
+            border-radius: var(--border-radius-btn);
+            transition: background-color var(--transition);
+        }
+
+        .back-link:hover {
+            background-color: var(--primary-light);
+        }
+
+        .macronutrients-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--border-radius-table);
+            overflow: hidden;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .macronutrients-table th,
+        .macronutrients-table td {
+            padding: var(--padding-cell);
+        }
+
+        .macronutrients-table th {
+            background-color: var(--primary-dark);
+            color: var(--text-dark);
+            font-weight: normal;
+        }
+
+        .macronutrients-table td {
+            background-color: var(--table-cell-dark);
+        }
+
+        .measurement-block {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            opacity: 0.75;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 0.5rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: color var(--transition);
+        }
+
+        .theme-toggle::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            transform: translateX(-50%);
+            background-color: var(--text-light);
+            color: var(--container-light);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover::after {
+            opacity: 1;
+        }
+
+        /* Light mode overrides */
+        body.light-mode {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        body.light-mode header {
+            background-color: var(--primary-dark);
+            color: var(--container-light);
+        }
+
+        body.light-mode .container {
+            background-color: var(--container-light);
+            box-shadow: var(--shadow);
+        }
+
+        body.light-mode .back-link {
+            background-color: var(--primary-dark);
+            color: var(--container-light);
+        }
+
+        body.light-mode .back-link:hover {
+            background-color: var(--primary-light);
+        }
+
+        body.light-mode .macronutrients-table td {
+            background-color: var(--table-cell-light);
+        }
+
+        body.light-mode .bar-track {
+            background-color: rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ ingredient.name }}</h1>
+        {% if ingredient.measurement_unit %}
+        <p>Measured in {{ ingredient.measurement_unit }}{% if ingredient.weight_per_unit %} &mdash; {{ ingredient.weight_per_unit }}g per unit{% endif %}</p>
+        {% endif %}
+    </header>
+
+    <div class="container">
+        <h2>Nutritional values per 100g</h2>
+
+        {% set nutrients = [
+            ("Calories",      "kcal", ingredient.components | selectattr("name", "equalto", "calories")      | map(attribute="quantity_per_100_g") | first | default(0)),
+            ("Protein",       "g",    ingredient.components | selectattr("name", "equalto", "protein")       | map(attribute="quantity_per_100_g") | first | default(0)),
+            ("Fat",           "g",    ingredient.components | selectattr("name", "equalto", "fat")           | map(attribute="quantity_per_100_g") | first | default(0)),
+            ("Carbohydrates", "g",    ingredient.components | selectattr("name", "equalto", "carbohydrates") | map(attribute="quantity_per_100_g") | first | default(0))
+        ] %}
+
+        <table class="macronutrients-table">
+            <tr>
+                <th>Nutrient</th>
+                <th>Per 100g</th>
+            </tr>
+            {% for label, unit, value in nutrients %}
+            <tr>
+                <td>{{ label }}</td>
+                <td>{{ value | round(1) }} {{ unit }}</td>
+            </tr>
+            {% endfor %}
+            {% if ingredient.alcohol_percentage > 0 %}
+            <tr>
+                <td>Alcohol</td>
+                <td>{{ ingredient.alcohol_percentage }} %</td>
+                <td></td>
+            </tr>
+            {% endif %}
+        </table>
+
+        <a href="/" class="back-link">&larr; Back to recipes</a>
+    </div>
+
+    <footer>
+        <p style="font-size: 0.9em; color: #888; text-align: center; margin-top: 2rem;">
+            Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
+        </p>
+    </footer>
+
+    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
+
+    <script>
+        document.body.classList.add('dark-mode');
+
+        function toggleTheme() {
+            const body = document.body;
+            const toggleButton = document.querySelector('.theme-toggle');
+            body.classList.toggle('light-mode');
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('light-mode')) {
+                toggleButton.textContent = '☀️';
+                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+                localStorage.setItem('theme', 'light');
+            } else {
+                toggleButton.textContent = '🌙';
+                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        })();
+    </script>
+</body>
+</html>
