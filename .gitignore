@@ -1,5 +1,6 @@
 !/static_site/404.html
 !/static_site/icons
 /static_site/*.html
+/static_site/ingredients
 uv.lock
 .venv/

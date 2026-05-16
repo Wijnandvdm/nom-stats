@@ -1,5 +1,6 @@
 import csv
 import os
+import re
 from typing import Any, Dict, List, Tuple
 
 import yaml
@@ -10,6 +11,10 @@ OUTPUT_DIR = "static_site"
 CONFIG_DIR = os.path.join(os.path.dirname(__file__), "configuration")
 INGREDIENTS_FILE = os.path.join(CONFIG_DIR, "ingredients.csv")
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
+
+
+def slugify(name: str) -> str:
+    return re.sub(r'[^a-z0-9-]', '', name.lower().replace(' ', '-'))
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -71,12 +76,10 @@ def calculate_nutrition(
 
             measurement_unit = ingredient.get("measurement_unit")
             if weight_per_unit:
-                human_readable_ingredients.append(
-                    f"{float(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}"
-                )
-
+                display = f"{float(quantity / weight_per_unit)} {measurement_unit} {ingredient_name}"
             else:
-                human_readable_ingredients.append(f"{quantity} {measurement_unit} {ingredient_name}")
+                display = f"{quantity} {measurement_unit} {ingredient_name}"
+            human_readable_ingredients.append({"display": display, "slug": slugify(ingredient_name)})
 
             # Nutrition
             protein_per_100g = next(
@@ -210,6 +213,16 @@ def generate_static_pages() -> None:
         recipe_filename = recipe["filename"]
         with open(os.path.join(OUTPUT_DIR, recipe_filename), "w") as file:
             file.write(recipe_template.render(recipe=recipe))
+
+    # Render individual ingredient pages
+    ingredients_dir = os.path.join(OUTPUT_DIR, "ingredients")
+    os.makedirs(ingredients_dir, exist_ok=True)
+    ingredient_template = env.get_template("ingredient_detail.html")
+
+    for ingredient in all_ingredients.values():
+        slug = slugify(ingredient["name"])
+        with open(os.path.join(ingredients_dir, f"{slug}.html"), "w") as file:
+            file.write(ingredient_template.render(ingredient=ingredient))
 
 
 if __name__ == "__main__":
