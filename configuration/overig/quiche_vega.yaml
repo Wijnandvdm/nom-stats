@@ -13,7 +13,6 @@ ingredients:
     quantity: 100
   - name: 'ah geraspte kaas 20+'
     quantity: 75
-
 steps:
   - "Verwarm de oven voor op 180-190°C"
   - "Bekleed de 18cm springvorm met quichedeeg"
@@ -22,10 +21,8 @@ steps:
   - "Meng eieren, crème fraîche en kruiden tot een glad mengsel"
   - "Roer spekjes, bosui en kaas door het mengsel"
   - "Giet het geheel in de vorm"
-  - "Bak de quiche 25–35 minuten tot hij goudbruin en net stevig is"
-  - "Laat 5–10 minuten afkoelen voor het aansnijden"
-
+  - "Bak de quiche 25-35 minuten tot hij goudbruin en net stevig is"
+  - "Laat 5-10 minuten afkoelen voor het aansnijden"
 rating: 5
-
 dietary_labels:
  - vegetarian

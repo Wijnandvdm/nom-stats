@@ -24,3 +24,4 @@ This of course does not explain the complete functionality of this project. Want
 # Todo:
 - When you click on an ingredient, you are referred to a new page with the nutritional values of that ingredient
 - Option to have components in your recipes (e.g. sticky toffee pudding has the sauce and the pudding, they both need butter)
+- Add a check if all keys in the recipe.yaml have the value they expect, and if not give a decent error warning in the precommit
