@@ -15,16 +15,9 @@ repos:
 
   - repo: local
     hooks:
-      - id: custom-python-check
-        name: check ingredients csv
-        entry: uv run python check_ingredients_csv.py
+      - id: check-data-entries
+        name: check data entries (fix csv whitespace + validate recipe yamls)
+        entry: uv run python check_data_entries.py
         language: system
         always_run: true
 
-  - repo: local
-    hooks:
-      - id: custom-python-check
-        name: check recipe yamls
-        entry: uv run python check_recipe_yamls.py
-        language: system
-        always_run: true

@@ -4,3 +4,4 @@
 /static_site/ingredients
 uv.lock
 .venv/
+*pycache*
