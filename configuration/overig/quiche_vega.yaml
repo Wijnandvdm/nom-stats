@@ -2,17 +2,17 @@ recipe_name: 'Quiche'
 description: 'Romige, hartige quiche met spek, kaas en bosui—klein van formaat, groot van smaak!'
 ingredients:
   - name: 'skyr'
-    quantity: 100
+    quantity: 75
   - name: 'zelfrijzend bakmeel'
-    quantity: 100
+    quantity: 75
   - name: 'vivera spek'
     quantity: 175
   - name: 'bosui'
     quantity: 2
   - name: 'ei'
     quantity: 3
-  - name: 'minusl slagroom lactosevrij'
-    quantity: 100
+  - name: 'creme fraiche light'
+    quantity: 125
   - name: 'ah geraspte kaas 20+'
     quantity: 75
 steps:
