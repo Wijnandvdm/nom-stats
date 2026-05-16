@@ -1,8 +1,10 @@
 recipe_name: 'Quiche'
 description: 'Romige, hartige quiche met spek, kaas en bosui—klein van formaat, groot van smaak!'
 ingredients:
-  - name: 'ah quichedeeg'
-    quantity: 115
+  - name: 'skyr'
+    quantity: 100
+  - name: 'zelfrijzend bakmeel'
+    quantity: 100
   - name: 'spek'
     quantity: 125
   - name: 'bosui'
