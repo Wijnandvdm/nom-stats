@@ -1,0 +1,26 @@
+recipe_name: 'Blueberry oatmeal muffins'
+description: "12 mini muffins "
+ingredients:
+      - name: 'havermout'
+        quantity: 50
+      - name: 'bloem'
+        quantity: 50
+      - name: 'yoghurt'
+        quantity: 100
+      - name: 'ei'
+        quantity: 1
+      - name: 'vanillesuiker'
+        quantity: 8
+      - name: 'maple syrup'
+        quantity: 40
+      - name: 'baksoda'
+        quantity: 6
+      - name: 'blauwe bessen'
+        quantity: 100
+
+steps:
+  - "Maal de havermout fijn"
+  - "Meng alle ingredienten door elkaar"
+  - "Verdeel over de muffin tray"
+  - "Bak voor 15min in de oven"
+rating: 5
