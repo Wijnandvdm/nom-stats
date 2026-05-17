@@ -16,7 +16,7 @@ ingredients:
       - name: 'baksoda'
         quantity: 6
       - name: 'blauwe bessen'
-        quantity: 100
+        quantity: 50
 
 steps:
   - "Maal de havermout fijn"
