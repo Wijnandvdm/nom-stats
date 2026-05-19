@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ recipe['recipe_name'] }}</title>
+    <title></title>
     <style>
         /* Root Variables for Light/Dark Mode */
         :root {
@@ -83,10 +83,6 @@
         }
         .ingredients-list li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid var(--text-light);
-        }
-        .ingredients-list li:last-child {
-            border-bottom: none;
         }
         .nutrition-info {
             margin-top: 1.5rem;
@@ -237,37 +233,34 @@
 <body>
     <header>
         <h1>
-            {{ recipe.name }}
-            {% for label in recipe.dietary_labels %}
-            {% set icon_path = 'icons/' ~ label ~ '.svg' %}
-            <img src="{{ icon_path }}"
-                alt="{{ label }}"
+            Balon 43
+            
+            
+            <img src="icons/alcoholic.svg"
+                alt="alcoholic"
                 class="dietary-icon"
-                title="{{ label }}" />
-            {% endfor %}
+                title="alcoholic" />
+            
         </h1>
-        <!-- <h1>{{ recipe['name'] }}</h1> -->
-        <p>{{ recipe['description'] }}</p>
+        <!-- <h1>Balon 43</h1> -->
+        <p>Sour and sweet, a dentist's delight!</p>
         <!-- Star Rating Section -->
         <div class="star-rating">
-            {% for _ in range(recipe['rating']) %}
+            
                 <span class="star filled">★</span>
-            {% endfor %}
-            {% for _ in range(5 - recipe['rating']) %}
-                <span class="star empty">★</span>
-            {% endfor %}
+            
+                <span class="star filled">★</span>
+            
+                <span class="star filled">★</span>
+            
+                <span class="star filled">★</span>
+            
+                <span class="star filled">★</span>
+            
+            
         </div>
         <!-- Spice Level Section -->
-        {% if recipe['spice_level'] > 0 %}
-        <div class="spice-rating">
-            {% for _ in range(recipe['spice_level']) %}
-                <img src="icons/pepper.svg" alt="spice" class="pepper-icon filled" />
-            {% endfor %}
-            {% for _ in range(5 - recipe['spice_level']) %}
-                <img src="icons/pepper.svg" alt="" class="pepper-icon empty" />
-            {% endfor %}
-        </div>
-        {% endif %}
+        
     </header>
 
     <div class="container">
@@ -278,32 +271,32 @@
                 <th></th>
                 <th>Total</th>
                 <th>Per 100g or ml</th>
-                {% if recipe.alcohol_percentage is defined %}
+                
                 <th>Alcohol</th>
-                {% endif %}
+                
             </tr>
             <tr>
                 <td>Calories</td>
-                <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
-                <td>{{ recipe.calories_100g | round(0) }}</td>
-                {% if recipe.alcohol_percentage is defined %}
-                <td rowspan="4">{{ recipe.alcohol_percentage }} %</td>
-                {% endif %}
+                <td id="total-calories" data-base="288">288</td>
+                <td>107</td>
+                
+                <td rowspan="4">9.2 %</td>
+                
             </tr>
             <tr>
                 <td>Protein</td>
-                <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
-                <td>{{ recipe.protein_100g | round(0) }} g</td>
+                <td id="total-protein" data-base="0">0 g</td>
+                <td>0.0 g</td>
             </tr>
             <tr>
                 <td>Fat</td>
-                <td id="total-fat" data-base="{{ recipe.total_fat }}">{{ recipe.total_fat | round(0) }} g</td>
-                <td>{{ recipe.fat_100g | round(0) }} g</td>
+                <td id="total-fat" data-base="0">0 g</td>
+                <td>0.0 g</td>
             </tr>
             <tr>
                 <td>Carbohydrates</td>
-                <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | round(0) }} g</td>
-                <td>{{ recipe.carbs_100g | round(0) }} g</td>
+                <td id="total-carbs" data-base="21">21 g</td>
+                <td>8.0 g</td>
             </tr>
         </table>
 
@@ -386,16 +379,18 @@
         </script>
 
         <h2>Ingredients</h2>
-        {% for component in recipe.components %}
-            {% if component.name %}
-            <h3>{{ component.name }}</h3>
-            {% endif %}
+        
+            
             <ul class="ingredients-list">
-                {% for ingredient in component.ingredients %}
-                    <li data-base="{{ ingredient.display }}"><a href="/ingredients/{{ ingredient.slug }}.html" class="ingredient-link">{{ ingredient.display }}</a></li>
-                {% endfor %}
+                
+                    <li data-base="80 ml likeur 43"><a href="/ingredients/likeur-43.html" class="ingredient-link">80 ml likeur 43</a></li>
+                
+                    <li data-base="160 ml spa rood"><a href="/ingredients/spa-rood.html" class="ingredient-link">160 ml spa rood</a></li>
+                
+                    <li data-base="30 ml citroensap"><a href="/ingredients/citroensap.html" class="ingredient-link">30 ml citroensap</a></li>
+                
             </ul>
-        {% endfor %}
+        
 
 
         <div class="servings-control">
@@ -406,14 +401,24 @@
         </div>
 
         <!-- Preparation Steps Section -->
-        {% if recipe['steps'] %}
+        
             <h2>Preparation Steps</h2>
             <ol class="steps-list">
-                {% for step in recipe['steps'] %}
-                    <li>{{ step }}</li>
-                {% endfor %}
+                
+                    <li>Giet de Likeur 43 in een glas</li>
+                
+                    <li>Giet het citroensap erbij</li>
+                
+                    <li>Giet de spa rood erbij</li>
+                
+                    <li>Meng grondig</li>
+                
+                    <li>Optioneel: Voeg ijs toe</li>
+                
+                    <li>Optioneel: garneer met sinaasappelschijfjes </li>
+                
             </ol>
-        {% endif %}
+        
 
         <a href="/" class="back-link">&larr; Back to recipes</a>
     </div>
