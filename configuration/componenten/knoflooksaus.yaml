@@ -12,5 +12,7 @@ steps:
   - "Pers of hak 1 bol knoflook fijn."
   - "Meng alle ingrediënten door de yoghurt."
   - "Breng op smaak met zout en 10 draaien met de pepermolen."
+rating: 5
+spice_level: 2
 dietary_labels:
   - vegetarian
