@@ -1,0 +1,16 @@
+recipe_name: 'Knoflooksaus'
+description: "Garlic so good, vampires file restraining orders"
+ingredients:
+  - name: 'griekse yoghurt'
+    quantity: 450
+  - name: 'honing'
+    quantity: 20
+  - name: 'knoflook'
+    quantity: 10
+steps:
+  - "Hak de bieslook fijn tot het er appetijtelijk uitziet."
+  - "Pers of hak 1 bol knoflook fijn."
+  - "Meng alle ingrediënten door de yoghurt."
+  - "Breng op smaak met zout en 10 draaien met de pepermolen."
+dietary_labels:
+  - vegetarian

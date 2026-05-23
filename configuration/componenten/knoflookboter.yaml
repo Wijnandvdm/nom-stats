@@ -1,0 +1,17 @@
+recipe_name: 'Garlic Butter'
+description: "Dads secret weapon for everything from bread to vampires"
+ingredients:
+  - name: 'gezouten roomboter'
+    quantity: 250
+  - name: 'knoflook'
+    quantity: 15
+  - name: 'honing'
+    quantity: 20
+steps:
+  - "Laat de roomboter op kamertemperatuur komen."
+  - "Pers of hak 1.5 bol knoflook fijn."
+  - "Pers 5 zoethoutjes en meng dit met de rest"
+  - "Hak 1 theelepel peterselie en 1 theelepel bieslook fijn."
+  - "Meng de zachte boter met de knoflook, 1 eetlepel honing, peterselie en bieslook."
+dietary_labels:
+  - vegetarian
