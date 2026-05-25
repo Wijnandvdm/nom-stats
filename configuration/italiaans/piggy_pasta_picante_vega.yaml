@@ -21,5 +21,6 @@ steps:
   - "Voeg de fijn geraspte pecorino romano toe"
   - "Meng de gekookte spaghetti door de saus, voeg indien nodig wat kookvocht toe voor extra smeuïgheid"
 rating: 5
+spice_level: 3
 dietary_labels:
   - vegetarian

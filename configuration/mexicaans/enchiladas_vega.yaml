@@ -25,5 +25,6 @@ steps:
   - "Strooi de kaas en jalapeno's erover"
   - "In de oven voor 25 min op 180 graden"
 rating: 5
+spice_level: 2
 dietary_labels:
   - vegetarian

@@ -2,7 +2,7 @@ recipe_name: 'TacocaT'
 description: 'Was it a car or a cat I saW?'
 ingredients:
   - name: 'vivera kip'
-    quantity: 160
+    quantity: 175
   - name: 'ui'
     quantity: 1
   - name: 'mais'
@@ -21,5 +21,6 @@ steps:
   - "Voeg kruidenmix toe"
   - "Schep in tacos"
 rating: 5
+spice_level: 2
 dietary_labels:
   - vegetarian

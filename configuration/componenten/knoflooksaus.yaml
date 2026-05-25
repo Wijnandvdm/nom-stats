@@ -13,6 +13,6 @@ steps:
   - "Meng alle ingrediënten door de yoghurt."
   - "Breng op smaak met zout en 10 draaien met de pepermolen."
 rating: 5
-spice_level: 2
+spice_level: 0
 dietary_labels:
   - vegetarian

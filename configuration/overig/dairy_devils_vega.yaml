@@ -23,5 +23,6 @@ steps:
   - "Jalapeno slices op de kaas"
   - "Saus naar keuze toevoegen"
 rating: 5
+spice_level: 2
 dietary_labels:
   - vegetarian

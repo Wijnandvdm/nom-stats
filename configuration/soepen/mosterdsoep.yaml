@@ -30,5 +30,6 @@ steps:
   - "Roer slagroom door het mengsel"
   - "Roer mosterd door het mengsel"
 rating: 5
+spice_level: 0
 dietary_labels:
   - vegetarian

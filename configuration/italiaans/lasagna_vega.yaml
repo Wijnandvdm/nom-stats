@@ -34,5 +34,6 @@ steps:
   - "Kaas bovenop"
   - "In de oven op 200 graden voor ~20 minuten"
 rating: 5
+spice_level: 3
 dietary_labels:
   - vegetarian
