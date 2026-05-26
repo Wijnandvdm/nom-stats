@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -268,18 +268,18 @@
 
     <div class="container">
         <!-- Macronutrients Table -->
-        <h2>Macronutrients</h2>
+        <h2>Macronutriënten</h2>
         <table class="macronutrients-table">
             <tr>
                 <th></th>
-                <th>Total</th>
-                <th>Per 100g or ml</th>
+                <th>Totaal</th>
+                <th>Per 100g of ml</th>
                 {% if recipe.alcohol_percentage is defined %}
                 <th>Alcohol</th>
                 {% endif %}
             </tr>
             <tr>
-                <td>Calories</td>
+                <td>Calorieën</td>
                 <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
                 <td>{{ recipe.calories_100g | round(0) }}</td>
                 {% if recipe.alcohol_percentage is defined %}
@@ -287,17 +287,17 @@
                 {% endif %}
             </tr>
             <tr>
-                <td>Protein</td>
+                <td>Eiwit</td>
                 <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
                 <td>{{ recipe.protein_100g | round(0) }} g</td>
             </tr>
             <tr>
-                <td>Fat</td>
+                <td>Vet</td>
                 <td id="total-fat" data-base="{{ recipe.total_fat }}">{{ recipe.total_fat | round(0) }} g</td>
                 <td>{{ recipe.fat_100g | round(0) }} g</td>
             </tr>
             <tr>
-                <td>Carbohydrates</td>
+                <td>Koolhydraten</td>
                 <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | round(0) }} g</td>
                 <td>{{ recipe.carbs_100g | round(0) }} g</td>
             </tr>
@@ -352,7 +352,7 @@
                 container.insertAdjacentElement("afterend", warning);
             }
 
-            warning.textContent = `Maybe you should open a restaurant! Let's keep it under ${MAX_SERVINGS} servings, shall we?`;
+            warning.textContent = `Misschien moet je maar een restaurant openen! Laten we het onder de ${MAX_SERVINGS} porties houden, oké?`;
             warning.style.opacity = 1;
 
             // Clear existing timeout if the user keeps clicking
@@ -381,7 +381,7 @@
         }
         </script>
 
-        <h2>Ingredients</h2>
+        <h2>Ingrediënten</h2>
         {% for component in recipe.components %}
             {% if component.name %}
             <h3>{{ component.name }}</h3>
@@ -395,7 +395,7 @@
 
 
         <div class="servings-control">
-            <label for="servings">Servings:</label>
+            <label for="servings">Porties:</label>
             <button class="serving-btn" onclick="decreaseServings()">−</button>
             <span id="servings">1</span>
             <button class="serving-btn" onclick="increaseServings()">+</button>
@@ -403,7 +403,7 @@
 
         <!-- Preparation Steps Section -->
         {% if recipe['steps'] %}
-            <h2>Preparation Steps</h2>
+            <h2>Bereidingswijze</h2>
             <ol class="steps-list">
                 {% for step in recipe['steps'] %}
                     <li>{{ step }}</li>
@@ -411,18 +411,18 @@
             </ol>
         {% endif %}
 
-        <a href="/" class="back-link">&larr; Back to recipes</a>
+        <a href="/" class="back-link">&larr; Terug naar recepten</a>
     </div>
 
     <!-- Disclaimer -->
     <footer>
         <p style="font-size: 0.9em; color: #888; text-align: center; margin-top: 2rem;">
-            Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
+            Disclaimer: De voedingsinformatie op deze pagina is uitsluitend bedoeld ter informatie en mag niet worden beschouwd als professioneel advies voor voedings- of gezondheidsdoeleinden. Raadpleeg uw huisarts of een gecertificeerde diëtist voor passend advies over gezonde voeding.
         </p>
     </footer>
 
     <!-- Theme toggle button -->
-    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
+    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, echt?">🌙</button>
 
     <script>
         // Default mode is dark
@@ -438,11 +438,11 @@
             // Save theme preference to localStorage
             if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '☀️';
-                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+                toggleButton.setAttribute('data-tooltip', 'Welkom terug in de beschaving!');
                 localStorage.setItem('theme', 'light');
             } else {
                 toggleButton.textContent = '🌙';
-                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+                toggleButton.setAttribute('data-tooltip', 'Light mode, echt?');
                 localStorage.setItem('theme', 'dark');
             }
         }

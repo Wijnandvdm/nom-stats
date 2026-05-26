@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -150,13 +150,13 @@
     </style>
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
+    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, echt?">🌙</button>
     <header>
         <h1>🍽️ NomStats</h1>
         <input
             type="text"
             id="searchBar"
-            placeholder="🔍 Search recipes..."
+            placeholder="🔍 Zoek recepten..."
             style="margin-top: 1rem; padding: 8px; width: 80%; max-width: 400px; border-radius: 6px; border: 1px solid #ccc;"
         >
     </header>
@@ -182,7 +182,7 @@
     </div>
     <footer>
         <p style="font-size: 0.9em; text-align: center; margin-top: 2rem;">
-            Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
+            Disclaimer: De voedingsinformatie op deze pagina is uitsluitend bedoeld ter informatie en mag niet worden beschouwd als professioneel advies voor voedings- of gezondheidsdoeleinden. Raadpleeg uw huisarts of een gecertificeerde diëtist voor passend advies over gezonde voeding.
         </p>
     </footer>
     <script>
@@ -196,11 +196,11 @@
             body.classList.toggle('light-mode');
             if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '☀️';
-                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+                toggleButton.setAttribute('data-tooltip', 'Welkom terug in de beschaving!');
                 localStorage.setItem('theme', 'light');
             } else {
                 toggleButton.textContent = '🌙';
-                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+                toggleButton.setAttribute('data-tooltip', 'Light mode, echt?');
                 localStorage.setItem('theme', 'dark');
             }
         }
