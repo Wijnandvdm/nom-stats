@@ -181,7 +181,7 @@
     </header>
 
     <div class="container">
-        <h2>Voedingswaarden per 100g</h2>
+        <h2>Voedingswaarden per 100{{ ingredient.measurement_unit or 'g' }}</h2>
 
         {% set nutrients = [
             ("Calorieën",     "kcal", ingredient.components | selectattr("name", "equalto", "calories")      | map(attribute="quantity_per_100_g") | first | default(0)),
@@ -193,7 +193,7 @@
         <table class="macronutrients-table">
             <tr>
                 <th>Voedingsstof</th>
-                <th>Per 100g</th>
+                <th>Per 100{{ ingredient.measurement_unit or 'g' }}</th>
             </tr>
             {% for label, unit, value in nutrients %}
             <tr>
@@ -203,9 +203,8 @@
             {% endfor %}
             {% if ingredient.alcohol_percentage > 0 %}
             <tr>
-                <td>Alcohol (%)</td>
+                <td>Alcohol</td>
                 <td>{{ ingredient.alcohol_percentage }} %</td>
-                <td></td>
             </tr>
             {% endif %}
         </table>
