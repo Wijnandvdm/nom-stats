@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ ingredient.name }}</title>
+    <title>{{ ingredient.name | title }}</title>
     <style>
         :root {
             --primary-dark: #0B6623;
@@ -174,25 +174,25 @@
 </head>
 <body>
     <header>
-        <h1>{{ ingredient.name }}</h1>
+        <h1>{{ ingredient.name | title }}</h1>
         {% if ingredient.measurement_unit %}
-        <p>Measured in {{ ingredient.measurement_unit }}{% if ingredient.weight_per_unit %} &mdash; {{ ingredient.weight_per_unit }}g per unit{% endif %}</p>
+        <p>Gemeten in {{ ingredient.measurement_unit }}{% if ingredient.weight_per_unit %} &mdash; {{ ingredient.weight_per_unit }}g per eenheid{% endif %}</p>
         {% endif %}
     </header>
 
     <div class="container">
-        <h2>Nutritional values per 100g</h2>
+        <h2>Voedingswaarden per 100g</h2>
 
         {% set nutrients = [
-            ("Calories",      "kcal", ingredient.components | selectattr("name", "equalto", "calories")      | map(attribute="quantity_per_100_g") | first | default(0)),
-            ("Protein",       "g",    ingredient.components | selectattr("name", "equalto", "protein")       | map(attribute="quantity_per_100_g") | first | default(0)),
-            ("Fat",           "g",    ingredient.components | selectattr("name", "equalto", "fat")           | map(attribute="quantity_per_100_g") | first | default(0)),
-            ("Carbohydrates", "g",    ingredient.components | selectattr("name", "equalto", "carbohydrates") | map(attribute="quantity_per_100_g") | first | default(0))
+            ("Calorieën",     "kcal", ingredient.components | selectattr("name", "equalto", "calories")      | map(attribute="quantity_per_100_g") | first | default(0)),
+            ("Eiwit",         "g",    ingredient.components | selectattr("name", "equalto", "protein")       | map(attribute="quantity_per_100_g") | first | default(0)),
+            ("Vet",           "g",    ingredient.components | selectattr("name", "equalto", "fat")           | map(attribute="quantity_per_100_g") | first | default(0)),
+            ("Koolhydraten",  "g",    ingredient.components | selectattr("name", "equalto", "carbohydrates") | map(attribute="quantity_per_100_g") | first | default(0))
         ] %}
 
         <table class="macronutrients-table">
             <tr>
-                <th>Nutrient</th>
+                <th>Voedingsstof</th>
                 <th>Per 100g</th>
             </tr>
             {% for label, unit, value in nutrients %}
@@ -203,23 +203,23 @@
             {% endfor %}
             {% if ingredient.alcohol_percentage > 0 %}
             <tr>
-                <td>Alcohol</td>
+                <td>Alcohol (%)</td>
                 <td>{{ ingredient.alcohol_percentage }} %</td>
                 <td></td>
             </tr>
             {% endif %}
         </table>
 
-        <a href="/" class="back-link">&larr; Back to recipes</a>
+        <a href="/" class="back-link">&larr; Terug naar recepten</a>
     </div>
 
     <footer>
         <p style="font-size: 0.9em; color: #888; text-align: center; margin-top: 2rem;">
-            Disclaimer: The nutritional information provided is for informational purposes only and should not be considered as professional advice for dietary or health purposes. Please consult your local physician or a certified nutritionist for proper guidance on healthy eating.
+            Disclaimer: De voedingsinformatie op deze pagina is uitsluitend bedoeld ter informatie en mag niet worden beschouwd als professioneel advies voor voedings- of gezondheidsdoeleinden. Raadpleeg uw huisarts of een gecertificeerde diëtist voor passend advies over gezonde voeding.
         </p>
     </footer>
 
-    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, really?">🌙</button>
+    <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, echt?">🌙</button>
 
     <script>
         document.body.classList.add('dark-mode');
@@ -231,11 +231,11 @@
             body.classList.toggle('dark-mode');
             if (body.classList.contains('light-mode')) {
                 toggleButton.textContent = '☀️';
-                toggleButton.setAttribute('data-tooltip', 'Welcome back to civilization!');
+                toggleButton.setAttribute('data-tooltip', 'Welkom terug in de beschaving!');
                 localStorage.setItem('theme', 'light');
             } else {
                 toggleButton.textContent = '🌙';
-                toggleButton.setAttribute('data-tooltip', 'Light mode, really?');
+                toggleButton.setAttribute('data-tooltip', 'Light mode, echt?');
                 localStorage.setItem('theme', 'dark');
             }
         }
