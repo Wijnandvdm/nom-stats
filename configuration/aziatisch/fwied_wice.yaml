@@ -1,0 +1,40 @@
+recipe_name: 'Fwied Wice'
+description: ""
+ingredients:
+  - name: 'sushi rijst'
+    quantity: 100
+  - name: 'kip'
+    quantity: 87.5
+  - name: 'ei'
+    quantity: 1
+  - name: 'winterpeen'
+    quantity: 0.5
+  - name: 'bosui'
+    quantity: 1
+  - name: 'erwten'
+    quantity: 75
+  - name: 'go-tan sojasaus'
+    quantity: 15
+  - name: 'rijstazijn'
+    quantity: 5
+  - name: 'knoflook'
+    quantity: 3
+  - name: 'stemgember'
+    quantity: 4
+steps:
+  - "Spoel de rijst in een zeef onder koud stromend water."
+  - "Kook de rijst, liefst een dag van tevoren."
+  - "Kluts het ei."
+  - "Bak het ei los in een koekenpan, hak grof en zet apart."
+  - "Meng sojasaus, rijstazijn, knoflook en gember tot een saus."
+  - "Bak de kip goudbruin en zet apart."
+  - "Bak de winterpeen 2 minuten."
+  - "Voeg de bosui toe en bak 2 minuten mee."
+  - "Voeg de erwten toe en bak 1-2 minuten op hoog vuur."
+  - "Voeg de koude rijst toe, maak klonten los en bak 5 minuten tot heet en licht krokant."
+  - "Voeg de saus en kip toe, meng goed en zet het vuur uit."
+  - "Schep het ei erdoor en serveer direct."
+rating: 5
+spice_level: 4
+dietary_labels:
+  - vegetarian
