@@ -20,6 +20,3 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
    - Your [website](https://nomstats.z6.web.core.windows.net/) is now available!
 
 This of course does not explain the complete functionality of this project. Want to know more? Don't be shy, ask the creator of this repo!
-
-Todo:
-- Fix slightly inconsistent look in rating and spice rating. (stars become black when not filled, peppers become slightly transparent instead of black)
