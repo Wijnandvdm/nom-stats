@@ -22,4 +22,4 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
 This of course does not explain the complete functionality of this project. Want to know more? Don't be shy, ask the creator of this repo!
 
 Todo:
-- All UI stuff in Dutch
+- Fix slightly inconsistent look in rating and spice rating. (stars become black when not filled, peppers become slightly transparent instead of black)

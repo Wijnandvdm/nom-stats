@@ -3,8 +3,8 @@ description: "A wice so nice, we're fwying it twice!"
 ingredients:
   - name: 'sushi rijst'
     quantity: 100
-  - name: 'kip'
-    quantity: 125
+  - name: 'vivera kip'
+    quantity: 87.5
   - name: 'ei'
     quantity: 1
   - name: 'winterpeen'
@@ -34,7 +34,7 @@ steps:
   - "Voeg de koude rijst toe, maak klonten los en bak 5 minuten tot heet en licht krokant."
   - "Voeg de saus en kip toe, meng goed en zet het vuur uit."
   - "Schep het ei erdoor en serveer direct."
-rating: 5
-spice_level: 4
+rating: 4
+spice_level: 0
 dietary_labels:
   - vegetarian
