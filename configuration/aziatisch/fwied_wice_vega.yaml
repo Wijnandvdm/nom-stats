@@ -2,7 +2,7 @@ recipe_name: 'Fwied Wice'
 description: "A wice so nice, we're fwying it twice!"
 ingredients:
   - name: 'sushi rijst'
-    quantity: 100
+    quantity: 75
   - name: 'vivera kip'
     quantity: 175
   - name: 'ei'
