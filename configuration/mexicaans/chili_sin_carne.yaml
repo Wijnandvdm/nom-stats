@@ -2,7 +2,7 @@ recipe_name: 'Chili Sin Carne'
 description: '10/10 would eat again'
 ingredients:
   - name: 'beyond meat burger gehakt'
-    quantity: 226
+    quantity: 113
   - name: 'chilibonen'
     quantity: 100
   - name: 'zwarte bonen'
