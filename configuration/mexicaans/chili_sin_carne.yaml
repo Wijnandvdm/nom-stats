@@ -3,9 +3,9 @@ description: '10/10 would eat again'
 ingredients:
   - name: 'beyond meat burger gehakt'
     quantity: 226
-  - name: 'bruine bonen'
-    quantity: 250
-  - name: 'kidneybonen'
+  - name: 'chilibonen'
+    quantity: 100
+  - name: 'zwarte bonen'
     quantity: 62.5
   - name: 'tomatenblokjes bio'
     quantity: 200
@@ -13,8 +13,8 @@ ingredients:
     quantity: 35
   - name: 'mais'
     quantity: 75
-  - name: 'linzen'
-    quantity: 187.5
+  - name: 'witte bonen in tomatensaus'
+    quantity: 200
   - name: 'paprika'
     quantity: 1
   - name: 'ui'

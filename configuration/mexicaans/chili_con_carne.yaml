@@ -3,8 +3,8 @@ description: '10/10 would eat again'
 ingredients:
   - name: 'gehakt'
     quantity: 250
-  - name: 'bruine bonen'
-    quantity: 250
+  - name: 'chilibonen'
+    quantity: 300
   - name: 'kidneybonen'
     quantity: 62.5
   - name: 'tomatenblokjes bio'
@@ -13,8 +13,8 @@ ingredients:
     quantity: 35
   - name: 'mais'
     quantity: 75
-  - name: 'linzen'
-    quantity: 187.5
+  - name: 'witte bonen in tomatensaus'
+    quantity: 200
   - name: 'paprika'
     quantity: 1
   - name: 'ui'
