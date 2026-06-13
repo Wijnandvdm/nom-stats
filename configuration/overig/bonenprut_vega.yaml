@@ -1,0 +1,21 @@
+recipe_name: 'Bonenprut'
+description: 'Looks disgusting, tastes delicious'
+ingredients:
+  - name: 'cottage cheese light'
+    quantity: 200
+  - name: 'kidneybonen'
+    quantity: 125
+  - name: 'zwarte bonen'
+    quantity: 65
+  - name: 'puntpaprika'
+    quantity: 1
+steps:
+  - "Voeg cottage cheese, kidney bonen en zwarte bonen bij elkaar"
+  - "Snij de paprika in stukjes en voeg toe"
+  - "Snij paar plakjes jalapenos en voeg to"
+  - "Voeg een halve eetlepel enchilada kruiden toe"
+  - "Meng alles door elkaar"
+rating: 5
+spice_level: 2
+dietary_labels:
+  - vegetarian
