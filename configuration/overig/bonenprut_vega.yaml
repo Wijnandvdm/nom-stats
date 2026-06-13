@@ -15,8 +15,8 @@ steps:
   - "Snij paar plakjes jalapenos en voeg to"
   - "Voeg een halve eetlepel enchilada kruiden toe"
   - "Meng alles door elkaar"
-preparation_time: 25
 rating: 5
 spice_level: 2
+preparation_time: 10
 dietary_labels:
   - vegetarian

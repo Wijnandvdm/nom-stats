@@ -33,8 +33,8 @@ steps:
   - "Etc."
   - "Kaas bovenop"
   - "In de oven op 200 graden voor ~20 minuten"
-preparation_time: 60
 rating: 5
 spice_level: 3
+preparation_time: 60
 dietary_labels:
   - vegetarian

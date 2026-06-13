@@ -26,8 +26,8 @@ steps:
   - "Breng de salade op smaak met oregano en zout"
   - "Meng alles voorzichtig door elkaar"
   - "Serveer vers en koud"
-preparation_time: 15
 rating: 5
 spice_level: 0
+preparation_time: 15
 dietary_labels:
   - vegetarian

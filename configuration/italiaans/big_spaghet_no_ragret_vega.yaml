@@ -18,8 +18,8 @@ steps:
   - "Bak de uien en spaghetti groenten"
   - "Kook de spaghetti"
   - "Meng alles bij elkaar"
-preparation_time: 30
 rating: 5
 spice_level: 0
+preparation_time: 30
 dietary_labels:
   - vegetarian

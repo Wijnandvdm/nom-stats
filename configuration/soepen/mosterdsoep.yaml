@@ -29,8 +29,8 @@ steps:
   - "Voeg bouillonblokje toe"
   - "Roer slagroom door het mengsel"
   - "Roer mosterd door het mengsel"
-preparation_time: 30
 rating: 5
 spice_level: 0
+preparation_time: 30
 dietary_labels:
   - vegetarian

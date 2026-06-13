@@ -20,6 +20,6 @@ steps:
   - "Voeg tomatensaus toe"
   - "Voeg kruidenmix toe"
   - "Schep in tacos"
-preparation_time: 30
 rating: 5
 spice_level: 2
+preparation_time: 30
