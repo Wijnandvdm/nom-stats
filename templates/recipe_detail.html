@@ -240,6 +240,16 @@
             opacity: 1;
             border-bottom-style: solid;
         }
+        .component-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            transition: opacity var(--transition);
+        }
+        .component-link:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -411,7 +421,7 @@
             {% endif %}
             <ul class="ingredients-list">
                 {% for ingredient in component.ingredients %}
-                    <li data-base="{{ ingredient.display }}"><a href="/ingredients/{{ ingredient.slug }}.html" class="ingredient-link">{{ ingredient.display }}</a></li>
+                    <li data-base="{{ ingredient.display }}"><a href="/ingredients/{{ ingredient.slug }}.html" class="ingredient-link">{{ ingredient.display }}</a>{% if ingredient.recipe_ref %} <a href="/{{ ingredient.recipe_ref }}.html" class="component-link" title="Bekijk recept">↗</a>{% endif %}</li>
                 {% endfor %}
             </ul>
         {% endfor %}

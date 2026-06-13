@@ -71,7 +71,7 @@ def _format_ingredient_display(recipe_ingredient: dict, ingredient: dict) -> dic
         display = f"{float(quantity)} {measurement_unit} {name}"
     else:
         display = f"{quantity} {measurement_unit} {name}"
-    return {"display": display, "slug": slugify(name)}
+    return {"display": display, "slug": slugify(name), "recipe_ref": recipe_ingredient.get("recipe_ref")}
 
 
 def _build_display_components(
