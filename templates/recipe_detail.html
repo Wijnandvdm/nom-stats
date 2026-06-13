@@ -111,6 +111,18 @@
         .pepper-icon.empty {
             filter: grayscale(1) brightness(1.8);
         }
+        .preparation-time {
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .clock-icon {
+            width: auto;
+            height: 20px;
+            vertical-align: middle;
+        }
         body {
             background-color: var(--bg-dark);
             color: var(--text-dark);
@@ -261,6 +273,17 @@
             {% for _ in range(5 - recipe['spice_level']) %}
                 <img src="icons/pepper.svg" alt="" class="pepper-icon empty" />
             {% endfor %}
+        </div>
+        {% endif %}
+        <!-- Preparation Time -->
+        {% if recipe.preparation_time %}
+        <div class="preparation-time">
+            <img src="icons/clock.svg" alt="Bereidingstijd" class="clock-icon" />
+            <span>
+                {%- set h = recipe.preparation_time // 60 -%}
+                {%- set m = recipe.preparation_time % 60 -%}
+                {%- if h > 0 -%}{{ h }}u {% if m > 0 %}{{ m }} min{% endif %}{%- else -%}{{ m }} min{%- endif -%}
+            </span>
         </div>
         {% endif %}
     </header>

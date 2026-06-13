@@ -32,6 +32,7 @@ steps:
   - "Voeg appel toe"
   - "Laat koken tot het (nep)vlees gaar is"
   - "Serveer met rijst"
+preparation_time: 40
 rating: 4
 spice_level: 0
 dietary_labels:
