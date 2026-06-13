@@ -17,7 +17,7 @@ ingredients:
     quantity: 1
   - name: 'chiliolie'
     quantity: 20
-    recipe_ref: 'chili_oil'
+    recipe_reference: 'chili_oil'
 steps:
   - "Bak de tofu in een hete pan plat gedrukt tot de onderkant bruin is. Maak het fijn met een stamper of spatel en bak verder tot krokant."
   - "Voeg sojasaus toe aan het gehakt en laat inkoken tot een glanzend laagje. Roer de fijngehakte knoflook erdoor en houd warm."
