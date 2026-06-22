@@ -13,6 +13,9 @@ ingredients:
     quantity: 2
   - name: 'knoflook'
     quantity: 3
+  - name: 'ah geraspte kaas 20+'
+    quantity: 25
+
 steps:
   - "Bak het gehakt"
   - "Bak de uien en spaghetti groenten"
