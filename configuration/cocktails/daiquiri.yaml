@@ -1,0 +1,22 @@
+recipe_name: 'Daiquiri'
+description: "Sweet and sour, unlimited power!"
+ingredients:
+  - name: 'ananassap'
+    quantity: 100
+  - name: 'caribica rum gold'
+    quantity: 50
+  - name: 'limoensap'
+    quantity: 10
+  - name: 'maple syrup'
+    quantity: 10
+steps:
+  - "Giet de Vodka in een glas"
+  - "Giet de Kahlua erbij"
+  - "Meng grondig"
+  - "Optioneel: Voeg ijs toe"
+  - "Giet de room voorzichtig eroverheen, gebruik eventeel een lepel"
+  - "Optioneel: garneer met mokkaboontjes"
+rating: 4
+preparation_time: 5
+dietary_labels:
+  - alcoholic

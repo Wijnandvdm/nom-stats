@@ -1,0 +1,19 @@
+recipe_name: 'Spritz!'
+description: "Prosecco, bruiswater en ???"
+ingredients:
+  - name: 'prosecco'
+    quantity: 75
+  - name: 'passievrucht likeur'
+    quantity: 50
+  - name: 'spa rood'
+    quantity: 25
+steps:
+  - "Giet de Prosecco in een glas"
+  - "Giet de Passievrucht Likeur (of andere smaak naar keuze) erbij"
+  - "Giet de spa rood erbij"
+  - "Voeg ijs toe"
+  - "Badabim, badabum."
+rating: 4
+preparation_time: 5
+dietary_labels:
+  - alcoholic
