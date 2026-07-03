@@ -2,13 +2,13 @@ recipe_name: 'Daiquiri'
 description: "Sweet and sour, unlimited power!"
 ingredients:
   - name: 'ananassap'
-    quantity: 100
+    quantity: 150
   - name: 'caribica rum gold'
+    quantity: 75
+  - name: 'maple syrup'
     quantity: 50
   - name: 'limoensap'
-    quantity: 10
-  - name: 'maple syrup'
-    quantity: 10
+    quantity: 25
 steps:
   - "Giet de Vodka in een glas"
   - "Giet de Kahlua erbij"
