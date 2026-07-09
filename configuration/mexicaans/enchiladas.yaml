@@ -16,7 +16,7 @@ ingredients:
   - name: 'jalapeno'
     quantity: 0.5
   - name: 'enchilada kruidenmix'
-    quantity: 58
+    quantity: 12
     recipe_reference: 'enchilada_kruidenmix'
 steps:
   - "Snij de ui"
