@@ -15,8 +15,10 @@ ingredients:
     quantity: 1
   - name: 'jalapeno'
     quantity: 0.5
+  - name: 'enchilada kruidenmix'
+    quantity: 58
+    recipe_reference: 'enchilada_kruidenmix'
 steps:
-  - "Maak kruidenmix: 2,5 el paprika poeder, 1 el uipoeder, 1 el knoflookpoeder, 1 el komijnpoeder, 2 tl chilipoeder, 2 tl oregano, 1 tl peterselie, 1 tl koriander, 0,5 tl peper, 0,25 tl kaneel, 0,25 tl nootmuskaat"
   - "Snij de ui"
   - "Bak gehakt met picadollo kruiden"
   - "Voeg bonenmix, ui en helft van passata toe"

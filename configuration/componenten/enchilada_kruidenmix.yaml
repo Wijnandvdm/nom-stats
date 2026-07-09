@@ -1,0 +1,34 @@
+recipe_name: 'Enchilada Kruidenmix'
+description: 'The spice of life, measured in tablespoons'
+ingredients:
+  - name: 'paprikapoeder'
+    quantity: 20
+  - name: 'uipoeder'
+    quantity: 8
+  - name: 'knoflookpoeder'
+    quantity: 8
+  - name: 'komijnpoeder'
+    quantity: 8
+  - name: 'chilipoeder'
+    quantity: 4
+  - name: 'oregano'
+    quantity: 4
+  - name: 'peterselie gedroogd'
+    quantity: 2
+  - name: 'koriander gedroogd'
+    quantity: 2
+  - name: 'peper'
+    quantity: 1
+  - name: 'kaneel'
+    quantity: 0.5
+  - name: 'nootmuskaat'
+    quantity: 0.5
+steps:
+  - "1 eetlepel (el) = 8 gram"
+  - "1 theelepel (tl) = 2 gram"
+  - "Meng alle specerijen goed door elkaar."
+rating: 5
+spice_level: 2
+preparation_time: 5
+dietary_labels:
+  - vegetarian
