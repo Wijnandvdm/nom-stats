@@ -25,7 +25,10 @@ ingredients:
     quantity: 0.5
 steps:
   - "1 eetlepel (el) = 8 gram"
+  - "1/2 eetlepel (el) = 4 gram"
   - "1 theelepel (tl) = 2 gram"
+  - "1/2 theelepel (tl) = 1 gram"
+  - "1/4 theelepel (tl) = 0,5 gram"
   - "Meng alle specerijen goed door elkaar."
 rating: 5
 spice_level: 2
