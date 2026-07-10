@@ -9,6 +9,9 @@ ingredients:
     quantity: 65
   - name: 'puntpaprika'
     quantity: 1
+  - name: 'enchilada kruidenmix'
+    quantity: 4
+    recipe_reference: 'enchilada_kruidenmix'
 steps:
   - "Voeg cottage cheese, kidney bonen en zwarte bonen bij elkaar"
   - "Snij de paprika in stukjes en voeg toe"
