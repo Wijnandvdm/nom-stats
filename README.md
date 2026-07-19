@@ -23,3 +23,4 @@ This of course does not explain the complete functionality of this project. Want
 
 # todo:
 - rubs, kruidenmixes en glazes als aparte paginas/groepjes, refereerbaar in andere recepten
+- een lean variant en een bulk variant van een recept mogelijk maken, die je vervolgens aan en uit kan switchen
