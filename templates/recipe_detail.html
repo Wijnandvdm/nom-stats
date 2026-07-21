@@ -224,28 +224,40 @@
             display: inline-block;
         }
         .variant-toggle {
-            display: flex;
-            gap: 0.5rem;
+            display: inline-flex;
+            position: relative;
             margin: 0 0 1.5rem 0;
+            border-radius: 999px;
+            border: 2px solid var(--primary-dark);
+            overflow: hidden;
+        }
+        .toggle-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            border-radius: 999px;
+            transition: left var(--transition);
+            pointer-events: none;
         }
         .variant-btn {
-            background-color: var(--primary-dark);
-            color: var(--text-dark);
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            background: transparent;
             border: none;
-            padding: 0.4rem 1.2rem;
+            padding: 0.4rem 1.4rem;
             font-size: 1rem;
             font-weight: bold;
-            border-radius: 8px;
             cursor: pointer;
-            opacity: 0.5;
-            transition: background-color var(--transition), opacity var(--transition);
+            color: var(--primary-light);
+            transition: color var(--transition);
+            white-space: nowrap;
         }
         .variant-btn.active {
-            opacity: 1;
-        }
-        .variant-btn:hover {
-            background-color: var(--primary-light);
-            opacity: 1;
+            color: var(--text-dark);
         }
         .dietary-icon {
             width: 20px;
@@ -327,6 +339,7 @@
     <div class="container">
         {% if recipe.variants %}
         <div class="variant-toggle">
+            <div class="toggle-thumb"></div>
             {% for variant_name in recipe.variants %}
             <button class="variant-btn {% if loop.first %}active{% endif %}"
                     data-variant="{{ variant_name }}"
@@ -536,7 +549,10 @@
                 container.appendChild(ul);
             });
 
-            // Update active button
+            // Slide thumb and update active button
+            const variantKeys = Object.keys(variantData);
+            const idx = variantKeys.indexOf(name);
+            document.querySelector('.toggle-thumb').style.left = (idx * (100 / variantKeys.length)) + '%';
             document.querySelectorAll('.variant-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.variant === name);
             });
