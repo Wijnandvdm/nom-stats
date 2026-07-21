@@ -228,8 +228,11 @@
             position: relative;
             margin: 0 0 1.5rem 0;
             border-radius: 999px;
-            border: 2px solid var(--primary-dark);
             overflow: hidden;
+            background-color: var(--accordion-bg);
+        }
+        body.light-mode .variant-toggle {
+            background-color: var(--border-light);
         }
         .toggle-thumb {
             position: absolute;
@@ -237,7 +240,7 @@
             left: 0;
             width: 50%;
             height: 100%;
-            background-color: var(--primary-dark);
+            background-color: var(--primary-light);
             border-radius: 999px;
             transition: left var(--transition);
             pointer-events: none;
@@ -248,16 +251,21 @@
             flex: 1;
             background: transparent;
             border: none;
-            padding: 0.4rem 1.4rem;
-            font-size: 1rem;
+            padding: 0.25rem 1rem;
+            font-size: 0.9rem;
             font-weight: bold;
             cursor: pointer;
-            color: var(--primary-light);
-            transition: color var(--transition);
+            color: var(--text-dark);
+            opacity: 0.5;
+            transition: color var(--transition), opacity var(--transition);
             white-space: nowrap;
         }
+        body.light-mode .variant-btn {
+            color: var(--text-light);
+        }
         .variant-btn.active {
-            color: var(--text-dark);
+            color: #fff;
+            opacity: 1;
         }
         .dietary-icon {
             width: 20px;
