@@ -565,13 +565,11 @@
                 container.appendChild(ul);
             });
 
-            // Slide thumb and update active button
-            const variantKeys = Object.keys(variantData);
-            const idx = variantKeys.indexOf(name);
-            document.querySelector('.toggle-thumb').style.left = (idx * (100 / variantKeys.length)) + '%';
-            document.querySelectorAll('.variant-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.variant === name);
-            });
+            // Slide thumb to the matching button's position in the DOM
+            const btns = Array.from(document.querySelectorAll('.variant-btn'));
+            const idx = btns.findIndex(btn => btn.dataset.variant === name);
+            document.querySelector('.toggle-thumb').style.left = (idx * (100 / btns.length)) + '%';
+            btns.forEach(btn => btn.classList.toggle('active', btn.dataset.variant === name));
 
             // Re-apply current servings multiplier
             updateDisplay();
