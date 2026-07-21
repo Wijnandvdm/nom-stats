@@ -230,6 +230,8 @@
             border-radius: 999px;
             overflow: hidden;
             background-color: var(--accordion-bg);
+            border: 2px solid var(--primary-dark);
+            cursor: pointer;
         }
         body.light-mode .variant-toggle {
             background-color: var(--border-light);
@@ -254,7 +256,7 @@
             padding: 0.25rem 1rem;
             font-size: 0.9rem;
             font-weight: bold;
-            cursor: pointer;
+            pointer-events: none;
             color: var(--text-dark);
             opacity: 0.5;
             transition: color var(--transition), opacity var(--transition);
@@ -346,12 +348,11 @@
 
     <div class="container">
         {% if recipe.variants %}
-        <div class="variant-toggle">
+        <div class="variant-toggle" onclick="toggleVariant()">
             <div class="toggle-thumb"></div>
             {% for variant_name in recipe.variants %}
             <button class="variant-btn {% if loop.first %}active{% endif %}"
-                    data-variant="{{ variant_name }}"
-                    onclick="switchVariant('{{ variant_name }}')">
+                    data-variant="{{ variant_name }}">
                 {{ variant_name | capitalize }}
             </button>
             {% endfor %}
@@ -517,6 +518,13 @@
     {% if recipe.variants %}
     <script>
         const variantData = {{ recipe.variants | tojson }};
+
+        function toggleVariant() {
+            const variantKeys = Object.keys(variantData);
+            const active = document.querySelector('.variant-btn.active').dataset.variant;
+            const nextIdx = (variantKeys.indexOf(active) + 1) % variantKeys.length;
+            switchVariant(variantKeys[nextIdx]);
+        }
 
         function switchVariant(name) {
             const data = variantData[name];
