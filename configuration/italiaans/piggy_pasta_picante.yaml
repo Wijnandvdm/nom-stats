@@ -4,7 +4,7 @@ variants:
   lean:
     ingredients:
       - name: 'spaghetti'
-        quantity: 100
+        quantity: 80
       - name: 'spek'
         quantity: 100
       - name: 'tomatenblokjes bio'
