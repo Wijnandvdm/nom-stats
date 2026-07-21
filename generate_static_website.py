@@ -14,7 +14,7 @@ env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
 
 def slugify(name: str) -> str:
-    return re.sub(r'[^a-z0-9-]', '', name.lower().replace(' ', '-'))
+    return re.sub(r"[^a-z0-9-]", "", name.lower().replace(" ", "-"))
 
 
 if not os.path.exists(OUTPUT_DIR):
@@ -59,6 +59,9 @@ def load_ingredients_csv(ingredients_file: str) -> dict:
 def _get_flat_ingredients(yaml_content: Dict[str, Any]) -> List[Dict[str, Any]]:
     if "components" in yaml_content:
         return [i for c in yaml_content["components"] for i in c.get("ingredients", [])]
+    if "variants" in yaml_content:
+        first_variant = next(iter(yaml_content["variants"].values()))
+        return first_variant.get("ingredients", [])
     return yaml_content.get("ingredients", [])
 
 
@@ -71,7 +74,11 @@ def _format_ingredient_display(recipe_ingredient: dict, ingredient: dict) -> dic
         display = f"{float(quantity)} {measurement_unit} {name}"
     else:
         display = f"{quantity} {measurement_unit} {name}"
-    return {"display": display, "slug": slugify(name), "recipe_reference": recipe_ingredient.get("recipe_reference")}
+    return {
+        "display": display,
+        "slug": slugify(name),
+        "recipe_reference": recipe_ingredient.get("recipe_reference"),
+    }
 
 
 def _build_display_components(
@@ -189,6 +196,28 @@ def process_all_recipes(
                             alcohol_percentage,
                         ) = calculate_nutrition(flat_ingredients, all_ingredients)
 
+                        variants_data = None
+                        if "variants" in yaml_content:
+                            variants_data = {}
+                            for variant_name, variant_content in yaml_content["variants"].items():
+                                v_ingr = variant_content.get("ingredients", [])
+                                (vtp, vtc, vp100, vc100, vtf, vtcarb, vf100, vcarb100, _) = (
+                                    calculate_nutrition(v_ingr, all_ingredients)
+                                )
+                                variants_data[variant_name] = {
+                                    "components": _build_display_components(
+                                        {"ingredients": v_ingr}, all_ingredients
+                                    ),
+                                    "total_protein": vtp,
+                                    "total_calories": vtc,
+                                    "protein_100g": vp100,
+                                    "calories_100g": vc100,
+                                    "total_fat": vtf,
+                                    "total_carbs": vtcarb,
+                                    "fat_100g": vf100,
+                                    "carbs_100g": vcarb100,
+                                }
+
                         recipe_data = {
                             "name": yaml_content["recipe_name"],
                             "description": yaml_content.get("description", ""),
@@ -200,7 +229,9 @@ def process_all_recipes(
                             "carbs_100g": carbs_100g,
                             "total_fat": total_fat,
                             "total_carbs": total_carbs,
-                            "components": _build_display_components(yaml_content, all_ingredients),
+                            "components": next(iter(variants_data.values()))["components"]
+                            if variants_data
+                            else _build_display_components(yaml_content, all_ingredients),
                             "steps": yaml_content.get("steps", []),
                             "rating": yaml_content.get("rating", 0),
                             "spice_level": yaml_content.get("spice_level", 0),
@@ -208,6 +239,7 @@ def process_all_recipes(
                             "filename": filename.replace(".yaml", ".html"),
                             "dietary_labels": yaml_content.get("dietary_labels", []),
                             "category": category.title(),
+                            "variants": variants_data,
                         }
 
                         labels = recipe_data["dietary_labels"]

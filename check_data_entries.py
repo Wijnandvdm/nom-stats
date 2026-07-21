@@ -201,9 +201,11 @@ def _check_ingredient_entry(item: Any, location: str) -> list[str]:
 
 
 def _get_flat_ingredients(data: dict) -> list[dict]:
-    """Flatten ingredients from either the top-level list or nested components."""
+    """Flatten ingredients from either the top-level list, nested components, or all variants."""
     if "components" in data:
         return [i for c in data["components"] for i in c.get("ingredients", [])]
+    if "variants" in data:
+        return [i for v in data["variants"].values() for i in v.get("ingredients", [])]
     return data.get("ingredients", [])
 
 
@@ -216,7 +218,7 @@ def check_recipe(file: Path, known: set[str]) -> list[str]:
     - rating and spice_level are integers in the range 0–5
     - description and steps are the correct types when present
     - dietary_labels only contains known values
-    - exactly one of 'ingredients' or 'components' is present, with valid entries
+    - exactly one of 'ingredients', 'components', or 'variants' is present, with valid entries
     - all ingredient names exist in ingredients.csv
     """
     loc = str(file)
@@ -268,18 +270,19 @@ def check_recipe(file: Path, known: set[str]) -> list[str]:
 
     has_ingredients = "ingredients" in data
     has_components = "components" in data
+    has_variants = "variants" in data
 
-    if not has_ingredients and not has_components:
-        issues.append(f"{loc}: must have either 'ingredients' or 'components'")
-    elif has_ingredients and has_components:
-        issues.append(f"{loc}: cannot have both 'ingredients' and 'components' — pick one")
+    if sum([has_ingredients, has_components, has_variants]) == 0:
+        issues.append(f"{loc}: must have either 'ingredients', 'components', or 'variants'")
+    elif sum([has_ingredients, has_components, has_variants]) > 1:
+        issues.append(f"{loc}: cannot combine 'ingredients', 'components', and 'variants' — pick one")
     elif has_ingredients:
         if not isinstance(data["ingredients"], list):
             issues.append(f"{loc}: 'ingredients' must be a list")
         else:
             for item in data["ingredients"]:
                 issues.extend(_check_ingredient_entry(item, loc))
-    else:
+    elif has_components:
         if not isinstance(data["components"], list):
             issues.append(f"{loc}: 'components' must be a list")
         else:
@@ -295,6 +298,20 @@ def check_recipe(file: Path, known: set[str]) -> list[str]:
                 else:
                     for item in comp_ingredients:
                         issues.extend(_check_ingredient_entry(item, loc))
+    else:
+        if not isinstance(data["variants"], dict):
+            issues.append(f"{loc}: 'variants' must be a mapping")
+        else:
+            for variant_name, variant_content in data["variants"].items():
+                if not isinstance(variant_content, dict):
+                    issues.append(f"{loc}: variant '{variant_name}' must be a mapping")
+                    continue
+                v_ingredients = variant_content.get("ingredients", [])
+                if not isinstance(v_ingredients, list):
+                    issues.append(f"{loc}: variant '{variant_name}' 'ingredients' must be a list")
+                else:
+                    for item in v_ingredients:
+                        issues.extend(_check_ingredient_entry(item, f"{loc} (variant '{variant_name}')"))
 
     for item in _get_flat_ingredients(data):
         name = item.get("name") if isinstance(item, dict) else None

@@ -223,6 +223,30 @@
             text-align: center;
             display: inline-block;
         }
+        .variant-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0 0 1.5rem 0;
+        }
+        .variant-btn {
+            background-color: var(--primary-dark);
+            color: var(--text-dark);
+            border: none;
+            padding: 0.4rem 1.2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: background-color var(--transition), opacity var(--transition);
+        }
+        .variant-btn.active {
+            opacity: 1;
+        }
+        .variant-btn:hover {
+            background-color: var(--primary-light);
+            opacity: 1;
+        }
         .dietary-icon {
             width: 20px;
             height: 20px;
@@ -301,6 +325,18 @@
     </header>
 
     <div class="container">
+        {% if recipe.variants %}
+        <div class="variant-toggle">
+            {% for variant_name in recipe.variants %}
+            <button class="variant-btn {% if loop.first %}active{% endif %}"
+                    data-variant="{{ variant_name }}"
+                    onclick="switchVariant('{{ variant_name }}')">
+                {{ variant_name | capitalize }}
+            </button>
+            {% endfor %}
+        </div>
+        {% endif %}
+
         <!-- Macronutrients Table -->
         <h2>Macronutriënten</h2>
         <table class="macronutrients-table">
@@ -315,7 +351,7 @@
             <tr>
                 <td>Calorieën</td>
                 <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
-                <td>{{ recipe.calories_100g | round(0) }}</td>
+                <td id="calories-100g">{{ recipe.calories_100g | round(0) }}</td>
                 {% if recipe.alcohol_percentage is defined %}
                 <td rowspan="4">{{ recipe.alcohol_percentage }} %</td>
                 {% endif %}
@@ -323,17 +359,17 @@
             <tr>
                 <td>Eiwit</td>
                 <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
-                <td>{{ recipe.protein_100g | round(0) }} g</td>
+                <td id="protein-100g">{{ recipe.protein_100g | round(0) }} g</td>
             </tr>
             <tr>
                 <td>Vet</td>
                 <td id="total-fat" data-base="{{ recipe.total_fat }}">{{ recipe.total_fat | round(0) }} g</td>
-                <td>{{ recipe.fat_100g | round(0) }} g</td>
+                <td id="fat-100g">{{ recipe.fat_100g | round(0) }} g</td>
             </tr>
             <tr>
                 <td>Koolhydraten</td>
                 <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | round(0) }} g</td>
-                <td>{{ recipe.carbs_100g | round(0) }} g</td>
+                <td id="carbs-100g">{{ recipe.carbs_100g | round(0) }} g</td>
             </tr>
         </table>
 
@@ -416,6 +452,7 @@
         </script>
 
         <h2>Ingrediënten</h2>
+        <div id="ingredients-container">
         {% for component in recipe.components %}
             {% if component.name %}
             <h3>{{ component.name }}</h3>
@@ -426,6 +463,7 @@
                 {% endfor %}
             </ul>
         {% endfor %}
+        </div>
 
 
         <div class="servings-control">
@@ -454,6 +492,60 @@
             Disclaimer: De voedingsinformatie op deze pagina is uitsluitend bedoeld ter informatie en mag niet worden beschouwd als professioneel advies voor voedings- of gezondheidsdoeleinden. Raadpleeg uw huisarts of een gecertificeerde diëtist voor passend advies over gezonde voeding.
         </p>
     </footer>
+
+    {% if recipe.variants %}
+    <script>
+        const variantData = {{ recipe.variants | tojson }};
+
+        function switchVariant(name) {
+            const data = variantData[name];
+
+            // Update macro totals
+            document.getElementById('total-calories').dataset.base = data.total_calories;
+            document.getElementById('total-protein').dataset.base = data.total_protein;
+            document.getElementById('total-fat').dataset.base = data.total_fat;
+            document.getElementById('total-carbs').dataset.base = data.total_carbs;
+
+            // Update per-100g cells
+            document.getElementById('calories-100g').textContent = Math.round(data.calories_100g);
+            document.getElementById('protein-100g').textContent = Math.round(data.protein_100g) + ' g';
+            document.getElementById('fat-100g').textContent = Math.round(data.fat_100g) + ' g';
+            document.getElementById('carbs-100g').textContent = Math.round(data.carbs_100g) + ' g';
+
+            // Rebuild ingredients list
+            const container = document.getElementById('ingredients-container');
+            container.innerHTML = '';
+            data.components.forEach(component => {
+                if (component.name) {
+                    const h3 = document.createElement('h3');
+                    h3.textContent = component.name;
+                    container.appendChild(h3);
+                }
+                const ul = document.createElement('ul');
+                ul.className = 'ingredients-list';
+                component.ingredients.forEach(ing => {
+                    const li = document.createElement('li');
+                    li.dataset.base = ing.display;
+                    const a = document.createElement('a');
+                    a.href = '/ingredients/' + ing.slug + '.html';
+                    a.className = 'ingredient-link';
+                    a.textContent = ing.display;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+                container.appendChild(ul);
+            });
+
+            // Update active button
+            document.querySelectorAll('.variant-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.variant === name);
+            });
+
+            // Re-apply current servings multiplier
+            updateDisplay();
+        }
+    </script>
+    {% endif %}
 
     <!-- Theme toggle button -->
     <button class="theme-toggle" onclick="toggleTheme()" data-tooltip="Light mode, echt?">🌙</button>

@@ -1,20 +1,38 @@
 recipe_name: 'Chicken Carnage'
 description: 'All I see is red'
-ingredients:
-  - name: 'kip'
-    quantity: 300
-  - name: 'penne'
-    quantity: 120
-  - name: 'ah pesto arrabbiata'
-    quantity: 95
-  - name: 'tomatenblokjes bio'
-    quantity: 200
-  - name: 'paprika'
-    quantity: 1
-  - name: 'ui'
-    quantity: 1
-  - name: 'jalapeno'
-    quantity: 0.5
+variants:
+  lean:
+    ingredients:
+      - name: 'kip'
+        quantity: 200
+      - name: 'penne'
+        quantity: 80
+      - name: 'ah pesto arrabbiata'
+        quantity: 95
+      - name: 'tomatenblokjes bio'
+        quantity: 200
+      - name: 'paprika'
+        quantity: 1
+      - name: 'ui'
+        quantity: 1
+      - name: 'jalapeno'
+        quantity: 0.5
+  bulk:
+    ingredients:
+      - name: 'kip'
+        quantity: 300
+      - name: 'penne'
+        quantity: 120
+      - name: 'ah pesto arrabbiata'
+        quantity: 95
+      - name: 'tomatenblokjes bio'
+        quantity: 200
+      - name: 'paprika'
+        quantity: 1
+      - name: 'ui'
+        quantity: 1
+      - name: 'jalapeno'
+        quantity: 0.5
 steps:
   - "Snij de uien"
   - "Snij de paprika"
