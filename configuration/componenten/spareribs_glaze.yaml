@@ -1,0 +1,17 @@
+recipe_name: 'Spareribs Glaze'
+description: 'Sticky, sweet, and worth every napkin'
+ingredients:
+  - name: 'honing'
+    quantity: 30
+  - name: 'bruine basterdsuiker'
+    quantity: 4
+  - name: 'go-tan sojasaus'
+    quantity: 10
+steps:
+  - "Meng honing, basterdsuiker en sojasaus goed door elkaar."
+  - "Bestrijk de ribben royaal met de glaze."
+rating: 5
+spice_level: 0
+preparation_time: 5
+dietary_labels:
+  - vegetarian

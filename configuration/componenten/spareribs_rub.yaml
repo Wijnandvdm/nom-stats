@@ -1,0 +1,31 @@
+recipe_name: 'Spareribs Rub'
+description: 'Low effort, high reward, seven spices deep'
+ingredients:
+  - name: 'paprikapoeder'
+    quantity: 14
+  - name: 'uipoeder'
+    quantity: 4
+  - name: 'zout'
+    quantity: 4
+  - name: 'suiker'
+    quantity: 2
+  - name: 'peper'
+    quantity: 2
+  - name: 'chilipoeder'
+    quantity: 2
+  - name: 'knoflookpoeder'
+    quantity: 2
+  - name: 'komijnpoeder'
+    quantity: 2
+steps:
+  - "1 eetlepel (el) = 8 gram"
+  - "1/2 eetlepel (el) = 4 gram"
+  - "1 theelepel (tl) = 2 gram"
+  - "1/2 theelepel (tl) = 1 gram"
+  - "1/4 theelepel (tl) = 0,5 gram"
+  - "Meng alle specerijen goed door elkaar."
+rating: 5
+spice_level: 1
+preparation_time: 5
+dietary_labels:
+  - vegetarian

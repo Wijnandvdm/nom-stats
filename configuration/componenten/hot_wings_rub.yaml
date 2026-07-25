@@ -1,0 +1,23 @@
+recipe_name: 'Hot Wings Rub'
+description: 'Two teaspoons of everything, one of the rest'
+ingredients:
+  - name: 'zout'
+    quantity: 4
+  - name: 'suiker'
+    quantity: 4
+  - name: 'paprikapoeder'
+    quantity: 4
+  - name: 'peper'
+    quantity: 2
+  - name: 'gemberpoeder'
+    quantity: 2
+  - name: 'chilipoeder'
+    quantity: 2
+steps:
+  - "1 theelepel (tl) = 2 gram"
+  - "Meng alle specerijen goed door elkaar."
+rating: 5
+spice_level: 3
+preparation_time: 5
+dietary_labels:
+  - vegetarian
