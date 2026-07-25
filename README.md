@@ -20,8 +20,3 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
    - Your [website](https://nomstats.z6.web.core.windows.net/) is now available!
 
 This of course does not explain the complete functionality of this project. Want to know more? Don't be shy, ask the creator of this repo!
-
-# todo:
-- rubs, kruidenmixes en glazes als aparte paginas/groepjes, refereerbaar in andere recepten
-- een lean variant en een bulk variant van een recept mogelijk maken, die je vervolgens aan en uit kan switchen
-- components ondersteunen binnen een variant (nu alleen ingredients per variant)

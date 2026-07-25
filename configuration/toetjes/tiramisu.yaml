@@ -1,0 +1,30 @@
+recipe_name: 'Tiramisu'
+description: 'Klassieke Italiaanse no-bake'
+ingredients:
+  - name: 'eidooier'
+    quantity: 1
+  - name: 'suiker'
+    quantity: 40
+  - name: 'mascarpone'
+    quantity: 200
+  - name: 'lange vingers'
+    quantity: 4
+  - name: 'koffie'
+    quantity: 100
+  - name: 'cacaopoeder'
+    quantity: 10
+steps:
+  - "Zet de koffie en laat afkoelen"
+  - "Klop de eidooier met de suiker tot een luchtig, lichtgeel mengsel"
+  - "Meng de mascarpone door het eidooier-suikermengsel tot een gladde crème"
+  - "Doop de lange vingers kort in de koffie tot vlak voor ze uit elkaar vallen"
+  - "Leg de gedoopte lange vingers op de bodem van een schaaltje"
+  - "Schep de mascarponecrème erover en strijk glad"
+  - "Herhaal de lagen tot het mengsel op is"
+  - "Bestrooi royaal met cacaopoeder"
+  - "Zet minimaal 1 uur (maar meer is beter) in de koelkast"
+rating: 5
+spice_level: 0
+preparation_time: 20
+dietary_labels:
+  - vegetarian

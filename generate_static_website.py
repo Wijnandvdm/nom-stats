@@ -49,9 +49,7 @@ def load_ingredients_csv(ingredients_file: str) -> dict:
                         "quantity_per_100_g": float(row.get("carbohydrates_per_100g", 0) or 0),
                     },
                 ],
-                "alcohol_percentage": float(row["alcohol_percentage"])
-                if row.get("alcohol_percentage")
-                else 0,
+                "alcohol_percentage": float(row["alcohol_percentage"]) if row.get("alcohol_percentage") else 0,
             }
     return ingredients
 
@@ -61,6 +59,8 @@ def _get_flat_ingredients(yaml_content: Dict[str, Any]) -> List[Dict[str, Any]]:
         return [i for c in yaml_content["components"] for i in c.get("ingredients", [])]
     if "variants" in yaml_content:
         first_variant = next(iter(yaml_content["variants"].values()))
+        if "components" in first_variant:
+            return [i for c in first_variant["components"] for i in c.get("ingredients", [])]
         return first_variant.get("ingredients", [])
     return yaml_content.get("ingredients", [])
 
@@ -94,10 +94,7 @@ def _build_display_components(
         return result
 
     if "components" in yaml_content:
-        return [
-            {"name": c["name"], "ingredients": resolve(c.get("ingredients", []))}
-            for c in yaml_content["components"]
-        ]
+        return [{"name": c["name"], "ingredients": resolve(c.get("ingredients", []))} for c in yaml_content["components"]]
     return [{"name": None, "ingredients": resolve(yaml_content.get("ingredients", []))}]
 
 
@@ -200,14 +197,13 @@ def process_all_recipes(
                         if "variants" in yaml_content:
                             variants_data = {}
                             for variant_name, variant_content in yaml_content["variants"].items():
-                                v_ingr = variant_content.get("ingredients", [])
-                                (vtp, vtc, vp100, vc100, vtf, vtcarb, vf100, vcarb100, _) = (
-                                    calculate_nutrition(v_ingr, all_ingredients)
-                                )
+                                if "components" in variant_content:
+                                    v_ingr = [i for c in variant_content["components"] for i in c.get("ingredients", [])]
+                                else:
+                                    v_ingr = variant_content.get("ingredients", [])
+                                (vtp, vtc, vp100, vc100, vtf, vtcarb, vf100, vcarb100, _) = calculate_nutrition(v_ingr, all_ingredients)
                                 variants_data[variant_name] = {
-                                    "components": _build_display_components(
-                                        {"ingredients": v_ingr}, all_ingredients
-                                    ),
+                                    "components": _build_display_components(variant_content, all_ingredients),
                                     "total_protein": vtp,
                                     "total_calories": vtc,
                                     "protein_100g": vp100,

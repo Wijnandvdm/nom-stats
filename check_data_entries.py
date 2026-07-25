@@ -71,10 +71,7 @@ def check_unexpected_columns(df: pd.DataFrame, schema: pd.DataFrame) -> list[str
     """Return a warning if the CSV contains columns not defined in the schema."""
     extra = set(df.columns) - set(schema["column"])
     if extra:
-        return [
-            f"Unexpected columns found: {', '.join(extra)}. "
-            "Remove them or update the schema if they are intentional."
-        ]
+        return [f"Unexpected columns found: {', '.join(extra)}. Remove them or update the schema if they are intentional."]
     return []
 
 
@@ -111,13 +108,9 @@ def check_measurement_units(df: pd.DataFrame) -> list[str]:
     if "measurement_unit" not in df.columns:
         return []
     base_units = {"g", "ml"}
-    mismatches = df[
-        (~df["measurement_unit"].isin(base_units))
-        & (df["weight_per_unit"].isnull() | (df["weight_per_unit"] == ""))
-    ]
+    mismatches = df[(~df["measurement_unit"].isin(base_units)) & (df["weight_per_unit"].isnull() | (df["weight_per_unit"] == ""))]
     return [
-        f"Line {i + 2}: '{row['name']}' uses unit '{row['measurement_unit']}' "
-        "but has no weight_per_unit conversion."
+        f"Line {i + 2}: '{row['name']}' uses unit '{row['measurement_unit']}' but has no weight_per_unit conversion."
         for i, row in mismatches.iterrows()
     ]
 
@@ -205,7 +198,13 @@ def _get_flat_ingredients(data: dict) -> list[dict]:
     if "components" in data:
         return [i for c in data["components"] for i in c.get("ingredients", [])]
     if "variants" in data:
-        return [i for v in data["variants"].values() for i in v.get("ingredients", [])]
+        result = []
+        for v in data["variants"].values():
+            if "components" in v:
+                result.extend(i for c in v["components"] for i in c.get("ingredients", []))
+            else:
+                result.extend(v.get("ingredients", []))
+        return result
     return data.get("ingredients", [])
 
 
@@ -263,10 +262,7 @@ def check_recipe(file: Path, known: set[str]) -> list[str]:
         else:
             for label in labels:
                 if label not in VALID_DIETARY_LABELS:
-                    issues.append(
-                        f"{loc}: unknown dietary label '{label}' "
-                        f"(valid: {', '.join(sorted(VALID_DIETARY_LABELS))})"
-                    )
+                    issues.append(f"{loc}: unknown dietary label '{label}' (valid: {', '.join(sorted(VALID_DIETARY_LABELS))})")
 
     has_ingredients = "ingredients" in data
     has_components = "components" in data
@@ -303,15 +299,38 @@ def check_recipe(file: Path, known: set[str]) -> list[str]:
             issues.append(f"{loc}: 'variants' must be a mapping")
         else:
             for variant_name, variant_content in data["variants"].items():
+                vloc = f"{loc} (variant '{variant_name}')"
                 if not isinstance(variant_content, dict):
-                    issues.append(f"{loc}: variant '{variant_name}' must be a mapping")
+                    issues.append(f"{vloc}: must be a mapping")
                     continue
-                v_ingredients = variant_content.get("ingredients", [])
-                if not isinstance(v_ingredients, list):
-                    issues.append(f"{loc}: variant '{variant_name}' 'ingredients' must be a list")
+                has_v_ingredients = "ingredients" in variant_content
+                has_v_components = "components" in variant_content
+                if has_v_ingredients and has_v_components:
+                    issues.append(f"{vloc}: cannot have both 'ingredients' and 'components' — pick one")
+                elif not has_v_ingredients and not has_v_components:
+                    issues.append(f"{vloc}: must have either 'ingredients' or 'components'")
+                elif has_v_ingredients:
+                    if not isinstance(variant_content["ingredients"], list):
+                        issues.append(f"{vloc}: 'ingredients' must be a list")
+                    else:
+                        for item in variant_content["ingredients"]:
+                            issues.extend(_check_ingredient_entry(item, vloc))
                 else:
-                    for item in v_ingredients:
-                        issues.extend(_check_ingredient_entry(item, f"{loc} (variant '{variant_name}')"))
+                    if not isinstance(variant_content["components"], list):
+                        issues.append(f"{vloc}: 'components' must be a list")
+                    else:
+                        for comp in variant_content["components"]:
+                            if not isinstance(comp, dict):
+                                issues.append(f"{vloc}: each component must be a mapping")
+                                continue
+                            if "name" not in comp or not isinstance(comp["name"], str):
+                                issues.append(f"{vloc}: each component must have a string 'name'")
+                            comp_ingredients = comp.get("ingredients", [])
+                            if not isinstance(comp_ingredients, list):
+                                issues.append(f"{vloc}: component '{comp.get('name', '?')}' 'ingredients' must be a list")
+                            else:
+                                for item in comp_ingredients:
+                                    issues.extend(_check_ingredient_entry(item, vloc))
 
     for item in _get_flat_ingredients(data):
         name = item.get("name") if isinstance(item, dict) else None
