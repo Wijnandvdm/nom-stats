@@ -20,4 +20,3 @@ repos:
         entry: uv run python check_data_entries.py
         language: system
         always_run: true
-
