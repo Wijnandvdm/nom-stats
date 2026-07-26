@@ -23,3 +23,4 @@ This of course does not explain the complete functionality of this project. Want
 
 # todo:
 - make ingredient references (links to nutrition values) working in the lean and bulk variants, as they work in regular variants
+- make deployment process more efficient (instead of recreating resource group, check if it exists. If exists, empty storage account and fill it. If not exists, do current process of recreation)
