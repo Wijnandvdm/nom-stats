@@ -1,20 +1,38 @@
 recipe_name: 'Pizza Scorched Chorizo'
 description: 'And it burns, burns, burns, the rings of fire!'
-ingredients:
-  - name: 'skyr'
-    quantity: 100
-  - name: 'zelfrijzend bakmeel'
-    quantity: 100
-  - name: 'bertolli pizzasaus piccante'
-    quantity: 90
-  - name: 'ui'
-    quantity: 1
-  - name: 'chorizo'
-    quantity: 130
-  - name: 'jalapeno'
-    quantity: 1
-  - name: 'ah geraspte kaas 20+'
-    quantity: 75
+variants:
+  lean:
+    ingredients:
+      - name: 'skyr'
+        quantity: 60
+      - name: 'zelfrijzend bakmeel'
+        quantity: 60
+      - name: 'bertolli pizzasaus piccante'
+        quantity: 60
+      - name: 'ui'
+        quantity: 1
+      - name: 'chorizo'
+        quantity: 130
+      - name: 'jalapeno'
+        quantity: 1
+      - name: 'ah geraspte kaas 20+'
+        quantity: 75
+  bulk:
+    ingredients:
+      - name: 'skyr'
+        quantity: 100
+      - name: 'zelfrijzend bakmeel'
+        quantity: 100
+      - name: 'bertolli pizzasaus piccante'
+        quantity: 90
+      - name: 'ui'
+        quantity: 1
+      - name: 'chorizo'
+        quantity: 130
+      - name: 'jalapeno'
+        quantity: 1
+      - name: 'ah geraspte kaas 20+'
+        quantity: 75
 steps:
   - "Meng skyr met zelfrijzend bakmeel tot een niet plakkend deeg"
   - "Laat het bolletje deeg 10 minuten rusten"
