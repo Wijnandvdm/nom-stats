@@ -65,26 +65,26 @@ jobs:
           storage_account_404_document="404.html"
           storage_account_index_document="index.html"
 
-          # Step 0: Delete resource group if necessary
           rg_exists=$(az group exists -n ${resource_group})
           if [[ "${rg_exists}" == "true" ]]; then
-            echo "Resource group exists. Deleting..."
-            az group delete -n ${resource_group} --yes
+            echo "Resource group exists. Syncing changed files..."
+            az storage blob sync -s static_site -c '$web' \
+              --account-name ${storage_account_name} --delete-destination true
           else
-            echo "Resource group does not exist. Skipping deletion."
+            echo "Resource group does not exist. Creating from scratch..."
+
+            # Step 1: Create resource group
+            az group create -n ${resource_group} -l ${location}
+
+            # Step 2: Create Azure Storage Account
+            az storage account create -n ${storage_account_name} -g ${resource_group} -l ${location}  \
+                --sku ${storage_account_sku} --hns ${storage_account_hns_enabled}
+
+            # Step 3: Turn on static website capability
+            az storage blob service-properties update --account-name ${storage_account_name}  \
+                --static-website --404-document ${storage_account_404_document}  \
+                --index-document ${storage_account_index_document}
+
+            # Step 4: Upload html files
+            az storage blob upload-batch -s static_site -d '$web' --account-name ${storage_account_name} --overwrite
           fi
-
-          # Step 1: Create resource group
-          az group create -n ${resource_group} -l ${location}
-
-          # Step 2: Create Azure Storage Account
-          az storage account create -n ${storage_account_name} -g ${resource_group} -l ${location}  \
-              --sku ${storage_account_sku} --hns ${storage_account_hns_enabled}
-
-          # Step 3: Turn on static website capability
-          az storage blob service-properties update --account-name ${storage_account_name}  \
-              --static-website --404-document ${storage_account_404_document}  \
-              --index-document ${storage_account_index_document}
-
-          # Step 4: Upload html files
-          az storage blob upload-batch -s static_site -d '$web' --account-name ${storage_account_name} --overwrite
