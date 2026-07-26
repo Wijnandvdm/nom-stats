@@ -1,0 +1,45 @@
+recipe_name: 'Kapsalon voor 2'
+description: 'Klassieke kapsalon met vlees, friet, kaas en sla'
+variants:
+  lean:
+    ingredients:
+      - name: 'kipdijfilet'
+        quantity: 200
+      - name: 'yildriz turkse knoflooksaus'
+        quantity: 155
+      - name: 'ijsbergsla'
+        quantity: 100
+      - name: 'ah geraspte kaas 20+'
+        quantity: 64
+      - name: 'go-tan chillisaus sweet chilli extra hot'
+        quantity: 100
+      - name: 'vetbak friet'
+        quantity: 150
+  bulk:
+    ingredients:
+      - name: 'kipdijfilet'
+        quantity: 300
+      - name: 'yildriz turkse knoflooksaus'
+        quantity: 155
+      - name: 'ijsbergsla'
+        quantity: 100
+      - name: 'ah geraspte kaas 20+'
+        quantity: 64
+      - name: 'go-tan chillisaus sweet chilli extra hot'
+        quantity: 100
+      - name: 'vetbak friet'
+        quantity: 200
+steps:
+  - "Voor-verwarm de oven"
+  - "Braad het vlees"
+  - "Bestel/bereid de friet"
+  - "Plaats de friet op de bodem"
+  - "Knoflooksaus en chilisaus er overheen"
+  - "Plaats het vlees op de friet"
+  - "Knoflooksaus en chilisaus er overheen"
+  - "Kaas strooisels er overheen"
+  - "In de oven tot kaas gesmolten is"
+  - "Ijsbergsla er overheen"
+rating: 5
+spice_level: 1
+preparation_time: 20
