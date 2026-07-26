@@ -1,7 +1,7 @@
 recipe_name: 'Kapsalon voor 2'
 description: 'Klassieke kapsalon met vlees, friet, kaas en sla'
 variants:
-  lean:
+  less bulky bulk:
     ingredients:
       - name: 'kipdijfilet'
         quantity: 200
