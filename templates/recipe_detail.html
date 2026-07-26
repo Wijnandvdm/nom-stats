@@ -486,6 +486,20 @@
             </ul>
         {% endfor %}
         </div>
+        {% if recipe.variants %}
+        {% for name, v in recipe.variants.items() %}
+        <div id="variant-html-{{ name }}" hidden>
+            {% for component in v.components %}
+                {% if component.name %}<h3>{{ component.name }}</h3>{% endif %}
+                <ul class="ingredients-list">
+                    {% for ingredient in component.ingredients %}
+                    <li data-base="{{ ingredient.display }}">{% if ingredient.recipe_reference %}<a href="/{{ ingredient.recipe_reference }}.html" class="component-link">{{ ingredient.display }}</a>{% else %}<a href="/ingredients/{{ ingredient.slug }}.html" class="ingredient-link">{{ ingredient.display }}</a>{% endif %}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        {% endif %}
 
 
         <div class="servings-control">
@@ -543,27 +557,7 @@
 
             // Rebuild ingredients list
             const container = document.getElementById('ingredients-container');
-            container.innerHTML = '';
-            data.components.forEach(component => {
-                if (component.name) {
-                    const h3 = document.createElement('h3');
-                    h3.textContent = component.name;
-                    container.appendChild(h3);
-                }
-                const ul = document.createElement('ul');
-                ul.className = 'ingredients-list';
-                component.ingredients.forEach(ing => {
-                    const li = document.createElement('li');
-                    li.dataset.base = ing.display;
-                    const a = document.createElement('a');
-                    a.href = '/ingredients/' + ing.slug + '.html';
-                    a.className = 'ingredient-link';
-                    a.textContent = ing.display;
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
-                container.appendChild(ul);
-            });
+            container.innerHTML = document.getElementById('variant-html-' + name).innerHTML;
 
             // Slide thumb to the matching button's position in the DOM
             const btns = Array.from(document.querySelectorAll('.variant-btn'));
