@@ -20,6 +20,3 @@ Secondly, NomStats is a tool for generating and hosting recipe websites with nut
    - Your [website](https://nomstats.z6.web.core.windows.net/) is now available!
 
 This of course does not explain the complete functionality of this project. Want to know more? Don't be shy, ask the creator of this repo!
-
-# todo:
-- make deployment process more efficient (instead of recreating resource group, check if it exists. If exists, empty storage account and fill it. If not exists, do current process of recreation)
