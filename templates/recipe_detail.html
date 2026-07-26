@@ -419,12 +419,14 @@
             document.querySelectorAll(".ingredients-list li").forEach(el => {
                 const baseText = el.dataset.base;
                 const match = baseText.match(/^([\d\.]+)\s*(.*)$/);  // find number + unit/name
-                if (match) {
-                    const baseQty = parseFloat(match[1]);
-                    const rest = match[2];
-                    el.textContent = (baseQty * servings).toFixed(2).replace(/\.00$/, "") + " " + rest;
+                const newText = match
+                    ? (parseFloat(match[1]) * servings).toFixed(2).replace(/\.00$/, "") + " " + match[2]
+                    : baseText;
+                const a = el.querySelector('a');
+                if (a) {
+                    a.textContent = newText;
                 } else {
-                    el.textContent = baseText; // if no number, leave it as is
+                    el.textContent = newText;
                 }
             });
         }
