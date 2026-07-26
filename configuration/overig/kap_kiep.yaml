@@ -1,7 +1,7 @@
-recipe_name: 'Kapsalon voor 2'
-description: 'Klassieke kapsalon met vlees, friet, kaas en sla'
+recipe_name: 'Kap Kiep'
+description: 'Dik worden doe je zo:'
 variants:
-  less bulky bulk:
+  chonky:
     ingredients:
       - name: 'kipdijfilet'
         quantity: 200
@@ -15,7 +15,7 @@ variants:
         quantity: 100
       - name: 'vetbak friet'
         quantity: 150
-  bulk:
+  chonkiest:
     ingredients:
       - name: 'kipdijfilet'
         quantity: 300
@@ -42,4 +42,4 @@ steps:
   - "Ijsbergsla er overheen"
 rating: 5
 spice_level: 1
-preparation_time: 20
+preparation_time: 30
