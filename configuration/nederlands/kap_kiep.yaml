@@ -6,7 +6,7 @@ variants:
       - name: 'kipdijfilet'
         quantity: 200
       - name: 'yildriz turkse knoflooksaus'
-        quantity: 155
+        quantity: 67
       - name: 'ijsbergsla'
         quantity: 100
       - name: 'ah geraspte kaas 20+'
@@ -20,7 +20,7 @@ variants:
       - name: 'kipdijfilet'
         quantity: 300
       - name: 'yildriz turkse knoflooksaus'
-        quantity: 155
+        quantity: 67
       - name: 'ijsbergsla'
         quantity: 100
       - name: 'ah geraspte kaas 20+'
