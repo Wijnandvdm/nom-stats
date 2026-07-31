@@ -12,7 +12,7 @@ variants:
       - name: 'ah geraspte kaas 20+'
         quantity: 64
       - name: 'go-tan chillisaus sweet chilli extra hot'
-        quantity: 100
+        quantity: 45
       - name: 'vetbak friet'
         quantity: 150
   chonkiest:
@@ -26,7 +26,7 @@ variants:
       - name: 'ah geraspte kaas 20+'
         quantity: 64
       - name: 'go-tan chillisaus sweet chilli extra hot'
-        quantity: 100
+        quantity: 45
       - name: 'vetbak friet'
         quantity: 200
 steps:
