@@ -1,0 +1,33 @@
+recipe_name: 'I ♥ liver'
+description: "Heartache and a fried liver, a classic combination"
+ingredients:
+  - name: 'sushi rijst'
+    quantity: 100
+  - name: 'runderlever'
+    quantity: 125
+  - name: 'kippenhart'
+    quantity: 125
+  - name: 'sugar snaps'
+    quantity: 125
+  - name: 'paprika'
+    quantity: 0.5
+  - name: 'knoflook'
+    quantity: 4
+  - name: 'bosui'
+    quantity: 1
+  - name: 'ui'
+    quantity: 0.5
+  - name: 'go-tan sojasaus'
+    quantity: 20
+steps:
+  - "Kook de sushi rijst"
+  - "Hak de knoflook fijn"
+  - "Snijd de paprika in reepjes"
+  - "Snijd de ui in halve ringen"
+  - "Wok de paprika, sugar snaps en ui"
+  - "Bak in andere pan lever en hartjes gaar"
+  - "Voeg gehakte knoflook, bosui en sojasaus toe"
+  - "Bak alles kort mee"
+  - "Assemble!"
+rating: 4
+preparation_time: 30

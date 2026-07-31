@@ -1,5 +1,7 @@
 name,measurement_unit,weight_per_unit,protein_per_100g,calories_per_100g,fat_per_100g,carbohydrates_per_100g,alcohol_percentage
 biefstuk,g,,22.9,108,1.8,0,0
+runderlever,g,,21,123,3.6,1.9,0
+kippenhart,g,,13,135,9,0.5,0
 gehakt,g,,18.8,224,16.5,0.2,0
 beyond meat burger gehakt,g,,16,196,12,5.6,0
 vega slager lecker burgerlijk,g,,11,180,11,4.5,0
@@ -26,6 +28,7 @@ sushi rijst,g,,7.4,349,0.9,77,0
 basmati rijst,g,,8.8,355,0.5,78,0
 sperziebonen,g,,2.3,25,0.2,1.8,0
 edamame boontjes,g,,12,138,6.1,5.6,0
+sugar snaps,g,,2,33,0,5,0
 avocado,g,,2,183,18,1.8,0
 ah terra gerookte tofu,g,,15,131,6.4,0.4,0
 ah zeewier salade,g,,1.5,92,3.7,11,0
