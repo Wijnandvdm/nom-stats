@@ -67,9 +67,9 @@ def _get_flat_ingredients(yaml_content: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 def _grams_to_spoon(grams: float) -> str:
     if grams >= 8:
-        amount, unit = round(grams / 8, 2), "el"
+        amount, unit = round(grams / 8, 2), "eetlepel(s)"
     else:
-        amount, unit = round(grams / 2, 2), "tl"
+        amount, unit = round(grams / 2, 2), "theelepel(s)"
     return f"{amount:g} {unit}"
 
 

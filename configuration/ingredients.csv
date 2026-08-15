@@ -150,9 +150,9 @@ enchilada kruidenmix,el_tl,,10,355,10,50,0
 hot wings rub,el_tl,,6,283,6,44,0
 spareribs rub,el_tl,,6,312,6,47,0
 spareribs glaze,g,,2,270,0,66,0
-zout,g,,0,0,0,0,0
-msg,g,,0,0,0,0,0
-suiker,g,,0,400,0,100,0
+zout,el_tl,,0,0,0,0,0
+msg,el_tl,,0,0,0,0,0
+suiker,el_tl,,0,400,0,100,0
 tomatenblokjes bio,g,,1,22,0.1,4,0
 op smaak gebakken tomaten,g,,1.5,75,3.3,9.3,0
 tomatenpuree bio,g,,4.8,89,0.4,15,0
