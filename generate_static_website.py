@@ -92,7 +92,7 @@ def _format_ingredient_display(recipe_ingredient: dict, ingredient: dict) -> dic
     if measurement_unit == "el_tl":
         display = f"{_grams_to_spoon(quantity)} {name}"
     elif weight_per_unit:
-        display = f"{float(quantity)} {measurement_unit} {name}"
+        display = f"{_fmt_number(quantity)} {measurement_unit} {name}"
     else:
         display = f"{quantity} {measurement_unit} {name}"
     return {
