@@ -186,7 +186,7 @@
 
     <div class="container">
         {% set per_unit = 'g' if ingredient.measurement_unit == 'el_tl' else (ingredient.measurement_unit or 'g') %}
-        <h2>Voedingswaarden per 100{{ per_unit }}</h2>
+        <h2>Macronutriënten</h2>
 
         {% set nutrients = [
             ("Calorieën",     "kcal", ingredient.components | selectattr("name", "equalto", "calories")      | map(attribute="quantity_per_100_g") | first | default(0)),
@@ -203,7 +203,7 @@
             {% for label, unit, value in nutrients %}
             <tr>
                 <td>{{ label }}</td>
-                <td>{{ value | round(1) }} {{ unit }}</td>
+                <td>{{ value | round(1) | fmt }} {{ unit }}</td>
             </tr>
             {% endfor %}
             {% if ingredient.alcohol_percentage > 0 %}

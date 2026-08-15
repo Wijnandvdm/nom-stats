@@ -372,26 +372,26 @@
             </tr>
             <tr>
                 <td>Calorieën</td>
-                <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | round(0) }}</td>
-                <td id="calories-100g">{{ recipe.calories_100g | round(0) }}</td>
+                <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | fmt }}</td>
+                <td id="calories-100g">{{ recipe.calories_100g | fmt }}</td>
                 {% if recipe.alcohol_percentage is defined %}
                 <td rowspan="4">{{ recipe.alcohol_percentage }} %</td>
                 {% endif %}
             </tr>
             <tr>
                 <td>Eiwit</td>
-                <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | round(0) }} g</td>
-                <td id="protein-100g">{{ recipe.protein_100g | round(0) }} g</td>
+                <td id="total-protein" data-base="{{ recipe.total_protein }}">{{ recipe.total_protein | fmt }} g</td>
+                <td id="protein-100g">{{ recipe.protein_100g | fmt }} g</td>
             </tr>
             <tr>
                 <td>Vet</td>
-                <td id="total-fat" data-base="{{ recipe.total_fat }}">{{ recipe.total_fat | round(0) }} g</td>
-                <td id="fat-100g">{{ recipe.fat_100g | round(0) }} g</td>
+                <td id="total-fat" data-base="{{ recipe.total_fat }}">{{ recipe.total_fat | fmt }} g</td>
+                <td id="fat-100g">{{ recipe.fat_100g | fmt }} g</td>
             </tr>
             <tr>
                 <td>Koolhydraten</td>
-                <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | round(0) }} g</td>
-                <td id="carbs-100g">{{ recipe.carbs_100g | round(0) }} g</td>
+                <td id="total-carbs" data-base="{{ recipe.total_carbs }}">{{ recipe.total_carbs | fmt }} g</td>
+                <td id="carbs-100g">{{ recipe.carbs_100g | fmt }} g</td>
             </tr>
         </table>
 

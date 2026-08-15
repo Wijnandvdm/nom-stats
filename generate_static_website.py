@@ -13,6 +13,17 @@ INGREDIENTS_FILE = os.path.join(CONFIG_DIR, "ingredients.csv")
 env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
 
+def _fmt_number(value):
+    try:
+        f = float(value)
+        return int(f) if f == int(f) else f
+    except (ValueError, TypeError):
+        return value
+
+
+env.filters["fmt"] = _fmt_number
+
+
 def slugify(name: str) -> str:
     return re.sub(r"[^a-z0-9-]", "", name.lower().replace(" ", "-"))
 
