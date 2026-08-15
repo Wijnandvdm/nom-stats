@@ -175,13 +175,18 @@
 <body>
     <header>
         <h1>{{ ingredient.name | title }}</h1>
-        {% if ingredient.measurement_unit %}
-        <p>Gemeten in {{ ingredient.measurement_unit }}{% if ingredient.weight_per_unit %} &mdash; {{ ingredient.weight_per_unit }}g per eenheid{% endif %}</p>
+        {% if ingredient.measurement_unit == 'el_tl' %}
+        <p>1 theelepel = 2g</p>
+        <p>1 eetlepel = 8g</p>
+        {% elif ingredient.measurement_unit %}
+        <p>Gemeten in {{ ingredient.measurement_unit }}</p>
+        {% if ingredient.weight_per_unit %}<p>{{ ingredient.weight_per_unit }}g per eenheid</p>{% endif %}
         {% endif %}
     </header>
 
     <div class="container">
-        <h2>Voedingswaarden per 100{{ ingredient.measurement_unit or 'g' }}</h2>
+        {% set per_unit = 'g' if ingredient.measurement_unit == 'el_tl' else (ingredient.measurement_unit or 'g') %}
+        <h2>Voedingswaarden per 100{{ per_unit }}</h2>
 
         {% set nutrients = [
             ("Calorieën",     "kcal", ingredient.components | selectattr("name", "equalto", "calories")      | map(attribute="quantity_per_100_g") | first | default(0)),
@@ -193,7 +198,7 @@
         <table class="macronutrients-table">
             <tr>
                 <th>Voedingsstof</th>
-                <th>Per 100{{ ingredient.measurement_unit or 'g' }}</th>
+                <th>Per 100{{ per_unit }}</th>
             </tr>
             {% for label, unit, value in nutrients %}
             <tr>
