@@ -209,7 +209,7 @@
             {% if ingredient.alcohol_percentage > 0 %}
             <tr>
                 <td>Alcohol</td>
-                <td>{{ ingredient.alcohol_percentage }} %</td>
+                <td>{{ ingredient.alcohol_percentage | fmt }} %</td>
             </tr>
             {% endif %}
         </table>

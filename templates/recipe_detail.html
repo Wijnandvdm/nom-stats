@@ -375,7 +375,7 @@
                 <td id="total-calories" data-base="{{ recipe.total_calories }}">{{ recipe.total_calories | fmt }}</td>
                 <td id="calories-100g">{{ recipe.calories_100g | fmt }}</td>
                 {% if recipe.alcohol_percentage is defined %}
-                <td rowspan="4">{{ recipe.alcohol_percentage }} %</td>
+                <td rowspan="4">{{ recipe.alcohol_percentage | fmt }} %</td>
                 {% endif %}
             </tr>
             <tr>
