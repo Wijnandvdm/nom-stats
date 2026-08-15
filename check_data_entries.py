@@ -107,7 +107,7 @@ def check_measurement_units(df: pd.DataFrame) -> list[str]:
     """Return issues for non-base units that are missing a weight_per_unit conversion."""
     if "measurement_unit" not in df.columns:
         return []
-    base_units = {"g", "ml"}
+    base_units = {"g", "ml", "el_tl"}
     mismatches = df[(~df["measurement_unit"].isin(base_units)) & (df["weight_per_unit"].isnull() | (df["weight_per_unit"] == ""))]
     return [
         f"Line {i + 2}: '{row['name']}' uses unit '{row['measurement_unit']}' but has no weight_per_unit conversion."

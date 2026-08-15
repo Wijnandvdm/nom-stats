@@ -65,12 +65,22 @@ def _get_flat_ingredients(yaml_content: Dict[str, Any]) -> List[Dict[str, Any]]:
     return yaml_content.get("ingredients", [])
 
 
+def _grams_to_spoon(grams: float) -> str:
+    if grams >= 8:
+        amount, unit = round(grams / 8, 2), "el"
+    else:
+        amount, unit = round(grams / 2, 2), "tl"
+    return f"{amount:g} {unit}"
+
+
 def _format_ingredient_display(recipe_ingredient: dict, ingredient: dict) -> dict:
     quantity = recipe_ingredient.get("quantity", 0)
     name = recipe_ingredient["name"]
     weight_per_unit = ingredient.get("weight_per_unit", 0)
     measurement_unit = ingredient.get("measurement_unit")
-    if weight_per_unit:
+    if measurement_unit == "el_tl":
+        display = f"{_grams_to_spoon(quantity)} {name}"
+    elif weight_per_unit:
         display = f"{float(quantity)} {measurement_unit} {name}"
     else:
         display = f"{quantity} {measurement_unit} {name}"

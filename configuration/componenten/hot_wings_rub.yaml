@@ -14,7 +14,6 @@ ingredients:
   - name: 'chilipoeder'
     quantity: 2
 steps:
-  - "1 theelepel (tl) = 2 gram"
   - "Meng alle specerijen goed door elkaar."
 rating: 5
 spice_level: 3
