@@ -2,7 +2,7 @@ recipe_name: 'Spareribs Glaze'
 description: 'Sticky, sweet, and worth every napkin'
 ingredients:
   - name: 'honing'
-    quantity: 30
+    quantity: 60
   - name: 'bruine basterdsuiker'
     quantity: 4
   - name: 'go-tan sojasaus'
