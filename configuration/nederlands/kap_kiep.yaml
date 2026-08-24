@@ -9,8 +9,8 @@ variants:
         quantity: 67
       - name: 'ijsbergsla'
         quantity: 100
-      - name: 'ah geraspte kaas 20+'
-        quantity: 64
+      - name: 'ah jong belegen 20+'
+        quantity: 2
       - name: 'go-tan chillisaus sweet chilli extra hot'
         quantity: 45
       - name: 'vetbak friet'
@@ -23,8 +23,8 @@ variants:
         quantity: 67
       - name: 'ijsbergsla'
         quantity: 100
-      - name: 'ah geraspte kaas 20+'
-        quantity: 64
+      - name: 'ah jong belegen 20+'
+        quantity: 2
       - name: 'go-tan chillisaus sweet chilli extra hot'
         quantity: 45
       - name: 'vetbak friet'
