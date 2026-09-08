@@ -5,33 +5,36 @@ variants:
     ingredients:
       - name: 'kipdijfilet'
         quantity: 200
-      - name: 'yildriz turkse knoflooksaus'
-        quantity: 67
       - name: 'ijsbergsla'
         quantity: 100
       - name: 'ah jong belegen 20+'
         quantity: 2
+      - name: 'vetbak friet'
+        quantity: 150
+      - name: 'yildriz turkse knoflooksaus'
+        quantity: 67
       - name: 'go-tan chillisaus sweet chilli extra hot'
         quantity: 45
       - name: 'hete kip kruidenmix'
         quantity: 4
         recipe_reference: 'hete_kip_kruidenmix'
-      - name: 'vetbak friet'
-        quantity: 150
   chonkiest:
     ingredients:
       - name: 'kipdijfilet'
         quantity: 300
-      - name: 'yildriz turkse knoflooksaus'
-        quantity: 67
       - name: 'ijsbergsla'
         quantity: 100
       - name: 'ah jong belegen 20+'
         quantity: 2
-      - name: 'go-tan chillisaus sweet chilli extra hot'
-        quantity: 45
       - name: 'vetbak friet'
         quantity: 200
+      - name: 'yildriz turkse knoflooksaus'
+        quantity: 67
+      - name: 'go-tan chillisaus sweet chilli extra hot'
+        quantity: 45
+      - name: 'hete kip kruidenmix'
+        quantity: 4
+        recipe_reference: 'hete_kip_kruidenmix'
 steps:
   - "Voor-verwarm de oven"
   - "Braad het vlees"
