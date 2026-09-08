@@ -1,20 +1,20 @@
 recipe_name: 'Maharadja Mule (needs testing)'
 description: "Een koninklijke twist op de Moscow Mule, zoet, zuur en pittig!"
 ingredients:
-  - name: 'wodka'
+  - name: 'absolut vodka'
     quantity: 40
   - name: 'likeur 43'
     quantity: 20
-  - name: 'falernum'
-    quantity: 15
+  # - name: 'falernum'
+  #   quantity: 15
   - name: 'limoensap'
     quantity: 15
   - name: 'ananassap'
     quantity: 30
-  - name: 'ginger beer'
-    quantity: 120
+  # - name: 'ginger beer'
+  #   quantity: 120
 steps:
-  - "Giet de wodka in een glas"
+  - "Giet de vodka in een glas"
   - "Giet de likeur 43 erbij"
   - "Giet de falernum erbij"
   - "Giet het limoensap erbij"

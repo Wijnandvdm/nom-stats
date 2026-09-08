@@ -13,6 +13,9 @@ variants:
         quantity: 2
       - name: 'go-tan chillisaus sweet chilli extra hot'
         quantity: 45
+      - name: 'hete kip kruidenmix'
+        quantity: 4
+        recipe_reference: 'hete_kip_kruidenmix'
       - name: 'vetbak friet'
         quantity: 150
   chonkiest:

@@ -1,0 +1,24 @@
+recipe_name: 'Hete Kip Kruidenmix'
+description: 'Bij voorkeur met gerookt paprikapoeder'
+ingredients:
+  - name: 'paprikapoeder'
+    quantity: 4
+  - name: 'chilipoeder'
+    quantity: 2
+  - name: 'komijnpoeder'
+    quantity: 2
+  - name: 'knoflookpoeder'
+    quantity: 2
+  - name: 'uipoeder'
+    quantity: 2
+  - name: 'peper'
+    quantity: 1
+  - name: 'zout'
+    quantity: 2
+steps:
+  - "Meng alle specerijen goed door elkaar."
+rating: 5
+spice_level: 3
+preparation_time: 5
+dietary_labels:
+  - vegetarian
