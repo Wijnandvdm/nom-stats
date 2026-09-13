@@ -1,0 +1,35 @@
+recipe_name: 'Poteto potato salad'
+description: 'Tometo tomato'
+ingredients:
+  - name: 'krieltjes vastkokend'
+    quantity: 250
+  - name: 'rode peper'
+    quantity: 0.25
+  - name: 'knoflook'
+    quantity: 2
+  - name: 'basilicum vers'
+    quantity: 5
+  - name: 'extra vierge olijfolie'
+    quantity: 15
+  - name: 'citroensap'
+    quantity: 5
+  - name: 'zout'
+    quantity: 0.5
+  - name: 'peper'
+    quantity: 0.5
+steps:
+  - "Kook de krieltjes"
+  - "Snijd de peper en knoflook in stukjes"
+  - "Snijd de basilicum grof"
+  - "Voeg peper, knoflook, basilicum, zout en peper toe aan vijzel"
+  - "Ga los met de vijzel"
+  - "Voeg olijfolie toe en meng verder"
+  - "Voeg citroensap toe en meng"
+  - "Laat krieltjes na koken even chillen"
+  - "Snijd de krieltjes in halfjes of kwartjes"
+  - "Meng dressing met krieltjes"
+rating: 5
+spice_level: 3
+preparation_time: 20
+dietary_labels:
+  - vegetarian
