@@ -1,14 +1,14 @@
 recipe_name: 'Spareribs Glaze'
-description: 'Sticky, sweet, and worth every napkin'
+description: 'Sticky, sweet, and worth every napkin. Genoeg voor 1 pack van 9 ribs.'
 ingredients:
   - name: 'honing'
-    quantity: 60
-  - name: 'bruine basterdsuiker'
-    quantity: 4
-  - name: 'go-tan sojasaus'
+    quantity: 25
+  - name: 'ketjap manis'
     quantity: 10
+  - name: 'bruine basterdsuiker'
+    quantity: 5
 steps:
-  - "Meng honing, basterdsuiker en sojasaus goed door elkaar."
+  - "Meng honing, ketjap en basterdsuiker goed door elkaar."
   - "Bestrijk de ribben royaal met de glaze."
 rating: 5
 spice_level: 0
