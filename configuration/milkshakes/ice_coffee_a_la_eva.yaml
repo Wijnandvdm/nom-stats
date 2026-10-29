@@ -1,0 +1,23 @@
+recipe_name: 'Ice Ice Coffee'
+description: 'Stay frosty'
+ingredients:
+  - name: 'lactosevrije halfvolle melk'
+    quantity: 200
+  - name: 'koffie'
+    quantity: 200
+  - name: 'lichtbruine basterdsuiker'
+    quantity: 35
+  - name: 'eiwitpoeder'
+    quantity: 30
+steps:
+  - "Zet twee kopjes koffie"
+  - "Roer de suiker door de hete koffie tot deze is opgelost"
+  - "Zet de koffie in de vriezer tot deze licht bevroren is"
+  - "Doe de ijskoude (licht bevroren) melk in een blender"
+  - "Voeg de ijskoude (licht bevroren) koffie toe"
+  - "Voeg het eiwitpoeder toe"
+  - "Blend tot een gladde shake"
+  - "Schenk in een glas en serveer direct"
+rating: 5
+spice_level: 0
+preparation_time: 5
