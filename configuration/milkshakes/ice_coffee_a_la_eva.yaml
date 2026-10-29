@@ -1,8 +1,8 @@
-recipe_name: 'Protein Iced Coffee a la Eva'
+recipe_name: 'Protein Iced Coffee a la Wijnand'
 description: 'Stay frosty'
 ingredients:
   - name: 'lactosevrije halfvolle melk'
-    quantity: 100
+    quantity: 200
   - name: 'koffie'
     quantity: 200
   - name: 'lichtbruine basterdsuiker'
